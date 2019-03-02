@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # launch url
-url = "https://stats.nba.com/game/0021800922/playbyplay/"
+url = "https://stats.nba.com/game/0021800934/playbyplay/"
 
 # create a new Firefox session
 #driver = webdriver.Chrome()
