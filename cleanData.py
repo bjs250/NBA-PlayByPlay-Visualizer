@@ -74,4 +74,6 @@ if __name__ == "__main__":
         if seconds[index+1] < seconds[index]:
             seconds[(index+1):] += (seconds[index]-seconds[index+1])
     df["time(seconds)"] = seconds
+
+    df.to_csv('stats.csv')
     
