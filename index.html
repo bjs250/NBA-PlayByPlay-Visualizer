@@ -13,26 +13,61 @@
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script>
 
-// Load in data
+// Load in data by defining a series of promises...
+let loadPlayByPlay = function(dataList){
+    return new Promise(function(resolve,reject){
+        
+        d3.csv("http://127.0.0.1:8080/stats.csv").then(function(data) {
+            data.forEach(function(d) {
+                d["home_score"] = +d["home_score"];
+                d["visit_score"] = +d["visit_score"];
+                d["score differential"] = +d["score differential"];
+                d["time"] = +d["time(seconds)"];
+            });
+            dataList.push(data.splice(0,150));
+            resolve(dataList);
+        });
 
-d3.csv("http://127.0.0.1:8080/stats.csv").then(function(data) {
-  data.forEach(function(d) {
-    d["home_score"] = +d["home_score"];
-    d["visit_score"] = +d["visit_score"];
-    d["score differential"] = +d["score differential"];
-    d["time"] = +d["time(seconds)"];
-  });
-  console.log("Test");
-  console.log(data.slice(0,100));
-  var raw_PlayByPlay_data = data.slice(0,100);
-  postDataLoad(raw_PlayByPlay_data);
-});
+    });
+}
+
+let loadBoxScore = function(dataList){
+    return new Promise(function(resolve,reject){
+
+        d3.csv("http://127.0.0.1:8080/Box_stats.csv").then(function(data) {
+            data.forEach(function(d) {
+                d["players"] = d["players"];
+            });
+            console.log(dataList);
+            dataList.push(data);
+            console.log(dataList);
+            resolve(dataList);
+        });
+    });
+}
+
+// Complete the promises in sequences and add the results in an array
+dataList = []
+
+loadPlayByPlay(dataList).then(function(result){
+    return loadBoxScore(result);
+}).then(function(result){
+    console.log("done")
+    console.log(result)
+    raw_PlayByPlay_data = result[0]
+    raw_BoxScore_data = result[1]
+    //Finally, pass the data downstream
+    postDataLoad(raw_PlayByPlay_data,raw_BoxScore_data)
+})
+
 
 // Now that data is loaded, put it into plot
-function postDataLoad(raw_PlayByPlay_data) {
+function postDataLoad(raw_PlayByPlay_data,raw_BoxScore_data) {
 
 console.log("Data loads?");
 console.log(raw_PlayByPlay_data[0]);  
+console.log(raw_BoxScore_data[0]);  
+
 
 // Extract time and score differential into arrays
 var xdata = raw_PlayByPlay_data.map(d => d["time"]);
@@ -44,6 +79,11 @@ var visit = raw_PlayByPlay_data.map(d => d["visit"])
 var xy = []; 
 for(var i = 0; i < xdata.length; i++ ) {
    xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i]});
+}
+
+var baseline_xy = []; 
+for(var i = 0; i < xdata.length; i++ ) {
+    baseline_xy.push({x: xdata[i], y: 0});
 }
 
 console.log("data",xy);
@@ -69,6 +109,10 @@ var line = d3.line()
     .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
     .curve(d3.curveStepAfter) // apply smoothing to the line
 
+var baseline = d3.line()
+    .x(function(d) { return xScale(d.x); }) // set the x values for the line generator
+    .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
+    
 // Add the SVG to the page and employ margin rule up above
 var svg = d3.select("body")
     .append("svg")
@@ -83,30 +127,69 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
+// Label    
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width/2)
+    .attr("y", height + 20)
+    .text("Time");
+
 // Call the y axis in a group tag
 svg.append("g")
     .attr("class", "y axis")
     .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
- 
+
+// Labels
+svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 6)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Home");
+
+svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("x", -1*height+45)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Away");
+    
 // Append the path, bind the data, and call the line generator 
 svg.append("path")
     .datum(xy) // 10. Binds data to the line 
     .attr("class", "line") 
     .attr("d", line) 
 
+svg.append("path")
+    .datum(baseline_xy)
+    .attr("class", "baseline") 
+    .style("stroke-dasharray", ("3, 3")) 
+    .attr("d", baseline) 
+
 // Define the div for the tooltip
 var div = d3.select("body").append("div")	
     .attr("class", "tooltip")				
     .style("opacity", 0);
 
+// Restrict dataset to only scoring plays
+var pruned_xy = []; 
+for(var i = 1; i < xdata.length; i++ ) {
+    if (ydata[i] !== ydata[i-1]){
+        pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i]});
+    }
+}
+
 // Appends a circle for each datapoint 
 svg.selectAll(".dot")
-    .data(xy)
+    .data(pruned_xy)
   .enter().append("circle") // Uses the enter().append() method
     .attr("class", "dot") // Assign a class for styling
     .attr("cx", function(d) { return xScale(d.x) })
     .attr("cy", function(d) { return yScale(d.y) })
-    .attr("r", 5)
+    .attr("r", 4)
     .on("mouseover", function(d) {		
             div.transition()		
                 .duration(200)		
