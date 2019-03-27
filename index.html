@@ -27,6 +27,19 @@
   stroke: steelblue;
 }
 
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
 </style>
 <!-- Body tag is where we will append our SVG and SVG objects-->
 <body>
@@ -59,11 +72,13 @@ console.log(data[0]);
 // Extract time and score differential into arrays
 var xdata = data.map(d => d["time"]);
 var ydata = data.map(d => d["score differential"]);
+var home = data.map(d => d["home"]);
+var visit = data.map(d => d["visit"])
 
 // Put data into input format for d3.line
 var xy = []; 
 for(var i = 0; i < xdata.length; i++ ) {
-   xy.push({x: xdata[i], y: ydata[i]});
+   xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i]});
 }
 
 console.log("data",xy);
@@ -87,7 +102,7 @@ var yScale = d3.scaleLinear()
 var line = d3.line()
     .x(function(d) { return xScale(d.x); }) // set the x values for the line generator
     .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
-    //.curve(d3.curveMonotoneX) // apply smoothing to the line
+    .curve(d3.curveStepAfter) // apply smoothing to the line
 
 // Add the SVG to the page and employ margin rule up above
 var svg = d3.select("body")
@@ -114,6 +129,11 @@ svg.append("path")
     .attr("class", "line") 
     .attr("d", line) 
 
+// Define the div for the tooltip
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
 // Appends a circle for each datapoint 
 svg.selectAll(".dot")
     .data(xy)
@@ -122,44 +142,20 @@ svg.selectAll(".dot")
     .attr("cx", function(d) { return xScale(d.x) })
     .attr("cy", function(d) { return yScale(d.y) })
     .attr("r", 5)
-      .on("mouseover", function(a, b, c) { 
-  			console.log(a) 
-        this.attr('class', 'focus')
-		})
+    .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div.html(d.home + d.visit)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
 
-/*
-      .on("mouseout", function() {  })
-//       .on("mousemove", mousemove);
-
-//   var focus = svg.append("g")
-//       .attr("class", "focus")
-//       .style("display", "none");
-
-//   focus.append("circle")
-//       .attr("r", 4.5);
-
-//   focus.append("text")
-//       .attr("x", 9)
-//       .attr("dy", ".35em");
-
-//   svg.append("rect")
-//       .attr("class", "overlay")
-//       .attr("width", width)
-//       .attr("height", height)
-//       .on("mouseover", function() { focus.style("display", null); })
-//       .on("mouseout", function() { focus.style("display", "none"); })
-//       .on("mousemove", mousemove);
-  
-//   function mousemove() {
-//     var x0 = x.invert(d3.mouse(this)[0]),
-//         i = bisectDate(data, x0, 1),
-//         d0 = data[i - 1],
-//         d1 = data[i],
-//         d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-//     focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-//     focus.select("text").text(d);
-//   }
-*/
 };
 
 </script>

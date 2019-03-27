@@ -35,6 +35,7 @@ def convertTime(s):
 
 if __name__ == "__main__":
 
+    # Clean the play-by-play data
     df = pd.read_pickle("./stats.pkl")
 
     # Remove extra whitespace
@@ -77,3 +78,7 @@ if __name__ == "__main__":
 
     df.to_csv('stats.csv')
     
+    # Clean the Box Score Data
+    df = pd.read_pickle("./Box_stats.pkl")
+    df["players"] = df["players"].str.split(" ").str.get(0) + " " +  df["players"].str.split(" ").str.get(1) 
+    df.to_csv('Box_stats.csv')

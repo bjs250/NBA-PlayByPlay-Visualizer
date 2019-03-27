@@ -9,8 +9,8 @@ import os
 url = "https://stats.nba.com/game/0021800934/playbyplay/"
 
 # create a new Firefox session
-#driver = webdriver.Chrome()
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
+#driver = webdriver.Firefox()
 driver.implicitly_wait(20)
 driver.get(url)
 
