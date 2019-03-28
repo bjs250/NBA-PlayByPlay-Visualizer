@@ -93,14 +93,18 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50}
   , width = window.innerWidth - margin.left - margin.right // Use the window's width 
   , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
 
+
 // X scale 
 var xScale = d3.scaleLinear()
     .domain(d3.extent(xy, function(d) {return d.x;})) 
     .range([0, width]);
 
 // Y scale 
+var extrema = d3.extent(xy, function(d) {return d.y;})
+extrema[0] -= 1
+extrema[1] += 1
 var yScale = d3.scaleLinear()
-    .domain(d3.extent(xy, function(d) {return d.y;}))
+    .domain(extrema)
     .range([height, 0]); 
   
 // d3's line generator
@@ -119,7 +123,8 @@ var svg = d3.select("body")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    
 
 // Call the x axis in a group tag
 svg.append("g")
@@ -127,7 +132,7 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
-// Label    
+// Label the x axis
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
@@ -140,7 +145,7 @@ svg.append("g")
     .attr("class", "y axis")
     .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-// Labels
+// Label the y axis
 svg.append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
@@ -156,18 +161,23 @@ svg.append("text")
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("Away");
-    
-// Append the path, bind the data, and call the line generator 
-svg.append("path")
-    .datum(xy) // 10. Binds data to the line 
-    .attr("class", "line") 
-    .attr("d", line) 
 
+
+// Append the path, bind the data, and call the line generator
+
+// Add baseline for score differential = 0
 svg.append("path")
     .datum(baseline_xy)
     .attr("class", "baseline") 
     .style("stroke-dasharray", ("3, 3")) 
     .attr("d", baseline) 
+
+
+// Add path for data above the baseline
+svg.append("path")
+    .datum(xy) // 10. Binds data to the line 
+    .attr("d", line)
+    .attr("class","line")
 
 // Define the div for the tooltip
 var div = d3.select("body").append("div")	
@@ -205,5 +215,6 @@ svg.selectAll(".dot")
         });
 
 };
+
 
 </script>
