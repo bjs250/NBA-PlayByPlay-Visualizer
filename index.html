@@ -28,7 +28,7 @@ let loadPlayByPlay = function(dataList){
                 d["score differential"] = +d["score differential"];
                 d["time"] = +d["time(seconds)"];
             });
-            dataList.push(data.slice(0,100));
+            dataList.push(data.slice(0,140));
             resolve(dataList);
         });
 
@@ -98,7 +98,8 @@ var xScale = d3.scaleLinear()
 
 const xAxis = d3.axisBottom(xScale)
     .tickValues(xy.x)
-    .tickFormat(d => moment.utc((15*60-d)*1000).format('mm:ss'));
+    .tickFormat(d => moment.utc((15*60-d)*1000).format('mm:ss'))
+    .ticks(20)
 
 // Y scale 
 var extrema = d3.extent(xy, function(d) {return d.y;})
