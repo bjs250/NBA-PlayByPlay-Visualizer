@@ -11,20 +11,24 @@
 
 <!-- Load in the d3 library -->
 <script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+
 <script>
 
 // Load in data by defining a series of promises...
 let loadPlayByPlay = function(dataList){
     return new Promise(function(resolve,reject){
         
-        d3.csv("http://127.0.0.1:8080/stats.csv").then(function(data) {
+        d3.csv("http://127.0.0.1:8081/stats.csv").then(function(data) {
             data.forEach(function(d) {
                 d["home_score"] = +d["home_score"];
                 d["visit_score"] = +d["visit_score"];
                 d["score differential"] = +d["score differential"];
                 d["time"] = +d["time(seconds)"];
             });
-            dataList.push(data.splice(0,150));
+            dataList.push(data.slice(0,100));
             resolve(dataList);
         });
 
@@ -34,13 +38,11 @@ let loadPlayByPlay = function(dataList){
 let loadBoxScore = function(dataList){
     return new Promise(function(resolve,reject){
 
-        d3.csv("http://127.0.0.1:8080/Box_stats.csv").then(function(data) {
+        d3.csv("http://127.0.0.1:8081/Box_stats.csv").then(function(data) {
             data.forEach(function(d) {
                 d["players"] = d["players"];
             });
-            console.log(dataList);
             dataList.push(data);
-            console.log(dataList);
             resolve(dataList);
         });
     });
@@ -52,8 +54,6 @@ dataList = []
 loadPlayByPlay(dataList).then(function(result){
     return loadBoxScore(result);
 }).then(function(result){
-    console.log("done")
-    console.log(result)
     raw_PlayByPlay_data = result[0]
     raw_BoxScore_data = result[1]
     //Finally, pass the data downstream
@@ -67,7 +67,6 @@ function postDataLoad(raw_PlayByPlay_data,raw_BoxScore_data) {
 console.log("Data loads?");
 console.log(raw_PlayByPlay_data[0]);  
 console.log(raw_BoxScore_data[0]);  
-
 
 // Extract time and score differential into arrays
 var xdata = raw_PlayByPlay_data.map(d => d["time"]);
@@ -86,8 +85,6 @@ for(var i = 0; i < xdata.length; i++ ) {
     baseline_xy.push({x: xdata[i], y: 0});
 }
 
-console.log("data",xy);
-
 // Use the margin convention practice 
 var margin = {top: 50, right: 50, bottom: 50, left: 50}
   , width = window.innerWidth - margin.left - margin.right // Use the window's width 
@@ -98,6 +95,10 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50}
 var xScale = d3.scaleLinear()
     .domain(d3.extent(xy, function(d) {return d.x;})) 
     .range([0, width]);
+
+const xAxis = d3.axisBottom(xScale)
+    .tickValues(xy.x)
+    .tickFormat(d => moment.utc((15*60-d)*1000).format('mm:ss'));
 
 // Y scale 
 var extrema = d3.extent(xy, function(d) {return d.y;})
@@ -130,15 +131,17 @@ var svg = d3.select("body")
 svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+    //.call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+    .call(xAxis)
 
 // Label the x axis
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
     .attr("x", width/2)
-    .attr("y", height + 20)
-    .text("Time");
+    .attr("y", height + 40)
+    .text("Time")
+    .attr("font","garamond");
 
 // Call the y axis in a group tag
 svg.append("g")
@@ -152,8 +155,10 @@ svg.append("text")
     .attr("y", 6)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("Home");
+    .text("Home")
+    .attr("font","garamond");
 
+/*
 svg.append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
@@ -161,7 +166,7 @@ svg.append("text")
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("Away");
-
+*/
 
 // Append the path, bind the data, and call the line generator
 
@@ -201,12 +206,12 @@ svg.selectAll(".dot")
     .attr("cy", function(d) { return yScale(d.y) })
     .attr("r", 4)
     .on("mouseover", function(d) {		
-            div.transition()		
-                .duration(200)		
-                .style("opacity", .9);		
-            div.html(d.home + d.visit)	
+            div.transition()
+                .duration(200)	
+                .style("opacity", 1);		
+            div.html(d.home + d.visit)
                 .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px");	
+                .style("top", (d3.event.pageY - 40) + "px");	
             })					
         .on("mouseout", function(d) {		
             div.transition()		
