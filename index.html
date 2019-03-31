@@ -21,7 +21,7 @@
 let loadPlayByPlay = function(dataList){
     return new Promise(function(resolve,reject){
         
-        d3.csv("http://127.0.0.1:8081/stats.csv").then(function(data) {
+        d3.csv("http://127.0.0.1:8080/stats.csv").then(function(data) {
             data.forEach(function(d) {
                 d["home_score"] = +d["home_score"];
                 d["visit_score"] = +d["visit_score"];
@@ -38,7 +38,7 @@ let loadPlayByPlay = function(dataList){
 let loadBoxScore = function(dataList){
     return new Promise(function(resolve,reject){
 
-        d3.csv("http://127.0.0.1:8081/Box_stats.csv").then(function(data) {
+        d3.csv("http://127.0.0.1:8080/Box_stats.csv").then(function(data) {
             data.forEach(function(d) {
                 d["players"] = d["players"];
             });
@@ -84,6 +84,41 @@ var baseline_xy = [];
 for(var i = 0; i < xdata.length; i++ ) {
     baseline_xy.push({x: xdata[i], y: 0});
 }
+
+// Try to extract per player information
+var playerData = [];
+var playerDataDict = {}
+var currentVisitInfo = "";  
+var currentHomeInfo = "";
+
+for(var i = 0; i < raw_BoxScore_data.length; i++ ) {
+    currentPlayer = raw_BoxScore_data[i].players.split(" ")[1].toLowerCase()
+    playerDataDict[currentPlayer] = {"info": [], "time": []}
+    console.log(currentPlayer)
+    for(var j = 0; j < xdata.length; j++ ) {
+        currentInfo = ""
+        currentVisitInfo = visit[j].toLowerCase()
+        if (currentVisitInfo.includes(currentPlayer))
+        {
+            currentInfo += currentVisitInfo
+        }
+        currentInfo += " "
+        currentHomeInfo = home[j].toLowerCase()
+        if (currentHomeInfo.includes(currentPlayer))
+        {
+            currentInfo += currentHomeInfo
+        }
+        if (currentInfo !== " ")
+        {
+            playerDataDict[currentPlayer]["time"].push(xdata[j])
+            playerDataDict[currentPlayer]["info"].push(home[j] + visit[j])
+        }
+        
+    }
+}
+
+console.log(playerDataDict)
+
 
 // Use the margin convention practice 
 var margin = {top: 50, right: 50, bottom: 50, left: 50}
