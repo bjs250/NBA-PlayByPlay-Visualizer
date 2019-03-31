@@ -24,7 +24,12 @@
     fill: #ff0000;
     stroke: #fff;
 }
-  
+ 
+.pdot {
+  fill: #a200ff;
+  stroke: #fff;
+}
+
 .focus circle {
   fill: none;
   stroke: steelblue;
