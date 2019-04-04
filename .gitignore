@@ -2,8 +2,6 @@
 stats.pkl
 stats.xlsx
 stats.csv
-package-lock.json
-node_modules/
 Resources/
 .vscode/
 package.json
