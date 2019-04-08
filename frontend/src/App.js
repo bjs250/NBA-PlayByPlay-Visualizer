@@ -27,7 +27,7 @@ class App extends Component {
     event.preventDefault();
     console.log("Current value of user input: " + this.state.user_input);
     axios
-    .get("/api/games/")
+    .get("/games/"+this.state.user_input)
     .then(res => console.log(res.data))
     .catch(err => console.log(err));
   };
