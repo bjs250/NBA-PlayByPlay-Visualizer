@@ -2,9 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from rest_framework import viewsets          
-from .serializers import GameSerializer      
+from django.core import serializers
+#from .serializers import GameSerializer      
 from .models import Game           
-import requests          
+import requests      
+
+import pandas as pd
+import json
+import os
 
 def showGame(request,id):
     try:
@@ -13,7 +18,21 @@ def showGame(request,id):
         foundGame = None
 
     if foundGame is not None:
-        return HttpResponse("test: " + foundGame.game_id)
+
+        #data = serializers.serialize('json', [foundGame,])
+        #print(data)
+        
+        # Get the corresponding data file
+        os.chdir(os.path.dirname(__file__))
+        cwd = os.getcwd()
+        dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').to_dict()
+
+        # Return as a JSON response
+        return HttpResponse(
+            json.dumps(dt),
+            content_type = 'application/javascript; charset=utf8'
+            )
+    
     else:
         return HttpResponse("That does not exist")
 

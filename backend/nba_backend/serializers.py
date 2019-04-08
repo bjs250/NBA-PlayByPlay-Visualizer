@@ -4,4 +4,4 @@ from .models import Game
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ('id', 'date', 'home', 'away')
+        fields = ('id','game_id', 'date', 'home', 'away')

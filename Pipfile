@@ -10,6 +10,7 @@ django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 requests = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
