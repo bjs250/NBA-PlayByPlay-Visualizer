@@ -15,13 +15,16 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include                 
-from rest_framework import routers                    
-from nba_backend import views                            
+from django.urls import path, include     
 
-router = routers.DefaultRouter()                      
-router.register(r'games', views.GameView, 'game')     
+from rest_framework import routers                    
+from nba_backend import views                        
+
+#router = routers.DefaultRouter()                      
+#router.register(r'games', views.GameView, 'game')     
 
 urlpatterns = [
-    path('admin/', admin.site.urls),         path('api/', include(router.urls))                
+    path('', include('nba_backend.urls')),
+    path('admin/', admin.site.urls),
+    #path('api/', include(router.urls))
 ]

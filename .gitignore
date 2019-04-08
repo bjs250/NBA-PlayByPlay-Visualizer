@@ -4,9 +4,9 @@ stats.xlsx
 stats.csv
 Resources/
 .vscode/
-package.json
 Box_stats.csv
 Box_stats.pkl
+frontend/node_modules
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
