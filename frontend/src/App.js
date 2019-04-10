@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
+import * as d3 from 'd3';
+import PBP_Graph from './components/PBP_Graph.js'
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +35,8 @@ class App extends Component {
   };
 
   render() {
+    const size = 500;
+
     return (
       <div className="App">
         <h1>Header</h1>
@@ -48,6 +52,12 @@ class App extends Component {
             Submit
           </button>
         </form>
+
+        <div>
+        <PBP_Graph size={size}
+        />
+        </div>
+
       </div>
     );
   }

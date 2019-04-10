@@ -25,8 +25,8 @@ def showGame(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').to_dict()
-
+        dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').fillna('').to_dict()
+        
         # Return as a JSON response
         return HttpResponse(
             json.dumps(dt),
