@@ -9,6 +9,9 @@ import { select } from 'd3-selection';
 
 import moment from 'moment';
 
+import whyDidYouUpdate from "why-did-you-update";
+whyDidYouUpdate(React);
+
 class PBP_Graph extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +27,7 @@ class PBP_Graph extends Component {
 
   componentDidMount()
   {
+    console.log("PBP Render mount")
       fetch('http://localhost:8000/games/0021800934#')
       .then(res => res.json())
       .then(res => 
@@ -35,31 +39,24 @@ class PBP_Graph extends Component {
   }
 
   render() {
+    console.log("PBP Render called")
     let { data } = this.state;
 
     // Use the margin convention practice 
     var margin = {top: 50, right: 50, bottom: 50, left: 50}
-    , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-    , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
+    , width = this.props.width - margin.left - margin.right // Use the window's width 
+    , height = this.props.height - margin.top - margin.bottom; // Use the window's height
     
     if (Object.keys(data).length) // make sure data has been loaded
     {
       var xdata = Object.values(data["time(seconds)"]);
       var ydata = Object.values(data["score differential"]);
 
-
-      console.log("hit")
-      console.log("xdata",xdata, xdata.length)
-
       // Put data into input format for d3.line
       var xy = [];
       for(var i = 0; i < xdata.length; i++ ) {
         xy.push({x: xdata[i], y: ydata[i]});
       }
-
-      console.log("xy",xy)
-      console.log("xy.x",xy[10].x)
-      console.log("xy.y",xy[10].y)
 
       // X scale 
       var xScale = d3.scaleLinear()
@@ -81,13 +78,12 @@ class PBP_Graph extends Component {
         .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
         .curve(d3.curveStepAfter) // apply smoothing to the line
 
-      console.log("line",line(xy))
-
         return (
           <svg 
             width={this.props.width} 
             height={this.props.height}>
             <g 
+              transform={`translate(${margin.left}, ${margin.top})`}
               >
               <g
                 className="x axis"
@@ -104,7 +100,7 @@ class PBP_Graph extends Component {
                 d={line(xy)}
                 fill={"none"}
                 stroke={"#000000"}
-                stroke-width={"3"}>
+                strokeWidth={"3"}>
               </path>
             </g>
   

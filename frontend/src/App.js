@@ -35,7 +35,7 @@ class App extends Component {
   };
 
   render() {
-    const height = 500;
+    const height = 600;
     const width = 1000;
 
     return (
