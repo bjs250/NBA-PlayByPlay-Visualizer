@@ -35,7 +35,8 @@ class App extends Component {
   };
 
   render() {
-    const size = 500;
+    const height = 500;
+    const width = 1000;
 
     return (
       <div className="App">
@@ -54,7 +55,9 @@ class App extends Component {
         </form>
 
         <div>
-        <PBP_Graph size={size}
+        <PBP_Graph 
+          width={width}
+          height={height}
         />
         </div>
 
