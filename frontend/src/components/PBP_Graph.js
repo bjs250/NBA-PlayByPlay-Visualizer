@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import './PBP_Graph.css';
 
 import * as d3 from 'd3';
-//import { scaleBand, scaleLinear } from 'd3-scale';
-import { max } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
 import { select } from 'd3-selection';
 
 import moment from 'moment';
-
-import whyDidYouUpdate from "why-did-you-update";
-whyDidYouUpdate(React);
 
 class PBP_Graph extends Component {
   constructor(props) {
@@ -94,18 +89,21 @@ class PBP_Graph extends Component {
                 className="y axis"
                 ref={node => select(node).call(axisLeft(yScale))}
               />
-            </g>
-            <g className="line"
-                transform={`translate(${margin.left}, ${margin.top})`}
-                >
-              <path
+              <path className="line"
                 d={line(xy)}
-                fill={"none"}
-                stroke={"#000000"}
-                strokeWidth={"3"}>
-              </path>
+              />
+              {xy.map(d => (
+                <circle
+                  //key={d.letter}
+                  className="pdot"
+                  cx={xScale(d.x)}
+                  cy={yScale(d.y)}
+                  r={3}
+                  
+                />
+              ))}
             </g>
-  
+            
           </svg>
       );
 
