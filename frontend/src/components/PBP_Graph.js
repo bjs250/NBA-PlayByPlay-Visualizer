@@ -42,13 +42,13 @@ class PBP_Graph extends Component {
     console.log("PBP Render called")
     let { data } = this.state;
 
-    // Use the margin convention practice 
-    var margin = {top: 50, right: 50, bottom: 50, left: 50}
-    , width = this.props.width - margin.left - margin.right // Use the window's width 
-    , height = this.props.height - margin.top - margin.bottom; // Use the window's height
-    
     if (Object.keys(data).length) // make sure data has been loaded
     {
+      // Use the margin convention practice 
+      var margin = {top: 50, right: 50, bottom: 50, left: 50}
+      , width = this.props.width - margin.left - margin.right // Use the window's width 
+      , height = this.props.height - margin.top - margin.bottom; // Use the window's height
+      
       var xdata = Object.values(data["time(seconds)"]);
       var ydata = Object.values(data["score differential"]);
 
@@ -88,14 +88,16 @@ class PBP_Graph extends Component {
               <g
                 className="x axis"
                 transform={`translate(0, ${height})`}
-                ref={node => select(node).call(axisBottom(xScale).ticks(1))}
+                ref={node => select(node).call(axisBottom(xScale).ticks(10))}
               />
               <g
                 className="y axis"
                 ref={node => select(node).call(axisLeft(yScale))}
               />
             </g>
-            <g className="line">
+            <g className="line"
+                transform={`translate(${margin.left}, ${margin.top})`}
+                >
               <path
                 d={line(xy)}
                 fill={"none"}
