@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
-import * as d3 from 'd3';
-import PBP_Graph from './components/PBP_Graph.js'
+
+import PlayByPlayGraph from './components/PlayByPlayGraph.js'
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class App extends Component {
         </form>
 
         <div>
-        <PBP_Graph 
+        <PlayByPlayGraph 
           width={width}
           height={height}
         />

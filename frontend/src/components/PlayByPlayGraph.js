@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PBP_Graph.css';
+import './PlayByPlayGraph.css';
 
 import * as d3 from 'd3';
 import { axisBottom, axisLeft } from 'd3-axis';
@@ -7,7 +7,7 @@ import { select } from 'd3-selection';
 
 import moment from 'moment';
 
-class PBP_Graph extends Component {
+class PlayByPlayGraph extends Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ class PBP_Graph extends Component {
       // Put data into input format for d3.line
       var xy = [];
       for(var i = 0; i < xdata.length; i++ ) {
-        xy.push({x: xdata[i], y: ydata[i]});
+        xy.push({x: xdata[i], y: ydata[i], key:i});
       }
 
       // X scale 
@@ -94,7 +94,7 @@ class PBP_Graph extends Component {
               />
               {xy.map(d => (
                 <circle
-                  //key={d.letter}
+                  key={d.key}
                   className="pdot"
                   cx={xScale(d.x)}
                   cy={yScale(d.y)}
@@ -118,4 +118,4 @@ class PBP_Graph extends Component {
 
 }
 
-export default PBP_Graph;
+export default PlayByPlayGraph;
