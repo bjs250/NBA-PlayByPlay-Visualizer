@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import * as d3 from 'd3';
-import { axisBottom, axisLeft } from 'd3-axis';
-import { select } from 'd3-selection';
+//import { axisBottom, axisLeft } from 'd3-axis';
+//import { select } from 'd3-selection';
 
 class Scatterplot extends React.Component {
     constructor(props) {

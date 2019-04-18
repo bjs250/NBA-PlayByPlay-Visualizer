@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import * as d3 from 'd3';
-import { axisBottom, axisLeft } from 'd3-axis';
-import { select } from 'd3-selection';
+//import { axisBottom, axisLeft } from 'd3-axis';
+//import { select } from 'd3-selection';
 
 import Scatterplot from './Scatterplot.js'
 
-
-const random = d3.randomNormal(5, 1);
 class Chart extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +16,7 @@ class Chart extends React.Component {
         }
 
         this.zoom = d3.zoom()
-            .scaleExtent([1, 5])
+            .scaleExtent([0, 5])
             .translateExtent([[0, 0], [5000 , props.height ]])
             .extent([[0, 0], [props.width, props.height]])
             .on("zoom", this.zoomed.bind(this))
