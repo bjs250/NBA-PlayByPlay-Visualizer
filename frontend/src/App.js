@@ -3,6 +3,7 @@ import './App.css';
 import axios from "axios";
 
 import PlayByPlayGraph from './components/PlayByPlayGraph.js'
+import Chart from './components/Chart.js'
 
 class App extends Component {
   constructor(props) {
@@ -35,12 +36,14 @@ class App extends Component {
   };
 
   render() {
-    const height = 600;
+    const height = 500;
     const width = 1000;
 
     return (
       <div className="App">
+        
         <h1>Header</h1>
+        
         <form>
           <input 
             type='text'
@@ -52,14 +55,18 @@ class App extends Component {
             onClick={this.handleSubmit}>
             Submit
           </button>
-        </form>
+        </form> 
 
-        <div>
+        
+        {/* <div>
         <PlayByPlayGraph 
           width={width}
           height={height}
         />
-        </div>
+        </div> */}
+        <Chart width={width} height={height}>
+
+        </Chart>
 
       </div>
     );
