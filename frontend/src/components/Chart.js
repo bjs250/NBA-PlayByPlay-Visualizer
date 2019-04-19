@@ -50,12 +50,13 @@ class Chart extends React.Component {
     render() {
         const { zoomTransform } = this.state,
         { width, height, margin } = this.props;
+        var scale_factor = 3;
 
         return (
             <svg width={width} height={height} ref="svg">
                 <Scatterplot data={this.state.data}
                     x={0} y={0}
-                    width={width*3}
+                    width={width*scale_factor}
                     height={height}
                     margin={margin}
                     zoomTransform={zoomTransform}

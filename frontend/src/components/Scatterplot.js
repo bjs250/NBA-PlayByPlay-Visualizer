@@ -1,4 +1,5 @@
 import React from 'react';
+import './Scatterplot.css'
 
 import * as d3 from 'd3';
 import { axisBottom, axisLeft } from 'd3-axis';
@@ -42,10 +43,35 @@ class Scatterplot extends React.Component {
 
     if (zoomTransform && zoomType === "scale") {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${y + zoomTransform.y + margin.top}) scale(${zoomTransform.k})`;
-    } else {
-      transform = `translate(${x}, ${y})`;
     }
+  
     return transform;
+  }
+
+  get ytransform(){
+    console.log("ok")
+    const { x, y, zoomTransform, zoomType, margin } = this.props;
+    console.log("Transform Executed",margin, zoomTransform)
+    let transform = "";
+
+    if (zoomTransform && zoomType === "scale") {
+      transform = `translate(${x + zoomTransform.x + margin.left}, ${zoomTransform.y}) scale(${zoomTransform.k})`;
+    } 
+    return transform;
+    
+  }
+
+  get xtransform(){
+    console.log("x xform")
+    const { x, y, zoomTransform, zoomType, margin } = this.props;
+    console.log("Transform Executed",margin, zoomTransform)
+    let transform = "";
+
+    if (zoomTransform && zoomType === "scale") {
+      transform = `translate(${x + margin.left}, ${y+zoomTransform.y}) scale(${zoomTransform.k})`;
+    } 
+    return transform;
+    
   }
 
   render() {
@@ -78,6 +104,7 @@ class Scatterplot extends React.Component {
 
       var yScale = d3.scaleLinear()
         .domain(extrema)
+        //.domain(d3.extent(xy, function (d) { return d.y; }))
         .range([new_height, 0]);
       
       // D3's line generator
@@ -87,28 +114,40 @@ class Scatterplot extends React.Component {
       .curve(d3.curveStepAfter) // apply smoothing to the line
 
       return (
-        <g transform={this.transform} ref="scatterplot">
-          <g
-            className="x axis"
-            transform={`translate(0, ${new_height})`}
-            ref={node => select(node).call(axisBottom(xScale).ticks(10))}
-          />
-          <g
-            className="y axis"
-            transform={`translate(0, 0)`}
-            ref={node => select(node).call(axisLeft(yScale))}
-          />
-          <path className="line"
-                d={line(xy)}
-              />
-          {xy.map(d => (
-            <circle className="pdot"
-              key={d.key}
-              cx={xScale(d.x)}
-              cy={yScale(d.y)}
-              r={3}
+        <g ref="scatterplot">
+          
+          <g transform={this.ytransform}>
+            
+            <g
+              className="xaxis"
+              transform={`translate(0, ${new_height})`}
+              ref={node => select(node).call(axisBottom(xScale).ticks(10))}
             />
-          ))}
+
+            <path className="line"
+                d={line(xy)}
+            />
+
+            {xy.map(d => (
+              <circle className="pdot"
+                key={d.key}
+                cx={xScale(d.x)}
+                cy={yScale(d.y)}
+                r={3}
+              />
+            ))}
+
+          </g>
+
+          <g transform={this.xtransform}>
+            <g
+              className="yaxis"
+              transform={`translate(0, 0)`}
+              ref={node => select(node).call(axisLeft(yScale).ticks(10))}
+            />
+          </g>
+
+  
         </g>
       );
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
 
-import PlayByPlayGraph from './components/PlayByPlayGraph.js'
+//import PlayByPlayGraph from './components/PlayByPlayGraph.js'
 import Chart from './components/Chart.js'
 
 class App extends Component {
