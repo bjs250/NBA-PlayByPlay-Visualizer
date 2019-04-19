@@ -38,6 +38,7 @@ class App extends Component {
   render() {
     const height = 500;
     const width = 1000;
+    var margin = {top: 50, right: 50, bottom: 50, left: 50}
 
     return (
       <div className="App">
@@ -64,8 +65,10 @@ class App extends Component {
           height={height}
         />
         </div> */}
-        <Chart width={width} height={height}>
-
+        <Chart 
+          width={width}
+          height={height} 
+          margin={margin}>
         </Chart>
 
       </div>

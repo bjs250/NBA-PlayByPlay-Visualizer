@@ -31,3 +31,10 @@
     transform: rotate(360deg);
   }
 }
+
+#GraphContainer{
+  width: 1000px;
+  height: 600px;
+  display: block;
+  margin: auto;
+}

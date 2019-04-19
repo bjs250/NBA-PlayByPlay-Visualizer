@@ -12,7 +12,7 @@ class Chart extends React.Component {
 
         this.state = {
             data: [],
-            zoomTransform: null
+            zoomTransform: {k:1, x:0, y:0},
         }
 
         this.zoom = d3.zoom()
@@ -23,7 +23,7 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-        console.log("PBP Render mount")
+        console.log("Chart mount")
         fetch('http://localhost:8000/games/0021800934#')
             .then(res => res.json())
             .then(res =>
@@ -49,7 +49,7 @@ class Chart extends React.Component {
 
     render() {
         const { zoomTransform } = this.state,
-            { width, height } = this.props;
+        { width, height, margin } = this.props;
 
         return (
             <svg width={width} height={height} ref="svg">
@@ -57,6 +57,7 @@ class Chart extends React.Component {
                     x={0} y={0}
                     width={width*3}
                     height={height}
+                    margin={margin}
                     zoomTransform={zoomTransform}
                     zoomType="scale" />
             </svg>
