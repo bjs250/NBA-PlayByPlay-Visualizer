@@ -50,7 +50,7 @@ class Chart extends React.Component {
     render() {
         const { zoomTransform } = this.state,
         { width, height, margin } = this.props;
-        var scale_factor = 3;
+        var scale_factor = 4;
 
         return (
             <svg width={width} height={height} ref="svg">
