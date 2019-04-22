@@ -1,3 +1,2 @@
-- Scrollable or zoomable x axis
 - Add tooltips
-- Add baseline
+- Fix x axis time and ticks

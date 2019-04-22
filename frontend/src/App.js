@@ -58,18 +58,15 @@ class App extends Component {
           </button>
         </form> 
 
-        
-        {/* <div>
-        <PlayByPlayGraph 
-          width={width}
-          height={height}
-        />
-        </div> */}
         <Chart 
           width={width}
           height={height} 
           margin={margin}>
         </Chart>
+
+        <div>
+          <p>test</p>
+        </div>
 
       </div>
     );

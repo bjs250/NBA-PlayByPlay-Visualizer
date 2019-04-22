@@ -34,7 +34,7 @@
   stroke: steelblue;
 }
 
-div.tooltip {	
+.tooltip {
     line-height: 1;
     font-weight: bold;
     padding: 8px;

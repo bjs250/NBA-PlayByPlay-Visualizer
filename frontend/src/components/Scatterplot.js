@@ -5,10 +5,18 @@ import * as d3 from 'd3';
 import { axisBottom, axisLeft } from 'd3-axis';
 import { select } from 'd3-selection';
 
+import Tooltip from './Tooltip.js';
+import Points from './Points.js';
+
 class Scatterplot extends React.Component {
   constructor(props) {
     super(props);
     this.updateD3(props);
+
+    this.state = {
+      hoveredPoint: null
+    }
+
   }
 
   componentWillUpdate(nextProps) {
@@ -184,14 +192,19 @@ class Scatterplot extends React.Component {
               d={baseline(baseline_xy)}
             />
 
-            {pruned_xy.map(d => (
-              <circle className="pdot"
-                key={d.key}
-                cx={xScale(d.x)}
-                cy={yScale(d.y)}
-                r={3}
-              />
-            ))}
+            <Points
+              scales={{xScale,yScale}}
+              data={pruned_xy}
+              onMouseOverCallback={d => this.setState({hoveredPoint: d})}
+              onMouseOutCallback={d => this.setState({hoveredPoint: null})}
+            />
+
+            { this.state.hoveredPoint ?
+              <Tooltip
+                hoveredPoint={this.state.hoveredPoint}
+                scales={{xScale,yScale}}
+              /> :
+            null}
 
           </g>
 

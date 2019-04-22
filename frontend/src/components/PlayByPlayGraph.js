@@ -94,7 +94,7 @@ class PlayByPlayGraph extends Component {
               />
               {xy.map(d => (
                 <circle
-                  key={d.key}
+                  ukey={d.key}
                   className="pdot"
                   cx={xScale(d.x)}
                   cy={yScale(d.y)}
