@@ -17,7 +17,7 @@ class Points extends React.Component {
                     key={d.key}
                     cx={xScale(d.x)}
                     cy={yScale(d.y)}
-                    r={3}
+                    r={4}
                     onMouseOver={() => this.props.onMouseOverCallback(d)}
                     onMouseOut={() => this.props.onMouseOutCallback(null)}
                 />
