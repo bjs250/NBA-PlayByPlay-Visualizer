@@ -18,11 +18,14 @@ class Tooltip extends React.Component {
 
         console.log(hoveredPoint)
             
+        const height = 100
+        const width = 300
+
         return (
 
-            <foreignObject x={xScale(hoveredPoint.x)} y={yScale(hoveredPoint.y)-100} width={300} height={100}>
-                <div>
-                <strong>{hoveredPoint.home+hoveredPoint.visit}</strong>
+            <foreignObject x={xScale(hoveredPoint.x)-width/2} y={yScale(hoveredPoint.y)-height/2} width={width} height={height} className ="tipContainer">
+                <div className="tooltip">
+                    <strong>{hoveredPoint.home+hoveredPoint.visit}</strong>
                 </div>
             </foreignObject>
             

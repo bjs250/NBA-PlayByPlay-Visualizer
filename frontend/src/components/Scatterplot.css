@@ -44,7 +44,13 @@
 
     position: absolute;			
     text-align: center;			
-    font: 12px garamond;			
+    font: 12px garamond;	
+    		
+}
+
+.tipContainer{
+  pointer-events: none;
+
 }
 
 .d3-tip:after {
