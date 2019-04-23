@@ -59,8 +59,15 @@ class Chart extends React.Component {
         console.log("Current selected button: " + this.state.buttonSelected)
         const { data, zoomTransform, buttonSelected } = this.state,
         { width, height, margin } = this.props;
-        var scale_factor = 4;
-
+        var scale_factor = null;
+        if (buttonSelected === "Full Game")
+        {
+            scale_factor = 4;
+        }
+        else{
+            scale_factor = 1;
+        }
+        
         return (
             <div>
                 <div>

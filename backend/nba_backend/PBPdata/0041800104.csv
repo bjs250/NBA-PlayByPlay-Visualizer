@@ -1,508 +1,508 @@
-,time,home,visit,home_score,visit_score,score differential,time(seconds)
-2,12:00,Jump Ball Drummond vs. Lopez: Tip to Jackson,,0,0,0,0
-3,11:38,Ellington 27' 3PT Jump Shot (3 PTS) (Jackson 1 AST),,0,3,-3,22
-4,11:10,,MISS Antetokounmpo 28' 3PT Jump Shot,0,3,-3,50
-5,11:08,,Bledsoe REBOUND (Off:1 Def:0),0,3,-3,52
-6,11:02,,MISS Middleton  3PT Jump Shot,0,3,-3,58
-7,11:00,Brown REBOUND (Off:0 Def:1),,0,3,-3,60
-8,10:49,Ellington 2' Driving Layup (5 PTS) (Drummond 1 AST),,0,5,-5,71
-9,10:34,,Brown 2' Driving Layup (2 PTS),2,5,-3,86
-10,10:23,Drummond 1' Cutting Dunk Shot (2 PTS) (Griffin 1 AST),,2,7,-5,97
-11,10:16,Brown S.FOUL (P1.T1) (K.Mauer),,2,7,-5,104
-12,10:16,,MISS Middleton Free Throw 1 of 2,2,7,-5,104
-13,10:16,,Bucks Rebound,2,7,-5,104
-14,10:16,,Middleton Free Throw 2 of 2 (1 PTS),3,7,-4,104
-15,10:01,MISS Brown  3PT Jump Shot,,3,7,-4,119
-16,9:59,Drummond REBOUND (Off:1 Def:0),,3,7,-4,121
-17,9:58,MISS Drummond 1' Layup,,3,7,-4,122
-18,9:56,Drummond REBOUND (Off:2 Def:0),,3,7,-4,124
-19,9:55,MISS Drummond 1' Layup,Lopez BLOCK (1 BLK),3,7,-4,125
-20,9:51,,Middleton REBOUND (Off:0 Def:1),3,7,-4,129
-21,9:38,,Lopez 17' Fadeaway Jumper (2 PTS) (Bledsoe 1 AST),5,7,-2,142
-22,9:20,Jackson 9' Floating Jump Shot (2 PTS),,5,9,-4,160
-23,9:13,Griffin P.FOUL (P1.T2) (K.Mauer),,5,9,-4,167
-24,9:06,,MISS Bledsoe 27' 3PT Jump Shot,5,9,-4,174
-25,9:03,,Antetokounmpo REBOUND (Off:1 Def:0),5,9,-4,177
-26,9:03,,Antetokounmpo 2' Dunk (2 PTS),7,9,-2,177
-27,9:03,Brown S.FOUL (P2.T3) (T.Brown),,7,9,-2,177
-28,9:03,,Antetokounmpo Free Throw 1 of 1 (3 PTS),8,9,-1,177
-29,8:48,MISS Jackson 6' Driving Floating Jump Shot,,8,9,-1,192
-30,8:45,Drummond REBOUND (Off:3 Def:0),,8,9,-1,195
-31,8:45,Drummond 2' Putback Layup (4 PTS),,8,11,-3,195
-32,8:42,Jackson P.FOUL (P1.T4) (K.Mauer),,8,11,-3,198
-33,8:36,Drummond STEAL (1 STL),Bledsoe Bad Pass Turnover (P1.T1),8,11,-3,204
-34,8:34,MISS Drummond 1' Running Layup,,8,11,-3,206
-35,8:33,Brown REBOUND (Off:1 Def:1),,8,11,-3,207
-36,8:32,Brown 1' Tip Layup Shot (2 PTS),,8,13,-5,208
-37,8:19,,Lopez Offensive Charge Foul (P1.T1) (D.Collins),8,13,-5,221
-38,8:19,,Lopez Offensive Foul Turnover (P1.T2),8,13,-5,221
-39,8:13,,Antetokounmpo P.FOUL (P1.T2) (K.Mauer),8,13,-5,227
-40,8:03,Griffin 2' Layup (2 PTS) (Drummond 2 AST),,8,15,-7,237
-41,8:03,,Bucks Timeout: Regular (Reg.1 Short 0),8,15,-7,237
-42,7:45,,MISS Antetokounmpo 5' Turnaround Hook Shot,8,15,-7,255
-43,7:43,Griffin REBOUND (Off:0 Def:1),,8,15,-7,257
-44,7:34,Jackson  3PT Jump Shot (5 PTS) (Griffin 2 AST),,8,18,-10,266
-45,7:22,,MISS Middleton 9' Pullup Jump Shot,8,18,-10,278
-46,7:20,Brown REBOUND (Off:1 Def:2),,8,18,-10,280
-47,7:03,MISS Jackson  3PT Pullup Jump Shot,,8,18,-10,297
-48,7:00,,Antetokounmpo REBOUND (Off:1 Def:1),8,18,-10,300
-49,6:59,Drummond S.FOUL (P1.PN) (D.Collins),,8,18,-10,301
-50,6:59,,MISS Antetokounmpo Free Throw 1 of 2,8,18,-10,301
-51,6:59,,Bucks Rebound,8,18,-10,301
-52,6:59,,SUB: Connaughton FOR Lopez,8,18,-10,301
-53,6:59,,SUB: Ilyasova FOR Brown,8,18,-10,301
-54,6:59,,MISS Antetokounmpo Free Throw 2 of 2,8,18,-10,301
-55,6:56,Drummond REBOUND (Off:3 Def:1),,8,18,-10,304
-56,6:44,Griffin Bad Pass Turnover (P1.T1),Bledsoe STEAL (1 STL),8,18,-10,316
-57,6:39,,MISS Antetokounmpo 5' Driving Layup,8,18,-10,321
-58,6:36,Drummond REBOUND (Off:3 Def:2),,8,18,-10,324
-59,6:34,Griffin 2' Running Dunk (4 PTS) (Ellington 1 AST),,8,20,-12,326
-60,6:21,,Middleton 27' 3PT Jump Shot (4 PTS) (Ilyasova 1 AST),11,20,-9,339
-61,6:19,PISTONS Timeout: Regular (Full 1 Short 0),,11,20,-9,341
-62,6:19,SUB: Kennard FOR Griffin,,11,20,-9,341
-63,6:19,,SUB: G. Hill FOR Bledsoe,11,20,-9,341
-64,6:03,Drummond 4' Driving Floating Jump Shot (6 PTS) (Jackson 2 AST),,11,22,-11,357
-65,6:03,,Ilyasova S.FOUL (P1.T3) (T.Brown),11,22,-11,357
-66,6:03,MISS Drummond Free Throw 1 of 1,,11,22,-11,357
-67,6:01,,Antetokounmpo REBOUND (Off:1 Def:2),11,22,-11,359
-68,5:48,,MISS Middleton 14' Pullup Jump Shot,11,22,-11,372
-69,5:45,Brown REBOUND (Off:1 Def:3),,11,22,-11,375
-70,5:36,MISS Drummond 3' Cutting Dunk Shot,Antetokounmpo BLOCK (1 BLK),11,22,-11,384
-71,5:34,,Ilyasova REBOUND (Off:0 Def:1),11,22,-11,386
-72,5:33,,Antetokounmpo 1' Running Layup (5 PTS) (Middleton 1 AST),13,22,-9,387
-73,5:33,Brown S.FOUL (P3.PN) (T.Brown),,13,22,-9,387
-74,5:33,SUB: Galloway FOR Brown,,13,22,-9,387
-75,5:33,,Antetokounmpo Free Throw 1 of 1 (6 PTS),14,22,-8,387
-76,5:15,MISS Jackson 26' 3PT Pullup Jump Shot,,14,22,-8,405
-77,5:12,,Antetokounmpo REBOUND (Off:1 Def:3),14,22,-8,408
-78,4:56,,G. Hill 3' Cutting Layup Shot (2 PTS) (Antetokounmpo 1 AST),16,22,-6,424
-79,4:44,,Middleton P.FOUL (P1.T4) (T.Brown),16,22,-6,436
-80,4:44,,SUB: Lopez FOR Antetokounmpo,16,22,-6,436
-81,4:37,Jackson 6' Driving Floating Jump Shot (7 PTS),,16,24,-8,443
-82,4:21,Jump Ball Jackson vs. G. Hill: Tip to Ilyasova,,16,24,-8,459
-83,4:21,,SUB: Mirotic FOR Middleton,16,24,-8,459
-84,4:13,,Ilyasova 13' Fadeaway Jumper (2 PTS),18,24,-6,467
-85,3:57,MISS Kennard 21' Jump Shot,,18,24,-6,483
-86,3:55,,Ilyasova REBOUND (Off:0 Def:2),18,24,-6,485
-87,3:46,,Connaughton 2' Driving Layup (2 PTS) (G. Hill 1 AST),20,24,-4,494
-88,3:24,MISS Drummond 2' Dunk,Lopez BLOCK (2 BLK),20,24,-4,516
-89,3:21,,Ilyasova REBOUND (Off:0 Def:3),20,24,-4,519
-90,3:14,Jackson STEAL (1 STL),G. Hill Lost Ball Turnover (P1.T3),20,24,-4,526
-91,3:11,,Lopez S.FOUL (P2.PN) (K.Mauer),20,24,-4,529
-92,3:11,Jackson Free Throw 1 of 2 (8 PTS),,20,25,-5,529
-93,3:11,Jackson Free Throw 2 of 2 (9 PTS),,20,26,-6,529
-94,2:46,,MISS Connaughton 17' Floating Jump Shot,20,26,-6,554
-95,2:41,Kennard REBOUND (Off:0 Def:1),,20,26,-6,559
-96,2:34,MISS Drummond 3' Turnaround Hook Shot,,20,26,-6,566
-97,2:34,PISTONS Rebound,,20,26,-6,566
-98,2:34,SUB: Smith FOR Drummond,,20,26,-6,566
-99,2:34,SUB: Maker FOR Jackson,,20,26,-6,566
-100,2:34,SUB: Griffin FOR Ellington,,20,26,-6,566
-101,2:34,,SUB: Brown FOR Lopez,20,26,-6,566
-102,2:25,MISS Galloway 27' 3PT Pullup Jump Shot,,20,26,-6,575
-103,2:23,,Mirotic REBOUND (Off:0 Def:1),20,26,-6,577
-104,2:13,,MISS Mirotic 3' Driving Layup,20,26,-6,587
-105,2:11,Maker REBOUND (Off:0 Def:1),,20,26,-6,589
-106,2:06,Kennard 15' Pullup Jump Shot (2 PTS) (Galloway 1 AST),,20,28,-8,594
-107,1:39,,MISS Ilyasova 26' 3PT Jump Shot,20,28,-8,621
-108,1:37,Maker REBOUND (Off:0 Def:2),,20,28,-8,623
-109,1:31,MISS Galloway 2' Driving Finger Roll Layup,,20,28,-8,629
-110,1:29,,Connaughton REBOUND (Off:0 Def:1),20,28,-8,631
-111,1:24,Maker S.FOUL (P1.PN) (D.Collins),,20,28,-8,636
-112,1:24,,Brown Free Throw 1 of 2 (3 PTS),21,28,-7,636
-113,1:24,,SUB: Antetokounmpo FOR Connaughton,21,28,-7,636
-114,1:24,,SUB: Bledsoe FOR Ilyasova,21,28,-7,636
-115,1:24,,MISS Brown Free Throw 2 of 2,21,28,-7,636
-116,1:22,Smith REBOUND (Off:0 Def:1),,21,28,-7,638
-117,0:58,MISS Griffin 12' Fadeaway Jumper,,21,28,-7,662
-118,0:58,PISTONS Rebound,,21,28,-7,662
-119,0:58,PISTONS Turnover: Shot Clock (T#2),,21,28,-7,662
-120,0:37,,MISS Antetokounmpo 3' Jump Shot,21,28,-7,683
-121,0:35,Griffin REBOUND (Off:0 Def:2),,21,28,-7,685
-122,0:27,MISS Kennard 3' Driving Layup,Antetokounmpo BLOCK (2 BLK),21,28,-7,693
-123,0:24,,Brown REBOUND (Off:0 Def:1),21,28,-7,696
-124,0:20,,G. Hill 27' 3PT Jump Shot (5 PTS) (Brown 1 AST),24,28,-4,700
-125,0:01,Maker Bad Pass Turnover (P1.T3),G. Hill STEAL (1 STL),24,28,-4,719
-126,0:01,Kennard S.FOUL (P1.PN) (K.Mauer),,24,28,-4,719
-127,0:01,Go to top ⇧,,24,28,-4,719
-128,0:01,,G. Hill Free Throw 1 of 2 (6 PTS),25,28,-3,719
-129,0:01,,SUB: Wilson FOR Antetokounmpo,25,28,-3,719
-130,0:01,,G. Hill Free Throw 2 of 2 (7 PTS),26,28,-2,719
-131,0:00,Griffin Bad Pass Turnover (P2.T4),Brown STEAL (1 STL),26,28,-2,720
-132,0:00,Go to top ⇧,,26,28,-2,720
-134,11:38,,Antetokounmpo 27' 3PT Jump Shot (9 PTS) (Brown 2 AST),29,28,1,720
-135,11:21,MISS Smith 10' Floating Jump Shot,,29,28,1,737
-136,11:19,,Ilyasova REBOUND (Off:0 Def:4),29,28,1,739
-137,11:18,Maker P.FOUL (P2.T1) (D.Collins),,29,28,1,740
-138,11:12,,Antetokounmpo 2' Driving Dunk (11 PTS) (Brown 3 AST),31,28,3,746
-139,10:51,Griffin 25' 3PT Pullup Jump Shot (7 PTS),,31,31,0,767
-140,10:46,Maker S.FOUL (P3.T2) (K.Mauer),,31,31,0,772
-141,10:46,,MISS Ilyasova Free Throw 1 of 2,31,31,0,772
-142,10:46,,Bucks Rebound,31,31,0,772
-143,10:46,,Ilyasova Free Throw 2 of 2 (3 PTS),32,31,1,772
-144,10:20,MISS Smith 5' Driving Floating Jump Shot,,32,31,1,798
-145,10:18,,Bledsoe REBOUND (Off:1 Def:1),32,31,1,800
-146,10:12,,MISS Ilyasova 25' 3PT Jump Shot,32,31,1,806
-147,10:10,Galloway REBOUND (Off:0 Def:1),,32,31,1,808
-148,10:01,MISS Maker  3PT Jump Shot,,32,31,1,817
-149,9:59,,Middleton REBOUND (Off:0 Def:2),32,31,1,819
-150,9:53,,MISS Brown 3' Layup,32,31,1,825
-151,9:51,Griffin REBOUND (Off:0 Def:3),,32,31,1,827
-152,9:47,Maker 2' Running Dunk (2 PTS) (Griffin 3 AST),,32,33,-1,831
-153,9:40,Galloway STEAL (1 STL),Middleton Lost Ball Turnover (P1.T4),32,33,-1,838
-154,9:32,MISS Maker 24' 3PT Jump Shot,,32,33,-1,846
-155,9:30,,Antetokounmpo REBOUND (Off:1 Def:4),32,33,-1,848
-156,9:19,,MISS Antetokounmpo 19' Pullup Jump Shot,32,33,-1,859
-157,9:15,Smith REBOUND (Off:0 Def:2),,32,33,-1,863
-158,9:12,MISS Smith 1' Running Layup,Antetokounmpo BLOCK (3 BLK),32,33,-1,866
-159,9:12,PISTONS Rebound,,32,33,-1,866
-160,9:12,SUB: Drummond FOR Maker,,32,33,-1,866
-161,9:12,,SUB: Connaughton FOR Brown,32,33,-1,866
-162,9:12,,SUB: Lopez FOR Ilyasova,32,33,-1,866
-163,8:59,Galloway 25' 3PT Jump Shot (3 PTS) (Smith 1 AST),,32,36,-4,879
-164,8:41,,Bledsoe 2' Driving Layup (2 PTS),34,36,-2,897
-165,8:26,Kennard 15' Pullup Jump Shot (4 PTS) (Griffin 4 AST),,34,38,-4,912
-166,8:10,Smith STEAL (1 STL),Bledsoe Bad Pass Turnover (P2.T5),34,38,-4,928
-167,8:06,Drummond 3' Running Dunk (8 PTS) (Galloway 2 AST),,34,40,-6,932
-168,8:05,,Bucks Timeout: Regular (Reg.2 Short 0),34,40,-6,933
-169,7:52,,Middleton 5' Driving Floating Jump Shot (6 PTS) (Bledsoe 2 AST),36,40,-4,946
-170,7:41,MISS Griffin 2' Driving Layup,Bledsoe BLOCK (1 BLK),36,40,-4,957
-171,7:40,Griffin REBOUND (Off:1 Def:3),,36,40,-4,958
-172,7:39,,Antetokounmpo S.FOUL (P2.T1) (D.Collins),36,40,-4,959
-173,7:39,Griffin Free Throw 1 of 2 (8 PTS),,36,41,-5,959
-174,7:39,,SUB: Mirotic FOR Bledsoe,36,41,-5,959
-175,7:39,,SUB: G. Hill FOR Antetokounmpo,36,41,-5,959
-176,7:39,Griffin Free Throw 2 of 2 (9 PTS),,36,42,-6,959
-177,7:27,,G. Hill Traveling Turnover (P2.T6),36,42,-6,971
-178,7:11,MISS Griffin 25' 3PT Jump Shot,,36,42,-6,987
-179,7:11,,Bucks Rebound,36,42,-6,987
-180,6:57,Galloway P.FOUL (P1.T3) (K.Mauer),,36,42,-6,1001
-181,6:57,SUB: Jackson FOR Smith,,36,42,-6,1001
-182,6:57,SUB: Brown FOR Griffin,,36,42,-6,1001
-183,6:46,,Lopez 13' Fadeaway Jumper (4 PTS),38,42,-4,1012
-184,6:26,Kennard 8' Jump Bank Shot (6 PTS) (Drummond 3 AST),,38,44,-6,1032
-185,6:16,,Lopez Out of Bounds - Bad Pass Turnover Turnover (P2.T7),38,44,-6,1042
-186,5:54,Jackson 12' Step Back Jump Shot (11 PTS),,38,46,-8,1064
-187,5:32,,Middleton 15' Turnaround Fadeaway (8 PTS),40,46,-6,1086
-188,5:18,Galloway 15' Pullup Jump Shot (5 PTS),,40,48,-8,1100
-189,5:05,,Mirotic 30' 3PT Jump Shot (3 PTS) (Connaughton 1 AST),43,48,-5,1113
-190,4:46,Jackson 25' 3PT Jump Shot (14 PTS) (Galloway 3 AST),,43,51,-8,1132
-191,4:28,Kennard S.FOUL (P2.T4) (K.Mauer),,43,51,-8,1150
-192,4:28,,Mirotic Free Throw 1 of 2 (4 PTS),44,51,-7,1150
-193,4:28,SUB: Ellington FOR Kennard,,44,51,-7,1150
-194,4:28,,SUB: Antetokounmpo FOR Middleton,44,51,-7,1150
-195,4:28,,MISS Mirotic Free Throw 2 of 2,44,51,-7,1150
-196,4:28,Drummond REBOUND (Off:3 Def:3),,44,51,-7,1150
-197,4:28,PISTONS Timeout: Regular (Full 2 Short 0),,44,51,-7,1150
-198,4:14,Galloway 25' 3PT Jump Shot (8 PTS) (Jackson 3 AST),,44,54,-10,1164
-199,4:03,,Antetokounmpo 3' Driving Hook Shot (13 PTS) (Mirotic 1 AST),46,54,-8,1175
-200,4:03,Drummond S.FOUL (P2.PN) (T.Brown),,46,54,-8,1175
-201,4:03,,Antetokounmpo Free Throw 1 of 1 (14 PTS),47,54,-7,1175
-202,3:48,MISS Jackson 2' Driving Layup,,47,54,-7,1190
-203,3:46,,Antetokounmpo REBOUND (Off:1 Def:5),47,54,-7,1192
-204,3:43,,Antetokounmpo Traveling Turnover (P1.T8),47,54,-7,1195
-205,3:36,,G. Hill P.FOUL (P1.T2) (D.Collins),47,54,-7,1202
-206,3:36,,G. Hill AWAY.FROM.PLAY.FOUL (P2.T3) (T.Brown),47,54,-7,1202
-207,3:36,Jackson Free Throw 1 of 1 (15 PTS),,47,55,-8,1202
-208,3:36,,SUB: Bledsoe FOR Mirotic,47,55,-8,1202
-209,3:33,MISS Jackson 25' 3PT Jump Shot,,47,55,-8,1205
-210,3:33,,Bucks Rebound,47,55,-8,1205
-211,3:23,Brown P.FOUL (P4.PN) (T.Brown),,47,55,-8,1215
-212,3:23,,MISS Antetokounmpo Free Throw 1 of 2,47,55,-8,1215
-213,3:23,,Bucks Rebound,47,55,-8,1215
-214,3:23,SUB: Griffin FOR Brown,,47,55,-8,1215
-215,3:23,SUB: Kennard FOR Galloway,,47,55,-8,1215
-216,3:23,,Antetokounmpo Free Throw 2 of 2 (15 PTS),48,55,-7,1215
-217,3:08,MISS Griffin 6' Jump Shot,,48,55,-7,1230
-218,3:04,,Lopez REBOUND (Off:0 Def:1),48,55,-7,1234
-219,2:57,,Lopez 2' Driving Layup (6 PTS),50,55,-5,1241
-220,2:57,Griffin S.FOUL (P2.PN) (K.Mauer),,50,55,-5,1241
-221,2:57,,SUB: Brown FOR G. Hill,50,55,-5,1241
-222,2:57,,Lopez Free Throw 1 of 1 (7 PTS),51,55,-4,1241
-223,2:34,Jackson  3PT Jump Shot (18 PTS) (Ellington 2 AST),,51,58,-7,1264
-224,2:18,,MISS Antetokounmpo 27' 3PT Jump Shot,51,58,-7,1280
-225,2:13,Jackson REBOUND (Off:0 Def:1),,51,58,-7,1285
-226,2:12,MISS Griffin 2' Running Layup,,51,58,-7,1286
-227,2:12,,Connaughton REBOUND (Off:0 Def:2),51,58,-7,1286
-228,2:04,,Antetokounmpo 2' Driving Layup (17 PTS) (Brown 4 AST),53,58,-5,1294
-229,2:04,Drummond S.FOUL (P3.PN) (T.Brown),,53,58,-5,1294
-230,2:04,SUB: Maker FOR Drummond,,53,58,-5,1294
-231,2:04,,SUB: Middleton FOR Lopez,53,58,-5,1294
-232,2:04,,SUB: Ilyasova FOR Connaughton,53,58,-5,1294
-233,2:04,,MISS Antetokounmpo Free Throw 1 of 1,53,58,-5,1294
-234,2:03,Griffin REBOUND (Off:1 Def:4),,53,58,-5,1295
-235,2:03,,Brown P.FOUL (P1.T4) (D.Collins),53,58,-5,1295
-236,1:41,MISS Kennard 24' 3PT Jump Shot,,53,58,-5,1317
-237,1:38,,Antetokounmpo REBOUND (Off:1 Def:6),53,58,-5,1320
-238,1:37,Griffin S.FOUL (P3.PN) (K.Mauer),,53,58,-5,1321
-239,1:37,,Brown Free Throw 1 of 2 (4 PTS),54,58,-4,1321
-240,1:37,SUB: Galloway FOR Griffin,,54,58,-4,1321
-241,1:37,,Brown Free Throw 2 of 2 (5 PTS),55,58,-3,1321
-242,1:14,,Ilyasova S.FOUL (P2.PN) (K.Mauer),55,58,-3,1344
-243,1:14,Maker Free Throw 1 of 2 (3 PTS),,55,59,-4,1344
-244,1:14,Maker Free Throw 2 of 2 (4 PTS),,55,60,-5,1344
-245,0:55,Kennard BLOCK (1 BLK),MISS Brown 3' Layup,55,60,-5,1363
-246,0:51,,Brown REBOUND (Off:1 Def:1),55,60,-5,1367
-247,0:50,,MISS Antetokounmpo 3' Reverse Layup,55,60,-5,1368
-248,0:50,,Bucks Rebound,55,60,-5,1368
-249,0:50,,Bucks Turnover: Shot Clock (T#9),55,60,-5,1368
-250,0:36,MISS Jackson 7' Driving Floating Jump Shot,,55,60,-5,1382
-251,0:34,Maker REBOUND (Off:1 Def:2),,55,60,-5,1384
-252,0:31,MISS Jackson 26' 3PT Jump Shot,,55,60,-5,1387
-253,0:29,,Ilyasova REBOUND (Off:0 Def:5),55,60,-5,1389
-254,0:10,,MISS Middleton  3PT Jump Shot,55,60,-5,1408
-255,0:09,,Ilyasova REBOUND (Off:1 Def:5),55,60,-5,1409
-256,0:09,Kennard P.FOUL (P3.PN) (D.Collins),,55,60,-5,1409
-257,0:09,,MISS Ilyasova Free Throw 1 of 2,55,60,-5,1409
-258,0:09,,Bucks Rebound,55,60,-5,1409
-259,0:09,SUB: Drummond FOR Kennard,,55,60,-5,1409
-260,0:09,SUB: Griffin FOR Maker,,55,60,-5,1409
-261,0:09,,SUB: G. Hill FOR Antetokounmpo,55,60,-5,1409
-262,0:09,,Ilyasova Free Throw 2 of 2 (4 PTS),56,60,-4,1409
-263,0:01,MISS Galloway 25' 3PT Jump Shot,,56,60,-4,1417
-264,0:01,Jackson REBOUND (Off:1 Def:1),,56,60,-4,1417
-265,0:01,Jackson 1' Tip Dunk Shot (20 PTS),,56,62,-6,1417
-266,0:00,Go to top ⇧,,56,62,-6,1418
-268,11:44,,MISS Antetokounmpo 12' Jump Shot,56,62,-6,1418
-269,11:39,Ellington REBOUND (Off:0 Def:1),,56,62,-6,1423
-270,11:27,MISS Ellington 25' 3PT Jump Shot,,56,62,-6,1435
-271,11:24,,Brown REBOUND (Off:1 Def:2),56,62,-6,1438
-272,11:19,,MISS Brown 27' 3PT Jump Shot,56,62,-6,1443
-273,11:19,PISTONS Rebound,,56,62,-6,1443
-274,11:10,MISS Brown 2' Driving Layup,,56,62,-6,1452
-275,11:07,,Lopez REBOUND (Off:0 Def:2),56,62,-6,1455
-276,10:52,,MISS Middleton 24' 3PT Jump Shot,56,62,-6,1470
-277,10:49,,Brown REBOUND (Off:2 Def:2),56,62,-6,1473
-278,10:47,,Brown 2' Putback Layup (7 PTS),58,62,-4,1475
-279,10:30,MISS Ellington 3' Driving Layup,,58,62,-4,1492
-280,10:29,Drummond REBOUND (Off:4 Def:3),,58,62,-4,1493
-281,10:28,Drummond 3' Putback Layup (10 PTS),,58,64,-6,1494
-282,10:12,,MISS Brown  3PT Jump Shot,58,64,-6,1510
-283,10:10,Jackson REBOUND (Off:1 Def:2),,58,64,-6,1512
-284,10:02,Drummond 7' Floating Jump Shot (12 PTS) (Jackson 4 AST),,58,66,-8,1520
-285,9:41,,Bledsoe 1' Driving Layup (4 PTS) (Lopez 1 AST),60,66,-6,1541
-286,9:17,Griffin 8' Jump Shot (11 PTS),,60,68,-8,1565
-287,9:03,,MISS Bledsoe 6' Driving Floating Jump Shot,60,68,-8,1579
-288,9:01,Ellington REBOUND (Off:0 Def:2),,60,68,-8,1581
-289,8:51,Griffin Lost Ball Turnover (P3.T5),Antetokounmpo STEAL (1 STL),60,68,-8,1591
-290,8:45,,Antetokounmpo 2' Running Layup (19 PTS) (Bledsoe 3 AST),62,68,-6,1597
-291,8:15,Griffin 27' 3PT Step Back Jump Shot (14 PTS) (Jackson 5 AST),,62,71,-9,1627
-292,8:00,,Middleton 1' Driving Layup (10 PTS) (Bledsoe 4 AST),64,71,-7,1642
-293,8:00,Jackson S.FOUL (P2.T1) (D.Collins),,64,71,-7,1642
-294,8:00,,Middleton Free Throw 1 of 1 (11 PTS),65,71,-6,1642
-295,7:45,Griffin 4' Driving Hook Shot (16 PTS),,65,73,-8,1657
-296,7:33,,Bledsoe 2' Layup (6 PTS) (Lopez 2 AST),67,73,-6,1669
-297,7:33,Griffin S.FOUL (P4.T2) (T.Brown),,67,73,-6,1669
-298,7:33,,SUB: Ilyasova FOR Lopez,67,73,-6,1669
-299,7:33,,Bledsoe Free Throw 1 of 1 (7 PTS),68,73,-5,1669
-300,7:29,PISTONS Timeout: Regular (Full 3 Short 0),,68,73,-5,1673
-301,7:10,MISS Brown 24' 3PT Jump Shot,,68,73,-5,1692
-302,7:08,,Ilyasova REBOUND (Off:1 Def:6),68,73,-5,1694
-303,6:56,,MISS Ilyasova 18' Jump Shot,68,73,-5,1706
-304,6:53,Brown REBOUND (Off:1 Def:4),,68,73,-5,1709
-305,6:41,Drummond OFF.Foul (P4) (K.Mauer),,68,73,-5,1721
-306,6:41,Drummond Offensive Foul Turnover (P1.T6),,68,73,-5,1721
-307,6:41,SUB: Maker FOR Drummond,,68,73,-5,1721
-308,6:24,,Antetokounmpo 1' Driving Layup (21 PTS),70,73,-3,1738
-309,5:59,MISS Brown 7' Floating Jump Shot,,70,73,-3,1763
-310,5:56,,Brown REBOUND (Off:2 Def:3),70,73,-3,1766
-311,5:54,Brown S.FOUL (P5.T3) (K.Mauer),,70,73,-3,1768
-312,5:54,,Middleton Free Throw 1 of 3 (12 PTS),71,73,-2,1768
-313,5:54,,Middleton Free Throw 2 of 3 (13 PTS),72,73,-1,1768
-314,5:54,SUB: Kennard FOR Brown,,72,73,-1,1768
-315,5:54,,SUB: Connaughton FOR Bledsoe,72,73,-1,1768
-316,5:54,,SUB: G. Hill FOR Brown,72,73,-1,1768
-317,5:54,,Middleton Free Throw 3 of 3 (14 PTS),73,73,0,1768
-318,5:42,Griffin 26' 3PT Jump Shot (19 PTS) (Jackson 6 AST),,73,76,-3,1780
-319,5:29,,Antetokounmpo 1' Cutting Dunk Shot (23 PTS) (Ilyasova 2 AST),75,76,-1,1793
-320,5:23,,G. Hill P.FOUL (P3.T1) (T.Brown),75,76,-1,1799
-321,5:13,Griffin 27' 3PT Jump Shot (22 PTS) (Jackson 7 AST),,75,79,-4,1809
-322,5:05,,Antetokounmpo 2' Driving Layup (25 PTS) (Ilyasova 3 AST),77,79,-2,1817
-323,5:05,Maker S.FOUL (P4.T4) (T.Brown),,77,79,-2,1817
-324,5:05,,Antetokounmpo Free Throw 1 of 1 (26 PTS),78,79,-1,1817
-325,4:57,,Ilyasova P.FOUL (P3.T2) (T.Brown),78,79,-1,1825
-326,4:53,Jackson  3PT Jump Shot (23 PTS) (Kennard 1 AST),,78,82,-4,1829
-327,4:35,Maker P.FOUL (P5.PN) (K.Mauer),,78,82,-4,1847
-328,4:35,,,78,82,-4,1847
-329,4:35,,Middleton Free Throw Technical (15 PTS),79,82,-3,1847
-330,4:35,,Antetokounmpo Free Throw 1 of 2 (27 PTS),80,82,-2,1847
-331,4:35,SUB: Galloway FOR Griffin,,80,82,-2,1847
-332,4:35,,SUB: Lopez FOR Ilyasova,80,82,-2,1847
-333,4:35,,Antetokounmpo Free Throw 2 of 2 (28 PTS),81,82,-1,1847
-334,4:30,PISTONS Timeout: Regular (Full 4 Short 0),,81,82,-1,1852
-335,4:30,SUB: Smith FOR Jackson,,81,82,-1,1852
-336,4:30,,SUB: Mirotic FOR Middleton,81,82,-1,1852
-337,4:27,Kennard Lost Ball Turnover (P1.T7),Connaughton STEAL (1 STL),81,82,-1,1855
-338,4:21,,Connaughton 1' Running Dunk (4 PTS),83,82,1,1861
-339,3:57,MISS Maker 27' 3PT Jump Shot,,83,82,1,1885
-340,3:57,,Bucks Rebound,83,82,1,1885
-341,3:43,,Mirotic 25' 3PT Jump Shot (7 PTS) (Antetokounmpo 2 AST),86,82,4,1899
-342,3:27,Smith Out of Bounds - Bad Pass Turnover Turnover (P1.T8),,86,82,4,1915
-343,3:20,Galloway P.FOUL (P2.PN) (K.Mauer),,86,82,4,1922
-344,3:20,,Antetokounmpo Free Throw 1 of 2 (29 PTS),87,82,5,1922
-345,3:20,SUB: Drummond FOR Maker,,87,82,5,1922
-346,3:20,,SUB: Brown FOR Lopez,87,82,5,1922
-347,3:20,,Antetokounmpo Free Throw 2 of 2 (30 PTS),88,82,6,1922
-348,3:09,Smith 12' Pullup Jump Shot (2 PTS),,88,84,4,1933
-349,2:58,,Connaughton Out of Bounds Lost Ball Turnover (P1.T10),88,84,4,1944
-350,2:42,MISS Smith 10' Turnaround Jump Shot,,88,84,4,1960
-351,2:40,,Brown REBOUND (Off:2 Def:4),88,84,4,1962
-352,2:39,Galloway S.FOUL (P3.PN) (T.Brown),,88,84,4,1963
-353,2:39,,MISS Antetokounmpo Free Throw 1 of 2,88,84,4,1963
-354,2:39,,Bucks Rebound,88,84,4,1963
-355,2:39,SUB: Robinson III FOR Ellington,,88,84,4,1963
-356,2:39,,SUB: Ilyasova FOR Brown,88,84,4,1963
-357,2:39,,Antetokounmpo Free Throw 2 of 2 (31 PTS),89,84,5,1963
-358,2:26,MISS Smith 18' Jump Shot,,89,84,5,1976
-359,2:23,,Ilyasova REBOUND (Off:1 Def:7),89,84,5,1979
-360,2:19,,MISS Antetokounmpo 25' 3PT Jump Shot,89,84,5,1983
-361,2:17,Galloway REBOUND (Off:0 Def:2),,89,84,5,1985
-362,1:55,MISS Kennard 26' 3PT Jump Shot,,89,84,5,2007
-363,1:53,,G. Hill REBOUND (Off:0 Def:1),89,84,5,2009
-364,1:41,Robinson III S.FOUL (P1.PN) (K.Mauer),,89,84,5,2021
-365,1:41,,Bucks Timeout: Regular (Reg.3 Short 0),89,84,5,2021
-366,1:41,,SUB: Bledsoe FOR G. Hill,89,84,5,2021
-367,1:41,,SUB: Brown FOR Connaughton,89,84,5,2021
-368,1:41,,Antetokounmpo Free Throw 1 of 2 (32 PTS),90,84,6,2021
-369,1:41,,Antetokounmpo Free Throw 2 of 2 (33 PTS),91,84,7,2021
-370,1:36,,Brown P.FOUL (P2.T3) (T.Brown),91,84,7,2026
-371,1:36,,SUB: Connaughton FOR Antetokounmpo,91,84,7,2026
-372,1:28,,Ilyasova S.FOUL (P4.PN) (T.Brown),91,84,7,2034
-373,1:28,MISS Drummond Free Throw 1 of 2,,91,84,7,2034
-374,1:28,PISTONS Rebound,,91,84,7,2034
-375,1:28,Drummond Free Throw 2 of 2 (13 PTS),,91,85,6,2034
-376,1:14,,MISS Mirotic 24' 3PT Jump Shot,91,85,6,2048
-377,1:11,,Brown REBOUND (Off:3 Def:4),91,85,6,2051
-378,1:00,,MISS Bledsoe 14' Fadeaway Jumper,91,85,6,2062
-379,0:57,,Mirotic REBOUND (Off:1 Def:1),91,85,6,2065
-380,0:57,,Mirotic 1' Tip Layup Shot (9 PTS),93,85,8,2065
-381,0:42,MISS Galloway 6' Driving Floating Jump Shot,,93,85,8,2080
-382,0:37,Drummond REBOUND (Off:5 Def:3),,93,85,8,2085
-383,0:37,MISS Drummond 1' Tip Dunk Shot,,93,85,8,2085
-384,0:36,,Brown REBOUND (Off:3 Def:5),93,85,8,2086
-385,0:36,,Bledsoe 1' Driving Layup (9 PTS) (Brown 5 AST),95,85,10,2086
-386,0:20,MISS Galloway 24' 3PT Jump Shot,,95,85,10,2102
-387,0:18,,Ilyasova REBOUND (Off:1 Def:8),95,85,10,2104
-388,0:01,,MISS Bledsoe 12' Floating Jump Shot,95,85,10,2121
-389,0:01,,Bucks Rebound,95,85,10,2121
-390,0:00,Go to top ⇧,,95,85,10,2122
-392,11:38,MISS Drummond 5' Floating Jump Shot,,95,85,10,2122
-393,11:36,,Brown REBOUND (Off:3 Def:6),95,85,10,2124
-394,11:30,,Middleton 25' 3PT Jump Shot (18 PTS),98,85,13,2130
-395,11:23,MISS Griffin 26' 3PT Jump Shot,,98,85,13,2137
-396,11:21,,Bledsoe REBOUND (Off:1 Def:2),98,85,13,2139
-397,11:10,,Bledsoe 2' Layup (11 PTS),100,85,15,2150
-398,10:47,Jackson 24' 3PT Jump Shot (26 PTS) (Griffin 5 AST),,100,88,12,2173
-399,10:42,,Ilyasova OFF.Foul (P5) (K.Mauer),100,88,12,2178
-400,10:42,,Ilyasova Offensive Foul Turnover (P1.T11),100,88,12,2178
-401,10:42,,SUB: Antetokounmpo FOR Ilyasova,100,88,12,2178
-402,10:22,Drummond 1' Layup (15 PTS) (Griffin 6 AST),,100,90,10,2198
-403,10:10,,MISS Bledsoe 25' 3PT Jump Shot,100,90,10,2210
-404,10:08,Drummond REBOUND (Off:5 Def:4),,100,90,10,2212
-405,9:56,MISS Jackson 2' Driving Layup,,100,90,10,2224
-406,9:54,Drummond REBOUND (Off:6 Def:4),,100,90,10,2226
-407,9:54,MISS Drummond 5' Putback Layup,Lopez BLOCK (3 BLK),100,90,10,2226
-408,9:54,,Middleton REBOUND (Off:0 Def:3),100,90,10,2226
-409,9:50,Kennard STEAL (1 STL),Brown Lost Ball Turnover (P1.T12),100,90,10,2230
-410,9:46,MISS Kennard 3' Running Layup,Lopez BLOCK (4 BLK),100,90,10,2234
-411,9:39,,Brown REBOUND (Off:3 Def:7),100,90,10,2241
-412,9:37,,MISS Antetokounmpo 25' 3PT Jump Shot,100,90,10,2243
-413,9:37,,Middleton REBOUND (Off:1 Def:3),100,90,10,2243
-414,9:37,SUB: Ellington FOR Kennard,,100,90,10,2243
-415,9:24,,MISS Middleton 9' Turnaround Jump Shot,100,90,10,2256
-416,9:20,Drummond REBOUND (Off:6 Def:5),,100,90,10,2260
-417,9:16,MISS Griffin 2' Running Layup,,100,90,10,2264
-418,9:16,,Brown REBOUND (Off:3 Def:8),100,90,10,2264
-419,9:16,,Brown OFF.Foul (P3) (K.Mauer),100,90,10,2264
-420,9:16,,Brown Offensive Foul Turnover (P2.T13),100,90,10,2264
-421,9:01,MISS Ellington 6' Hook Shot,Lopez BLOCK (5 BLK),100,90,10,2279
-422,8:58,,Lopez REBOUND (Off:0 Def:3),100,90,10,2282
-423,8:42,,Bledsoe 25' 3PT Jump Shot (14 PTS) (Antetokounmpo 3 AST),103,90,13,2298
-424,8:35,PISTONS Timeout: Regular (Full 5 Short 0),,103,90,13,2305
-425,8:35,,SUB: G. Hill FOR Brown,103,90,13,2305
-426,8:16,MISS Jackson 4' Driving Layup,Antetokounmpo BLOCK (4 BLK),103,90,13,2324
-427,8:13,,Lopez REBOUND (Off:0 Def:4),103,90,13,2327
-428,8:11,,Bledsoe 2' Running Layup (16 PTS) (Lopez 3 AST),105,90,15,2329
-429,7:56,Griffin Lost Ball Turnover (P4.T9),Bledsoe STEAL (2 STL),105,90,15,2344
-430,7:49,,MISS Lopez 25' 3PT Jump Shot,105,90,15,2351
-431,7:48,,Bucks Rebound,105,90,15,2352
-432,7:45,Griffin P.FOUL (P5.T1) (K.Mauer),,105,90,15,2355
-433,7:34,,MISS Antetokounmpo 3' Layup,105,90,15,2366
-434,7:32,,Antetokounmpo REBOUND (Off:2 Def:6),105,90,15,2368
-435,7:22,,Antetokounmpo 25' 3PT Jump Shot (36 PTS) (Bledsoe 5 AST),108,90,18,2378
-436,7:14,MISS Jackson 10' Driving Floating Jump Shot,,108,90,18,2386
-437,7:13,,Lopez REBOUND (Off:0 Def:5),108,90,18,2387
-438,7:06,Griffin S.FOUL (P6.T2) (D.Collins),,108,90,18,2394
-439,7:06,SUB: Kennard FOR Griffin,,108,90,18,2394
-440,7:06,,SUB: Connaughton FOR Bledsoe,108,90,18,2394
-441,7:06,,Antetokounmpo Free Throw 1 of 2 (37 PTS),109,90,19,2394
-442,7:06,,Antetokounmpo Free Throw 2 of 2 (38 PTS),110,90,20,2394
-443,6:49,MISS Kennard 5' Floating Jump Shot,,110,90,20,2411
-444,6:47,,Antetokounmpo REBOUND (Off:2 Def:7),110,90,20,2413
-445,6:44,,Antetokounmpo 2' Running Layup (40 PTS),112,90,22,2416
-446,6:44,Jackson S.FOUL (P3.T3) (T.Brown),,112,90,22,2416
-447,6:44,,SUB: Mirotic FOR Middleton,112,90,22,2416
-448,6:44,,Antetokounmpo Free Throw 1 of 1 (41 PTS),113,90,23,2416
-449,6:30,MISS Jackson 3' Driving Floating Jump Shot,,113,90,23,2430
-450,6:30,PISTONS Rebound,,113,90,23,2430
-451,6:30,,Mirotic L.B.FOUL (P1.T1) (T.Brown),113,90,23,2430
-452,6:30,,SUB: Brown FOR Antetokounmpo,113,90,23,2430
-453,6:23,MISS Galloway 26' 3PT Jump Shot,,113,90,23,2437
-454,6:21,,Brown REBOUND (Off:3 Def:9),113,90,23,2439
-455,6:14,,Brown 2' Driving Layup (9 PTS),115,90,25,2446
-456,6:06,Drummond OFF.Foul (P5) (K.Mauer),,115,90,25,2454
-457,6:06,Drummond Offensive Foul Turnover (P2.T10),,115,90,25,2454
-458,6:01,,,115,90,25,2459
-459,5:44,,Brown OFF.Foul (P4) (T.Brown),115,90,25,2476
-460,5:44,,Brown Offensive Foul Turnover (P3.T14),115,90,25,2476
-461,5:44,,SUB: Wilson FOR Lopez,115,90,25,2476
-462,5:28,MISS Ellington 26' 3PT Jump Shot,,115,90,25,2492
-463,5:25,,Wilson REBOUND (Off:0 Def:1),115,90,25,2495
-464,5:18,,MISS G. Hill 25' 3PT Jump Shot,115,90,25,2502
-465,5:16,Drummond REBOUND (Off:6 Def:6),,115,90,25,2504
-466,5:04,Galloway 19' Jump Bank Shot (10 PTS),,115,92,23,2516
-467,4:46,,Wilson 2' Cutting Layup Shot (2 PTS) (G. Hill 2 AST),117,92,25,2534
-468,4:32,MISS Galloway 26' 3PT Jump Shot,,117,92,25,2548
-469,4:30,,Brown REBOUND (Off:3 Def:10),117,92,25,2550
-470,4:26,,Mirotic  3PT Jump Shot (12 PTS) (Brown 6 AST),120,92,28,2554
-471,4:20,PISTONS Timeout: Regular (Full 6 Short 0),,120,92,28,2560
-472,4:20,SUB: Calderon FOR Drummond,,120,92,28,2560
-473,4:20,SUB: Thomas FOR Jackson,,120,92,28,2560
-474,4:20,SUB: Maker FOR Ellington,,120,92,28,2560
-475,4:20,,SUB: Snell FOR G. Hill,120,92,28,2560
-476,4:20,,SUB: Frazier FOR Brown,120,92,28,2560
-477,4:09,MISS Maker 3' Layup,,120,92,28,2571
-478,4:06,,Frazier REBOUND (Off:0 Def:1),120,92,28,2574
-479,3:57,,Wilson  3PT Jump Shot (5 PTS) (Frazier 1 AST),123,92,31,2583
-480,3:39,Maker Out of Bounds Lost Ball Turnover (P2.T11),,123,92,31,2601
-481,3:28,Kennard STEAL (2 STL),Mirotic Bad Pass Turnover (P1.T15),123,92,31,2612
-482,3:21,Kennard 15' Step Back Jump Shot (8 PTS),,123,94,29,2619
-483,2:56,,Wilson Traveling Turnover (P1.T16),123,94,29,2644
-484,2:50,,Mirotic P.FOUL (P2.T2) (D.Collins),123,94,29,2650
-485,2:44,Thomas 9' Driving Floating Bank Jump Shot (2 PTS) (Calderon 1 AST),,123,96,27,2656
-486,2:44,,Snell S.FOUL (P1.T3) (T.Brown),123,96,27,2656
-487,2:44,Thomas Free Throw 1 of 1 (3 PTS),,123,97,26,2656
-488,2:27,,MISS Mirotic 26' 3PT Jump Shot,123,97,26,2673
-489,2:25,Thomas REBOUND (Off:0 Def:1),,123,97,26,2675
-490,2:22,Thomas 3' Running Layup (5 PTS),,123,99,24,2678
-491,2:02,,MISS Snell 24' 3PT Jump Shot,123,99,24,2698
-492,1:59,,Connaughton REBOUND (Off:1 Def:2),123,99,24,2701
-493,1:51,Galloway STEAL (2 STL),Frazier Bad Pass Turnover (P1.T17),123,99,24,2709
-494,1:46,Kennard 24' 3PT Jump Shot (11 PTS) (Maker 1 AST),,123,102,21,2714
-495,1:28,,Wilson 2' Driving Layup (7 PTS) (Frazier 2 AST),125,102,23,2732
-496,1:20,Maker 3' Cutting Layup Shot (6 PTS) (Calderon 2 AST),,125,104,21,2740
-497,1:20,,Wilson S.FOUL (P1.T4) (K.Mauer),125,104,21,2740
-498,1:20,MISS Maker Free Throw 1 of 1,,125,104,21,2740
-499,1:18,,Mirotic REBOUND (Off:1 Def:2),125,104,21,2742
-500,1:03,,Frazier 2' Driving Layup (2 PTS),127,104,23,2757
-501,0:53,MISS Thomas 13' Pullup Jump Shot,,127,104,23,2767
-502,0:50,,Connaughton REBOUND (Off:1 Def:3),127,104,23,2770
-503,0:42,Calderon STEAL (1 STL),Mirotic Bad Pass Turnover (P2.T18),127,104,23,2778
-504,0:27,MISS Thomas 24' 3PT Jump Shot,,127,104,23,2793
-505,0:24,,Connaughton REBOUND (Off:1 Def:4),127,104,23,2796
-506,0:03,,Bucks Turnover: Shot Clock (T#19),127,104,23,2817
-507,0:00,Go to top ⇧,,127,104,23,2820
-508,00:00.0,,,127,104,23,2820
-509,00:00.0,,,127,104,23,2820
-510,00:03.4,,,127,104,23,2820
-511,00:24.8,,,127,104,23,2799
+,time,home,visit,home_score,visit_score,score differential,time(seconds),quarter
+2,12:00,Jump Ball Drummond vs. Lopez: Tip to Jackson,,0,0,0,0,Q1
+3,11:38,Ellington 27' 3PT Jump Shot (3 PTS) (Jackson 1 AST),,0,3,-3,22,Q1
+4,11:10,,MISS Antetokounmpo 28' 3PT Jump Shot,0,3,-3,50,Q1
+5,11:08,,Bledsoe REBOUND (Off:1 Def:0),0,3,-3,52,Q1
+6,11:02,,MISS Middleton  3PT Jump Shot,0,3,-3,58,Q1
+7,11:00,Brown REBOUND (Off:0 Def:1),,0,3,-3,60,Q1
+8,10:49,Ellington 2' Driving Layup (5 PTS) (Drummond 1 AST),,0,5,-5,71,Q1
+9,10:34,,Brown 2' Driving Layup (2 PTS),2,5,-3,86,Q1
+10,10:23,Drummond 1' Cutting Dunk Shot (2 PTS) (Griffin 1 AST),,2,7,-5,97,Q1
+11,10:16,Brown S.FOUL (P1.T1) (K.Mauer),,2,7,-5,104,Q1
+12,10:16,,MISS Middleton Free Throw 1 of 2,2,7,-5,104,Q1
+13,10:16,,Bucks Rebound,2,7,-5,104,Q1
+14,10:16,,Middleton Free Throw 2 of 2 (1 PTS),3,7,-4,104,Q1
+15,10:01,MISS Brown  3PT Jump Shot,,3,7,-4,119,Q1
+16,9:59,Drummond REBOUND (Off:1 Def:0),,3,7,-4,121,Q1
+17,9:58,MISS Drummond 1' Layup,,3,7,-4,122,Q1
+18,9:56,Drummond REBOUND (Off:2 Def:0),,3,7,-4,124,Q1
+19,9:55,MISS Drummond 1' Layup,Lopez BLOCK (1 BLK),3,7,-4,125,Q1
+20,9:51,,Middleton REBOUND (Off:0 Def:1),3,7,-4,129,Q1
+21,9:38,,Lopez 17' Fadeaway Jumper (2 PTS) (Bledsoe 1 AST),5,7,-2,142,Q1
+22,9:20,Jackson 9' Floating Jump Shot (2 PTS),,5,9,-4,160,Q1
+23,9:13,Griffin P.FOUL (P1.T2) (K.Mauer),,5,9,-4,167,Q1
+24,9:06,,MISS Bledsoe 27' 3PT Jump Shot,5,9,-4,174,Q1
+25,9:03,,Antetokounmpo REBOUND (Off:1 Def:0),5,9,-4,177,Q1
+26,9:03,,Antetokounmpo 2' Dunk (2 PTS),7,9,-2,177,Q1
+27,9:03,Brown S.FOUL (P2.T3) (T.Brown),,7,9,-2,177,Q1
+28,9:03,,Antetokounmpo Free Throw 1 of 1 (3 PTS),8,9,-1,177,Q1
+29,8:48,MISS Jackson 6' Driving Floating Jump Shot,,8,9,-1,192,Q1
+30,8:45,Drummond REBOUND (Off:3 Def:0),,8,9,-1,195,Q1
+31,8:45,Drummond 2' Putback Layup (4 PTS),,8,11,-3,195,Q1
+32,8:42,Jackson P.FOUL (P1.T4) (K.Mauer),,8,11,-3,198,Q1
+33,8:36,Drummond STEAL (1 STL),Bledsoe Bad Pass Turnover (P1.T1),8,11,-3,204,Q1
+34,8:34,MISS Drummond 1' Running Layup,,8,11,-3,206,Q1
+35,8:33,Brown REBOUND (Off:1 Def:1),,8,11,-3,207,Q1
+36,8:32,Brown 1' Tip Layup Shot (2 PTS),,8,13,-5,208,Q1
+37,8:19,,Lopez Offensive Charge Foul (P1.T1) (D.Collins),8,13,-5,221,Q1
+38,8:19,,Lopez Offensive Foul Turnover (P1.T2),8,13,-5,221,Q1
+39,8:13,,Antetokounmpo P.FOUL (P1.T2) (K.Mauer),8,13,-5,227,Q1
+40,8:03,Griffin 2' Layup (2 PTS) (Drummond 2 AST),,8,15,-7,237,Q1
+41,8:03,,Bucks Timeout: Regular (Reg.1 Short 0),8,15,-7,237,Q1
+42,7:45,,MISS Antetokounmpo 5' Turnaround Hook Shot,8,15,-7,255,Q1
+43,7:43,Griffin REBOUND (Off:0 Def:1),,8,15,-7,257,Q1
+44,7:34,Jackson  3PT Jump Shot (5 PTS) (Griffin 2 AST),,8,18,-10,266,Q1
+45,7:22,,MISS Middleton 9' Pullup Jump Shot,8,18,-10,278,Q1
+46,7:20,Brown REBOUND (Off:1 Def:2),,8,18,-10,280,Q1
+47,7:03,MISS Jackson  3PT Pullup Jump Shot,,8,18,-10,297,Q1
+48,7:00,,Antetokounmpo REBOUND (Off:1 Def:1),8,18,-10,300,Q1
+49,6:59,Drummond S.FOUL (P1.PN) (D.Collins),,8,18,-10,301,Q1
+50,6:59,,MISS Antetokounmpo Free Throw 1 of 2,8,18,-10,301,Q1
+51,6:59,,Bucks Rebound,8,18,-10,301,Q1
+52,6:59,,SUB: Connaughton FOR Lopez,8,18,-10,301,Q1
+53,6:59,,SUB: Ilyasova FOR Brown,8,18,-10,301,Q1
+54,6:59,,MISS Antetokounmpo Free Throw 2 of 2,8,18,-10,301,Q1
+55,6:56,Drummond REBOUND (Off:3 Def:1),,8,18,-10,304,Q1
+56,6:44,Griffin Bad Pass Turnover (P1.T1),Bledsoe STEAL (1 STL),8,18,-10,316,Q1
+57,6:39,,MISS Antetokounmpo 5' Driving Layup,8,18,-10,321,Q1
+58,6:36,Drummond REBOUND (Off:3 Def:2),,8,18,-10,324,Q1
+59,6:34,Griffin 2' Running Dunk (4 PTS) (Ellington 1 AST),,8,20,-12,326,Q1
+60,6:21,,Middleton 27' 3PT Jump Shot (4 PTS) (Ilyasova 1 AST),11,20,-9,339,Q1
+61,6:19,PISTONS Timeout: Regular (Full 1 Short 0),,11,20,-9,341,Q1
+62,6:19,SUB: Kennard FOR Griffin,,11,20,-9,341,Q1
+63,6:19,,SUB: G. Hill FOR Bledsoe,11,20,-9,341,Q1
+64,6:03,Drummond 4' Driving Floating Jump Shot (6 PTS) (Jackson 2 AST),,11,22,-11,357,Q1
+65,6:03,,Ilyasova S.FOUL (P1.T3) (T.Brown),11,22,-11,357,Q1
+66,6:03,MISS Drummond Free Throw 1 of 1,,11,22,-11,357,Q1
+67,6:01,,Antetokounmpo REBOUND (Off:1 Def:2),11,22,-11,359,Q1
+68,5:48,,MISS Middleton 14' Pullup Jump Shot,11,22,-11,372,Q1
+69,5:45,Brown REBOUND (Off:1 Def:3),,11,22,-11,375,Q1
+70,5:36,MISS Drummond 3' Cutting Dunk Shot,Antetokounmpo BLOCK (1 BLK),11,22,-11,384,Q1
+71,5:34,,Ilyasova REBOUND (Off:0 Def:1),11,22,-11,386,Q1
+72,5:33,,Antetokounmpo 1' Running Layup (5 PTS) (Middleton 1 AST),13,22,-9,387,Q1
+73,5:33,Brown S.FOUL (P3.PN) (T.Brown),,13,22,-9,387,Q1
+74,5:33,SUB: Galloway FOR Brown,,13,22,-9,387,Q1
+75,5:33,,Antetokounmpo Free Throw 1 of 1 (6 PTS),14,22,-8,387,Q1
+76,5:15,MISS Jackson 26' 3PT Pullup Jump Shot,,14,22,-8,405,Q1
+77,5:12,,Antetokounmpo REBOUND (Off:1 Def:3),14,22,-8,408,Q1
+78,4:56,,G. Hill 3' Cutting Layup Shot (2 PTS) (Antetokounmpo 1 AST),16,22,-6,424,Q1
+79,4:44,,Middleton P.FOUL (P1.T4) (T.Brown),16,22,-6,436,Q1
+80,4:44,,SUB: Lopez FOR Antetokounmpo,16,22,-6,436,Q1
+81,4:37,Jackson 6' Driving Floating Jump Shot (7 PTS),,16,24,-8,443,Q1
+82,4:21,Jump Ball Jackson vs. G. Hill: Tip to Ilyasova,,16,24,-8,459,Q1
+83,4:21,,SUB: Mirotic FOR Middleton,16,24,-8,459,Q1
+84,4:13,,Ilyasova 13' Fadeaway Jumper (2 PTS),18,24,-6,467,Q1
+85,3:57,MISS Kennard 21' Jump Shot,,18,24,-6,483,Q1
+86,3:55,,Ilyasova REBOUND (Off:0 Def:2),18,24,-6,485,Q1
+87,3:46,,Connaughton 2' Driving Layup (2 PTS) (G. Hill 1 AST),20,24,-4,494,Q1
+88,3:24,MISS Drummond 2' Dunk,Lopez BLOCK (2 BLK),20,24,-4,516,Q1
+89,3:21,,Ilyasova REBOUND (Off:0 Def:3),20,24,-4,519,Q1
+90,3:14,Jackson STEAL (1 STL),G. Hill Lost Ball Turnover (P1.T3),20,24,-4,526,Q1
+91,3:11,,Lopez S.FOUL (P2.PN) (K.Mauer),20,24,-4,529,Q1
+92,3:11,Jackson Free Throw 1 of 2 (8 PTS),,20,25,-5,529,Q1
+93,3:11,Jackson Free Throw 2 of 2 (9 PTS),,20,26,-6,529,Q1
+94,2:46,,MISS Connaughton 17' Floating Jump Shot,20,26,-6,554,Q1
+95,2:41,Kennard REBOUND (Off:0 Def:1),,20,26,-6,559,Q1
+96,2:34,MISS Drummond 3' Turnaround Hook Shot,,20,26,-6,566,Q1
+97,2:34,PISTONS Rebound,,20,26,-6,566,Q1
+98,2:34,SUB: Smith FOR Drummond,,20,26,-6,566,Q1
+99,2:34,SUB: Maker FOR Jackson,,20,26,-6,566,Q1
+100,2:34,SUB: Griffin FOR Ellington,,20,26,-6,566,Q1
+101,2:34,,SUB: Brown FOR Lopez,20,26,-6,566,Q1
+102,2:25,MISS Galloway 27' 3PT Pullup Jump Shot,,20,26,-6,575,Q1
+103,2:23,,Mirotic REBOUND (Off:0 Def:1),20,26,-6,577,Q1
+104,2:13,,MISS Mirotic 3' Driving Layup,20,26,-6,587,Q1
+105,2:11,Maker REBOUND (Off:0 Def:1),,20,26,-6,589,Q1
+106,2:06,Kennard 15' Pullup Jump Shot (2 PTS) (Galloway 1 AST),,20,28,-8,594,Q1
+107,1:39,,MISS Ilyasova 26' 3PT Jump Shot,20,28,-8,621,Q1
+108,1:37,Maker REBOUND (Off:0 Def:2),,20,28,-8,623,Q1
+109,1:31,MISS Galloway 2' Driving Finger Roll Layup,,20,28,-8,629,Q1
+110,1:29,,Connaughton REBOUND (Off:0 Def:1),20,28,-8,631,Q1
+111,1:24,Maker S.FOUL (P1.PN) (D.Collins),,20,28,-8,636,Q1
+112,1:24,,Brown Free Throw 1 of 2 (3 PTS),21,28,-7,636,Q1
+113,1:24,,SUB: Antetokounmpo FOR Connaughton,21,28,-7,636,Q1
+114,1:24,,SUB: Bledsoe FOR Ilyasova,21,28,-7,636,Q1
+115,1:24,,MISS Brown Free Throw 2 of 2,21,28,-7,636,Q1
+116,1:22,Smith REBOUND (Off:0 Def:1),,21,28,-7,638,Q1
+117,0:58,MISS Griffin 12' Fadeaway Jumper,,21,28,-7,662,Q1
+118,0:58,PISTONS Rebound,,21,28,-7,662,Q1
+119,0:58,PISTONS Turnover: Shot Clock (T#2),,21,28,-7,662,Q1
+120,0:37,,MISS Antetokounmpo 3' Jump Shot,21,28,-7,683,Q1
+121,0:35,Griffin REBOUND (Off:0 Def:2),,21,28,-7,685,Q1
+122,0:27,MISS Kennard 3' Driving Layup,Antetokounmpo BLOCK (2 BLK),21,28,-7,693,Q1
+123,0:24,,Brown REBOUND (Off:0 Def:1),21,28,-7,696,Q1
+124,0:20,,G. Hill 27' 3PT Jump Shot (5 PTS) (Brown 1 AST),24,28,-4,700,Q1
+125,0:01,Maker Bad Pass Turnover (P1.T3),G. Hill STEAL (1 STL),24,28,-4,719,Q1
+126,0:01,Kennard S.FOUL (P1.PN) (K.Mauer),,24,28,-4,719,Q1
+127,0:01,Go to top ⇧,,24,28,-4,719,Q1
+128,0:01,,G. Hill Free Throw 1 of 2 (6 PTS),25,28,-3,719,Q1
+129,0:01,,SUB: Wilson FOR Antetokounmpo,25,28,-3,719,Q1
+130,0:01,,G. Hill Free Throw 2 of 2 (7 PTS),26,28,-2,719,Q1
+131,0:00,Griffin Bad Pass Turnover (P2.T4),Brown STEAL (1 STL),26,28,-2,720,Q1
+132,0:00,Go to top ⇧,,26,28,-2,720,Q1
+134,11:38,,Antetokounmpo 27' 3PT Jump Shot (9 PTS) (Brown 2 AST),29,28,1,720,Q2
+135,11:21,MISS Smith 10' Floating Jump Shot,,29,28,1,737,Q2
+136,11:19,,Ilyasova REBOUND (Off:0 Def:4),29,28,1,739,Q2
+137,11:18,Maker P.FOUL (P2.T1) (D.Collins),,29,28,1,740,Q2
+138,11:12,,Antetokounmpo 2' Driving Dunk (11 PTS) (Brown 3 AST),31,28,3,746,Q2
+139,10:51,Griffin 25' 3PT Pullup Jump Shot (7 PTS),,31,31,0,767,Q2
+140,10:46,Maker S.FOUL (P3.T2) (K.Mauer),,31,31,0,772,Q2
+141,10:46,,MISS Ilyasova Free Throw 1 of 2,31,31,0,772,Q2
+142,10:46,,Bucks Rebound,31,31,0,772,Q2
+143,10:46,,Ilyasova Free Throw 2 of 2 (3 PTS),32,31,1,772,Q2
+144,10:20,MISS Smith 5' Driving Floating Jump Shot,,32,31,1,798,Q2
+145,10:18,,Bledsoe REBOUND (Off:1 Def:1),32,31,1,800,Q2
+146,10:12,,MISS Ilyasova 25' 3PT Jump Shot,32,31,1,806,Q2
+147,10:10,Galloway REBOUND (Off:0 Def:1),,32,31,1,808,Q2
+148,10:01,MISS Maker  3PT Jump Shot,,32,31,1,817,Q2
+149,9:59,,Middleton REBOUND (Off:0 Def:2),32,31,1,819,Q2
+150,9:53,,MISS Brown 3' Layup,32,31,1,825,Q2
+151,9:51,Griffin REBOUND (Off:0 Def:3),,32,31,1,827,Q2
+152,9:47,Maker 2' Running Dunk (2 PTS) (Griffin 3 AST),,32,33,-1,831,Q2
+153,9:40,Galloway STEAL (1 STL),Middleton Lost Ball Turnover (P1.T4),32,33,-1,838,Q2
+154,9:32,MISS Maker 24' 3PT Jump Shot,,32,33,-1,846,Q2
+155,9:30,,Antetokounmpo REBOUND (Off:1 Def:4),32,33,-1,848,Q2
+156,9:19,,MISS Antetokounmpo 19' Pullup Jump Shot,32,33,-1,859,Q2
+157,9:15,Smith REBOUND (Off:0 Def:2),,32,33,-1,863,Q2
+158,9:12,MISS Smith 1' Running Layup,Antetokounmpo BLOCK (3 BLK),32,33,-1,866,Q2
+159,9:12,PISTONS Rebound,,32,33,-1,866,Q2
+160,9:12,SUB: Drummond FOR Maker,,32,33,-1,866,Q2
+161,9:12,,SUB: Connaughton FOR Brown,32,33,-1,866,Q2
+162,9:12,,SUB: Lopez FOR Ilyasova,32,33,-1,866,Q2
+163,8:59,Galloway 25' 3PT Jump Shot (3 PTS) (Smith 1 AST),,32,36,-4,879,Q2
+164,8:41,,Bledsoe 2' Driving Layup (2 PTS),34,36,-2,897,Q2
+165,8:26,Kennard 15' Pullup Jump Shot (4 PTS) (Griffin 4 AST),,34,38,-4,912,Q2
+166,8:10,Smith STEAL (1 STL),Bledsoe Bad Pass Turnover (P2.T5),34,38,-4,928,Q2
+167,8:06,Drummond 3' Running Dunk (8 PTS) (Galloway 2 AST),,34,40,-6,932,Q2
+168,8:05,,Bucks Timeout: Regular (Reg.2 Short 0),34,40,-6,933,Q2
+169,7:52,,Middleton 5' Driving Floating Jump Shot (6 PTS) (Bledsoe 2 AST),36,40,-4,946,Q2
+170,7:41,MISS Griffin 2' Driving Layup,Bledsoe BLOCK (1 BLK),36,40,-4,957,Q2
+171,7:40,Griffin REBOUND (Off:1 Def:3),,36,40,-4,958,Q2
+172,7:39,,Antetokounmpo S.FOUL (P2.T1) (D.Collins),36,40,-4,959,Q2
+173,7:39,Griffin Free Throw 1 of 2 (8 PTS),,36,41,-5,959,Q2
+174,7:39,,SUB: Mirotic FOR Bledsoe,36,41,-5,959,Q2
+175,7:39,,SUB: G. Hill FOR Antetokounmpo,36,41,-5,959,Q2
+176,7:39,Griffin Free Throw 2 of 2 (9 PTS),,36,42,-6,959,Q2
+177,7:27,,G. Hill Traveling Turnover (P2.T6),36,42,-6,971,Q2
+178,7:11,MISS Griffin 25' 3PT Jump Shot,,36,42,-6,987,Q2
+179,7:11,,Bucks Rebound,36,42,-6,987,Q2
+180,6:57,Galloway P.FOUL (P1.T3) (K.Mauer),,36,42,-6,1001,Q2
+181,6:57,SUB: Jackson FOR Smith,,36,42,-6,1001,Q2
+182,6:57,SUB: Brown FOR Griffin,,36,42,-6,1001,Q2
+183,6:46,,Lopez 13' Fadeaway Jumper (4 PTS),38,42,-4,1012,Q2
+184,6:26,Kennard 8' Jump Bank Shot (6 PTS) (Drummond 3 AST),,38,44,-6,1032,Q2
+185,6:16,,Lopez Out of Bounds - Bad Pass Turnover Turnover (P2.T7),38,44,-6,1042,Q2
+186,5:54,Jackson 12' Step Back Jump Shot (11 PTS),,38,46,-8,1064,Q2
+187,5:32,,Middleton 15' Turnaround Fadeaway (8 PTS),40,46,-6,1086,Q2
+188,5:18,Galloway 15' Pullup Jump Shot (5 PTS),,40,48,-8,1100,Q2
+189,5:05,,Mirotic 30' 3PT Jump Shot (3 PTS) (Connaughton 1 AST),43,48,-5,1113,Q2
+190,4:46,Jackson 25' 3PT Jump Shot (14 PTS) (Galloway 3 AST),,43,51,-8,1132,Q2
+191,4:28,Kennard S.FOUL (P2.T4) (K.Mauer),,43,51,-8,1150,Q2
+192,4:28,,Mirotic Free Throw 1 of 2 (4 PTS),44,51,-7,1150,Q2
+193,4:28,SUB: Ellington FOR Kennard,,44,51,-7,1150,Q2
+194,4:28,,SUB: Antetokounmpo FOR Middleton,44,51,-7,1150,Q2
+195,4:28,,MISS Mirotic Free Throw 2 of 2,44,51,-7,1150,Q2
+196,4:28,Drummond REBOUND (Off:3 Def:3),,44,51,-7,1150,Q2
+197,4:28,PISTONS Timeout: Regular (Full 2 Short 0),,44,51,-7,1150,Q2
+198,4:14,Galloway 25' 3PT Jump Shot (8 PTS) (Jackson 3 AST),,44,54,-10,1164,Q2
+199,4:03,,Antetokounmpo 3' Driving Hook Shot (13 PTS) (Mirotic 1 AST),46,54,-8,1175,Q2
+200,4:03,Drummond S.FOUL (P2.PN) (T.Brown),,46,54,-8,1175,Q2
+201,4:03,,Antetokounmpo Free Throw 1 of 1 (14 PTS),47,54,-7,1175,Q2
+202,3:48,MISS Jackson 2' Driving Layup,,47,54,-7,1190,Q2
+203,3:46,,Antetokounmpo REBOUND (Off:1 Def:5),47,54,-7,1192,Q2
+204,3:43,,Antetokounmpo Traveling Turnover (P1.T8),47,54,-7,1195,Q2
+205,3:36,,G. Hill P.FOUL (P1.T2) (D.Collins),47,54,-7,1202,Q2
+206,3:36,,G. Hill AWAY.FROM.PLAY.FOUL (P2.T3) (T.Brown),47,54,-7,1202,Q2
+207,3:36,Jackson Free Throw 1 of 1 (15 PTS),,47,55,-8,1202,Q2
+208,3:36,,SUB: Bledsoe FOR Mirotic,47,55,-8,1202,Q2
+209,3:33,MISS Jackson 25' 3PT Jump Shot,,47,55,-8,1205,Q2
+210,3:33,,Bucks Rebound,47,55,-8,1205,Q2
+211,3:23,Brown P.FOUL (P4.PN) (T.Brown),,47,55,-8,1215,Q2
+212,3:23,,MISS Antetokounmpo Free Throw 1 of 2,47,55,-8,1215,Q2
+213,3:23,,Bucks Rebound,47,55,-8,1215,Q2
+214,3:23,SUB: Griffin FOR Brown,,47,55,-8,1215,Q2
+215,3:23,SUB: Kennard FOR Galloway,,47,55,-8,1215,Q2
+216,3:23,,Antetokounmpo Free Throw 2 of 2 (15 PTS),48,55,-7,1215,Q2
+217,3:08,MISS Griffin 6' Jump Shot,,48,55,-7,1230,Q2
+218,3:04,,Lopez REBOUND (Off:0 Def:1),48,55,-7,1234,Q2
+219,2:57,,Lopez 2' Driving Layup (6 PTS),50,55,-5,1241,Q2
+220,2:57,Griffin S.FOUL (P2.PN) (K.Mauer),,50,55,-5,1241,Q2
+221,2:57,,SUB: Brown FOR G. Hill,50,55,-5,1241,Q2
+222,2:57,,Lopez Free Throw 1 of 1 (7 PTS),51,55,-4,1241,Q2
+223,2:34,Jackson  3PT Jump Shot (18 PTS) (Ellington 2 AST),,51,58,-7,1264,Q2
+224,2:18,,MISS Antetokounmpo 27' 3PT Jump Shot,51,58,-7,1280,Q2
+225,2:13,Jackson REBOUND (Off:0 Def:1),,51,58,-7,1285,Q2
+226,2:12,MISS Griffin 2' Running Layup,,51,58,-7,1286,Q2
+227,2:12,,Connaughton REBOUND (Off:0 Def:2),51,58,-7,1286,Q2
+228,2:04,,Antetokounmpo 2' Driving Layup (17 PTS) (Brown 4 AST),53,58,-5,1294,Q2
+229,2:04,Drummond S.FOUL (P3.PN) (T.Brown),,53,58,-5,1294,Q2
+230,2:04,SUB: Maker FOR Drummond,,53,58,-5,1294,Q2
+231,2:04,,SUB: Middleton FOR Lopez,53,58,-5,1294,Q2
+232,2:04,,SUB: Ilyasova FOR Connaughton,53,58,-5,1294,Q2
+233,2:04,,MISS Antetokounmpo Free Throw 1 of 1,53,58,-5,1294,Q2
+234,2:03,Griffin REBOUND (Off:1 Def:4),,53,58,-5,1295,Q2
+235,2:03,,Brown P.FOUL (P1.T4) (D.Collins),53,58,-5,1295,Q2
+236,1:41,MISS Kennard 24' 3PT Jump Shot,,53,58,-5,1317,Q2
+237,1:38,,Antetokounmpo REBOUND (Off:1 Def:6),53,58,-5,1320,Q2
+238,1:37,Griffin S.FOUL (P3.PN) (K.Mauer),,53,58,-5,1321,Q2
+239,1:37,,Brown Free Throw 1 of 2 (4 PTS),54,58,-4,1321,Q2
+240,1:37,SUB: Galloway FOR Griffin,,54,58,-4,1321,Q2
+241,1:37,,Brown Free Throw 2 of 2 (5 PTS),55,58,-3,1321,Q2
+242,1:14,,Ilyasova S.FOUL (P2.PN) (K.Mauer),55,58,-3,1344,Q2
+243,1:14,Maker Free Throw 1 of 2 (3 PTS),,55,59,-4,1344,Q2
+244,1:14,Maker Free Throw 2 of 2 (4 PTS),,55,60,-5,1344,Q2
+245,0:55,Kennard BLOCK (1 BLK),MISS Brown 3' Layup,55,60,-5,1363,Q2
+246,0:51,,Brown REBOUND (Off:1 Def:1),55,60,-5,1367,Q2
+247,0:50,,MISS Antetokounmpo 3' Reverse Layup,55,60,-5,1368,Q2
+248,0:50,,Bucks Rebound,55,60,-5,1368,Q2
+249,0:50,,Bucks Turnover: Shot Clock (T#9),55,60,-5,1368,Q2
+250,0:36,MISS Jackson 7' Driving Floating Jump Shot,,55,60,-5,1382,Q2
+251,0:34,Maker REBOUND (Off:1 Def:2),,55,60,-5,1384,Q2
+252,0:31,MISS Jackson 26' 3PT Jump Shot,,55,60,-5,1387,Q2
+253,0:29,,Ilyasova REBOUND (Off:0 Def:5),55,60,-5,1389,Q2
+254,0:10,,MISS Middleton  3PT Jump Shot,55,60,-5,1408,Q2
+255,0:09,,Ilyasova REBOUND (Off:1 Def:5),55,60,-5,1409,Q2
+256,0:09,Kennard P.FOUL (P3.PN) (D.Collins),,55,60,-5,1409,Q2
+257,0:09,,MISS Ilyasova Free Throw 1 of 2,55,60,-5,1409,Q2
+258,0:09,,Bucks Rebound,55,60,-5,1409,Q2
+259,0:09,SUB: Drummond FOR Kennard,,55,60,-5,1409,Q2
+260,0:09,SUB: Griffin FOR Maker,,55,60,-5,1409,Q2
+261,0:09,,SUB: G. Hill FOR Antetokounmpo,55,60,-5,1409,Q2
+262,0:09,,Ilyasova Free Throw 2 of 2 (4 PTS),56,60,-4,1409,Q2
+263,0:01,MISS Galloway 25' 3PT Jump Shot,,56,60,-4,1417,Q2
+264,0:01,Jackson REBOUND (Off:1 Def:1),,56,60,-4,1417,Q2
+265,0:01,Jackson 1' Tip Dunk Shot (20 PTS),,56,62,-6,1417,Q2
+266,0:00,Go to top ⇧,,56,62,-6,1418,Q2
+268,11:44,,MISS Antetokounmpo 12' Jump Shot,56,62,-6,1418,Q3
+269,11:39,Ellington REBOUND (Off:0 Def:1),,56,62,-6,1423,Q3
+270,11:27,MISS Ellington 25' 3PT Jump Shot,,56,62,-6,1435,Q3
+271,11:24,,Brown REBOUND (Off:1 Def:2),56,62,-6,1438,Q3
+272,11:19,,MISS Brown 27' 3PT Jump Shot,56,62,-6,1443,Q3
+273,11:19,PISTONS Rebound,,56,62,-6,1443,Q3
+274,11:10,MISS Brown 2' Driving Layup,,56,62,-6,1452,Q3
+275,11:07,,Lopez REBOUND (Off:0 Def:2),56,62,-6,1455,Q3
+276,10:52,,MISS Middleton 24' 3PT Jump Shot,56,62,-6,1470,Q3
+277,10:49,,Brown REBOUND (Off:2 Def:2),56,62,-6,1473,Q3
+278,10:47,,Brown 2' Putback Layup (7 PTS),58,62,-4,1475,Q3
+279,10:30,MISS Ellington 3' Driving Layup,,58,62,-4,1492,Q3
+280,10:29,Drummond REBOUND (Off:4 Def:3),,58,62,-4,1493,Q3
+281,10:28,Drummond 3' Putback Layup (10 PTS),,58,64,-6,1494,Q3
+282,10:12,,MISS Brown  3PT Jump Shot,58,64,-6,1510,Q3
+283,10:10,Jackson REBOUND (Off:1 Def:2),,58,64,-6,1512,Q3
+284,10:02,Drummond 7' Floating Jump Shot (12 PTS) (Jackson 4 AST),,58,66,-8,1520,Q3
+285,9:41,,Bledsoe 1' Driving Layup (4 PTS) (Lopez 1 AST),60,66,-6,1541,Q3
+286,9:17,Griffin 8' Jump Shot (11 PTS),,60,68,-8,1565,Q3
+287,9:03,,MISS Bledsoe 6' Driving Floating Jump Shot,60,68,-8,1579,Q3
+288,9:01,Ellington REBOUND (Off:0 Def:2),,60,68,-8,1581,Q3
+289,8:51,Griffin Lost Ball Turnover (P3.T5),Antetokounmpo STEAL (1 STL),60,68,-8,1591,Q3
+290,8:45,,Antetokounmpo 2' Running Layup (19 PTS) (Bledsoe 3 AST),62,68,-6,1597,Q3
+291,8:15,Griffin 27' 3PT Step Back Jump Shot (14 PTS) (Jackson 5 AST),,62,71,-9,1627,Q3
+292,8:00,,Middleton 1' Driving Layup (10 PTS) (Bledsoe 4 AST),64,71,-7,1642,Q3
+293,8:00,Jackson S.FOUL (P2.T1) (D.Collins),,64,71,-7,1642,Q3
+294,8:00,,Middleton Free Throw 1 of 1 (11 PTS),65,71,-6,1642,Q3
+295,7:45,Griffin 4' Driving Hook Shot (16 PTS),,65,73,-8,1657,Q3
+296,7:33,,Bledsoe 2' Layup (6 PTS) (Lopez 2 AST),67,73,-6,1669,Q3
+297,7:33,Griffin S.FOUL (P4.T2) (T.Brown),,67,73,-6,1669,Q3
+298,7:33,,SUB: Ilyasova FOR Lopez,67,73,-6,1669,Q3
+299,7:33,,Bledsoe Free Throw 1 of 1 (7 PTS),68,73,-5,1669,Q3
+300,7:29,PISTONS Timeout: Regular (Full 3 Short 0),,68,73,-5,1673,Q3
+301,7:10,MISS Brown 24' 3PT Jump Shot,,68,73,-5,1692,Q3
+302,7:08,,Ilyasova REBOUND (Off:1 Def:6),68,73,-5,1694,Q3
+303,6:56,,MISS Ilyasova 18' Jump Shot,68,73,-5,1706,Q3
+304,6:53,Brown REBOUND (Off:1 Def:4),,68,73,-5,1709,Q3
+305,6:41,Drummond OFF.Foul (P4) (K.Mauer),,68,73,-5,1721,Q3
+306,6:41,Drummond Offensive Foul Turnover (P1.T6),,68,73,-5,1721,Q3
+307,6:41,SUB: Maker FOR Drummond,,68,73,-5,1721,Q3
+308,6:24,,Antetokounmpo 1' Driving Layup (21 PTS),70,73,-3,1738,Q3
+309,5:59,MISS Brown 7' Floating Jump Shot,,70,73,-3,1763,Q3
+310,5:56,,Brown REBOUND (Off:2 Def:3),70,73,-3,1766,Q3
+311,5:54,Brown S.FOUL (P5.T3) (K.Mauer),,70,73,-3,1768,Q3
+312,5:54,,Middleton Free Throw 1 of 3 (12 PTS),71,73,-2,1768,Q3
+313,5:54,,Middleton Free Throw 2 of 3 (13 PTS),72,73,-1,1768,Q3
+314,5:54,SUB: Kennard FOR Brown,,72,73,-1,1768,Q3
+315,5:54,,SUB: Connaughton FOR Bledsoe,72,73,-1,1768,Q3
+316,5:54,,SUB: G. Hill FOR Brown,72,73,-1,1768,Q3
+317,5:54,,Middleton Free Throw 3 of 3 (14 PTS),73,73,0,1768,Q3
+318,5:42,Griffin 26' 3PT Jump Shot (19 PTS) (Jackson 6 AST),,73,76,-3,1780,Q3
+319,5:29,,Antetokounmpo 1' Cutting Dunk Shot (23 PTS) (Ilyasova 2 AST),75,76,-1,1793,Q3
+320,5:23,,G. Hill P.FOUL (P3.T1) (T.Brown),75,76,-1,1799,Q3
+321,5:13,Griffin 27' 3PT Jump Shot (22 PTS) (Jackson 7 AST),,75,79,-4,1809,Q3
+322,5:05,,Antetokounmpo 2' Driving Layup (25 PTS) (Ilyasova 3 AST),77,79,-2,1817,Q3
+323,5:05,Maker S.FOUL (P4.T4) (T.Brown),,77,79,-2,1817,Q3
+324,5:05,,Antetokounmpo Free Throw 1 of 1 (26 PTS),78,79,-1,1817,Q3
+325,4:57,,Ilyasova P.FOUL (P3.T2) (T.Brown),78,79,-1,1825,Q3
+326,4:53,Jackson  3PT Jump Shot (23 PTS) (Kennard 1 AST),,78,82,-4,1829,Q3
+327,4:35,Maker P.FOUL (P5.PN) (K.Mauer),,78,82,-4,1847,Q3
+328,4:35,,,78,82,-4,1847,Q3
+329,4:35,,Middleton Free Throw Technical (15 PTS),79,82,-3,1847,Q3
+330,4:35,,Antetokounmpo Free Throw 1 of 2 (27 PTS),80,82,-2,1847,Q3
+331,4:35,SUB: Galloway FOR Griffin,,80,82,-2,1847,Q3
+332,4:35,,SUB: Lopez FOR Ilyasova,80,82,-2,1847,Q3
+333,4:35,,Antetokounmpo Free Throw 2 of 2 (28 PTS),81,82,-1,1847,Q3
+334,4:30,PISTONS Timeout: Regular (Full 4 Short 0),,81,82,-1,1852,Q3
+335,4:30,SUB: Smith FOR Jackson,,81,82,-1,1852,Q3
+336,4:30,,SUB: Mirotic FOR Middleton,81,82,-1,1852,Q3
+337,4:27,Kennard Lost Ball Turnover (P1.T7),Connaughton STEAL (1 STL),81,82,-1,1855,Q3
+338,4:21,,Connaughton 1' Running Dunk (4 PTS),83,82,1,1861,Q3
+339,3:57,MISS Maker 27' 3PT Jump Shot,,83,82,1,1885,Q3
+340,3:57,,Bucks Rebound,83,82,1,1885,Q3
+341,3:43,,Mirotic 25' 3PT Jump Shot (7 PTS) (Antetokounmpo 2 AST),86,82,4,1899,Q3
+342,3:27,Smith Out of Bounds - Bad Pass Turnover Turnover (P1.T8),,86,82,4,1915,Q3
+343,3:20,Galloway P.FOUL (P2.PN) (K.Mauer),,86,82,4,1922,Q3
+344,3:20,,Antetokounmpo Free Throw 1 of 2 (29 PTS),87,82,5,1922,Q3
+345,3:20,SUB: Drummond FOR Maker,,87,82,5,1922,Q3
+346,3:20,,SUB: Brown FOR Lopez,87,82,5,1922,Q3
+347,3:20,,Antetokounmpo Free Throw 2 of 2 (30 PTS),88,82,6,1922,Q3
+348,3:09,Smith 12' Pullup Jump Shot (2 PTS),,88,84,4,1933,Q3
+349,2:58,,Connaughton Out of Bounds Lost Ball Turnover (P1.T10),88,84,4,1944,Q3
+350,2:42,MISS Smith 10' Turnaround Jump Shot,,88,84,4,1960,Q3
+351,2:40,,Brown REBOUND (Off:2 Def:4),88,84,4,1962,Q3
+352,2:39,Galloway S.FOUL (P3.PN) (T.Brown),,88,84,4,1963,Q3
+353,2:39,,MISS Antetokounmpo Free Throw 1 of 2,88,84,4,1963,Q3
+354,2:39,,Bucks Rebound,88,84,4,1963,Q3
+355,2:39,SUB: Robinson III FOR Ellington,,88,84,4,1963,Q3
+356,2:39,,SUB: Ilyasova FOR Brown,88,84,4,1963,Q3
+357,2:39,,Antetokounmpo Free Throw 2 of 2 (31 PTS),89,84,5,1963,Q3
+358,2:26,MISS Smith 18' Jump Shot,,89,84,5,1976,Q3
+359,2:23,,Ilyasova REBOUND (Off:1 Def:7),89,84,5,1979,Q3
+360,2:19,,MISS Antetokounmpo 25' 3PT Jump Shot,89,84,5,1983,Q3
+361,2:17,Galloway REBOUND (Off:0 Def:2),,89,84,5,1985,Q3
+362,1:55,MISS Kennard 26' 3PT Jump Shot,,89,84,5,2007,Q3
+363,1:53,,G. Hill REBOUND (Off:0 Def:1),89,84,5,2009,Q3
+364,1:41,Robinson III S.FOUL (P1.PN) (K.Mauer),,89,84,5,2021,Q3
+365,1:41,,Bucks Timeout: Regular (Reg.3 Short 0),89,84,5,2021,Q3
+366,1:41,,SUB: Bledsoe FOR G. Hill,89,84,5,2021,Q3
+367,1:41,,SUB: Brown FOR Connaughton,89,84,5,2021,Q3
+368,1:41,,Antetokounmpo Free Throw 1 of 2 (32 PTS),90,84,6,2021,Q3
+369,1:41,,Antetokounmpo Free Throw 2 of 2 (33 PTS),91,84,7,2021,Q3
+370,1:36,,Brown P.FOUL (P2.T3) (T.Brown),91,84,7,2026,Q3
+371,1:36,,SUB: Connaughton FOR Antetokounmpo,91,84,7,2026,Q3
+372,1:28,,Ilyasova S.FOUL (P4.PN) (T.Brown),91,84,7,2034,Q3
+373,1:28,MISS Drummond Free Throw 1 of 2,,91,84,7,2034,Q3
+374,1:28,PISTONS Rebound,,91,84,7,2034,Q3
+375,1:28,Drummond Free Throw 2 of 2 (13 PTS),,91,85,6,2034,Q3
+376,1:14,,MISS Mirotic 24' 3PT Jump Shot,91,85,6,2048,Q3
+377,1:11,,Brown REBOUND (Off:3 Def:4),91,85,6,2051,Q3
+378,1:00,,MISS Bledsoe 14' Fadeaway Jumper,91,85,6,2062,Q3
+379,0:57,,Mirotic REBOUND (Off:1 Def:1),91,85,6,2065,Q3
+380,0:57,,Mirotic 1' Tip Layup Shot (9 PTS),93,85,8,2065,Q3
+381,0:42,MISS Galloway 6' Driving Floating Jump Shot,,93,85,8,2080,Q3
+382,0:37,Drummond REBOUND (Off:5 Def:3),,93,85,8,2085,Q3
+383,0:37,MISS Drummond 1' Tip Dunk Shot,,93,85,8,2085,Q3
+384,0:36,,Brown REBOUND (Off:3 Def:5),93,85,8,2086,Q3
+385,0:36,,Bledsoe 1' Driving Layup (9 PTS) (Brown 5 AST),95,85,10,2086,Q3
+386,0:20,MISS Galloway 24' 3PT Jump Shot,,95,85,10,2102,Q3
+387,0:18,,Ilyasova REBOUND (Off:1 Def:8),95,85,10,2104,Q3
+388,0:01,,MISS Bledsoe 12' Floating Jump Shot,95,85,10,2121,Q3
+389,0:01,,Bucks Rebound,95,85,10,2121,Q3
+390,0:00,Go to top ⇧,,95,85,10,2122,Q3
+392,11:38,MISS Drummond 5' Floating Jump Shot,,95,85,10,2122,Q4
+393,11:36,,Brown REBOUND (Off:3 Def:6),95,85,10,2124,Q4
+394,11:30,,Middleton 25' 3PT Jump Shot (18 PTS),98,85,13,2130,Q4
+395,11:23,MISS Griffin 26' 3PT Jump Shot,,98,85,13,2137,Q4
+396,11:21,,Bledsoe REBOUND (Off:1 Def:2),98,85,13,2139,Q4
+397,11:10,,Bledsoe 2' Layup (11 PTS),100,85,15,2150,Q4
+398,10:47,Jackson 24' 3PT Jump Shot (26 PTS) (Griffin 5 AST),,100,88,12,2173,Q4
+399,10:42,,Ilyasova OFF.Foul (P5) (K.Mauer),100,88,12,2178,Q4
+400,10:42,,Ilyasova Offensive Foul Turnover (P1.T11),100,88,12,2178,Q4
+401,10:42,,SUB: Antetokounmpo FOR Ilyasova,100,88,12,2178,Q4
+402,10:22,Drummond 1' Layup (15 PTS) (Griffin 6 AST),,100,90,10,2198,Q4
+403,10:10,,MISS Bledsoe 25' 3PT Jump Shot,100,90,10,2210,Q4
+404,10:08,Drummond REBOUND (Off:5 Def:4),,100,90,10,2212,Q4
+405,9:56,MISS Jackson 2' Driving Layup,,100,90,10,2224,Q4
+406,9:54,Drummond REBOUND (Off:6 Def:4),,100,90,10,2226,Q4
+407,9:54,MISS Drummond 5' Putback Layup,Lopez BLOCK (3 BLK),100,90,10,2226,Q4
+408,9:54,,Middleton REBOUND (Off:0 Def:3),100,90,10,2226,Q4
+409,9:50,Kennard STEAL (1 STL),Brown Lost Ball Turnover (P1.T12),100,90,10,2230,Q4
+410,9:46,MISS Kennard 3' Running Layup,Lopez BLOCK (4 BLK),100,90,10,2234,Q4
+411,9:39,,Brown REBOUND (Off:3 Def:7),100,90,10,2241,Q4
+412,9:37,,MISS Antetokounmpo 25' 3PT Jump Shot,100,90,10,2243,Q4
+413,9:37,,Middleton REBOUND (Off:1 Def:3),100,90,10,2243,Q4
+414,9:37,SUB: Ellington FOR Kennard,,100,90,10,2243,Q4
+415,9:24,,MISS Middleton 9' Turnaround Jump Shot,100,90,10,2256,Q4
+416,9:20,Drummond REBOUND (Off:6 Def:5),,100,90,10,2260,Q4
+417,9:16,MISS Griffin 2' Running Layup,,100,90,10,2264,Q4
+418,9:16,,Brown REBOUND (Off:3 Def:8),100,90,10,2264,Q4
+419,9:16,,Brown OFF.Foul (P3) (K.Mauer),100,90,10,2264,Q4
+420,9:16,,Brown Offensive Foul Turnover (P2.T13),100,90,10,2264,Q4
+421,9:01,MISS Ellington 6' Hook Shot,Lopez BLOCK (5 BLK),100,90,10,2279,Q4
+422,8:58,,Lopez REBOUND (Off:0 Def:3),100,90,10,2282,Q4
+423,8:42,,Bledsoe 25' 3PT Jump Shot (14 PTS) (Antetokounmpo 3 AST),103,90,13,2298,Q4
+424,8:35,PISTONS Timeout: Regular (Full 5 Short 0),,103,90,13,2305,Q4
+425,8:35,,SUB: G. Hill FOR Brown,103,90,13,2305,Q4
+426,8:16,MISS Jackson 4' Driving Layup,Antetokounmpo BLOCK (4 BLK),103,90,13,2324,Q4
+427,8:13,,Lopez REBOUND (Off:0 Def:4),103,90,13,2327,Q4
+428,8:11,,Bledsoe 2' Running Layup (16 PTS) (Lopez 3 AST),105,90,15,2329,Q4
+429,7:56,Griffin Lost Ball Turnover (P4.T9),Bledsoe STEAL (2 STL),105,90,15,2344,Q4
+430,7:49,,MISS Lopez 25' 3PT Jump Shot,105,90,15,2351,Q4
+431,7:48,,Bucks Rebound,105,90,15,2352,Q4
+432,7:45,Griffin P.FOUL (P5.T1) (K.Mauer),,105,90,15,2355,Q4
+433,7:34,,MISS Antetokounmpo 3' Layup,105,90,15,2366,Q4
+434,7:32,,Antetokounmpo REBOUND (Off:2 Def:6),105,90,15,2368,Q4
+435,7:22,,Antetokounmpo 25' 3PT Jump Shot (36 PTS) (Bledsoe 5 AST),108,90,18,2378,Q4
+436,7:14,MISS Jackson 10' Driving Floating Jump Shot,,108,90,18,2386,Q4
+437,7:13,,Lopez REBOUND (Off:0 Def:5),108,90,18,2387,Q4
+438,7:06,Griffin S.FOUL (P6.T2) (D.Collins),,108,90,18,2394,Q4
+439,7:06,SUB: Kennard FOR Griffin,,108,90,18,2394,Q4
+440,7:06,,SUB: Connaughton FOR Bledsoe,108,90,18,2394,Q4
+441,7:06,,Antetokounmpo Free Throw 1 of 2 (37 PTS),109,90,19,2394,Q4
+442,7:06,,Antetokounmpo Free Throw 2 of 2 (38 PTS),110,90,20,2394,Q4
+443,6:49,MISS Kennard 5' Floating Jump Shot,,110,90,20,2411,Q4
+444,6:47,,Antetokounmpo REBOUND (Off:2 Def:7),110,90,20,2413,Q4
+445,6:44,,Antetokounmpo 2' Running Layup (40 PTS),112,90,22,2416,Q4
+446,6:44,Jackson S.FOUL (P3.T3) (T.Brown),,112,90,22,2416,Q4
+447,6:44,,SUB: Mirotic FOR Middleton,112,90,22,2416,Q4
+448,6:44,,Antetokounmpo Free Throw 1 of 1 (41 PTS),113,90,23,2416,Q4
+449,6:30,MISS Jackson 3' Driving Floating Jump Shot,,113,90,23,2430,Q4
+450,6:30,PISTONS Rebound,,113,90,23,2430,Q4
+451,6:30,,Mirotic L.B.FOUL (P1.T1) (T.Brown),113,90,23,2430,Q4
+452,6:30,,SUB: Brown FOR Antetokounmpo,113,90,23,2430,Q4
+453,6:23,MISS Galloway 26' 3PT Jump Shot,,113,90,23,2437,Q4
+454,6:21,,Brown REBOUND (Off:3 Def:9),113,90,23,2439,Q4
+455,6:14,,Brown 2' Driving Layup (9 PTS),115,90,25,2446,Q4
+456,6:06,Drummond OFF.Foul (P5) (K.Mauer),,115,90,25,2454,Q4
+457,6:06,Drummond Offensive Foul Turnover (P2.T10),,115,90,25,2454,Q4
+458,6:01,,,115,90,25,2459,Q4
+459,5:44,,Brown OFF.Foul (P4) (T.Brown),115,90,25,2476,Q4
+460,5:44,,Brown Offensive Foul Turnover (P3.T14),115,90,25,2476,Q4
+461,5:44,,SUB: Wilson FOR Lopez,115,90,25,2476,Q4
+462,5:28,MISS Ellington 26' 3PT Jump Shot,,115,90,25,2492,Q4
+463,5:25,,Wilson REBOUND (Off:0 Def:1),115,90,25,2495,Q4
+464,5:18,,MISS G. Hill 25' 3PT Jump Shot,115,90,25,2502,Q4
+465,5:16,Drummond REBOUND (Off:6 Def:6),,115,90,25,2504,Q4
+466,5:04,Galloway 19' Jump Bank Shot (10 PTS),,115,92,23,2516,Q4
+467,4:46,,Wilson 2' Cutting Layup Shot (2 PTS) (G. Hill 2 AST),117,92,25,2534,Q4
+468,4:32,MISS Galloway 26' 3PT Jump Shot,,117,92,25,2548,Q4
+469,4:30,,Brown REBOUND (Off:3 Def:10),117,92,25,2550,Q4
+470,4:26,,Mirotic  3PT Jump Shot (12 PTS) (Brown 6 AST),120,92,28,2554,Q4
+471,4:20,PISTONS Timeout: Regular (Full 6 Short 0),,120,92,28,2560,Q4
+472,4:20,SUB: Calderon FOR Drummond,,120,92,28,2560,Q4
+473,4:20,SUB: Thomas FOR Jackson,,120,92,28,2560,Q4
+474,4:20,SUB: Maker FOR Ellington,,120,92,28,2560,Q4
+475,4:20,,SUB: Snell FOR G. Hill,120,92,28,2560,Q4
+476,4:20,,SUB: Frazier FOR Brown,120,92,28,2560,Q4
+477,4:09,MISS Maker 3' Layup,,120,92,28,2571,Q4
+478,4:06,,Frazier REBOUND (Off:0 Def:1),120,92,28,2574,Q4
+479,3:57,,Wilson  3PT Jump Shot (5 PTS) (Frazier 1 AST),123,92,31,2583,Q4
+480,3:39,Maker Out of Bounds Lost Ball Turnover (P2.T11),,123,92,31,2601,Q4
+481,3:28,Kennard STEAL (2 STL),Mirotic Bad Pass Turnover (P1.T15),123,92,31,2612,Q4
+482,3:21,Kennard 15' Step Back Jump Shot (8 PTS),,123,94,29,2619,Q4
+483,2:56,,Wilson Traveling Turnover (P1.T16),123,94,29,2644,Q4
+484,2:50,,Mirotic P.FOUL (P2.T2) (D.Collins),123,94,29,2650,Q4
+485,2:44,Thomas 9' Driving Floating Bank Jump Shot (2 PTS) (Calderon 1 AST),,123,96,27,2656,Q4
+486,2:44,,Snell S.FOUL (P1.T3) (T.Brown),123,96,27,2656,Q4
+487,2:44,Thomas Free Throw 1 of 1 (3 PTS),,123,97,26,2656,Q4
+488,2:27,,MISS Mirotic 26' 3PT Jump Shot,123,97,26,2673,Q4
+489,2:25,Thomas REBOUND (Off:0 Def:1),,123,97,26,2675,Q4
+490,2:22,Thomas 3' Running Layup (5 PTS),,123,99,24,2678,Q4
+491,2:02,,MISS Snell 24' 3PT Jump Shot,123,99,24,2698,Q4
+492,1:59,,Connaughton REBOUND (Off:1 Def:2),123,99,24,2701,Q4
+493,1:51,Galloway STEAL (2 STL),Frazier Bad Pass Turnover (P1.T17),123,99,24,2709,Q4
+494,1:46,Kennard 24' 3PT Jump Shot (11 PTS) (Maker 1 AST),,123,102,21,2714,Q4
+495,1:28,,Wilson 2' Driving Layup (7 PTS) (Frazier 2 AST),125,102,23,2732,Q4
+496,1:20,Maker 3' Cutting Layup Shot (6 PTS) (Calderon 2 AST),,125,104,21,2740,Q4
+497,1:20,,Wilson S.FOUL (P1.T4) (K.Mauer),125,104,21,2740,Q4
+498,1:20,MISS Maker Free Throw 1 of 1,,125,104,21,2740,Q4
+499,1:18,,Mirotic REBOUND (Off:1 Def:2),125,104,21,2742,Q4
+500,1:03,,Frazier 2' Driving Layup (2 PTS),127,104,23,2757,Q4
+501,0:53,MISS Thomas 13' Pullup Jump Shot,,127,104,23,2767,Q4
+502,0:50,,Connaughton REBOUND (Off:1 Def:3),127,104,23,2770,Q4
+503,0:42,Calderon STEAL (1 STL),Mirotic Bad Pass Turnover (P2.T18),127,104,23,2778,Q4
+504,0:27,MISS Thomas 24' 3PT Jump Shot,,127,104,23,2793,Q4
+505,0:24,,Connaughton REBOUND (Off:1 Def:4),127,104,23,2796,Q4
+506,0:03,,Bucks Turnover: Shot Clock (T#19),127,104,23,2817,Q4
+507,0:00,Go to top ⇧,,127,104,23,2820,Q4
+508,00:00.0,,,127,104,23,2820,Q5
+509,00:00.0,,,127,104,23,2820,Q5
+510,00:03.4,,,127,104,23,2820,Q5
+511,00:24.8,,,127,104,23,2799,Q5

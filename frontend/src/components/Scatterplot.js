@@ -77,7 +77,7 @@ class Scatterplot extends React.Component {
   }
 
   render() {
-    const { data, width, height, margin } = this.props;
+    const { data, width, height, margin, buttonSelected } = this.props;
 
     if (Object.keys(data).length) // make sure data has been loaded
     {
@@ -89,22 +89,29 @@ class Scatterplot extends React.Component {
       var ydata = Object.values(data["score differential"]);
       var home = Object.values(data["home"]);
       var visit = Object.values(data["visit"]);
+      var quarter = Object.values(data["quarter"]);
 
       // Put data into input format for d3.line
       var xy = [];
       for (var i = 0; i < xdata.length; i++) {
-        xy.push({ x: xdata[i], y: ydata[i], key:i });
+        if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
+          xy.push({ x: xdata[i], y: ydata[i], key:i });
+        }
       }
 
       var baseline_xy = [];
       for (var i = 0; i < xdata.length; i++) {
-        baseline_xy.push({ x: xdata[i], y: 0 });
+        if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
+          baseline_xy.push({ x: xdata[i], y: 0 });
+        }
       }
 
       var pruned_xy = []; 
       for(var i = 1; i < xdata.length; i++ ) {
           if (ydata[i] !== ydata[i-1]){
+            if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
               pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i], key:i});
+            }
           }
       }
 

@@ -76,13 +76,22 @@ if __name__ == "__main__":
             seconds[(index+1):] += (seconds[index]-seconds[index+1])
     df["time(seconds)"] = seconds
 
+    # interpolate score data
+    quarter = list()
+    count = 1
+    for index, row in df.iterrows():
+        quarter.append("Q" + str(count))
+        if row['time'] == "0:00" and "Go to top" in row['home']:
+            count += 1
+    df["quarter"] = quarter
+
     df.to_csv('..//nba_backend//PBPdata//0041800104.csv')
     
-    # Clean the Box Score Data
+##### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//0041800104.pkl")
     df["players"] = df["players"].str.split(" ").str.get(0) + " " +  df["players"].str.split(" ").str.get(1) 
     df.to_csv('..//nba_backend//BoxScoreData//0041800104.csv')
 
-    # Remove the pickle files
-    os.remove("..//nba_backend//PBPdata//0041800104.pkl")
-    os.remove("..//nba_backend//BoxScoreData//0041800104.pkl")
+##### Remove the pickle files
+    #os.remove("..//nba_backend//PBPdata//0041800104.pkl")
+    #os.remove("..//nba_backend//BoxScoreData//0041800104.pkl")
