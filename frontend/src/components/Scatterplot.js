@@ -81,7 +81,6 @@ class Scatterplot extends React.Component {
 
     if (Object.keys(data).length) // make sure data has been loaded
     {
-      console.log("Render Good Path")
       // Use the margin convention practice 
       var new_width = width - margin.left - margin.right // Use the window's width 
       var new_height = height - margin.top - margin.bottom; // Use the window's height
@@ -220,7 +219,6 @@ class Scatterplot extends React.Component {
       );
     }
 
-    //console.log("Render Bad path")
     return (
       <div>Loading...</div>
     );

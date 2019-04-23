@@ -24,7 +24,7 @@ class Chart extends React.Component {
 
     componentDidMount() {
         console.log("Chart mount")
-        fetch('http://localhost:8000/games/0021800934#')
+        fetch('http://localhost:8000/games/PBP/0041800104#')
             .then(res => res.json())
             .then(res =>
                 this.setState({
@@ -48,13 +48,13 @@ class Chart extends React.Component {
     }
 
     render() {
-        const { zoomTransform } = this.state,
+        const { data, zoomTransform } = this.state,
         { width, height, margin } = this.props;
         var scale_factor = 4;
 
         return (
             <svg width={width} height={height} ref="svg">
-                <Scatterplot data={this.state.data}
+                <Scatterplot data={data}
                     x={0} y={0}
                     width={width*scale_factor}
                     height={height}
@@ -62,6 +62,7 @@ class Chart extends React.Component {
                     zoomTransform={zoomTransform}
                     zoomType="scale" />
             </svg>
+            
         );
     }
 }

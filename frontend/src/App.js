@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
 
-//import PlayByPlayGraph from './components/PlayByPlayGraph.js'
 import Chart from './components/Chart.js'
+import BoxScore from './components/BoxScore.js'
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     const height = 500;
     const width = 1000;
-    var margin = {top: 50, right: 50, bottom: 50, left: 50}
+    var margin = {top: 25, right: 50, bottom: 25, left: 50}
 
     return (
       <div className="App">
@@ -64,9 +64,9 @@ class App extends Component {
           margin={margin}>
         </Chart>
 
-        <div>
-          <p>test</p>
-        </div>
+        <BoxScore>
+
+        </BoxScore>
 
       </div>
     );

@@ -11,6 +11,9 @@ djangorestframework = "*"
 django-cors-headers = "*"
 requests = "*"
 pandas = "*"
+selenium = "*"
+bs4 = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
