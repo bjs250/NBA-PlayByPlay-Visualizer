@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # launch url
-url = "https://stats.nba.com/game/0021800934/"
+url = "https://stats.nba.com/game/0041800104/"
 
 # create a new Firefox session
 driver = webdriver.Chrome()
@@ -32,6 +32,6 @@ for table in tables:
 
 
 df = pd.DataFrame({"players": players})
-df.to_pickle("./Box_stats.pkl")
+df.to_pickle("..//nba_backend//BoxScoreData//0041800104.pkl")
 
 driver.quit()

@@ -3,7 +3,6 @@ import re
 import pandas as pd
 import numpy as np
 import os
-import matplotlib.pyplot as plt
 
 def trim(s):
     if s is not None:
@@ -36,9 +35,10 @@ def convertTime(s):
 if __name__ == "__main__":
 
     # Clean the play-by-play data
-    df = pd.read_pickle("./stats.pkl")
+    df = pd.read_pickle("..//nba_backend//PBPdata//0041800104.pkl")
 
     # Remove extra whitespace
+    print(df)
     df["home"] = df["home"].apply(trim)
     df["visit"] = df["visit"].apply(trim)
 
@@ -76,9 +76,13 @@ if __name__ == "__main__":
             seconds[(index+1):] += (seconds[index]-seconds[index+1])
     df["time(seconds)"] = seconds
 
-    df.to_csv('stats.csv')
+    df.to_csv('..//nba_backend//PBPdata//0041800104.csv')
     
     # Clean the Box Score Data
-    df = pd.read_pickle("./Box_stats.pkl")
+    df = pd.read_pickle("..//nba_backend//BoxScoreData//0041800104.pkl")
     df["players"] = df["players"].str.split(" ").str.get(0) + " " +  df["players"].str.split(" ").str.get(1) 
-    df.to_csv('Box_stats.csv')
+    df.to_csv('..//nba_backend//BoxScoreData//0041800104.csv')
+
+    # Remove the pickle files
+    os.remove("..//nba_backend//PBPdata//0041800104.pkl")
+    os.remove("..//nba_backend//BoxScoreData//0041800104.pkl")

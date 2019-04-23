@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # launch url
-url = "https://stats.nba.com/game/0021800934/playbyplay/"
+url = "https://stats.nba.com/game/0041800104/playbyplay/"
 
 # create a new Firefox session
 driver = webdriver.Chrome()
@@ -67,7 +67,12 @@ for tr in table.find_all("tr"):
 
     count+=1
 
+#print(os.path.abspath(os.curdir))
+#os.chdir('..')
+#print(os.path.abspath(os.curdir))
+#os.chdir('nba_backend/PBPdata/')
+#print(os.path.abspath(os.curdir))
 df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents})
-df.to_pickle("./stats.pkl")
+df.to_pickle("..//nba_backend//PBPdata//0041800104.pkl")
 
 driver.quit()
