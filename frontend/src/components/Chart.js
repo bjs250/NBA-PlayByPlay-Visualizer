@@ -1,9 +1,8 @@
 import React from 'react';
 
 import * as d3 from 'd3';
-//import { axisBottom, axisLeft } from 'd3-axis';
-//import { select } from 'd3-selection';
 
+import '../styles/Chart.css'
 import Scatterplot from './Scatterplot.js'
 
 class Chart extends React.Component {
@@ -77,11 +76,11 @@ class Chart extends React.Component {
                     </svg>
                 </div>
                 <div>
-                    <button id="Q1" onClick={this.handleQuarterSubmit}>Q1</button>
-                    <button id="Q2" onClick={this.handleQuarterSubmit}>Q2</button>
-                    <button id="Q3" onClick={this.handleQuarterSubmit}>Q3</button>
-                    <button id="Q4" onClick={this.handleQuarterSubmit}>Q4</button>
-                    <button id="Full Game" onClick={this.handleQuarterSubmit}>Full Game</button>
+                    <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q1" ? "selected" : "unselected"}>Q1</button>
+                    <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q2" ? "selected" : "unselected"}>Q2</button>
+                    <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q3" ? "selected" : "unselected"}>Q3</button>
+                    <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q4" ? "selected" : "unselected"}>Q4</button>
+                    <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected==="Full Game" ? "selected" : "unselected"}>Full Game</button>
                 </div>
             </div>
         );

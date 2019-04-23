@@ -1,5 +1,5 @@
 import React from 'react';
-import './Scatterplot.css'
+import '../styles/Scatterplot.css'
 
 import * as d3 from 'd3';
 import { axisBottom, axisLeft } from 'd3-axis';

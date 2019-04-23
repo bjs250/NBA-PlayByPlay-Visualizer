@@ -1,6 +1,5 @@
 import React from 'react';
-import './Scatterplot.css'
-import * as d3 from 'd3';
+import '../styles/Tooltip.css'
 
 class Tooltip extends React.Component {
     constructor(props) {

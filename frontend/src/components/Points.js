@@ -1,5 +1,5 @@
 import React from 'react';
-import './Scatterplot.css'
+import '../styles/Points.css'
 
 class Points extends React.Component {
     constructor(props) {
