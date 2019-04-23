@@ -1,2 +1,2 @@
 - Fix x axis time and ticks
-- Add boxscore and selection
+- Add boxscore and player selection

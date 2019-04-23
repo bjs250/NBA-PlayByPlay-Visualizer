@@ -24,9 +24,9 @@ class Scatterplot extends React.Component {
   }
 
   updateD3(props) {
-    const { data, width, height, zoomTransform, zoomType, margin } = props;
+    const { data, width, height, zoomTransform, zoomType, margin, buttonSelected } = props;
     //console.log("Update executed", width,height,margin)
-
+    
     this.xScale = d3.scaleLinear()
       .domain([0, d3.max(data, ([x, y]) => x)])
       .range([0, width - margin.left - margin.right]);

@@ -15,18 +15,17 @@ class App extends Component {
     };
 
     // Bind event listening methods here
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleGameInputChange = this.handleGameInputChange.bind(this);
+    this.handleGameSubmit = this.handleGameSubmit.bind(this);
   }
 
   // Retain and update the value of state.user_input
-  handleInputChange = (event) => {
+  handleGameInputChange = (event) => {
     this.setState({user_input: event.target.value})
   }
 
   // Make request to the back-end using the current state.user_input
-  handleSubmit = (event) => {
+  handleGameSubmit = (event) => {
     event.preventDefault();
     console.log("Current value of user input: " + this.state.user_input);
     axios
@@ -38,7 +37,7 @@ class App extends Component {
   render() {
     const height = 500;
     const width = 1000;
-    var margin = {top: 25, right: 50, bottom: 25, left: 50}
+    var margin = {top: 50, right: 50, bottom: 10, left: 50}
 
     return (
       <div className="App">
@@ -50,10 +49,10 @@ class App extends Component {
             type='text'
             placeholder = "Enter ID here" 
             value={this.state.user_input}
-            onChange={this.handleInputChange}
+            onChange={this.handleGameInputChange}
             />  
           <button
-            onClick={this.handleSubmit}>
+            onClick={this.handleGameSubmit}>
             Submit
           </button>
         </form> 

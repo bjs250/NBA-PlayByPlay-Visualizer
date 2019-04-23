@@ -32,18 +32,20 @@ class BoxScore extends React.Component {
         {
             const players = Object.values(data["players"])
 
-            console.log(players)
             return (
                 <div>
+                    <p>Box Score</p>
                     <table className="BoxScoreTable">
-                        <tr>
-                            <td><strong>Player</strong></td>
-                        </tr>
-                        {players.map(d => (
-                        <tr>
-                            <td>{d}</td>
-                        </tr>
-                        ))}
+                        <tbody>
+                            <tr>
+                                <td><strong>Player</strong></td>
+                            </tr>
+                            {players.map(d => (
+                            <tr>
+                                <td>{d}</td>
+                            </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             );
