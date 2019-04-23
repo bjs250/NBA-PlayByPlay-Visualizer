@@ -35,7 +35,7 @@ class App extends Component {
   };
 
   render() {
-    const height = 500;
+    const height = 600;
     const width = 1000;
     var margin = {top: 50, right: 50, bottom: 10, left: 50}
 
@@ -56,6 +56,8 @@ class App extends Component {
             Submit
           </button>
         </form> 
+
+        <br></br>
 
         <Chart 
           width={width}

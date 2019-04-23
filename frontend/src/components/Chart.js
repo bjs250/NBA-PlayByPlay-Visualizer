@@ -25,7 +25,7 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-        console.log("Chart mount")
+        console.log("Chart mounted ")
         fetch('http://localhost:8000/games/PBP/0041800104#')
             .then(res => res.json())
             .then(res =>
@@ -83,10 +83,10 @@ class Chart extends React.Component {
                     </svg>
                 </div>
                 <div>
-                    <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q1" ? "selected" : "unselected"}>Q1</button>
-                    <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q2" ? "selected" : "unselected"}>Q2</button>
-                    <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q3" ? "selected" : "unselected"}>Q3</button>
-                    <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected==="Q4" ? "selected" : "unselected"}>Q4</button>
+                    <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
+                    <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q2" ? "selected" : "unselected"}>Q2</button>
+                    <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q3" ? "selected" : "unselected"}>Q3</button>
+                    <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q4" ? "selected" : "unselected"}>Q4</button>
                     <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected==="Full Game" ? "selected" : "unselected"}>Full Game</button>
                 </div>
             </div>

@@ -159,12 +159,15 @@ class Scatterplot extends React.Component {
       var xScale = d3.scaleLinear()
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
-
+      var X_extrema = d3.extent(xy, function (d) { return d.x; })
+      var xticks = Math.floor((X_extrema[1] - X_extrema[0])/60.0)
+      
       // Y Scale 
       var extrema = d3.extent(xy, function (d) { return d.y; })
       extrema[0] -= 1
       extrema[1] += 1
-
+      var yticks = extrema[1] - extrema[0] + 1
+      
       var yScale = d3.scaleLinear()
         .domain(extrema)
         .range([new_height, 0]);
@@ -180,14 +183,14 @@ class Scatterplot extends React.Component {
       .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
 
       return (
-        <g ref="scatterplot">
+        <g ref="scatterplot" transform={`translate(0, ${5})`}>
 
           <g transform={this.ytransform}>
 
             <g
               className="xaxis"
               transform={`translate(0, ${new_height})`}
-              ref={node => select(node).call(axisBottom(xScale).ticks(10))}
+              ref={node => select(node).call(axisBottom(xScale).ticks(xticks))}
             />
 
             <path className="line"
@@ -218,7 +221,7 @@ class Scatterplot extends React.Component {
             <g
               className="yaxis"
               transform={`translate(0, 0)`}
-              ref={node => select(node).call(axisLeft(yScale).ticks(20))}
+              ref={node => select(node).call(axisLeft(yScale).ticks(yticks))}
             />
           </g>
 
