@@ -27,11 +27,24 @@ visitEvents = list()
 timeEvents = list()
 scoreEvents = list()
 homeEvents = list()
+quarters = list()
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 table = soup.find("div", class_="boxscore-pbp__inner")
 for tr in table.find_all("tr"):
     
+    # quarter node
+    quarterNode = tr.find("td", class_="start-period")
+    if quarterNode != None:
+        quarterText = quarterNode.getText()
+        t = None
+        for s in quarterText.split(" "):
+            if "Q" in s:
+                t = s
+        quarters.append(t)
+    else:
+        quarters.append(None)
+
     # visiting team node
     visitNode = tr.find("td", class_="play team vtm")
     if visitNode != None:
@@ -72,8 +85,8 @@ for tr in table.find_all("tr"):
     else:
         homeEvents.append(None)
 
-df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents})
-#print(df)
+df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents, "quarter":quarters})
+print(df)
 
 df.to_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
 
