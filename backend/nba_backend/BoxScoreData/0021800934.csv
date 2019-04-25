@@ -1,27 +1,29 @@
-,players
-0,Khris Middleton
-1,Giannis Antetokounmpo
-2,Brook Lopez
-3,Malcolm Brogdon
-4,Eric Bledsoe
-5,Pat Connaughton
-6,Nikola Mirotic
-7,Ersan Ilyasova
-8,Isaiah Canaan
-9,Tony Snell
-10,Bonzie Colson
-11,D.J. Wilson
-12,Christian Wood
-13,Brandon Ingram
-14,LeBron James
-15,Kyle Kuzma
-16,Reggie Bullock
-17,Rajon Rondo
-18,Josh Hart
-19,Mike Muscala
-20,Kentavious Caldwell-Pope
-21,JaVale McGee
-22,Isaac Bonga
-23,Alex Caruso
-24,Tyson Chandler
-25,Moritz Wagner
+,+/-,3P%,3PA,3PM,AST,BLK,DREB,FG%,FGA,FGM,FT%,FTA,FTM,MIN,OREB,PF,PTS,REB,STL,TEAM,TOV
+Khris Middleton,-3,50.0,4,2,6,0,4,50.0,8,4,88.9,9,8,32:11,1,4,18,5,0,Milwaukee Bucks,0
+Giannis Antetokounmpo,3,0.0,2,0,6,3,13,50.0,14,7,50.0,4,2,32:29,2,4,16,15,0,Milwaukee Bucks,4
+Brook Lopez,0,50.0,6,3,0,1,3,50.0,8,4,0.0,0,0,20:18,0,1,11,3,0,Milwaukee Bucks,2
+Malcolm Brogdon,9,100,3,3,4,0,2,61.5,13,8,100,2,2,27:45,0,0,21,2,0,Milwaukee Bucks,0
+Eric Bledsoe,14,18.2,11,2,5,1,7,50.0,24,12,100,5,5,30:52,2,0,31,9,0,Milwaukee Bucks,1
+Pat Connaughton,13,50.0,2,1,4,1,1,66.7,6,4,0.0,0,0,25:44,4,1,9,5,0,Milwaukee Bucks,1
+Nikola Mirotic,5,25.0,4,1,2,0,4,57.1,7,4,100,2,2,22:06,1,1,11,5,1,Milwaukee Bucks,2
+Ersan Ilyasova,18,50.0,4,2,1,0,2,50.0,8,4,100,2,2,23:39,0,3,12,2,2,Milwaukee Bucks,1
+Isaiah Canaan,-5,0.0,0,0,0,0,1,0.0,0,0,0.0,0,0,2:55,0,0,0,1,0,Milwaukee Bucks,0
+Tony Snell,1,0.0,4,0,2,0,3,20.0,5,1,0.0,0,0,22:01,1,1,2,4,1,Milwaukee Bucks,0
+Bonzie Colson,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Milwaukee Bucks,
+D.J. Wilson,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Milwaukee Bucks,
+Christian Wood,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Milwaukee Bucks,
+Milwaukee Bucks Totals:,11,35.0,40,14,30,6,40,51.6,93,48,87.5,24,21,,11,15,131,51,4,Milwaukee Bucks,11
+Brandon Ingram,-11,25.0,4,1,2,1,7,61.9,21,13,80.0,5,4,39:15,1,3,31,8,0,Los Angeles Lakers,0
+LeBron James,-4,37.5,8,3,10,0,5,52.6,19,10,80.0,10,8,38:49,2,2,31,7,1,Los Angeles Lakers,3
+Kyle Kuzma,-9,16.7,6,1,3,0,5,27.8,18,5,100,1,1,34:23,1,2,12,6,0,Los Angeles Lakers,1
+Reggie Bullock,9,33.3,3,1,0,0,3,40.0,5,2,0.0,0,0,25:39,0,1,5,3,0,Los Angeles Lakers,0
+Rajon Rondo,-17,33.3,12,4,9,0,6,36.8,19,7,100,2,2,39:54,2,5,20,8,2,Los Angeles Lakers,3
+Josh Hart,-1,50.0,2,1,1,1,2,66.7,3,2,0.0,0,0,14:56,0,3,5,2,0,Los Angeles Lakers,0
+Mike Muscala,-8,50.0,2,1,2,1,0,50.0,2,1,0.0,0,0,14:05,1,1,3,1,0,Los Angeles Lakers,0
+Kentavious Caldwell-Pope,-22,33.3,3,1,2,0,3,60.0,5,3,0.0,0,0,22:31,0,3,7,3,1,Los Angeles Lakers,2
+JaVale McGee,8,0.0,0,0,0,1,1,75.0,4,3,0.0,0,0,10:28,1,1,6,2,0,Los Angeles Lakers,0
+Isaac Bonga,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Los Angeles Lakers,
+Alex Caruso,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Los Angeles Lakers,
+Tyson Chandler,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Los Angeles Lakers,
+Moritz Wagner,,,,,,,,,,DNP - Coach's Decision                  ,,,,,,,,,,Los Angeles Lakers,
+Los Angeles Lakers Totals:,-11,32.5,40,13,29,4,32,47.9,96,46,83.3,18,15,,8,21,120,40,4,Los Angeles Lakers,9

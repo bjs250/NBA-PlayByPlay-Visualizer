@@ -1,25 +1,32 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
-import re
 import pandas as pd
-import os
+import sys
+
+# Check if there was an input argument or not
+game_id = ""
+if len(sys.argv) == 1:
+    game_id = "0041800104"
+elif len(sys.argv) == 2:
+    game_id = str(sys.argv[1])
+else:
+    raise Exception("Wrong number of input arguments : " + str(len(sys.argv)))
 
 # launch url
-url = "https://stats.nba.com/game/0041800104/playbyplay/"
+url = "https://stats.nba.com/game/" + game_id + "/playbyplay/"
+
+# TODO: add error handling if an invalid id is specified
 
 # create a new Firefox session
 driver = webdriver.Chrome()
 #driver = webdriver.Firefox()
-driver.implicitly_wait(20)
+driver.implicitly_wait(40)
 driver.get(url)
 
 visitEvents = list()
 timeEvents = list()
 scoreEvents = list()
 homeEvents = list()
-
-count = 0
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 table = soup.find("div", class_="boxscore-pbp__inner")
@@ -65,14 +72,9 @@ for tr in table.find_all("tr"):
     else:
         homeEvents.append(None)
 
-    count+=1
-
-#print(os.path.abspath(os.curdir))
-#os.chdir('..')
-#print(os.path.abspath(os.curdir))
-#os.chdir('nba_backend/PBPdata/')
-#print(os.path.abspath(os.curdir))
 df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents})
-df.to_pickle("..//nba_backend//PBPdata//0041800104.pkl")
+#print(df)
+
+df.to_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
 
 driver.quit()

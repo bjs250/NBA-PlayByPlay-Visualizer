@@ -1,8 +1,10 @@
+1) Render BoxScore stats
+2) Player selection in BoxScore
+
+- Toggle scoring plays vs other events
+
 - Fix x axis time and ticks --> preprocess the data on the back end
 - faint gridlines?
 - Reset viewport to left when quarter is selected
 - Make y axis minimum of 0
 
-- Toggle scoring plays vs other events
-- More BoxScore stats
-- Player selection in BoxScore

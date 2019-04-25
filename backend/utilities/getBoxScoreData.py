@@ -23,8 +23,6 @@ driver = webdriver.Chrome()
 driver.implicitly_wait(40)
 driver.get(url)
 
-count = 0
-
 # Declare data structures to be used to store data for the Pandas dataframe
 headers = list()
 data = {}

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
-import re
 import pandas as pd
 import numpy as np
+import sys
 import os
 
 def trim(s):
@@ -32,13 +32,29 @@ def convertTime(s):
         seconds = int(seconds)
     return (12*60) - (minutes*60+seconds)
 
+def handlePlayer(player):
+    if "Totals:" not in player:
+        changedPlayer = player.split(" ")[0] + " " +  player.split(" ")[1]
+    else:
+        changedPlayer = player
+    return changedPlayer
+
 if __name__ == "__main__":
 
+    # Check if there was an input argument or not
+    game_id = ""
+    if len(sys.argv) == 1:
+        game_id = "0041800104"
+    elif len(sys.argv) == 2:
+        game_id = str(sys.argv[1])
+    else:
+        raise Exception("Wrong number of input arguments : " + str(len(sys.argv)))
+
     # Clean the play-by-play data
-    df = pd.read_pickle("..//nba_backend//PBPdata//0041800104.pkl")
+    df = pd.read_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
 
     # Remove extra whitespace
-    print(df)
+    #print(df)
     df["home"] = df["home"].apply(trim)
     df["visit"] = df["visit"].apply(trim)
 
@@ -85,12 +101,12 @@ if __name__ == "__main__":
             count += 1
     df["quarter"] = quarter
 
-    df.to_csv('..//nba_backend//PBPdata//0041800104.csv')
+    df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
     
 ##### Clean the Box Score Data
-    df = pd.read_pickle("..//nba_backend//BoxScoreData//0041800104.pkl")
-    df["players"] = df["players"].str.split(" ").str.get(0) + " " +  df["players"].str.split(" ").str.get(1) 
-    df.to_csv('..//nba_backend//BoxScoreData//0041800104.csv')
+    df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
+    df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
+    df.to_csv("..//nba_backend//BoxScoreData//" + game_id + ".csv")
 
 ##### Remove the pickle files
     #os.remove("..//nba_backend//PBPdata//0041800104.pkl")

@@ -1,464 +1,457 @@
-,time,home,visit,home_score,visit_score,score differential,time(seconds)
-2,12:00,Jump Ball McGee vs. Jokic: Tip to Murray,,0,0,0,0
-3,11:40,,Barton 26' 3PT Jump Shot (3 PTS) (Harris 1 AST),3,0,3,20
-4,11:16,MISS James 6' Floating Jump Shot,,3,0,3,44
-5,11:15,,Jokic REBOUND (Off:0 Def:1),3,0,3,45
-6,11:03,,Barton 24' 3PT Jump Shot (6 PTS) (Murray 1 AST),6,0,6,57
-7,10:37,McGee 2' Cutting Dunk Shot (2 PTS) (Rondo 1 AST),,6,2,4,83
-8,10:15,,MISS Murray 27' 3PT Jump Shot,6,2,4,105
-9,10:11,Hart REBOUND (Off:0 Def:1),,6,2,4,109
-10,9:57,James Bad Pass Turnover (P1.T1),Jokic STEAL (1 STL),6,2,4,123
-11,9:52,,MISS Millsap 2' Running Alley Oop Layup Shot,6,2,4,128
-12,9:49,Rondo REBOUND (Off:0 Def:1),,6,2,4,131
-13,9:45,,Barton S.FOUL (P1.T1) (K.Mauer),6,2,4,135
-14,9:45,MISS James Free Throw 1 of 2,,6,2,4,135
-15,9:45,LAKERS Rebound,,6,2,4,135
-16,9:45,MISS James Free Throw 2 of 2,,6,2,4,135
-17,9:43,,Jokic REBOUND (Off:0 Def:2),6,2,4,137
-18,9:33,,Harris 1' Driving Layup (2 PTS) (Murray 2 AST),8,2,6,147
-19,9:19,McGee 1' Cutting Dunk Shot (4 PTS) (James 1 AST),,8,4,4,161
-20,9:08,,Barton 2' Driving Layup (8 PTS) (Murray 3 AST),10,4,6,172
-21,9:02,,Millsap S.FOUL (P1.T2) (J.Williams),10,4,6,178
-22,9:02,MISS James Free Throw 1 of 2,,10,4,6,178
-23,9:02,LAKERS Rebound,,10,4,6,178
-24,9:02,MISS James Free Throw 2 of 2,,10,4,6,178
-25,9:00,,Murray REBOUND (Off:0 Def:1),10,4,6,180
-26,8:52,,MISS Barton 26' 3PT Jump Shot,10,4,6,188
-27,8:48,McGee REBOUND (Off:0 Def:1),,10,4,6,192
-28,8:41,James 26' 3PT Pullup Jump Shot (3 PTS),,10,7,3,199
-29,8:28,,Murray Out of Bounds - Bad Pass Turnover Turnover (P1.T1),10,7,3,212
-30,8:22,James 28' 3PT Pullup Jump Shot (6 PTS),,10,10,0,218
-31,8:06,McGee S.FOUL (P1.T1) (K.Mauer),,10,10,0,234
-32,8:06,,MISS Jokic Free Throw 1 of 2,10,10,0,234
-33,8:06,,Nuggets Rebound,10,10,0,234
-34,8:06,,Jokic Free Throw 2 of 2 (1 PTS),11,10,1,234
-35,7:55,MISS James 27' 3PT Fadeaway Jumper,,11,10,1,245
-36,7:51,,Murray REBOUND (Off:0 Def:2),11,10,1,249
-37,7:44,,Murray 26' 3PT Jump Shot (3 PTS) (Barton 1 AST),14,10,4,256
-38,7:15,MISS Hart 24' 3PT Step Back Jump Shot,,14,10,4,285
-39,7:13,,Murray REBOUND (Off:0 Def:3),14,10,4,287
-40,7:09,,Murray 7' Floating Jump Shot (5 PTS),16,10,6,291
-41,7:02,LAKERS Timeout: Regular (Full 1 Short 0),,16,10,6,298
-42,7:02,SUB: Stephenson FOR Hart,,16,10,6,298
-43,6:51,McGee 2' Cutting Dunk Shot (6 PTS) (Rondo 2 AST),,16,12,4,309
-44,6:34,,Murray 14' Floating Jump Shot (7 PTS) (Jokic 1 AST),18,12,6,326
-45,6:23,Stephenson 24' 3PT Jump Shot (3 PTS) (Rondo 3 AST),,18,15,3,337
-46,6:06,,Jokic 2' Driving Layup (3 PTS) (Harris 2 AST),20,15,5,354
-47,5:50,Bullock 21' Pullup Jump Shot (2 PTS) (Rondo 4 AST),,20,17,3,370
-48,5:31,,Millsap 11' Jump Shot (2 PTS) (Murray 4 AST),22,17,5,389
-49,5:20,MISS James 11' Turnaround Fadeaway Shot,,22,17,5,400
-50,5:17,,Barton REBOUND (Off:0 Def:1),22,17,5,403
-51,5:15,,Harris 1' Running Layup (4 PTS) (Barton 2 AST),24,17,7,405
-52,5:04,MISS Stephenson 25' 3PT Jump Shot,,24,17,7,416
-53,5:01,,Murray REBOUND (Off:0 Def:4),24,17,7,419
-54,4:58,,MISS Murray 27' 3PT Running Pull-Up Jump Shot,24,17,7,422
-55,4:56,James REBOUND (Off:0 Def:1),,24,17,7,424
-56,4:50,MISS James 27' 3PT Running Pull-Up Jump Shot,,24,17,7,430
-57,4:47,,Jokic REBOUND (Off:0 Def:3),24,17,7,433
-58,4:47,Bullock S.FOUL (P1.T2) (A.Smith),,24,17,7,433
-59,4:47,,Millsap Free Throw 1 of 2 (3 PTS),25,17,8,433
-60,4:47,SUB: Wagner FOR McGee,,25,17,8,433
-61,4:47,SUB: Muscala FOR James,,25,17,8,433
-62,4:47,,SUB: Beasley FOR Harris,25,17,8,433
-63,4:47,,Millsap Free Throw 2 of 2 (4 PTS),26,17,9,433
-64,4:34,MISS Stephenson 2' Driving Layup,,26,17,9,446
-65,4:32,,Jokic REBOUND (Off:0 Def:4),26,17,9,448
-66,4:29,,Barton 26' 3PT Running Pull-Up Jump Shot (11 PTS) (Jokic 2 AST),29,17,12,451
-67,4:28,LAKERS Timeout: Regular (Full 2 Short 0),,29,17,12,452
-68,4:28,,SUB: Plumlee FOR Millsap,29,17,12,452
-69,4:13,MISS Muscala 24' 3PT Jump Shot,,29,17,12,467
-70,4:10,,Murray REBOUND (Off:0 Def:5),29,17,12,470
-71,4:01,,MISS Beasley 26' 3PT Jump Shot,29,17,12,479
-72,3:57,,Jokic REBOUND (Off:1 Def:4),29,17,12,483
-73,3:55,,Barton 27' 3PT Jump Shot (14 PTS) (Jokic 3 AST),32,17,15,485
-74,3:44,Wagner 26' 3PT Running Pull-Up Jump Shot (3 PTS) (Rondo 5 AST),,32,20,12,496
-75,3:29,Wagner P.FOUL (P1.T3) (K.Mauer),,32,20,12,511
-76,3:29,SUB: Hart FOR Bullock,,32,20,12,511
-77,3:20,,MISS Barton 2' Driving Layup,32,20,12,520
-78,3:18,Rondo REBOUND (Off:0 Def:2),,32,20,12,522
-79,3:11,Rondo Offensive Charge Foul (P1.T4) (K.Mauer),,32,20,12,529
-80,3:11,Rondo Offensive Foul Turnover (P1.T2),,32,20,12,529
-81,3:11,,SUB: Morris FOR Jokic,32,20,12,529
-82,3:11,,SUB: Millsap FOR Murray,32,20,12,529
-83,2:56,Wagner BLOCK (1 BLK),MISS Beasley 6' Floating Jump Shot,32,20,12,544
-84,2:54,Muscala REBOUND (Off:0 Def:1),,32,20,12,546
-85,2:50,Rondo 2' Running Reverse Layup (2 PTS),,32,22,10,550
-86,2:37,,Plumlee 2' Layup (2 PTS) (Morris 1 AST),34,22,12,563
-87,2:37,Wagner S.FOUL (P2.PN) (A.Smith),,34,22,12,563
-88,2:37,,SUB: Thomas FOR Barton,34,22,12,563
-89,2:37,,Plumlee Free Throw 1 of 1 (3 PTS),35,22,13,563
-90,2:18,MISS Wagner 3' Driving Dunk,,35,22,13,582
-91,2:17,,Millsap REBOUND (Off:0 Def:1),35,22,13,583
-92,2:11,Hart S.FOUL (P1.PN) (A.Smith),,35,22,13,589
-93,2:11,,MISS Thomas Free Throw 1 of 2,35,22,13,589
-94,2:11,,Nuggets Rebound,35,22,13,589
-95,2:11,,MISS Thomas Free Throw 2 of 2,35,22,13,589
-96,2:09,Rondo REBOUND (Off:0 Def:3),,35,22,13,591
-97,2:02,Wagner 25' 3PT Jump Shot (6 PTS) (Rondo 6 AST),,35,25,10,598
-98,1:59,,Nuggets Timeout: Regular (Reg.1 Short 0),35,25,10,601
-99,1:44,,MISS Morris 22' Jump Shot,35,25,10,616
-100,1:41,,Millsap REBOUND (Off:1 Def:1),35,25,10,619
-101,1:41,,Millsap 1' Putback Dunk (6 PTS),37,25,12,619
-102,1:25,Wagner Out of Bounds - Bad Pass Turnover Turnover (P1.T3),,37,25,12,635
-103,1:05,,Plumlee 3' Hook Shot (5 PTS),39,25,14,655
-104,0:50,MISS Muscala 28' 3PT Jump Shot,,39,25,14,670
-105,0:47,,Beasley REBOUND (Off:0 Def:1),39,25,14,673
-106,0:40,,MISS Millsap 2' Floating Jump Shot,39,25,14,680
-107,0:38,,Millsap REBOUND (Off:2 Def:1),39,25,14,682
-108,0:38,,Millsap 1' Tip Layup Shot (8 PTS),41,25,16,682
-109,0:26,Rondo Bad Pass Turnover (P2.T4),Thomas STEAL (1 STL),41,25,16,694
-110,0:23,,Beasley  Running Dunk (2 PTS) (Thomas 1 AST),43,25,18,697
-111,0:02,MISS Rondo 28' 3PT Jump Shot,,43,25,18,718
-112,0:01,,Beasley REBOUND (Off:0 Def:2),43,25,18,719
-113,0:00,,MISS Plumlee 4' Floating Jump Shot,43,25,18,720
-114,0:00,,Nuggets Rebound,43,25,18,720
-115,0:00,Go to top ⇧,,43,25,18,720
-117,11:47,MISS Caruso 26' 3PT Jump Shot,,43,25,18,720
-118,11:44,,Plumlee REBOUND (Off:0 Def:1),43,25,18,723
-119,11:29,,Thomas 2' Driving Layup (2 PTS),45,25,20,738
-120,11:18,,Morris P.FOUL (P1.T1) (J.Williams),45,25,20,749
-121,11:07,James 12' Fadeaway Jumper (8 PTS),,45,27,18,760
-122,10:58,James STEAL (1 STL),Morris Bad Pass Turnover (P1.T2),45,27,18,769
-123,10:53,Hart 2' Running Dunk (2 PTS) (Wagner 1 AST),,45,29,16,774
-124,10:27,,MISS Thomas 27' 3PT Jump Shot,45,29,16,800
-125,10:26,Bullock REBOUND (Off:0 Def:1),,45,29,16,801
-126,10:20,James Out of Bounds - Bad Pass Turnover Turnover (P2.T5),,45,29,16,807
-127,9:54,,Thomas 9' Floating Jump Shot (4 PTS) (Plumlee 1 AST),47,29,18,833
-128,9:40,MISS James 25' 3PT Jump Shot,,47,29,18,847
-129,9:37,,Thomas REBOUND (Off:0 Def:1),47,29,18,850
-130,9:21,,MISS Plumlee 4' Finger Roll Layup,47,29,18,866
-131,9:19,James REBOUND (Off:0 Def:2),,47,29,18,868
-132,9:16,MISS Wagner 25' 3PT Pullup Jump Shot,,47,29,18,871
-133,9:11,,Beasley REBOUND (Off:0 Def:3),47,29,18,876
-134,9:09,SUB: McGee FOR Wagner,,47,29,18,878
-135,9:09,,SUB: Craig FOR Millsap,47,29,18,878
-136,8:58,,MISS Craig 7' Floating Jump Shot,47,29,18,889
-137,8:55,,Plumlee REBOUND (Off:1 Def:1),47,29,18,892
-138,8:54,McGee BLOCK (1 BLK),MISS Plumlee 2' Reverse Layup,47,29,18,893
-139,8:54,,Beasley REBOUND (Off:1 Def:3),47,29,18,893
-140,8:48,,Morris 29' 3PT Jump Shot (3 PTS) (Beasley 1 AST),50,29,21,899
-141,8:38,McGee 6' Hook Shot (8 PTS) (James 2 AST),,50,31,19,909
-142,8:19,,Beasley 24' 3PT Jump Shot (5 PTS) (Morris 2 AST),53,31,22,928
-143,7:56,MISS Bullock 6' Floating Jump Shot,,53,31,22,951
-144,7:52,,Plumlee REBOUND (Off:1 Def:2),53,31,22,955
-145,7:48,,MISS Thomas 24' 3PT Jump Shot,53,31,22,959
-146,7:45,McGee REBOUND (Off:0 Def:2),,53,31,22,962
-147,7:40,James 3' Layup (10 PTS) (Hart 1 AST),,53,33,20,967
-148,7:26,,Morris 2' Cutting Layup Shot (5 PTS) (Plumlee 2 AST),55,33,22,981
-149,7:17,Caruso 3' Running Layup (2 PTS) (James 3 AST),,55,35,20,990
-150,7:04,,MISS Craig 24' 3PT Jump Shot,55,35,20,1003
-151,7:01,Caruso REBOUND (Off:0 Def:1),,55,35,20,1006
-152,6:58,,Craig P.FOUL (P1.T2) (J.Williams),55,35,20,1009
-153,6:58,LAKERS Timeout: Regular (Full 3 Short 0),,55,35,20,1009
-154,6:58,Go to top ⇧,,55,35,20,1009
-155,6:58,SUB: Rondo FOR Hart,,55,35,20,1009
-156,6:58,SUB: Caldwell-Pope FOR Bullock,,55,35,20,1009
-157,6:58,,SUB: Jokic FOR Plumlee,55,35,20,1009
-158,6:43,James 19' Jump Shot (12 PTS),,55,37,18,1024
-159,6:24,,MISS Beasley 27' 3PT Jump Shot,55,37,18,1043
-160,6:20,,Jokic REBOUND (Off:2 Def:4),55,37,18,1047
-161,6:12,,MISS Beasley 9' Floating Jump Shot,55,37,18,1055
-162,6:08,James REBOUND (Off:0 Def:3),,55,37,18,1059
-163,6:02,MISS Caruso 18' Jump Shot,,55,37,18,1065
-164,5:59,,Morris REBOUND (Off:0 Def:1),55,37,18,1068
-165,5:48,,MISS Craig 27' 3PT Jump Shot,55,37,18,1079
-166,5:44,Caruso REBOUND (Off:0 Def:2),,55,37,18,1083
-167,5:38,James 1' Driving Layup (14 PTS) (Rondo 7 AST),,55,39,16,1089
-168,5:38,,Craig S.FOUL (P2.T3) (J.Williams),55,39,16,1089
-169,5:38,,SUB: Harris FOR Thomas,55,39,16,1089
-170,5:38,,SUB: Murray FOR Craig,55,39,16,1089
-171,5:38,,SUB: Millsap FOR Morris,55,39,16,1089
-172,5:38,,SUB: Barton FOR Beasley,55,39,16,1089
-173,5:38,James Free Throw 1 of 1 (15 PTS),,55,40,15,1089
-174,5:24,Rondo BLOCK (1 BLK),MISS Barton 13' Turnaround Jump Shot,55,40,15,1103
-175,5:20,,Millsap REBOUND (Off:3 Def:1),55,40,15,1107
-176,5:13,,MISS Murray 17' Step Back Jump Shot,55,40,15,1114
-177,5:10,James REBOUND (Off:0 Def:4),,55,40,15,1117
-178,4:55,James  Driving Layup (17 PTS),,55,42,13,1132
-179,4:55,,Nuggets Timeout: Regular (Reg.2 Short 0),55,42,13,1132
-180,4:32,,Murray 18' Step Back Jump Shot (9 PTS),57,42,15,1155
-181,4:18,SUB: Stephenson FOR James,,57,42,15,1169
-182,4:13,MISS Stephenson 26' 3PT Jump Shot,,57,42,15,1174
-183,4:12,,Nuggets Rebound,57,42,15,1175
-184,3:58,,Millsap 10' Step Back Jump Shot (10 PTS) (Jokic 4 AST),59,42,17,1189
-185,3:40,Caruso  3PT Jump Shot (5 PTS) (Rondo 8 AST),,59,45,14,1207
-186,3:15,,MISS Jokic 27' 3PT Jump Shot,59,45,14,1232
-187,3:13,Rondo REBOUND (Off:0 Def:4),,59,45,14,1234
-188,2:59,MISS Stephenson 27' 3PT Jump Shot,,59,45,14,1248
-189,2:57,,Jokic REBOUND (Off:2 Def:5),59,45,14,1250
-190,2:50,,Barton 3' Driving Floating Jump Shot (16 PTS) (Jokic 5 AST),61,45,16,1257
-191,2:37,MISS Caldwell-Pope 7' Step Back Jump Shot,,61,45,16,1270
-192,2:36,LAKERS Rebound,,61,45,16,1271
-193,2:21,MISS Caldwell-Pope 24' 3PT Jump Shot,,61,45,16,1286
-194,2:20,,Harris REBOUND (Off:0 Def:1),61,45,16,1287
-195,2:20,Caruso P.FOUL (P1.T1) (A.Smith),,61,45,16,1287
-196,2:08,,Millsap 7' Turnaround Hook Shot (12 PTS),63,45,18,1299
-197,1:55,,Barton Violation:Kicked Ball (A.Smith),63,45,18,1312
-198,1:55,SUB: Hart FOR Stephenson,,63,45,18,1312
-199,1:49,McGee 1' Cutting Dunk Shot (10 PTS) (Caruso 1 AST),,63,47,16,1318
-200,1:49,,Millsap S.FOUL (P2.T4) (K.Mauer),63,47,16,1318
-201,1:49,MISS McGee Free Throw 1 of 1,,63,47,16,1318
-202,1:45,,Jokic REBOUND (Off:2 Def:6),63,47,16,1322
-203,1:33,,MISS Barton 26' 3PT Jump Shot,63,47,16,1334
-204,1:31,Caldwell-Pope REBOUND (Off:0 Def:1),,63,47,16,1336
-205,1:25,MISS McGee 1' Reverse Layup,,63,47,16,1342
-206,1:25,,Nuggets Rebound,63,47,16,1342
-207,1:25,Caldwell-Pope L.B.FOUL (P1.T2) (A.Smith),,63,47,16,1342
-208,1:17,,Jokic Out of Bounds - Bad Pass Turnover Turnover (P1.T3),63,47,16,1350
-209,1:05,MISS Rondo 25' 3PT Jump Shot,,63,47,16,1362
-210,1:01,Hart REBOUND (Off:1 Def:1),,63,47,16,1366
-211,0:57,Caruso 12' Pullup Jump Shot (7 PTS),,63,49,14,1370
-212,0:47,,MISS Murray 2' Layup,63,49,14,1380
-213,0:45,,Barton REBOUND (Off:1 Def:1),63,49,14,1382
-214,0:43,,Jokic 2' Layup (5 PTS) (Barton 3 AST),65,49,16,1384
-215,0:28,MISS Caruso 26' 3PT Jump Shot,,65,49,16,1399
-216,0:26,,Jokic REBOUND (Off:2 Def:7),65,49,16,1401
-217,0:04,,MISS Millsap 4' Turnaround Jump Shot,65,49,16,1423
-218,0:04,,Jokic REBOUND (Off:3 Def:7),65,49,16,1423
-219,0:03,Caldwell-Pope S.FOUL (P2.PN) (A.Smith),,65,49,16,1424
-220,0:03,,MISS Jokic Free Throw 1 of 2,65,49,16,1424
-221,0:03,,Nuggets Rebound,65,49,16,1424
-222,0:03,,SUB: Beasley FOR Millsap,65,49,16,1424
-223,0:03,,Jokic Free Throw 2 of 2 (6 PTS),66,49,17,1424
-224,0:01,MISS Rondo 1' Layup,,66,49,17,1426
-225,0:00,LAKERS Rebound,,66,49,17,1427
-226,0:00,Go to top ⇧,,66,49,17,1427
-228,11:44,McGee 2' Finger Roll Layup (12 PTS) (Rondo 9 AST),,66,51,15,1427
-229,11:20,,MISS Murray 6' Floating Jump Shot,66,51,15,1451
-230,11:15,,Harris REBOUND (Off:1 Def:1),66,51,15,1456
-231,11:13,,MISS Barton 27' 3PT Jump Shot,66,51,15,1458
-232,11:10,,Millsap REBOUND (Off:4 Def:1),66,51,15,1461
-233,11:08,,Murray 27' 3PT Jump Shot (12 PTS) (Millsap 1 AST),69,51,18,1463
-234,10:45,MISS Bullock 25' 3PT Jump Shot,,69,51,18,1486
-235,10:43,,Barton REBOUND (Off:1 Def:2),69,51,18,1488
-236,10:32,,MISS Millsap 25' 3PT Jump Shot,69,51,18,1499
-237,10:29,,Harris REBOUND (Off:2 Def:1),69,51,18,1502
-238,10:28,,Barton 26' 3PT Jump Shot (19 PTS) (Harris 3 AST),72,51,21,1503
-239,10:11,,Nuggets T.Foul (Def. 3 Sec Barton ) (J.Williams),72,51,21,1520
-240,10:11,MISS Bullock Free Throw Technical,,72,51,21,1520
-241,10:11,LAKERS Rebound,,72,51,21,1520
-242,10:03,McGee 1' Finger Roll Layup (14 PTS) (Rondo 10 AST),,72,53,19,1528
-243,9:46,,MISS Harris 28' 3PT Jump Shot,72,53,19,1545
-244,9:43,McGee REBOUND (Off:0 Def:3),,72,53,19,1548
-245,9:33,MISS Bullock 30' 3PT Jump Shot,,72,53,19,1558
-246,9:28,,Murray REBOUND (Off:0 Def:6),72,53,19,1563
-247,9:24,,MISS Harris 26' 3PT Jump Shot,72,53,19,1567
-248,9:21,McGee REBOUND (Off:0 Def:4),,72,53,19,1570
-249,9:02,MISS James 5' Driving Floating Jump Shot,,72,53,19,1589
-250,8:59,,Jokic REBOUND (Off:3 Def:8),72,53,19,1592
-251,8:49,,MISS Millsap 27' 3PT Jump Shot,72,53,19,1602
-252,8:46,McGee REBOUND (Off:0 Def:5),,72,53,19,1605
-253,8:40,MISS McGee 5' Floating Jump Shot,,72,53,19,1611
-254,8:35,,Jokic REBOUND (Off:3 Def:9),72,53,19,1616
-255,8:30,,Harris 2' Driving Layup (6 PTS),74,53,21,1621
-256,8:30,McGee Violation:Defensive Goaltending (J.Williams),,74,53,21,1621
-257,8:08,MISS James 26' 3PT Step Back Jump Shot,,74,53,21,1643
-258,8:05,,Jokic REBOUND (Off:3 Def:10),74,53,21,1646
-259,8:01,,Millsap 3' Floating Jump Shot (14 PTS) (Jokic 6 AST),76,53,23,1650
-260,7:53,McGee Bad Pass Turnover (P1.T6),Harris STEAL (1 STL),76,53,23,1658
-261,7:49,,MISS Murray 27' 3PT Jump Shot,76,53,23,1662
-262,7:47,McGee REBOUND (Off:0 Def:6),,76,53,23,1664
-263,7:38,McGee 1' Alley Oop Dunk (16 PTS) (James 4 AST),,76,55,21,1673
-264,7:26,McGee STEAL (1 STL),Jokic Lost Ball Turnover (P2.T4),76,55,21,1685
-265,7:22,James 2' Running Layup (19 PTS),,76,57,19,1689
-266,7:21,,Nuggets Timeout: Regular (Reg.3 Short 0),76,57,19,1690
-267,7:21,SUB: Wagner FOR McGee,,76,57,19,1690
-268,7:04,,MISS Barton 25' 3PT Jump Shot,76,57,19,1707
-269,6:59,Wagner REBOUND (Off:0 Def:1),,76,57,19,1712
-270,6:51,Hart 27' 3PT Jump Shot (5 PTS) (James 5 AST),,76,60,16,1720
-271,6:34,,MISS Murray 28' 3PT Jump Shot,76,60,16,1737
-272,6:30,,Millsap REBOUND (Off:5 Def:1),76,60,16,1741
-273,6:30,James BLOCK (1 BLK),MISS Millsap 2' Layup,76,60,16,1741
-274,6:30,Bullock REBOUND (Off:0 Def:2),,76,60,16,1741
-275,6:27,,,76,60,16,1744
-276,6:27,MISS Bullock Free Throw Technical,,76,60,16,1744
-277,6:27,LAKERS Rebound,,76,60,16,1744
-278,6:18,Wagner 2' Cutting Layup Shot (8 PTS) (James 6 AST),,76,62,14,1753
-279,6:04,James S.FOUL (P1.T1) (J.Williams),,76,62,14,1767
-280,6:04,,Jokic Free Throw 1 of 2 (7 PTS),77,62,15,1767
-281,6:04,,Jokic Free Throw 2 of 2 (8 PTS),78,62,16,1767
-282,5:49,MISS James 3' Reverse Layup,,78,62,16,1782
-283,5:49,,Murray REBOUND (Off:0 Def:7),78,62,16,1782
-284,5:31,,MISS Murray 26' 3PT Jump Shot,78,62,16,1800
-285,5:27,Rondo REBOUND (Off:0 Def:5),,78,62,16,1804
-286,5:19,,Jokic P.FOUL (P1.T1) (J.Williams),78,62,16,1812
-287,5:19,SUB: Caruso FOR Bullock,,78,62,16,1812
-288,5:10,James 2' Driving Finger Roll Layup (21 PTS),,78,64,14,1821
-289,4:54,,Harris 2' Driving Layup (8 PTS),80,64,16,1837
-290,4:36,Caruso Bad Pass Turnover (P1.T7),Jokic STEAL (2 STL),80,64,16,1855
-291,4:30,,MISS Harris 2' Alley Oop Layup,80,64,16,1861
-292,4:27,Caruso REBOUND (Off:0 Def:3),,80,64,16,1864
-293,4:17,MISS Rondo 26' 3PT Jump Shot,,80,64,16,1874
-294,4:17,LAKERS Rebound,,80,64,16,1874
-295,4:17,,Harris L.B.FOUL (P1.T2) (K.Mauer),80,64,16,1874
-296,4:17,SUB: Williams FOR James,,80,64,16,1874
-297,4:17,,SUB: Plumlee FOR Millsap,80,64,16,1874
-298,4:17,,SUB: Beasley FOR Harris,80,64,16,1874
-299,4:07,Wagner 3' Layup (10 PTS),,80,66,14,1884
-300,4:07,,Plumlee S.FOUL (P1.T3) (J.Williams),80,66,14,1884
-301,4:07,Wagner Free Throw 1 of 1 (11 PTS),,80,67,13,1884
-302,3:56,Caruso P.FOUL (P2.T2) (K.Mauer),,80,67,13,1895
-303,3:42,,Beasley 25' 3PT Jump Shot (8 PTS) (Plumlee 3 AST),83,67,16,1909
-304,3:23,MISS Caruso  3PT Jump Shot,,83,67,16,1928
-305,3:20,Rondo REBOUND (Off:1 Def:5),,83,67,16,1931
-306,3:12,Caruso 1' Driving Layup (9 PTS),,83,69,14,1939
-307,3:12,,Nuggets Timeout: Regular (Reg.4 Short 0),83,69,14,1939
-308,3:12,,SUB: Thomas FOR Barton,83,69,14,1939
-309,3:12,,SUB: Morris FOR Murray,83,69,14,1939
-310,2:54,,MISS Beasley 26' 3PT Jump Shot,83,69,14,1957
-311,2:51,Hart REBOUND (Off:1 Def:2),,83,69,14,1960
-312,2:35,Williams 5' Hook Shot (2 PTS) (Rondo 11 AST),,83,71,12,1976
-313,2:14,Rondo STEAL (1 STL),Beasley Bad Pass Turnover (P1.T5),83,71,12,1997
-314,2:11,,Plumlee S.FOUL (P2.T4) (K.Mauer),83,71,12,2000
-315,2:11,Go to top ⇧,,83,71,12,2000
-316,2:11,Hart Free Throw 1 of 2 (6 PTS),,83,72,11,2000
-317,2:11,Hart Free Throw 2 of 2 (7 PTS),,83,73,10,2000
-318,2:01,Williams P.FOUL (P1.T3) (J.Williams),,83,73,10,2010
-319,2:01,,SUB: Millsap FOR Jokic,83,73,10,2010
-320,1:51,,Plumlee Step Out of Bounds Turnover (P1.T6),83,73,10,2020
-321,1:39,,Millsap P.FOUL (P3.PN) (K.Mauer),83,73,10,2032
-322,1:39,MISS Williams Free Throw 1 of 2,,83,73,10,2032
-323,1:39,LAKERS Rebound,,83,73,10,2032
-324,1:39,Williams Free Throw 2 of 2 (3 PTS),,83,74,9,2032
-325,1:21,,MISS Morris 25' 3PT Jump Shot,83,74,9,2050
-326,1:20,Rondo REBOUND (Off:1 Def:6),,83,74,9,2051
-327,1:20,,Plumlee P.FOUL (P3.PN) (K.Mauer),83,74,9,2051
-328,1:20,Williams Free Throw 1 of 2 (4 PTS),,83,75,8,2051
-329,1:20,MISS Williams Free Throw 2 of 2,,83,75,8,2051
-330,1:18,Wagner REBOUND (Off:1 Def:1),,83,75,8,2053
-331,1:17,MISS Wagner 1' Putback Layup,Millsap BLOCK (1 BLK),83,75,8,2054
-332,1:13,,Thomas REBOUND (Off:0 Def:2),83,75,8,2058
-333,1:09,Williams P.FOUL (P2.T4) (J.Williams),,83,75,8,2062
-334,1:03,,Plumlee 1' Alley Oop Dunk (7 PTS) (Morris 3 AST),85,75,10,2068
-335,0:48,Rondo 2' Floating Jump Shot (4 PTS),,85,77,8,2083
-336,0:29,,MISS Thomas 28' 3PT Jump Shot,85,77,8,2102
-337,0:29,Wagner REBOUND (Off:1 Def:2),,85,77,8,2102
-338,0:23,MISS Hart 3' Layup,Plumlee BLOCK (1 BLK),85,77,8,2108
-339,0:23,LAKERS Rebound,,85,77,8,2108
-340,0:05,MISS Rondo 2' Floating Jump Shot,,85,77,8,2126
-341,0:03,Caruso REBOUND (Off:1 Def:3),,85,77,8,2128
-342,0:02,MISS Wagner 27' 3PT Jump Shot,,85,77,8,2129
-343,0:02,Williams REBOUND (Off:1 Def:0),,85,77,8,2129
-344,0:01,MISS Williams 1' Tip Layup Shot,,85,77,8,2130
-345,0:01,,Plumlee REBOUND (Off:1 Def:3),85,77,8,2130
-346,0:00,Go to top ⇧,,85,77,8,2131
-348,11:49,,Plumlee 2' Cutting Dunk Shot (9 PTS) (Morris 4 AST),87,77,10,2131
-349,11:36,,Thomas S.FOUL (P1.T1) (J.Williams),87,77,10,2144
-350,11:36,Caruso Free Throw 1 of 2 (10 PTS),,87,78,9,2144
-351,11:36,Caruso Free Throw 2 of 2 (11 PTS),,87,79,8,2144
-352,11:17,,MISS Beasley 27' 3PT Jump Shot,87,79,8,2163
-353,11:15,James REBOUND (Off:0 Def:5),,87,79,8,2165
-354,11:06,Williams 2' Reverse Layup (6 PTS) (Wagner 2 AST),,87,81,6,2174
-355,10:49,Williams P.FOUL (P3.T1) (A.Smith),,87,81,6,2191
-356,10:34,,MISS Morris 6' Driving Hook Shot,87,81,6,2206
-357,10:32,Hart REBOUND (Off:1 Def:3),,87,81,6,2208
-358,10:26,James 2' Driving Layup (23 PTS) (Hart 2 AST),,87,83,4,2214
-359,10:26,,Millsap S.FOUL (P4.T2) (J.Williams),87,83,4,2214
-360,10:26,,SUB: Jokic FOR Morris,87,83,4,2214
-361,10:26,,SUB: Murray FOR Plumlee,87,83,4,2214
-362,10:26,MISS James Free Throw 1 of 1,,87,83,4,2214
-363,10:22,,Beasley REBOUND (Off:1 Def:4),87,83,4,2218
-364,10:07,,MISS Beasley  3PT Jump Shot,87,83,4,2233
-365,10:06,Caruso REBOUND (Off:1 Def:4),,87,83,4,2234
-366,10:00,Caruso 1' Running Finger Roll Layup (13 PTS) (James 7 AST),,87,85,2,2240
-367,10:00,,Nuggets Timeout: Regular (Reg.5 Short 0),87,85,2,2240
-368,10:00,,SUB: Barton FOR Beasley,87,85,2,2240
-369,10:00,,SUB: Harris FOR Thomas,87,85,2,2240
-370,9:40,,MISS Jokic 8' Jump Bank Shot,87,85,2,2260
-371,9:38,,Millsap REBOUND (Off:6 Def:1),87,85,2,2262
-372,9:36,,Millsap 2' Putback Layup (16 PTS),89,85,4,2264
-373,9:36,,Millsap T.FOUL (P4.T2) (J.Williams),89,85,4,2264
-374,9:36,MISS Hart Free Throw Technical,,89,85,4,2264
-375,9:36,LAKERS Rebound,,89,85,4,2264
-376,9:21,Wagner Offensive Charge Foul (P3.T2) (J.Williams),,89,85,4,2279
-377,9:21,Wagner Offensive Foul Turnover (P2.T8),,89,85,4,2279
-378,9:11,James P.FOUL (P2.T3) (J.Williams),,89,85,4,2289
-379,8:59,,MISS Millsap 27' 3PT Jump Shot,89,85,4,2301
-380,8:56,,Harris REBOUND (Off:3 Def:1),89,85,4,2304
-381,8:49,,MISS Millsap 13' Jump Shot,89,85,4,2311
-382,8:45,,Harris REBOUND (Off:4 Def:1),89,85,4,2315
-383,8:37,,MISS Murray 27' 3PT Jump Shot,89,85,4,2323
-384,8:33,James REBOUND (Off:0 Def:6),,89,85,4,2327
-385,8:30,,Murray S.FOUL (P1.T3) (J.Williams),89,85,4,2330
-386,8:30,James Free Throw 1 of 2 (24 PTS),,89,86,3,2330
-387,8:30,James Free Throw 2 of 2 (25 PTS),,89,87,2,2330
-388,8:24,Williams P.FOUL (P4.T4) (J.Williams),,89,87,2,2336
-389,8:12,,MISS Murray 16' Jump Shot,89,87,2,2348
-390,8:11,Hart REBOUND (Off:1 Def:4),,89,87,2,2349
-391,8:02,MISS James 27' 3PT Jump Shot,,89,87,2,2358
-392,7:59,,Murray REBOUND (Off:0 Def:8),89,87,2,2361
-393,7:42,,MISS Barton  3PT Jump Shot,89,87,2,2378
-394,7:40,Caruso REBOUND (Off:1 Def:5),,89,87,2,2380
-395,7:37,MISS Hart 2' Alley Oop Layup,,89,87,2,2383
-396,7:37,,Nuggets Rebound,89,87,2,2383
-397,7:37,James L.B.FOUL (P3.PN) (A.Smith),,89,87,2,2383
-398,7:32,,Harris  3PT Jump Shot (11 PTS) (Millsap 2 AST),92,87,5,2388
-399,7:31,LAKERS Timeout: Regular (Full 4 Short 0),,92,87,5,2389
-400,7:18,James 3' Driving Dunk (27 PTS) (Caruso 2 AST),,92,89,3,2402
-401,6:52,,Harris 24' 3PT Jump Shot (14 PTS) (Jokic 7 AST),95,89,6,2428
-402,6:27,Williams 3' Hook Shot (8 PTS) (Caruso 3 AST),,95,91,4,2453
-403,6:01,,MISS Murray 13' Fadeaway Jumper,95,91,4,2479
-404,5:59,,Jokic REBOUND (Off:4 Def:10),95,91,4,2481
-405,5:49,,Harris 2' Layup (16 PTS),97,91,6,2491
-406,5:49,Caruso S.FOUL (P3.PN) (K.Mauer),,97,91,6,2491
-407,5:49,SUB: Rondo FOR Hart,,97,91,6,2491
-408,5:49,,Harris Free Throw 1 of 1 (17 PTS),98,91,7,2491
-409,5:28,MISS Wagner 27' 3PT Jump Shot,,98,91,7,2512
-410,5:23,,Harris REBOUND (Off:4 Def:2),98,91,7,2517
-411,5:06,,Harris 2' Driving Layup (19 PTS) (Barton 4 AST),100,91,9,2534
-412,5:06,LAKERS Timeout: Regular (Full 5 Short 0),,100,91,9,2534
-413,5:06,SUB: Hart FOR James,,100,91,9,2534
-414,4:46,MISS Wagner 8' Hook Shot,,100,91,9,2554
-415,4:44,,Jokic REBOUND (Off:4 Def:11),100,91,9,2556
-416,4:28,,Jokic 2' Hook Shot (10 PTS) (Harris 4 AST),102,91,11,2572
-417,4:12,MISS Caruso 16' Jump Shot,,102,91,11,2588
-418,4:08,,Jokic REBOUND (Off:4 Def:12),102,91,11,2592
-419,3:59,Rondo STEAL (2 STL),Barton Bad Pass Turnover (P1.T7),102,91,11,2601
-420,3:55,MISS Hart 2' Running Layup,Barton BLOCK (1 BLK),102,91,11,2605
-421,3:51,,Barton REBOUND (Off:1 Def:3),102,91,11,2609
-422,3:48,Hart P.FOUL (P2.PN) (K.Mauer),,102,91,11,2612
-423,3:48,,Barton Free Throw 1 of 2 (20 PTS),103,91,12,2612
-424,3:48,SUB: James FOR Williams,,103,91,12,2612
-425,3:48,,Barton Free Throw 2 of 2 (21 PTS),104,91,13,2612
-426,3:25,James 2' Driving Dunk (29 PTS),,104,93,11,2635
-427,3:07,Wagner STEAL (1 STL),Murray Bad Pass Turnover (P2.T8),104,93,11,2653
-428,3:05,Wagner Bad Pass Turnover (P3.T9),Jokic STEAL (3 STL),104,93,11,2655
-429,2:58,,Murray 1' Running Dunk (14 PTS) (Barton 5 AST),106,93,13,2662
-430,2:35,James 2' Reverse Layup (31 PTS),,106,95,11,2685
-431,2:22,Wagner P.FOUL (P4.PN) (K.Mauer),,106,95,11,2698
-432,2:22,,Jokic Free Throw 1 of 2 (11 PTS),107,95,12,2698
-433,2:22,,Jokic Free Throw 2 of 2 (12 PTS),108,95,13,2698
-434,2:21,James Out of Bounds Lost Ball Turnover (P3.T10),,108,95,13,2699
-435,2:19,,Barton 2' Floating Jump Shot (23 PTS) (Jokic 8 AST),110,95,15,2701
-436,2:19,James S.FOUL (P4.PN) (J.Williams),,110,95,15,2701
-437,2:19,,MISS Barton Free Throw 1 of 1,110,95,15,2701
-438,2:16,James REBOUND (Off:0 Def:7),,110,95,15,2704
-439,2:13,James Traveling Turnover (P4.T11),,110,95,15,2707
-440,2:13,SUB: Bonga FOR Rondo,,110,95,15,2707
-441,2:13,SUB: Williams FOR James,,110,95,15,2707
-442,2:00,,MISS Barton 25' 3PT Jump Shot,110,95,15,2720
-443,1:56,,Millsap REBOUND (Off:7 Def:1),110,95,15,2724
-444,1:47,,MISS Murray 9' Turnaround Fadeaway Shot,110,95,15,2733
-445,1:44,Bonga REBOUND (Off:0 Def:1),,110,95,15,2736
-446,1:38,Caruso 3' Driving Layup (15 PTS) (Bonga 1 AST),,110,97,13,2742
-447,1:26,,Murray 27' 3PT Pullup Jump Shot (17 PTS),113,97,16,2754
-448,1:11,MISS Wagner 27' 3PT Jump Shot,,113,97,16,2769
-449,1:08,,Jokic REBOUND (Off:4 Def:13),113,97,16,2772
-450,0:50,,Murray 2' Finger Roll Layup (19 PTS) (Millsap 3 AST),115,97,18,2790
-451,0:48,,Harris Personal Take Foul (P2.T4) (J.Williams),115,97,18,2792
-452,0:48,,SUB: Welsh FOR Millsap,115,97,18,2792
-453,0:48,,SUB: Morris FOR Barton,115,97,18,2792
-454,0:48,,SUB: Hernangomez FOR Harris,115,97,18,2792
-455,0:48,,SUB: Vanderbilt FOR Jokic,115,97,18,2792
-456,0:48,,SUB: Craig FOR Murray,115,97,18,2792
-457,0:39,Bonga Lost Ball Turnover (P1.T12),Craig STEAL (1 STL),115,97,18,2801
-458,0:19,,MISS Welsh 16' Turnaround Hook Shot,115,97,18,2821
-459,0:15,Williams REBOUND (Off:1 Def:1),,115,97,18,2825
-460,0:05,,Hernangomez S.FOUL (P1.PN) (A.Smith),115,97,18,2835
-461,0:05,Bonga Free Throw 1 of 2 (1 PTS),,115,98,17,2835
-462,0:05,Bonga Free Throw 2 of 2 (2 PTS),,115,99,16,2835
-463,0:00,Go to top ⇧,,115,99,16,2840
-464,00:00.0,,,115,99,16,2840
-465,00:00.0,,,115,99,16,2840
-466,00:05.3,,,115,99,16,2840
-467,00:05.3,,,115,98,17,2840
+,time,home,visit,home_score,visit_score,score differential,time(seconds),quarter
+2,12:00,Jump Ball Ingram vs. Lopez: Tip to Antetokounmpo,,0,0,0,0,Q1
+3,11:46,,Lopez 3' Hook Shot (2 PTS) (Antetokounmpo 1 AST),2,0,2,14,Q1
+4,11:33,James 24' 3PT Jump Shot (3 PTS) (Rondo 1 AST),,2,3,-1,27,Q1
+5,11:16,James STEAL (1 STL),Lopez Lost Ball Turnover (P1.T1),2,3,-1,44,Q1
+6,11:11,MISS Kuzma 8' Floating Jump Shot,,2,3,-1,49,Q1
+7,11:09,Ingram REBOUND (Off:1 Def:0),,2,3,-1,51,Q1
+8,11:06,MISS Rondo 25' 3PT Jump Shot,,2,3,-1,54,Q1
+9,11:03,,Antetokounmpo REBOUND (Off:0 Def:1),2,3,-1,57,Q1
+10,10:58,,Middleton 10' Turnaround Jump Shot (2 PTS) (Antetokounmpo 2 AST),4,3,1,62,Q1
+11,10:43,Ingram 14' Turnaround Fadeaway (2 PTS) (James 1 AST),,4,5,-1,77,Q1
+12,10:29,Rondo STEAL (1 STL),Lopez Lost Ball Turnover (P2.T2),4,5,-1,91,Q1
+13,10:21,Kuzma Offensive Goaltending Turnover (P1.T1),,4,5,-1,99,Q1
+14,10:12,LAKERS T.Foul (Def. 3 Sec Bullock ) (J.Capers),,4,5,-1,108,Q1
+15,10:12,,Middleton Free Throw Technical (3 PTS),5,5,0,108,Q1
+16,10:00,,MISS Middleton 12' Floating Jump Shot,5,5,0,120,Q1
+17,9:56,,Middleton REBOUND (Off:1 Def:0),5,5,0,124,Q1
+18,9:56,,Antetokounmpo Offensive Charge Foul (P1.T1) (D.Collins),5,5,0,124,Q1
+19,9:56,,Antetokounmpo Offensive Foul Turnover (P1.T3),5,5,0,124,Q1
+20,9:47,MISS James 25' 3PT Jump Shot,,5,5,0,133,Q1
+21,9:45,Rondo REBOUND (Off:1 Def:0),,5,5,0,135,Q1
+22,9:41,MISS Rondo 26' 3PT Jump Shot,,5,5,0,139,Q1
+23,9:39,,Bledsoe REBOUND (Off:0 Def:1),5,5,0,141,Q1
+24,9:35,,Bledsoe 3' Driving Layup (2 PTS),7,5,2,145,Q1
+25,9:35,Ingram S.FOUL (P1.T1) (D.Collins),,7,5,2,145,Q1
+26,9:35,,Bledsoe Free Throw 1 of 1 (3 PTS),8,5,3,145,Q1
+27,9:26,MISS Rondo 26' 3PT Jump Shot,,8,5,3,154,Q1
+28,9:23,,Antetokounmpo REBOUND (Off:0 Def:2),8,5,3,157,Q1
+29,9:17,,MISS Middleton 26' 3PT Running Pull-Up Jump Shot,8,5,3,163,Q1
+30,9:15,Ingram REBOUND (Off:1 Def:1),,8,5,3,165,Q1
+31,9:06,MISS Kuzma 27' 3PT Jump Shot,,8,5,3,174,Q1
+32,9:03,,Antetokounmpo REBOUND (Off:0 Def:3),8,5,3,177,Q1
+33,8:53,,MISS Brogdon 1' Layup,8,5,3,187,Q1
+34,8:51,Kuzma REBOUND (Off:0 Def:1),,8,5,3,189,Q1
+35,8:47,James Out of Bounds - Bad Pass Turnover Turnover (P1.T2),,8,5,3,193,Q1
+36,8:36,,MISS Bledsoe 25' 3PT Jump Shot,8,5,3,204,Q1
+37,8:35,LAKERS Rebound,,8,5,3,205,Q1
+38,8:13,Ingram 3' Driving Floating Jump Shot (4 PTS),,8,7,1,227,Q1
+39,8:06,Kuzma P.FOUL (P1.T2) (J.DeRosa),,8,7,1,234,Q1
+40,7:59,,MISS Antetokounmpo 26' 3PT Jump Shot,8,7,1,241,Q1
+41,7:57,Ingram REBOUND (Off:1 Def:2),,8,7,1,243,Q1
+42,7:49,MISS Rondo 24' 3PT Jump Shot,,8,7,1,251,Q1
+43,7:46,,Antetokounmpo REBOUND (Off:0 Def:4),8,7,1,254,Q1
+44,7:37,,MISS Bledsoe 24' 3PT Jump Shot,8,7,1,263,Q1
+45,7:34,James REBOUND (Off:0 Def:1),,8,7,1,266,Q1
+46,7:24,MISS Rondo 28' 3PT Jump Shot,,8,7,1,276,Q1
+47,7:21,,Antetokounmpo REBOUND (Off:0 Def:5),8,7,1,279,Q1
+48,7:18,,Antetokounmpo 1' Running Layup (2 PTS),10,7,3,282,Q1
+49,6:58,Rondo 26' 3PT Jump Shot (3 PTS) (James 2 AST),,10,10,0,302,Q1
+50,6:41,,MISS Lopez 27' 3PT Jump Shot,10,10,0,319,Q1
+51,6:38,James REBOUND (Off:0 Def:2),,10,10,0,322,Q1
+52,6:33,MISS Rondo  3PT Jump Shot,,10,10,0,327,Q1
+53,6:28,,Antetokounmpo REBOUND (Off:0 Def:6),10,10,0,332,Q1
+54,6:24,Rondo P.FOUL (P1.T3) (J.Capers),,10,10,0,336,Q1
+55,6:24,LAKERS Timeout: Regular (Full 1 Short 0),,10,10,0,336,Q1
+56,6:24,,SUB: Connaughton FOR Antetokounmpo,10,10,0,336,Q1
+57,6:24,,SUB: Mirotic FOR Brogdon,10,10,0,336,Q1
+58,6:10,,MISS Bledsoe 20' Step Back Jump Shot,10,10,0,350,Q1
+59,6:08,James REBOUND (Off:0 Def:3),,10,10,0,352,Q1
+60,6:03,MISS Bullock 24' 3PT Jump Shot,,10,10,0,357,Q1
+61,6:00,,Connaughton REBOUND (Off:0 Def:1),10,10,0,360,Q1
+62,5:46,,MISS Lopez 2' Layup,10,10,0,374,Q1
+63,5:44,,Connaughton REBOUND (Off:1 Def:1),10,10,0,376,Q1
+64,5:38,,Connaughton 21' Pullup Jump Shot (2 PTS) (Middleton 1 AST),12,10,2,382,Q1
+65,5:09,MISS James 30' 3PT Jump Shot,,12,10,2,411,Q1
+66,5:07,,Lopez REBOUND (Off:0 Def:1),12,10,2,413,Q1
+67,4:55,,Lopez 29' 3PT Jump Shot (5 PTS) (Mirotic 1 AST),15,10,5,425,Q1
+68,4:51,LAKERS Timeout: Regular (Full 2 Short 0),,15,10,5,429,Q1
+69,4:51,SUB: Hart FOR Kuzma,,15,10,5,429,Q1
+70,4:51,SUB: Muscala FOR Rondo,,15,10,5,429,Q1
+71,4:51,,SUB: Ilyasova FOR Bledsoe,15,10,5,429,Q1
+72,4:51,,SUB: Canaan FOR Lopez,15,10,5,429,Q1
+73,4:40,,Ilyasova P.FOUL (P1.T2) (J.Capers),15,10,5,440,Q1
+74,4:36,Bullock  Driving Reverse Layup (2 PTS) (Muscala 1 AST),,15,12,3,444,Q1
+75,4:27,,MISS Mirotic 27' 3PT Jump Shot,15,12,3,453,Q1
+76,4:22,Ingram REBOUND (Off:1 Def:3),,15,12,3,458,Q1
+77,4:20,Ingram 13' Pullup Jump Shot (6 PTS),,15,14,1,460,Q1
+78,3:51,,Middleton 26' 3PT Step Back Jump Shot (6 PTS),18,14,4,489,Q1
+79,3:40,James 3' Cutting Dunk Shot (5 PTS) (Ingram 1 AST),,18,16,2,500,Q1
+80,3:28,,Mirotic Traveling Turnover (P1.T4),18,16,2,512,Q1
+81,3:05,Ingram 19' Pullup Jump Shot (8 PTS),,18,18,0,535,Q1
+82,2:56,,Middleton 26' 3PT Running Pull-Up Jump Shot (9 PTS),21,18,3,544,Q1
+83,2:46,Ingram 2' Driving Layup (10 PTS),,21,20,1,554,Q1
+84,2:32,,MISS Ilyasova 5' Turnaround Jump Shot,21,20,1,568,Q1
+85,2:30,Bullock REBOUND (Off:0 Def:1),,21,20,1,570,Q1
+86,2:19,,Middleton S.FOUL (P1.T3) (D.Collins),21,20,1,581,Q1
+87,2:19,MISS James Free Throw 1 of 2,,21,20,1,581,Q1
+88,2:19,LAKERS Rebound,,21,20,1,581,Q1
+89,2:19,SUB: Kuzma FOR Bullock,,21,20,1,581,Q1
+90,2:19,,SUB: Antetokounmpo FOR Middleton,21,20,1,581,Q1
+91,2:19,,SUB: Brogdon FOR Connaughton,21,20,1,581,Q1
+92,2:19,,SUB: Snell FOR Canaan,21,20,1,581,Q1
+93,2:19,James Free Throw 2 of 2 (6 PTS),,21,21,0,581,Q1
+94,2:10,,MISS Snell 27' 3PT Jump Shot,21,21,0,590,Q1
+95,2:07,James REBOUND (Off:0 Def:4),,21,21,0,593,Q1
+96,2:01,Muscala 27' 3PT Jump Shot (3 PTS) (James 3 AST),,21,24,-3,599,Q1
+97,1:39,,Brogdon 1' Driving Layup (2 PTS),23,24,-1,621,Q1
+98,1:20,MISS Kuzma 6' Turnaround Fadeaway Shot,Antetokounmpo BLOCK (1 BLK),23,24,-1,640,Q1
+99,1:17,,Antetokounmpo REBOUND (Off:0 Def:7),23,24,-1,643,Q1
+100,1:13,Muscala BLOCK (1 BLK),MISS Antetokounmpo 2' Layup,23,24,-1,647,Q1
+101,1:08,Hart REBOUND (Off:0 Def:1),,23,24,-1,652,Q1
+102,1:05,Ingram 2' Driving Reverse Dunk Shot (12 PTS),,23,26,-3,655,Q1
+103,0:55,,Brogdon 1' Reverse Layup (4 PTS) (Ilyasova 1 AST),25,26,-1,665,Q1
+104,0:41,James Bad Pass Turnover (P2.T3),Mirotic STEAL (1 STL),25,26,-1,679,Q1
+105,0:36,,Snell 1' Running Dunk (2 PTS) (Brogdon 1 AST),27,26,1,684,Q1
+106,0:20,MISS James 2' Reverse Layup,,27,26,1,700,Q1
+107,0:20,,Mirotic REBOUND (Off:0 Def:1),27,26,1,700,Q1
+108,0:01,,MISS Mirotic 24' 3PT Jump Shot,27,26,1,719,Q1
+109,0:01,Kuzma REBOUND (Off:0 Def:2),,27,26,1,719,Q1
+110,0:00,Go to top ⇧,,27,26,1,720,Q1
+111,0:00,Go to top ⇧,,27,26,1,720,Q2
+113,11:45,MISS Rondo 13' Step Back Jump Shot,,27,26,1,720,Q3
+114,11:42,,Antetokounmpo REBOUND (Off:0 Def:8),27,26,1,723,Q3
+115,11:32,,Brogdon 27' 3PT Jump Shot (7 PTS) (Antetokounmpo 3 AST),30,26,4,733,Q3
+116,11:18,MISS Kuzma 2' Driving Bank Hook Shot,,30,26,4,747,Q3
+117,11:16,,Brogdon REBOUND (Off:0 Def:1),30,26,4,749,Q3
+118,11:15,,Antetokounmpo 1' Running Layup (4 PTS) (Brogdon 2 AST),32,26,6,750,Q3
+119,11:15,Hart S.FOUL (P1.T1) (D.Collins),,32,26,6,750,Q3
+120,11:15,,SUB: Lopez FOR Ilyasova,32,26,6,750,Q3
+121,11:15,,MISS Antetokounmpo Free Throw 1 of 1,32,26,6,750,Q3
+122,11:13,,Antetokounmpo REBOUND (Off:1 Def:8),32,26,6,752,Q3
+123,11:01,,MISS Connaughton 26' 3PT Jump Shot,32,26,6,764,Q3
+124,10:58,Kuzma REBOUND (Off:0 Def:3),,32,26,6,767,Q3
+125,10:48,MISS Hart 26' 3PT Jump Shot,,32,26,6,777,Q3
+126,10:44,Muscala REBOUND (Off:1 Def:0),,32,26,6,781,Q3
+127,10:41,Hart 2' Cutting Layup Shot (2 PTS) (Kuzma 1 AST),,32,28,4,784,Q3
+128,10:31,,Lopez 28' 3PT Jump Shot (8 PTS) (Brogdon 3 AST),35,28,7,794,Q3
+129,10:17,MISS Rondo 25' 3PT Jump Shot,,35,28,7,808,Q3
+130,10:15,,Antetokounmpo REBOUND (Off:1 Def:9),35,28,7,810,Q3
+131,10:10,,Antetokounmpo Out of Bounds - Bad Pass Turnover Turnover (P2.T5),35,28,7,815,Q3
+132,10:10,SUB: McGee FOR Hart,,35,28,7,815,Q3
+133,9:50,Rondo  3PT Jump Shot (6 PTS) (Caldwell-Pope 1 AST),,35,31,4,835,Q3
+134,9:36,McGee BLOCK (1 BLK),MISS Antetokounmpo 2' Driving Dunk,35,31,4,849,Q3
+135,9:33,Caldwell-Pope REBOUND (Off:0 Def:1),,35,31,4,852,Q3
+136,9:29,Caldwell-Pope 24' 3PT Running Pull-Up Jump Shot (3 PTS) (Rondo 2 AST),,35,34,1,856,Q3
+137,9:13,,Brogdon 2' Cutting Layup Shot (9 PTS) (Antetokounmpo 4 AST),37,34,3,872,Q3
+138,9:01,Rondo 28' 3PT Jump Shot (9 PTS) (Muscala 2 AST),,37,37,0,884,Q3
+139,8:51,,Bucks Timeout: Regular (Reg.1 Short 0),37,37,0,894,Q3
+140,8:51,SUB: Bullock FOR Muscala,,37,37,0,894,Q3
+141,8:51,,SUB: Bledsoe FOR Brogdon,37,37,0,894,Q3
+142,8:51,,SUB: Mirotic FOR Antetokounmpo,37,37,0,894,Q3
+143,8:37,,MISS Lopez 25' 3PT Jump Shot,37,37,0,908,Q3
+144,8:34,Rondo REBOUND (Off:1 Def:1),,37,37,0,911,Q3
+145,8:22,McGee 9' Hook Shot (2 PTS) (Caldwell-Pope 2 AST),,37,39,-2,923,Q3
+146,8:15,Caldwell-Pope S.FOUL (P1.T2) (J.Capers),,37,39,-2,930,Q3
+147,8:15,,Bledsoe Free Throw 1 of 2 (4 PTS),38,39,-1,930,Q3
+148,8:15,SUB: Ingram FOR Kuzma,,38,39,-1,930,Q3
+149,8:15,,Bledsoe Free Throw 2 of 2 (5 PTS),39,39,0,930,Q3
+150,8:01,McGee 1' Cutting Dunk Shot (4 PTS) (Rondo 3 AST),,39,41,-2,944,Q3
+151,7:49,,Mirotic 21' Step Back Jump Shot (2 PTS) (Bledsoe 1 AST),41,41,0,956,Q3
+152,7:37,McGee 3' Hook Shot (6 PTS),,41,43,-2,968,Q3
+153,7:24,,MISS Bledsoe 27' 3PT Jump Shot,41,43,-2,981,Q3
+154,7:21,Caldwell-Pope REBOUND (Off:0 Def:2),,41,43,-2,984,Q3
+155,7:10,Rondo 2' Driving Finger Roll Layup (11 PTS) (Ingram 2 AST),,41,45,-4,995,Q3
+156,6:52,,Mirotic 28' 3PT Jump Shot (5 PTS) (Bledsoe 2 AST),44,45,-1,1013,Q3
+157,6:45,Caldwell-Pope Bad Pass Turnover (P1.T4),Snell STEAL (1 STL),44,45,-1,1020,Q3
+158,6:42,,Bledsoe 2' Cutting Layup Shot (7 PTS) (Snell 1 AST),46,45,1,1023,Q3
+159,6:35,MISS Rondo 1' Layup,,46,45,1,1030,Q3
+160,6:35,,Bledsoe REBOUND (Off:0 Def:2),46,45,1,1030,Q3
+161,6:26,,MISS Snell  3PT Jump Shot,46,45,1,1039,Q3
+162,6:22,,Bledsoe REBOUND (Off:1 Def:2),46,45,1,1043,Q3
+163,6:22,,Bledsoe 1' Layup (9 PTS),48,45,3,1043,Q3
+164,6:22,LAKERS Timeout: Regular (Full 3 Short 0),,48,45,3,1043,Q3
+165,6:22,SUB: James FOR Caldwell-Pope,,48,45,3,1043,Q3
+166,6:22,SUB: Kuzma FOR McGee,,48,45,3,1043,Q3
+167,6:22,,SUB: Middleton FOR Snell,48,45,3,1043,Q3
+168,6:09,Ingram 9' Turnaround Fadeaway (14 PTS),,48,47,1,1056,Q3
+169,5:46,,MISS Bledsoe 17' Pullup Jump Shot,48,47,1,1079,Q3
+170,5:44,Bullock REBOUND (Off:0 Def:2),,48,47,1,1081,Q3
+171,5:43,Kuzma 1' Running Layup (2 PTS) (James 4 AST),,48,49,-1,1082,Q3
+172,5:43,,Middleton S.FOUL (P2.T1) (D.Collins),48,49,-1,1082,Q3
+173,5:43,Kuzma Free Throw 1 of 1 (3 PTS),,48,50,-2,1082,Q3
+174,5:30,Ingram P.FOUL (P2.T3) (D.Collins),,48,50,-2,1095,Q3
+175,5:25,,Mirotic Out of Bounds - Bad Pass Turnover Turnover (P2.T6),48,50,-2,1100,Q3
+176,5:16,MISS Kuzma 28' 3PT Jump Shot,,48,50,-2,1109,Q3
+177,5:11,,Bledsoe REBOUND (Off:1 Def:3),48,50,-2,1114,Q3
+178,5:03,,Bledsoe 2' Cutting Layup Shot (11 PTS) (Connaughton 1 AST),50,50,0,1122,Q3
+179,4:58,MISS Kuzma 2' Layup,Lopez BLOCK (1 BLK),50,50,0,1127,Q3
+180,4:58,LAKERS Rebound,,50,50,0,1127,Q3
+181,4:58,,SUB: Antetokounmpo FOR Connaughton,50,50,0,1127,Q3
+182,4:53,MISS Kuzma 12' Hook Shot,,50,50,0,1132,Q3
+183,4:51,,Lopez REBOUND (Off:0 Def:2),50,50,0,1134,Q3
+184,4:46,,Lopez 27' 3PT Pullup Jump Shot (11 PTS) (Middleton 2 AST),53,50,3,1139,Q3
+185,4:23,Kuzma 1' Cutting Layup Shot (5 PTS) (James 5 AST),,53,52,1,1162,Q3
+186,4:15,Bullock S.FOUL (P1.T4) (J.DeRosa),,53,52,1,1170,Q3
+187,4:15,,Middleton Free Throw 1 of 2 (10 PTS),54,52,2,1170,Q3
+188,4:15,,SUB: Ilyasova FOR Lopez,54,52,2,1170,Q3
+189,4:15,,SUB: Snell FOR Mirotic,54,52,2,1170,Q3
+190,4:15,,Middleton Free Throw 2 of 2 (11 PTS),55,52,3,1170,Q3
+191,3:58,MISS James 27' 3PT Jump Shot,,55,52,3,1187,Q3
+192,3:55,,Bledsoe REBOUND (Off:1 Def:4),55,52,3,1190,Q3
+193,3:49,Rondo P.FOUL (P2.PN) (D.Collins),,55,52,3,1196,Q3
+194,3:49,,Antetokounmpo Free Throw 1 of 2 (5 PTS),56,52,4,1196,Q3
+195,3:49,,Antetokounmpo Free Throw 2 of 2 (6 PTS),57,52,5,1196,Q3
+196,3:37,Kuzma 8' Floating Jump Shot (7 PTS) (James 6 AST),,57,54,3,1208,Q3
+197,3:25,,Bledsoe Out of Bounds - Bad Pass Turnover Turnover (P1.T7),57,54,3,1220,Q3
+198,3:15,MISS Rondo 2' Layup,,57,54,3,1230,Q3
+199,3:11,,Snell REBOUND (Off:0 Def:1),57,54,3,1234,Q3
+200,3:03,,MISS Snell 26' 3PT Running Pull-Up Jump Shot,57,54,3,1242,Q3
+201,3:01,Rondo REBOUND (Off:1 Def:2),,57,54,3,1244,Q3
+202,2:52,Ingram 16' Turnaround Fadeaway (16 PTS),,57,56,1,1253,Q3
+203,2:38,,MISS Snell 26' 3PT Jump Shot,57,56,1,1267,Q3
+204,2:36,Ingram REBOUND (Off:1 Def:4),,57,56,1,1269,Q3
+205,2:32,MISS Kuzma 1' Finger Roll Layup,,57,56,1,1273,Q3
+206,2:25,James REBOUND (Off:1 Def:4),,57,56,1,1280,Q3
+207,2:25,James 1' Putback Dunk (8 PTS),,57,58,-1,1280,Q3
+208,2:17,,MISS Ilyasova  3PT Jump Shot,57,58,-1,1288,Q3
+209,2:14,Rondo REBOUND (Off:1 Def:3),,57,58,-1,1291,Q3
+210,2:01,Kuzma 4' Floating Jump Shot (9 PTS),,57,60,-3,1304,Q3
+211,1:35,,MISS Bledsoe 26' 3PT Jump Shot,57,60,-3,1330,Q3
+212,1:35,LAKERS Rebound,,57,60,-3,1330,Q3
+213,1:35,,SUB: Brogdon FOR Bledsoe,57,60,-3,1330,Q3
+214,1:17,MISS Kuzma 28' 3PT Jump Shot,,57,60,-3,1348,Q3
+215,1:14,,Middleton REBOUND (Off:1 Def:1),57,60,-3,1351,Q3
+216,1:09,,MISS Middleton 25' 3PT Pullup Jump Shot,57,60,-3,1356,Q3
+217,1:07,Ingram REBOUND (Off:1 Def:5),,57,60,-3,1358,Q3
+218,0:57,James 17' Pullup Jump Shot (10 PTS),,57,62,-5,1368,Q3
+219,0:48,,Antetokounmpo 2' Driving Finger Roll Layup (8 PTS) (Snell 2 AST),59,62,-3,1377,Q3
+220,0:24,Bullock 26' 3PT Jump Shot (5 PTS) (James 7 AST),,59,65,-6,1401,Q3
+221,0:01,,MISS Brogdon 7' Floating Jump Shot,59,65,-6,1424,Q3
+222,0:01,,Bucks Rebound,59,65,-6,1424,Q3
+223,0:00,Go to top ⇧,,59,65,-6,1425,Q3
+225,11:44,MISS Bullock 27' 3PT Jump Shot,,59,65,-6,1425,Q4
+226,11:42,,Bledsoe REBOUND (Off:1 Def:5),59,65,-6,1427,Q4
+227,11:32,,MISS Brogdon 20' Fadeaway Jumper,59,65,-6,1437,Q4
+228,11:30,James REBOUND (Off:1 Def:5),,59,65,-6,1439,Q4
+229,11:18,Ingram 12' Jump Shot (18 PTS) (James 8 AST),,59,67,-8,1451,Q4
+230,10:56,,Brogdon 2' Cutting Layup Shot (11 PTS) (Middleton 3 AST),61,67,-6,1473,Q4
+231,10:46,MISS Bullock 15' Pullup Jump Shot,,61,67,-6,1483,Q4
+232,10:43,,Antetokounmpo REBOUND (Off:1 Def:10),61,67,-6,1486,Q4
+233,10:38,,Antetokounmpo 3' Running Layup (10 PTS),63,67,-4,1491,Q4
+234,10:26,Kuzma 25' 3PT Jump Shot (12 PTS) (Rondo 4 AST),,63,70,-7,1503,Q4
+235,10:14,,Middleton 2' Running Layup (13 PTS),65,70,-5,1515,Q4
+236,9:54,MISS Kuzma 27' 3PT Jump Shot,,65,70,-5,1535,Q4
+237,9:51,,Bledsoe REBOUND (Off:1 Def:6),65,70,-5,1538,Q4
+238,9:42,,MISS Bledsoe 26' 3PT Jump Shot,65,70,-5,1547,Q4
+239,9:40,LAKERS Rebound,,65,70,-5,1549,Q4
+240,9:23,MISS Ingram  3PT Jump Shot,,65,70,-5,1566,Q4
+241,9:18,,Antetokounmpo REBOUND (Off:1 Def:11),65,70,-5,1571,Q4
+242,9:11,,Bledsoe 3' Floating Jump Shot (13 PTS) (Antetokounmpo 5 AST),67,70,-3,1578,Q4
+243,8:58,MISS Ingram 3' Finger Roll Layup,Bledsoe BLOCK (1 BLK),67,70,-3,1591,Q4
+244,8:56,LAKERS Rebound,,67,70,-3,1593,Q4
+245,8:48,Ingram 2' Layup (20 PTS),,67,72,-5,1601,Q4
+246,8:48,,Middleton S.FOUL (P3.T1) (J.Capers),67,72,-5,1601,Q4
+247,8:48,MISS Ingram Free Throw 1 of 1,,67,72,-5,1601,Q4
+248,8:46,,Antetokounmpo REBOUND (Off:1 Def:12),67,72,-5,1603,Q4
+249,8:39,,MISS Bledsoe 24' 3PT Jump Shot,67,72,-5,1610,Q4
+250,8:35,,Bledsoe REBOUND (Off:2 Def:6),67,72,-5,1614,Q4
+251,8:26,,MISS Antetokounmpo 19' Jump Shot,67,72,-5,1623,Q4
+252,8:24,Rondo REBOUND (Off:1 Def:4),,67,72,-5,1625,Q4
+253,8:21,Ingram 2' Driving Dunk (22 PTS) (Rondo 5 AST),,67,74,-7,1628,Q4
+254,8:18,,Bucks Timeout: Regular (Reg.2 Short 0),67,74,-7,1631,Q4
+255,8:01,,MISS Lopez 26' 3PT Jump Shot,67,74,-7,1648,Q4
+256,7:59,Bullock REBOUND (Off:0 Def:3),,67,74,-7,1650,Q4
+257,7:45,Ingram 20' Pullup Jump Shot (24 PTS) (Rondo 6 AST),,67,76,-9,1664,Q4
+258,7:32,,MISS Antetokounmpo 3' Driving Layup,67,76,-9,1677,Q4
+259,7:28,,Antetokounmpo REBOUND (Off:2 Def:12),67,76,-9,1681,Q4
+260,7:28,,MISS Antetokounmpo 1' Tip Layup Shot,67,76,-9,1681,Q4
+261,7:27,Ingram REBOUND (Off:1 Def:6),,67,76,-9,1682,Q4
+262,7:09,James 1' Driving Layup (12 PTS),,67,78,-11,1700,Q4
+263,7:09,,Lopez S.FOUL (P1.T2) (D.Collins),67,78,-11,1700,Q4
+264,7:09,,SUB: Connaughton FOR Brogdon,67,78,-11,1700,Q4
+265,7:09,James Free Throw 1 of 1 (13 PTS),,67,79,-12,1700,Q4
+266,6:53,James P.FOUL (P1.T1) (J.DeRosa),,67,79,-12,1716,Q4
+267,6:39,Rondo STEAL (2 STL),Antetokounmpo Bad Pass Turnover (P3.T8),67,79,-12,1730,Q4
+268,6:35,MISS Kuzma 2' Layup,Antetokounmpo BLOCK (2 BLK),67,79,-12,1734,Q4
+269,6:31,,Lopez REBOUND (Off:0 Def:3),67,79,-12,1738,Q4
+270,6:26,,Bledsoe 2' Running Layup (15 PTS) (Connaughton 2 AST),69,79,-10,1743,Q4
+271,6:03,MISS Ingram 12' Turnaround Fadeaway Shot,,69,79,-10,1766,Q4
+272,5:58,,Middleton REBOUND (Off:1 Def:2),69,79,-10,1771,Q4
+273,5:53,,Bledsoe 2' Driving Layup (17 PTS) (Middleton 4 AST),71,79,-8,1776,Q4
+274,5:51,LAKERS Timeout: Regular (Full 4 Short 0),,71,79,-8,1778,Q4
+275,5:51,,SUB: Mirotic FOR Lopez,71,79,-8,1778,Q4
+276,5:41,,Mirotic P.FOUL (P1.T3) (J.DeRosa),71,79,-8,1788,Q4
+277,5:32,MISS James 3' Driving Layup,Antetokounmpo BLOCK (3 BLK),71,79,-8,1797,Q4
+278,5:31,James REBOUND (Off:2 Def:5),,71,79,-8,1798,Q4
+279,5:31,,Antetokounmpo S.FOUL (P2.T4) (D.Collins),71,79,-8,1798,Q4
+280,5:31,James Free Throw 1 of 2 (14 PTS),,71,80,-9,1798,Q4
+281,5:31,James Free Throw 2 of 2 (15 PTS),,71,81,-10,1798,Q4
+282,5:17,,Bledsoe 2' Driving Layup (19 PTS),73,81,-8,1812,Q4
+283,4:53,,Antetokounmpo P.FOUL (P3.PN) (J.Capers),73,81,-8,1836,Q4
+284,4:53,James Free Throw 1 of 2 (16 PTS),,73,82,-9,1836,Q4
+285,4:53,SUB: Caldwell-Pope FOR Kuzma,,73,82,-9,1836,Q4
+286,4:53,SUB: Muscala FOR Bullock,,73,82,-9,1836,Q4
+287,4:53,,SUB: Ilyasova FOR Antetokounmpo,73,82,-9,1836,Q4
+288,4:53,MISS James Free Throw 2 of 2,,73,82,-9,1836,Q4
+289,4:49,,Ilyasova REBOUND (Off:0 Def:1),73,82,-9,1840,Q4
+290,4:39,,Connaughton 1' Reverse Dunk (4 PTS) (Bledsoe 3 AST),75,82,-7,1850,Q4
+291,4:19,Rondo Out of Bounds - Bad Pass Turnover Turnover (P1.T5),,75,82,-7,1870,Q4
+292,4:19,,SUB: Snell FOR Middleton,75,82,-7,1870,Q4
+293,4:13,,Connaughton 27' 3PT Jump Shot (7 PTS) (Bledsoe 4 AST),78,82,-4,1876,Q4
+294,3:51,MISS Muscala 26' 3PT Jump Shot,,78,82,-4,1898,Q4
+295,3:48,,Bledsoe REBOUND (Off:2 Def:7),78,82,-4,1901,Q4
+296,3:45,,Ilyasova 1' Cutting Layup Shot (2 PTS) (Bledsoe 5 AST),80,82,-2,1904,Q4
+297,3:28,MISS Ingram 3' Cutting Layup Shot,,80,82,-2,1921,Q4
+298,3:23,,Mirotic REBOUND (Off:0 Def:2),80,82,-2,1926,Q4
+299,3:18,,Bledsoe 27' 3PT Pullup Jump Shot (22 PTS),83,82,1,1931,Q4
+300,3:15,LAKERS Timeout: Regular (Full 5 Short 0),,83,82,1,1934,Q4
+301,3:15,SUB: Hart FOR Rondo,,83,82,1,1934,Q4
+302,3:00,,Ilyasova P.FOUL (P2.PN) (J.DeRosa),83,82,1,1949,Q4
+303,3:00,James Free Throw 1 of 2 (17 PTS),,83,83,0,1949,Q4
+304,3:00,James Free Throw 2 of 2 (18 PTS),,83,84,-1,1949,Q4
+305,2:50,Hart BLOCK (1 BLK),MISS Connaughton 4' Dunk,83,84,-1,1959,Q4
+306,2:49,,Connaughton REBOUND (Off:2 Def:1),83,84,-1,1960,Q4
+307,2:49,,Connaughton Step Out of Bounds Turnover (P1.T9),83,84,-1,1960,Q4
+308,2:36,James 1' Driving Reverse Layup (20 PTS) (Hart 1 AST),,83,86,-3,1973,Q4
+309,2:19,,MISS Mirotic 28' 3PT Jump Shot,83,86,-3,1990,Q4
+310,2:16,Ingram REBOUND (Off:1 Def:7),,83,86,-3,1993,Q4
+311,2:03,,Snell P.FOUL (P1.PN) (J.Capers),83,86,-3,2006,Q4
+312,2:03,Ingram Free Throw 1 of 2 (25 PTS),,83,87,-4,2006,Q4
+313,2:03,,SUB: Brogdon FOR Bledsoe,83,87,-4,2006,Q4
+314,2:03,Ingram Free Throw 2 of 2 (26 PTS),,83,88,-5,2006,Q4
+315,1:45,,Mirotic 2' Hook Bank Shot (7 PTS),85,88,-3,2024,Q4
+316,1:28,MISS Ingram 25' 3PT Jump Shot,,85,88,-3,2041,Q4
+317,1:25,,Mirotic REBOUND (Off:0 Def:3),85,88,-3,2044,Q4
+318,1:16,,MISS Brogdon 3' Jump Shot,85,88,-3,2053,Q4
+319,1:14,,Connaughton REBOUND (Off:3 Def:1),85,88,-3,2055,Q4
+320,1:13,,Ilyasova 27' 3PT Jump Shot (5 PTS) (Connaughton 3 AST),88,88,0,2056,Q4
+321,0:47,Ingram 27' 3PT Jump Shot (29 PTS),,88,91,-3,2082,Q4
+322,0:34,,Brogdon 28' 3PT Jump Shot (14 PTS),91,91,0,2095,Q4
+323,0:29,Hart 26' 3PT Jump Shot (5 PTS) (James 9 AST),,91,94,-3,2100,Q4
+324,0:07,,MISS Ilyasova 15' Jump Shot,91,94,-3,2122,Q4
+325,0:06,,Mirotic REBOUND (Off:1 Def:3),91,94,-3,2123,Q4
+326,0:06,Hart S.FOUL (P2.T2) (J.Capers),,91,94,-3,2123,Q4
+327,0:06,,Mirotic Free Throw 1 of 2 (8 PTS),92,94,-2,2123,Q4
+328,0:06,,Mirotic Free Throw 2 of 2 (9 PTS),93,94,-1,2123,Q4
+329,0:00,MISS Ingram  3PT Jump Shot,,93,94,-1,2129,Q4
+330,0:00,LAKERS Rebound,,93,94,-1,2129,Q4
+331,0:00,Go to top ⇧,,93,94,-1,2129,Q4
+333,11:49,,Ilyasova 25' 3PT Jump Shot (8 PTS) (Brogdon 4 AST),96,94,2,2129,Q5
+334,11:26,MISS Kuzma 3' Driving Layup,Connaughton BLOCK (1 BLK),96,94,2,2152,Q5
+335,11:22,,Snell REBOUND (Off:0 Def:2),96,94,2,2156,Q5
+336,11:21,,MISS Brogdon 2' Running Layup,96,94,2,2157,Q5
+337,11:21,,Snell REBOUND (Off:1 Def:2),96,94,2,2157,Q5
+338,11:10,Hart S.FOUL (P3.T1) (J.DeRosa),,96,94,2,2168,Q5
+339,11:10,,Ilyasova Free Throw 1 of 2 (9 PTS),97,94,3,2168,Q5
+340,11:10,,Ilyasova Free Throw 2 of 2 (10 PTS),98,94,4,2168,Q5
+341,10:58,Caldwell-Pope 15' Pullup Jump Shot (5 PTS) (Rondo 7 AST),,98,96,2,2180,Q5
+342,10:48,,Antetokounmpo 2' Driving Dunk (12 PTS),100,96,4,2190,Q5
+343,10:48,Muscala S.FOUL (P1.T2) (D.Collins),,100,96,4,2190,Q5
+344,10:48,SUB: McGee FOR Muscala,,100,96,4,2190,Q5
+345,10:48,,MISS Antetokounmpo Free Throw 1 of 1,100,96,4,2190,Q5
+346,10:45,McGee REBOUND (Off:0 Def:1),,100,96,4,2193,Q5
+347,10:28,MISS Rondo 2' Driving Finger Roll Layup,,100,96,4,2210,Q5
+348,10:26,,Ilyasova REBOUND (Off:0 Def:2),100,96,4,2212,Q5
+349,10:25,Caldwell-Pope STEAL (1 STL),Ilyasova Bad Pass Turnover (P1.T10),100,96,4,2213,Q5
+350,10:18,Caldwell-Pope 11' Fadeaway Jumper (7 PTS) (Rondo 8 AST),,100,98,2,2220,Q5
+351,9:50,,Antetokounmpo 17' Jump Shot (14 PTS) (Connaughton 4 AST),102,98,4,2248,Q5
+352,9:36,MISS McGee 3' Dunk,,102,98,4,2262,Q5
+353,9:34,Kuzma REBOUND (Off:1 Def:3),,102,98,4,2264,Q5
+354,9:31,MISS Rondo 26' 3PT Jump Shot,,102,98,4,2267,Q5
+355,9:29,McGee REBOUND (Off:1 Def:1),,102,98,4,2269,Q5
+356,9:21,MISS Caldwell-Pope 27' 3PT Jump Shot,,102,98,4,2277,Q5
+357,9:18,,Brogdon REBOUND (Off:0 Def:2),102,98,4,2280,Q5
+358,8:59,,Brogdon 1' Driving Layup (16 PTS),104,98,6,2299,Q5
+359,8:50,Rondo 17' Pullup Jump Shot (13 PTS) (Kuzma 2 AST),,104,100,4,2308,Q5
+360,8:36,,MISS Ilyasova 26' 3PT Jump Shot,104,100,4,2322,Q5
+361,8:33,Kuzma REBOUND (Off:1 Def:4),,104,100,4,2325,Q5
+362,8:28,MISS Kuzma 27' 3PT Jump Shot,,104,100,4,2330,Q5
+363,8:27,,Bucks Rebound,104,100,4,2331,Q5
+364,8:27,McGee L.B.FOUL (P1.T3) (J.Capers),,104,100,4,2331,Q5
+365,8:27,SUB: James FOR Kuzma,,104,100,4,2331,Q5
+366,8:27,,SUB: Mirotic FOR Connaughton,104,100,4,2331,Q5
+367,8:27,,SUB: Middleton FOR Ilyasova,104,100,4,2331,Q5
+368,8:12,,Antetokounmpo 3' Layup (16 PTS),106,100,6,2346,Q5
+369,7:49,MISS James 9' Fadeaway Jumper,,106,100,6,2369,Q5
+370,7:47,,Snell REBOUND (Off:1 Def:3),106,100,6,2371,Q5
+371,7:36,,MISS Middleton 12' Turnaround Fadeaway Shot,106,100,6,2382,Q5
+372,7:33,Caldwell-Pope REBOUND (Off:0 Def:3),,106,100,6,2385,Q5
+373,7:28,James 24' 3PT Pullup Jump Shot (23 PTS) (Rondo 9 AST),,106,103,3,2390,Q5
+374,7:12,,MISS Antetokounmpo 27' 3PT Jump Shot,106,103,3,2406,Q5
+375,7:09,Hart REBOUND (Off:0 Def:2),,106,103,3,2409,Q5
+376,7:01,Rondo 27' 3PT Jump Shot (16 PTS) (James 10 AST),,106,106,0,2417,Q5
+377,7:00,,Bucks Timeout: Regular (Reg.3 Short 0),106,106,0,2418,Q5
+378,7:00,SUB: Ingram FOR Hart,,106,106,0,2418,Q5
+379,7:00,,SUB: Connaughton FOR Brogdon,106,106,0,2418,Q5
+380,7:00,,SUB: Bledsoe FOR Snell,106,106,0,2418,Q5
+381,6:46,,Connaughton 1' Dunk (9 PTS) (Mirotic 2 AST),108,106,2,2432,Q5
+382,6:31,Rondo 2' Driving Layup (18 PTS),,108,108,0,2447,Q5
+383,6:19,Rondo P.FOUL (P3.T4) (J.Capers),,108,108,0,2459,Q5
+384,6:06,,MISS Bledsoe 25' 3PT Jump Shot,108,108,0,2472,Q5
+385,6:03,,Connaughton REBOUND (Off:4 Def:1),108,108,0,2475,Q5
+386,5:52,,MISS Bledsoe 26' 3PT Jump Shot,108,108,0,2486,Q5
+387,5:47,Rondo REBOUND (Off:1 Def:5),,108,108,0,2491,Q5
+388,5:45,,Middleton S.FOUL (P4.T1) (J.DeRosa),108,108,0,2493,Q5
+389,5:45,Rondo Free Throw 1 of 2 (19 PTS),,108,109,-1,2493,Q5
+390,5:45,,SUB: Ilyasova FOR Antetokounmpo,108,109,-1,2493,Q5
+391,5:45,Rondo Free Throw 2 of 2 (20 PTS),,108,110,-2,2493,Q5
+392,5:29,,Ilyasova 2' Cutting Layup Shot (12 PTS) (Middleton 5 AST),110,110,0,2509,Q5
+393,5:07,MISS Caldwell-Pope 24' 3PT Jump Shot,,110,110,0,2531,Q5
+394,5:03,Rondo REBOUND (Off:2 Def:5),,110,110,0,2535,Q5
+395,4:59,Rondo Bad Pass Turnover (P2.T6),Ilyasova STEAL (1 STL),110,110,0,2539,Q5
+396,4:59,Rondo P.FOUL (P4.PN) (J.DeRosa),,110,110,0,2539,Q5
+397,4:59,,MISS Middleton Free Throw 1 of 2,110,110,0,2539,Q5
+398,4:59,,Bucks Rebound,110,110,0,2539,Q5
+399,4:59,,Middleton Free Throw 2 of 2 (14 PTS),111,110,1,2539,Q5
+400,4:35,MISS James 2' Layup,,111,110,1,2563,Q5
+401,4:33,,Mirotic REBOUND (Off:1 Def:4),111,110,1,2565,Q5
+402,4:24,,Mirotic 18' Turnaround Jump Shot (11 PTS),113,110,3,2574,Q5
+403,4:08,James 1' Driving Dunk (25 PTS),,113,112,1,2590,Q5
+404,4:08,,Ilyasova S.FOUL (P3.T2) (J.Capers),113,112,1,2590,Q5
+405,4:08,James Free Throw 1 of 1 (26 PTS),,113,113,0,2590,Q5
+406,4:08,SUB: Kuzma FOR McGee,,113,113,0,2590,Q5
+407,3:55,Ingram BLOCK (1 BLK),MISS Bledsoe 9' Layup,113,113,0,2603,Q5
+408,3:47,Kuzma REBOUND (Off:1 Def:5),,113,113,0,2611,Q5
+409,3:35,,Connaughton S.FOUL (P1.T3) (J.DeRosa),113,113,0,2623,Q5
+410,3:35,Ingram Free Throw 1 of 2 (30 PTS),,113,114,-1,2623,Q5
+411,3:35,,Bucks Timeout: Regular (Reg.4 Short 0),113,114,-1,2623,Q5
+412,3:35,,SUB: Brogdon FOR Connaughton,113,114,-1,2623,Q5
+413,3:35,,SUB: Antetokounmpo FOR Mirotic,113,114,-1,2623,Q5
+414,3:35,Ingram Free Throw 2 of 2 (31 PTS),,113,115,-2,2623,Q5
+415,3:26,,Bledsoe 3' Driving Floating Bank Jump Shot (24 PTS),115,115,0,2632,Q5
+416,3:26,Caldwell-Pope S.FOUL (P2.PN) (J.DeRosa),,115,115,0,2632,Q5
+417,3:26,,Bledsoe Free Throw 1 of 1 (25 PTS),116,115,1,2632,Q5
+418,3:11,James 26' 3PT Jump Shot (29 PTS) (Kuzma 3 AST),,116,118,-2,2647,Q5
+419,2:44,,Antetokounmpo Offensive Charge Foul (P4.T4) (J.Capers),116,118,-2,2674,Q5
+420,2:44,,Antetokounmpo Offensive Foul Turnover (P4.T11),116,118,-2,2674,Q5
+421,2:36,Rondo Out of Bounds - Bad Pass Turnover Turnover (P3.T7),,116,118,-2,2682,Q5
+422,2:25,,Bledsoe 1' Driving Layup (27 PTS),118,118,0,2693,Q5
+423,2:25,Kuzma S.FOUL (P2.PN) (J.Capers),,118,118,0,2693,Q5
+424,2:25,,Bledsoe Free Throw 1 of 1 (28 PTS),119,118,1,2693,Q5
+425,2:10,James OFF.Foul (P2) (J.Capers),,119,118,1,2708,Q5
+426,2:10,James Offensive Foul Turnover (P3.T8),,119,118,1,2708,Q5
+427,1:54,Rondo S.FOUL (P5.PN) (D.Collins),,119,118,1,2724,Q5
+428,1:54,,Brogdon Free Throw 1 of 2 (17 PTS),120,118,2,2724,Q5
+429,1:54,,Brogdon Free Throw 2 of 2 (18 PTS),121,118,3,2724,Q5
+430,1:54,LAKERS Timeout: Regular (Full 6 Short 0),,121,118,3,2724,Q5
+431,1:48,Caldwell-Pope Bad Pass Turnover (P2.T9),Ilyasova STEAL (2 STL),121,118,3,2730,Q5
+432,1:41,,Brogdon 24' 3PT Jump Shot (21 PTS) (Middleton 6 AST),124,118,6,2737,Q5
+433,1:34,MISS James 27' 3PT Jump Shot,,124,118,6,2744,Q5
+434,1:32,,Antetokounmpo REBOUND (Off:2 Def:13),124,118,6,2746,Q5
+435,1:14,,MISS Bledsoe 27' 3PT Step Back Jump Shot,124,118,6,2764,Q5
+436,1:11,Rondo REBOUND (Off:2 Def:6),,124,118,6,2767,Q5
+437,1:01,MISS Ingram 13' Pullup Jump Shot,,124,118,6,2777,Q5
+438,0:59,,Middleton REBOUND (Off:1 Def:3),124,118,6,2779,Q5
+439,0:37,,Bledsoe 26' 3PT Jump Shot (31 PTS) (Antetokounmpo 6 AST),127,118,9,2801,Q5
+440,0:37,LAKERS Timeout: Regular (Full 7 Short 0),,127,118,9,2801,Q5
+441,0:35,MISS James 29' 3PT Jump Shot,,127,118,9,2803,Q5
+442,0:31,,Middleton REBOUND (Off:1 Def:4),127,118,9,2807,Q5
+443,0:29,Caldwell-Pope Personal Take Foul (P3.PN) (D.Collins),,127,118,9,2809,Q5
+444,0:29,,Middleton Free Throw 1 of 2 (15 PTS),128,118,10,2809,Q5
+445,0:29,,SUB: Connaughton FOR Bledsoe,128,118,10,2809,Q5
+446,0:29,,SUB: Snell FOR Antetokounmpo,128,118,10,2809,Q5
+447,0:29,,Middleton Free Throw 2 of 2 (16 PTS),129,118,11,2809,Q5
+448,0:23,James 2' Driving Layup (31 PTS),,129,120,9,2815,Q5
+449,0:22,Ingram Personal Take Foul (P3.PN) (D.Collins),,129,120,9,2816,Q5
+450,0:22,,Middleton Free Throw 1 of 2 (17 PTS),130,120,10,2816,Q5
+451,0:22,,SUB: Mirotic FOR Ilyasova,130,120,10,2816,Q5
+452,0:22,,SUB: Canaan FOR Brogdon,130,120,10,2816,Q5
+453,0:22,,Middleton Free Throw 2 of 2 (18 PTS),131,120,11,2816,Q5
+454,0:16,MISS Ingram 20' Jump Shot,,131,120,11,2822,Q5
+455,0:12,,Canaan REBOUND (Off:0 Def:1),131,120,11,2826,Q5
+456,0:00,Go to top ⇧,,131,120,11,2838,Q5
+457,00:00.0,,,131,120,11,2838,Q6
+458,00:00.0,,,131,120,11,2838,Q6
+459,00:12.6,,,131,120,11,2838,Q6
+460,00:16.8,,,131,120,11,2834,Q6
