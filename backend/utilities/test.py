@@ -6,7 +6,6 @@ valid_abbreviations = []
 valid_teams = [s.strip().lower() for s in valid_teams]
 nameMap = {}
 data = {}
-unique_games = set()
 exclusion_list = ["Pistons GT","NetsGC","Long Island Nets","Santa Cruz Warriors","Lakeland Magic","Westchester Knicks","Raptors 905","Stockton Kings","Windy City Bulls","Erie BayHawks","South Bay Lakers","Austin Spurs","Agua Caliente Clippers","Northern Arizona Suns","Sydney Kings","New Orleans Hornets"]
 exclusion_list = [s.strip().lower() for s in exclusion_list]
 
@@ -42,17 +41,14 @@ with open('leaguegamefinder.json') as f:
                 if date not in data:
                     data[date] = {}
                 data[date][b] = gameID
-
-                a = matchup.split(" @ ")
         
 total = 0
 for key in data.keys():
-    if "2019-04" in key:
-        for s in data[key]:
-            if "boston celtics" in s:
-                print(key,data[key][s])
-        total += len(data[key])
-        
+    #if "2019-04" in key:
+    for s in data[key]:
+        if "boston celtics" in s:
+            print(key,data[key][s])
+
 #for name in nameMap.keys():
 #    print(name,nameMap[name])
 
