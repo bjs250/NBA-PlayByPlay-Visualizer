@@ -17,24 +17,40 @@ with open('leaguegamefinder.json') as f:
     #print(d["resultSets"][0]["headers"])  
     for rowSet in d["resultSets"][0]["rowSet"]:
         teamName = rowSet[3].strip().lower()
+        
+        teamAbbreviation = rowSet[2]
+        if teamAbbreviation not in nameMap:
+            nameMap[teamAbbreviation] = teamName
+
+    for rowSet in d["resultSets"][0]["rowSet"]:
+        teamName = rowSet[3].strip().lower()
+        
         for team in valid_teams:
             if team in teamName and "gaming" not in teamName and " gc" not in teamName and " gt" not in teamName and teamName not in exclusion_list:
-
-                teamAbbreviation = rowSet[2]
-                if teamAbbreviation not in nameMap:
-                    nameMap[teamAbbreviation] = teamName
                 
                 date = rowSet[5]
-                if date not in data:
-                    data[date] = []
                 matchup = rowSet[6]
                 gameID = rowSet[4]
-                data[date].append((teamName,matchup,gameID))
+                teamAbbreviation = rowSet[2]
+                
+                a = matchup.split(" @ ")
+                if len(a) == 1:
+                    a = a[0].split(" vs. ")
+                b = frozenset({nameMap[a[0]],nameMap[a[1]]})
+                
+                
+                if date not in data:
+                    data[date] = {}
+                data[date][b] = gameID
 
+                a = matchup.split(" @ ")
+        
 total = 0
 for key in data.keys():
     if "2019-04" in key:
-        
+        for s in data[key]:
+            if "boston celtics" in s:
+                print(key,data[key][s])
         total += len(data[key])
         
 #for name in nameMap.keys():
