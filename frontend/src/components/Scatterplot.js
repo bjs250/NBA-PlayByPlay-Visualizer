@@ -85,7 +85,7 @@ class Scatterplot extends React.Component {
       var new_width = width - margin.left - margin.right // Use the window's width 
       var new_height = height - margin.top - margin.bottom; // Use the window's height
 
-      var xdata = Object.values(data["time(seconds)"]);
+      var xdata = Object.values(data["time_seconds"]);
       var ydata = Object.values(data["score differential"]);
       var home = Object.values(data["home"]);
       var visit = Object.values(data["visit"]);

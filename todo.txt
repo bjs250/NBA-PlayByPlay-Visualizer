@@ -1,10 +1,15 @@
-1) Render BoxScore stats
-2) Player selection in BoxScore
+2) make list of ID's
+    figure out how to take data slowly using the nba api 
+    
+1) More BoxScore stats
 
-- Toggle scoring plays vs other events
+use database instead of files?
 
-- Fix x axis time and ticks --> preprocess the data on the back end
+- Fix x axis time and ticks 
+- preprocess the data on the back end
 - faint gridlines?
 - Reset viewport to left when quarter is selected
 - Make y axis minimum of 0
 
+- Toggle scoring plays vs other events
+- Player selection in BoxScore

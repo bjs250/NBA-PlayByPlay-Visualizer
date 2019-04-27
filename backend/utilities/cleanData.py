@@ -130,6 +130,7 @@ if __name__ == "__main__":
 ##### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
     df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
+    print(df)
     df.to_csv("..//nba_backend//BoxScoreData//" + game_id + ".csv")
 
 ##### Remove the pickle files

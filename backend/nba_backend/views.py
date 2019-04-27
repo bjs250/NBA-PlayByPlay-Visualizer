@@ -51,6 +51,7 @@ def showGameBS(request,id):
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
         dt = pd.read_csv(cwd+'/BoxScoreData/'+foundGame.game_id+'.csv').fillna('').to_dict()
+        print(dt)
         
         # Return as a JSON response
         return HttpResponse(

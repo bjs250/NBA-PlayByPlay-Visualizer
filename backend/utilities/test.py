@@ -44,9 +44,8 @@ with open('leaguegamefinder.json') as f:
         
 total = 0
 for key in data.keys():
-    #if "2019-04" in key:
-    for s in data[key]:
-        if "boston celtics" in s:
+    if "2019-" in key:
+        for s in data[key]:
             print(key,data[key][s])
 
 #for name in nameMap.keys():
