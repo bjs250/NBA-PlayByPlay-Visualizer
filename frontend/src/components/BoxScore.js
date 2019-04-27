@@ -47,78 +47,96 @@ class BoxScore extends React.Component {
         const PF = Object.values(data["PF"])
         const PTS = Object.values(data["PTS"])
         const PlusMinus = Object.values(data["+/-"])
-       
+
         let table = []
-        table.push(<tr>
-            <td>Players</td>
-            <td>MIN</td>
-            <td>FGM</td>
-            <td>FG%</td>
-            <td>3PM</td>
-            <td>3PA</td>
-            <td>3P%</td>
-            <td>FTM</td>
-            <td>FTA</td>
-            <td>FT%</td>
-            <td>OREB</td>
-            <td>DREB</td>
-            <td>REB</td>
-            <td>AST</td>
-            <td>TOV</td>
-            <td>STL</td>
-            <td>BLK</td>
-            <td>PF</td>
-            <td>PTS</td>
-            <td>+/-</td>
 
-        </tr>)
-
-    
         // Outer loop to create parent
 
         for (let i = 0; i < players.length; i++) {
-          let children = []
-          children.push(<td>{players[i]}</td>)
-          children.push(<td>{MIN[i]}</td>)
-          children.push(<td>{FGM[i]}</td>)
-          children.push(<td>{FGPercent[i]}</td>)
-          children.push(<td>{ThreePM[i]}</td>)
-          children.push(<td>{ThreePA[i]}</td>)
-          children.push(<td>{ThreePPercent[i]}</td>)
-          children.push(<td>{FTM[i]}</td>)
-          children.push(<td>{FTA[i]}</td>)
-          children.push(<td>{FTPercent[i]}</td>)
-          children.push(<td>{OREB[i]}</td>)
-          children.push(<td>{DREB[i]}</td>)
-          children.push(<td>{REB[i]}</td>)
-          children.push(<td>{AST[i]}</td>)
-          children.push(<td>{TOV[i]}</td>)
-          children.push(<td>{STL[i]}</td>)
-          children.push(<td>{BLK[i]}</td>)
-          children.push(<td>{PF[i]}</td>)
-          children.push(<td>{PTS[i]}</td>)
-          children.push(<td>{PlusMinus[i]}</td>)
+            let children = []
+            children.push(<td>{players[i]}</td>)
+            if (FGPercent[i] === "") {
+                children.push(<td>DNP</td>)
+                for (let j = 0; j < 18; j++) {
+                    children.push(<td>--</td>)
+                }
+            }
 
-          table.push(<tr>{children}</tr>)
+            else {
+                if (MIN[i] === "") {
+                    children.push(<td>--</td>)
+                }
+                else {
+                    children.push(<td>{MIN[i]}</td>)
+                }
+                children.push(<td>{FGM[i]}</td>)
+                children.push(<td>{FGPercent[i]}</td>)
+                children.push(<td>{ThreePM[i]}</td>)
+                children.push(<td>{ThreePA[i]}</td>)
+                children.push(<td>{ThreePPercent[i]}</td>)
+                children.push(<td>{FTM[i]}</td>)
+                children.push(<td>{FTA[i]}</td>)
+                children.push(<td>{FTPercent[i]}</td>)
+                children.push(<td>{OREB[i]}</td>)
+                children.push(<td>{DREB[i]}</td>)
+                children.push(<td>{REB[i]}</td>)
+                children.push(<td>{AST[i]}</td>)
+                children.push(<td>{TOV[i]}</td>)
+                children.push(<td>{STL[i]}</td>)
+                children.push(<td>{BLK[i]}</td>)
+                children.push(<td>{PF[i]}</td>)
+                children.push(<td>{PTS[i]}</td>)
+                children.push(<td>{PlusMinus[i]}</td>)
+            }
+
+
+
+            table.push(<tr>{children}</tr>)
+            if (players[i].includes("Total")) {
+                table.push(<tr><td>(break)</td></tr>)
+            }
+
         }
         return table
-      }
+    }
 
     render() {
 
         const { data } = this.state;
-        
+
         if (Object.keys(data).length) // make sure data has been loaded
         {
-            const players = Object.values(data["Unnamed: 0"])
-            const FGA = Object.values(data["FGA"])
 
             return (
                 <div>
-                    <p>Box Score</p>
-
                     <table className="BoxScoreTable">
-                        {this.createTable()}
+                        <thead>
+                            <tr>
+                                <th>Players</th>
+                                <th>MIN</th>
+                                <th>FGM</th>
+                                <th>FG%</th>
+                                <th>3PM</th>
+                                <th>3PA</th>
+                                <th>3P%</th>
+                                <th>FTM</th>
+                                <th>FTA</th>
+                                <th>FT%</th>
+                                <th>OREB</th>
+                                <th>DREB</th>
+                                <th>REB</th>
+                                <th>AST</th>
+                                <th>TOV</th>
+                                <th>STL</th>
+                                <th>BLK</th>
+                                <th>PF</th>
+                                <th>PTS</th>
+                                <th>+/-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.createTable()}
+                        </tbody>
                     </table>
 
                 </div>
@@ -127,8 +145,8 @@ class BoxScore extends React.Component {
 
         return (
             <div>Loading...</div>
-          );
-        
+        );
+
     }
 }
 

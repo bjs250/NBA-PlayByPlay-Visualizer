@@ -1,8 +1,8 @@
-2) make list of ID's
+1) Selectable stats
+
+make list of ID's
     figure out how to take data slowly using the nba api 
     
-1) More BoxScore stats
-
 use database instead of files?
 
 - Fix x axis time and ticks 
