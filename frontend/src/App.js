@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Chart from './components/Chart.js'
 import BoxScore from './components/BoxScore.js'
+import MyTable from './components/MyTable.js'
 
 class App extends Component {
   constructor(props) {
@@ -65,9 +66,10 @@ class App extends Component {
           margin={margin}>
         </Chart>
 
-        <BoxScore>
 
-        </BoxScore>
+        <MyTable>
+
+        </MyTable>
 
       </div>
     );

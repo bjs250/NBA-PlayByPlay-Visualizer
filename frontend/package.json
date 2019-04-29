@@ -10,8 +10,10 @@
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-art": "^16.8.6",
+    "react-base-table": "^1.1.1",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
+    "react-table": "^6.10.0",
     "reactstrap": "^8.0.0",
     "why-did-you-update": "^1.0.6"
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import '../styles/BoxScore.css'
 
 class BoxScore extends React.Component {
@@ -21,8 +22,15 @@ class BoxScore extends React.Component {
                     data: res
                 })
             )
+        
+        this.handleRowClick = this.handleRowClick.bind(this);
 
     }
+
+    handleRowClick = (event) => {
+        event.preventDefault();
+        console.log(event.target.id)
+    };
 
     createTable = () => {
         const { data } = this.state;
@@ -54,7 +62,15 @@ class BoxScore extends React.Component {
 
         for (let i = 0; i < players.length; i++) {
             let children = []
-            children.push(<td>{players[i]}</td>)
+            
+            if (players[i].includes("Total")) {
+                children.push(<td key={i} className="total" onClick={()=>{console.log("hit")}}>{players[i]}</td>)
+            }
+            else
+            {
+                children.push(<td>{players[i]}</td>)
+            }
+
             if (FGPercent[i] === "") {
                 children.push(<td>DNP</td>)
                 for (let j = 0; j < 18; j++) {
@@ -89,11 +105,9 @@ class BoxScore extends React.Component {
                 children.push(<td>{PlusMinus[i]}</td>)
             }
 
-
-
             table.push(<tr>{children}</tr>)
             if (players[i].includes("Total")) {
-                table.push(<tr><td>(break)</td></tr>)
+                table.push(<tr><td className="break"></td></tr>)
             }
 
         }
@@ -103,45 +117,7 @@ class BoxScore extends React.Component {
     render() {
 
         const { data } = this.state;
-
-        if (Object.keys(data).length) // make sure data has been loaded
-        {
-
-            return (
-                <div>
-                    <table className="BoxScoreTable">
-                        <thead>
-                            <tr>
-                                <th>Players</th>
-                                <th>MIN</th>
-                                <th>FGM</th>
-                                <th>FG%</th>
-                                <th>3PM</th>
-                                <th>3PA</th>
-                                <th>3P%</th>
-                                <th>FTM</th>
-                                <th>FTA</th>
-                                <th>FT%</th>
-                                <th>OREB</th>
-                                <th>DREB</th>
-                                <th>REB</th>
-                                <th>AST</th>
-                                <th>TOV</th>
-                                <th>STL</th>
-                                <th>BLK</th>
-                                <th>PF</th>
-                                <th>PTS</th>
-                                <th>+/-</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.createTable()}
-                        </tbody>
-                    </table>
-
-                </div>
-            );
-        }
+        console.log("boxscore")
 
         return (
             <div>Loading...</div>

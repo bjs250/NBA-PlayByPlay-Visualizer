@@ -1,12 +1,19 @@
 td { 
     text-align: left; 
     padding: 5px;
+}
 
+.break{
+    padding:15px
 }
 
 th {
     text-align: left; 
     padding: 5px;
+}
+
+.total{
+    
 }
 
 .BoxScoreTable{
