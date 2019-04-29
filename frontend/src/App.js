@@ -66,6 +66,7 @@ class App extends Component {
           margin={margin}>
         </Chart>
 
+        <br></br>
 
         <MyTable>
 
