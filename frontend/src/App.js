@@ -67,8 +67,12 @@ class App extends Component {
 
         <br></br>
 
-        <BoxScore>
+        <BoxScore
+          team={"Home"}>
+        </BoxScore>
 
+        <BoxScore
+          team={"Away"}>
         </BoxScore>
 
       </div>
