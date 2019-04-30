@@ -1,7 +1,8 @@
 
-1) Split into 2 tables?
 
 2) Selectable stats
+
+fix sorting on all columns to be int based
 
 make list of ID's
     figure out how to take data slowly using the nba api 
