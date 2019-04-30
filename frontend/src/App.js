@@ -4,7 +4,6 @@ import axios from "axios";
 
 import Chart from './components/Chart.js'
 import BoxScore from './components/BoxScore.js'
-import MyTable from './components/MyTable.js'
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class App extends Component {
 
     // Initialize state here
     this.state = {
-      user_input : '',
+      user_input: '',
     };
 
     // Bind event listening methods here
@@ -68,9 +67,9 @@ class App extends Component {
 
         <br></br>
 
-        <MyTable>
+        <BoxScore>
 
-        </MyTable>
+        </BoxScore>
 
       </div>
     );

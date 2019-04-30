@@ -50,12 +50,14 @@ def showGameBS(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        dt = pd.read_csv(cwd+'/BoxScoreData/'+foundGame.game_id+'.csv').fillna('').to_dict()
-        print(dt)
+        dt = pd.read_csv(cwd+'/BoxScoreData/'+foundGame.game_id+'.csv').fillna('').transpose().to_dict()
+        for key in dt.keys():
+            dt[key]["PLAYER"] = dt[key].pop("Unnamed: 0")
+        data = [dt[key] for key in dt.keys()]
         
         # Return as a JSON response
         return HttpResponse(
-            json.dumps(dt),
+            json.dumps(data),
             content_type = 'application/javascript; charset=utf8'
             )
     
