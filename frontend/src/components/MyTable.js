@@ -123,6 +123,7 @@ class MyTable extends React.Component {
             columns={home_columns}
             showPagination={false}
             defaultPageSize={formatted_data_home.length}
+            defaultSortMethod={sort}
           />
           <p>Visit</p>
           <ReactTable
@@ -130,8 +131,8 @@ class MyTable extends React.Component {
             columns={visit_columns}
             showPagination={false}
             defaultPageSize={formatted_data_visit.length}
+            defaultSortMethod={sort}
           />
-
         </div>
       );
 
@@ -149,14 +150,37 @@ class MyTable extends React.Component {
 
 export default MyTable;
 
-function MINsort(a, b, desc) {
-  console.log("sort", a, b, desc)
+function sort(a, b, desc) {
   // force null and undefined to the bottom
   a = a === null || a === undefined ? '' : a
   b = b === null || b === undefined ? '' : b
-  // force any string values to lowercase
-  a = typeof a === 'string' ? a.toLowerCase() : a
-  b = typeof b === 'string' ? b.toLowerCase() : b
+  // check if numeric
+  if (isNumeric(a) && isNumeric(b))
+  {
+      a = parseInt(a)
+      b = parseInt(b)
+  }
+  else
+  {
+    // check if MIN column
+    if (a.includes(":") && b.includes(":"))
+    {
+      var minute;
+      var second;
+      minute = a.split(":")[0]
+      second = a.split(":")[1]
+      a = parseInt(minute)*60 + parseInt(second)
+      minute = b.split(":")[0]
+      second = b.split(":")[1]
+      b = parseInt(minute)*60 + parseInt(second)
+    }
+    else{
+    // force any string values to lowercase
+    a = typeof a === 'string' ? a.toLowerCase() : a
+    b = typeof b === 'string' ? b.toLowerCase() : b
+    }
+  }
+
   // Return either 1 or -1 to indicate a sort priority
   if (a > b) {
     return 1
@@ -167,4 +191,8 @@ function MINsort(a, b, desc) {
   // returning 0, undefined or any falsey value will use subsequent sorts or
   // the index as a tiebreaker
   return 0
+}
+
+function isNumeric(num){
+  return !isNaN(num)
 }

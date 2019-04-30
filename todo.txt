@@ -1,8 +1,4 @@
-
-
-2) Selectable stats
-
-fix sorting on all columns to be int based
+1) Selectable stats
 
 make list of ID's
     figure out how to take data slowly using the nba api 
