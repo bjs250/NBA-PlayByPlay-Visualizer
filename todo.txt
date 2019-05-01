@@ -1,4 +1,7 @@
+0) Change appearance of cells that are selected
 1) Selectable stats
+
+
 
 make list of ID's
     figure out how to take data slowly using the nba api 

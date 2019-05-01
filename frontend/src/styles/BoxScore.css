@@ -1,8 +1,12 @@
+.selected{
+  background-color: black;
+  color: white;
+}
 
-
-
-
-
+.unselected{
+  background-color: white;
+  color: black;
+}
 
 .ReactTable {
   position: relative;

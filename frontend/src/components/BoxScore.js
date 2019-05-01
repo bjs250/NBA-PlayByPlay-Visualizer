@@ -10,6 +10,7 @@ class MyTable extends React.Component {
             selected: {},
             selectAll: 0,
             data: [],
+            sel: {},
         };
 
         this.toggleRow = this.toggleRow.bind(this);
@@ -33,8 +34,19 @@ class MyTable extends React.Component {
                         return row["TEAM"] !== home_team;
                     });
                 }
+
+                const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
+                var raw_sel = {}
+                for (var i = 0; i < raw_data.length; i++) {
+                    raw_sel[i] = {}
+                    for (var j = 0; j < headers.length; j++) {
+                        raw_sel[i][headers[j]] = 0
+                    }
+                }
+
                 this.setState({
-                    data: raw_data
+                    data: raw_data,
+                    sel: raw_sel
                 })
             }
             )
@@ -65,10 +77,11 @@ class MyTable extends React.Component {
     }
 
     render() {
-        const { data } = this.state;
-        
+        const { data, sel } = this.state;
+
         if (data.length) // make sure data has been loaded
         {
+            //console.log("sel", this.state.sel)
 
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
@@ -104,12 +117,25 @@ class MyTable extends React.Component {
                 sortable: false,
                 width: 45,
             }
-            
+
             var columns = []
             columns.push(check)
 
             for (var i = 0; i < headers.length - 1; i++) {
-                columns.push({ Header: headers[i], accessor: accessors[i], width: 50, Footer: (<strong>{footer[accessors[i]]}</strong>) })
+                columns.push({
+                    Header: headers[i],
+                    accessor: accessors[i],
+                    width: 50,
+                    Footer: (<strong>{footer[accessors[i]]}</strong>),
+                    getProps: (state, rowInfo, column) => {
+                        return {
+                            style: {
+                                background: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'red' : null,
+                                color: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'white' : 'black',
+                            },
+                        };
+                    }
+                })
             }
 
             // Change the width of the player column
@@ -122,8 +148,43 @@ class MyTable extends React.Component {
                         data={data.slice(0, data.length - 1)}
                         columns={columns}
                         showPagination={false}
-                        defaultPageSize={data.length-1}
+                        defaultPageSize={data.length - 1}
                         defaultSortMethod={sort}
+                        getTdProps={(state, rowInfo, column, instance) => {
+                            return {
+                                onClick: (e, handleOriginal) => {
+                                    //console.log('A Td Element was clicked!')
+                                    //console.log('it produced this event:', e)
+                                    //console.log('It was in this column:', column)
+                                    //console.log('It was in this row:', rowInfo)
+                                    //console.log('It was in this table instance:', instance)
+
+                                    //console.log(e.target)
+                                    //console.log(rowInfo.original["PLAYER"], column["Header"])
+
+                                    if (rowInfo && rowInfo.row && column && column["Header"]) {
+                                        //console.log("index", rowInfo.index, column["Header"],this.state.sel[rowInfo.index][column["Header"]])
+                                        var new_sel = Object.assign({}, this.state.sel);
+                                        new_sel[rowInfo.index][column["Header"]] = this.state.sel[rowInfo.index][column["Header"]] === 0 ? 1 : 0
+                                        //console.log("new_sel", new_sel)
+                                        this.setState({
+                                            sel: new_sel
+                                        })
+                                    }
+
+
+                                    // IMPORTANT! React-Table uses onClick internally to trigger
+                                    // events like expanding SubComponents and pivots.
+                                    // By default a custom 'onClick' handler will override this functionality.
+                                    // If you want to fire the original onClick handler, call the
+                                    // 'handleOriginal' function.
+                                    if (handleOriginal) {
+                                        handleOriginal()
+                                    }
+                                }
+
+                            }
+                        }}
                     />
                 </div>
             );
@@ -141,6 +202,16 @@ class MyTable extends React.Component {
 }
 
 export default MyTable;
+
+function MyCell(
+    { 
+        value, 
+        columnProps: { rest: { someFunc } } 
+    }) 
+    {
+    return <a href="#" onClick={someFunc}>{value}</a>
+}
+
 
 function sort(a, b, desc) {
     // force null and undefined to the bottom
