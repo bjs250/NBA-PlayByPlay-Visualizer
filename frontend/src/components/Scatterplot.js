@@ -115,6 +115,21 @@ class Scatterplot extends React.Component {
           }
       }
 
+      var phrase = "3pt"
+      var player = "jackson"
+      var queried_xy = [];
+      var text;
+      for(var i = 1; i < xdata.length; i++ ) {
+        if (home[i] || visit[i])
+        {
+          text = (home[i] + " " + visit[i]).trim()
+          if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase))//&& Math.abs(ydata[i] - ydata[i-1]) === 3)
+          {
+            console.log(i,text)
+          }
+        }
+      }
+      
       // Try to extract per player information
       /*
       var playerData = [];

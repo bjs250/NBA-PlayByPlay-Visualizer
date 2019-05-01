@@ -1,6 +1,22 @@
-0) Change appearance of cells that are selected
 1) Selectable stats
+    gray: MIN, FG%, 3P%, FT%, REB?
+    special: pts
+    column seelction
 
+
+REB: player name + "REBOUND" 
+filter again:
+    OREB
+    DREB
+
+TOV: "Turnover"
+STL: "STL"
+BLK: "BLK"
+PF: ".foul"
+
+PTS: anytime the y axis value changes from before
+
+2) filter function or queries
 
 
 make list of ID's
