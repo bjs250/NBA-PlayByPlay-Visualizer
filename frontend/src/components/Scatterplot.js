@@ -26,12 +26,12 @@ class Scatterplot extends React.Component {
   updateD3(props) {
     const { data, width, height, zoomTransform, zoomType, margin, buttonSelected } = props;
     
-    this.xScale = d3.scaleLinear()
-      .domain([0, d3.max(data, ([x, y]) => x)])
-      .range([0, width - margin.left - margin.right]);
-    this.yScale = d3.scaleLinear()
-      .domain([0, d3.max(data, ([x, y]) => y)])
-      .range([0, height - margin.top - margin.bottom]);
+    // this.xScale = d3.scaleLinear()
+    //   .domain([0, d3.max(data, ([x, y]) => x)])
+    //   .range([0, width - margin.left - margin.right]);
+    // this.yScale = d3.scaleLinear()
+    //   .domain([0, d3.max(data, ([x, y]) => y)])
+    //   .range([0, height - margin.top - margin.bottom]);
 
     if (zoomTransform && zoomType === "detail") {
       this.xScale.domain(zoomTransform.rescaleX(this.xScale).domain());
@@ -77,20 +77,25 @@ class Scatterplot extends React.Component {
 
   render() {
     const { data, width, height, margin, buttonSelected } = this.props;
-
-    if (Object.keys(data).length) // make sure data has been loaded
+    
+    if (data.length) // make sure data has been loaded
     {
-      console.log(Object.keys(data).length)
       // Use the margin convention practice 
       var new_width = width - margin.left - margin.right // Use the window's width 
       var new_height = height - margin.top - margin.bottom; // Use the window's height
 
-      var xdata = Object.values(data["time_seconds"]);
-      var ydata = Object.values(data["score differential"]);
-      var home = Object.values(data["home"]);
-      var visit = Object.values(data["visit"]);
-      var quarter = Object.values(data["quarter"]);
+      var xdata = data.map(d => d["time_seconds"]);
+      var ydata = data.map(d => d["score differential"]);
+      //var home = Object.values(data["home"]);
+      //var visit = Object.values(data["visit"]);
+      var quarter = data.map(d => d["quarter"]);
 
+      // by default, just take scoring plays
+      var a = new Set();
+      Object.keys(data).forEach(function(element){
+
+      })
+      
       // Put data into input format for d3.line
       var xy = [];
       for (var i = 0; i < xdata.length; i++) {
@@ -99,45 +104,45 @@ class Scatterplot extends React.Component {
         }
       }
 
-      var baseline_xy = [];
-      for (var i = 0; i < xdata.length; i++) {
-        if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
-          baseline_xy.push({ x: xdata[i], y: 0 });
-        }
-      }
+      // var baseline_xy = [];
+      // for (var i = 0; i < xdata.length; i++) {
+      //   if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
+      //     baseline_xy.push({ x: xdata[i], y: 0 });
+      //   }
+      // }
 
-      var pruned_xy = []; 
-      for(var i = 1; i < xdata.length; i++ ) {
-          if (ydata[i] !== ydata[i-1]){
-            if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){       
-              pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i], key:i});
-            }
-          }
-      }
+      // var pruned_xy = []; 
+      // for(var i = 1; i < xdata.length; i++ ) {
+      //     if (ydata[i] !== ydata[i-1]){
+      //       if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){       
+      //         pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i], key:i});
+      //       }
+      //     }
+      // }
       
 
-      var phrase = "free throw"
-      var player = "drummond"
-      var queried_xy = [];
-      var text;
-      for(var i = 1; i < xdata.length; i++ ) {
-        if (home[i] || visit[i])
-        {
-          text = (home[i] + " " + visit[i]).trim()
-          if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase)) //&& Math.abs(ydata[i] - ydata[i-1]) === 3)
-          {
-            // if (text.match(/\([\w ]+\)$/) && text.match(/\([\w ]+\)$/)[0].toLowerCase().includes(player) === true)
-            // {
-            //   console.log("fake",i,text)  
-            // } 
-            // else{
-            //   console.log("real",i,text)
-            // }
-            //console.log(i,text)
-            //console.log(text.match(/\([\w ]+\)$/)[0])
-          }
-        }
-      }
+      // var phrase = "free throw"
+      // var player = "drummond"
+      // var queried_xy = [];
+      // var text;
+      // for(var i = 1; i < xdata.length; i++ ) {
+      //   if (home[i] || visit[i])
+      //   {
+      //     text = (home[i] + " " + visit[i]).trim()
+      //     if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase)) //&& Math.abs(ydata[i] - ydata[i-1]) === 3)
+      //     {
+      //       // if (text.match(/\([\w ]+\)$/) && text.match(/\([\w ]+\)$/)[0].toLowerCase().includes(player) === true)
+      //       // {
+      //       //   console.log("fake",i,text)  
+      //       // } 
+      //       // else{
+      //       //   console.log("real",i,text)
+      //       // }
+      //       //console.log(i,text)
+      //       //console.log(text.match(/\([\w ]+\)$/)[0])
+      //     }
+      //   }
+      // }
       
       // Try to extract per player information
       /*
@@ -221,23 +226,23 @@ class Scatterplot extends React.Component {
               d={line(xy)}
             />
 
-            <path className="baseline"
+            {/* <path className="baseline"
               d={baseline(baseline_xy)}
-            />
+            /> */}
 
-            <Points
+            {/* <Points
               scales={{xScale,yScale}}
               data={pruned_xy}
               onMouseOverCallback={d => this.setState({hoveredPoint: d})}
               onMouseOutCallback={d => this.setState({hoveredPoint: null})}
-            />
+            /> */}
 
-            { this.state.hoveredPoint ?
+            {/* { this.state.hoveredPoint ?
               <Tooltip
                 hoveredPoint={this.state.hoveredPoint}
                 scales={{xScale,yScale}}
               /> :
-            null}
+            null} */}
 
           </g>
 

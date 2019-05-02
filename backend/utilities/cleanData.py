@@ -65,13 +65,13 @@ if __name__ == "__main__":
     for key in df.keys():
         df[key]["PLAYER"] = key
     
-    data = [df[key] for key in df.keys()]
+    data = list(df.values())
+    #data = [df[key] for key in df.keys()]
     with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
         pickle.dump(data, fp)
     
     players = [df[key]["PLAYER"].split(" ")[1].lower() for key in df.keys()]
-    print(players)
-
+    
 ######### Clean the PBP Data
     # Read in the Play-By-Play data
     df = pd.read_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
@@ -141,11 +141,35 @@ if __name__ == "__main__":
     df.loc[df['quarter'] == "Q2",'time_seconds'] += 720
     df.loc[df['quarter'] == "Q3",'time_seconds'] += 720*2
     df.loc[df['quarter'] == "Q4",'time_seconds'] += 720*3
+    
+    # Create score-differential line data
+    full_line_data = pd.DataFrame()
+    full_line_data['quarter'] = df['quarter']
+    full_line_data['time_seconds'] = df['time_seconds']
+    full_line_data['score differential'] = df['score differential']
+    full_line_data_dict = full_line_data.fillna('').transpose().to_dict()
+    full_line_data_list = list(full_line_data_dict.values())
+    
+    truncated_data_list = []
+    for index,element in enumerate(full_line_data_list):
+        if index == 0:
+            truncated_data_list.append(element)
+        else:
+            if full_line_data_list[index]["score differential"] != full_line_data_list[index-1]["score differential"]:
+                truncated_data_list.append(element)
+    
+    with open("..//nba_backend//PBPdata//" + game_id + "line_edit.pkl", 'wb') as fp:
+        pickle.dump(truncated_data_list, fp)
+    
+    #print(truncated_data_list)
+    #print(len(truncated_data_list))
+    
+    # Create datapoint tree for queries
     dt = df.fillna('').transpose().to_dict()
-
+    
     data = {}
     categories = ["1","2","3","BLK","TOV","FOUL","STL","REB","AST"]
-    data["rest"] = []
+    #data["rest"] = []
     for player in players:
         data[player] = {}
         for category in categories:
@@ -161,7 +185,8 @@ if __name__ == "__main__":
         event = dt[index]
         text = (event["home"] + " "  + event["visit"]).strip().lower()
         if text is "":
-            data["rest"].append(event)
+            pass
+            #data["rest"].append(event)
         else:
             for player in players:
                 if player in text:

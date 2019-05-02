@@ -27,11 +27,13 @@ def showGamePBP(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').fillna('').to_dict()
-        
+        #dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').fillna('').to_dict()
+        with open (cwd+'/PBPdata/'+foundGame.game_id+'line_edit.pkl', 'rb') as fp:
+            data = pickle.load(fp)
+
         # Return as a JSON response
         return HttpResponse(
-            json.dumps(dt),
+            json.dumps(data),
             content_type = 'application/javascript; charset=utf8'
             )
     
