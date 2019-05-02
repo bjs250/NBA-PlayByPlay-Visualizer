@@ -5,6 +5,7 @@ import sys
 import os
 import time
 import pickle
+import re
 
 def trim(s):
     if s is not None:
@@ -148,9 +149,15 @@ if __name__ == "__main__":
     for player in players:
         data[player] = {}
         for category in categories:
-            data[player][category] = []
+            if category in ["1","2","3"]:
+                data[player][category] = {}
+                data[player][category]["Made"] = []
+                data[player][category]["Miss"] = []
+            else:
+                data[player][category] = []
 
-    for index in dt:
+    
+    for index in range(1,len(dt.keys())):
         event = dt[index]
         text = (event["home"] + " "  + event["visit"]).strip().lower()
         if text is "":
@@ -159,22 +166,49 @@ if __name__ == "__main__":
             for player in players:
                 if player in text:
 
+                    # AST
+                    a = re.search("\([\w ]+\)$",text)
+                    if event not in data[player]["AST"] and a is not None and a.group(0).split(" ")[0][1:] == player:
+                        data[player]["AST"].append(event)
+
+                    difference = np.abs(dt[index]["score differential"]-dt[index-1]["score differential"])
+
+                    # FT, 2, 3
+                    if difference == 1 and event not in data[player]["1"]["Made"]:
+                        data[player]["1"]["Made"].append(event)
+                    elif difference == 2 and event not in data[player]["2"]["Made"] and event not in data[player]["AST"]:
+                        data[player]["2"]["Made"].append(event)                    
+                    elif difference == 3 and event not in data[player]["3"]["Made"] and event not in data[player]["AST"]:
+                        data[player]["3"]["Made"].append(event)
+                    
+                    # BLK
+                    if "blk" in text and event not in data[player]["BLK"]:
+                        data[player]["BLK"].append(event)
+
+                    # FOUL
+                    if "foul" in text and "s.foul" not in text and event not in data[player]["FOUL"] and text.split(" ")[0] == player:
+                        data[player]["FOUL"].append(event)
+
+                    # STL
                     phrase = player + " " + "steal"
                     if phrase in text and event not in data[player]["STL"]:
                         data[player]["STL"].append(event)
 
-                    if "blk" in text and event not in data[player]["BLK"]:
-                        data[player]["BLK"].append(event)
-
-                    if "foul" in text and "s.foul" not in text and event not in data[player]["FOUL"] and text.split(" ")[0] == player:
-                        data[player]["FOUL"].append(event)
-
-                    if "turnover" in text  and event not in data[player]["TOV"] and event not in data[player]["STL"]:
+                    # TOV
+                    if "turnover" in text and event not in data[player]["TOV"] and event not in data[player]["STL"]:
                         data[player]["TOV"].append(event)
 
-    for event in data["brown"]["BLK"]:
-        text = (event["home"] + " "  + event["visit"]).strip()
-        print(event["time_seconds"],text)
+                    if player in text and "miss" in text and event not in data[player]["BLK"]:
+                        if "3pt" in text:
+                            data[player]["3"]["Miss"].append(event)
+                        elif "free throw" in text:
+                            data[player]["1"]["Miss"].append(event)
+                        else:
+                            data[player]["2"]["Miss"].append(event)
+    
+    with open("..//nba_backend//PBPdata//" + game_id + "_edit.pkl", 'wb') as fp:
+        pickle.dump(data, fp)
+                  
     #df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
 
 ##### Remove the pickle files
