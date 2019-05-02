@@ -57,6 +57,21 @@ if __name__ == "__main__":
     else:
         raise Exception("Wrong number of input arguments : " + str(len(sys.argv)))
 
+######### Clean the Box Score Data
+    df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
+    df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
+    df = df.fillna('').transpose().to_dict()
+    for key in df.keys():
+        df[key]["PLAYER"] = key
+    
+    data = [df[key] for key in df.keys()]
+    with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
+        pickle.dump(data, fp)
+    
+    players = [df[key]["PLAYER"].split(" ")[1].lower() for key in df.keys()]
+    print(players)
+
+######### Clean the PBP Data
     # Read in the Play-By-Play data
     df = pd.read_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
 
@@ -79,7 +94,7 @@ if __name__ == "__main__":
     # Remove extra whitespace from string values
     df["home"] = df["home"].apply(trim)
     df["visit"] = df["visit"].apply(trim)
-
+    
     # Remove rows that have a fractional time
     indices = []
     for index, row in df.iterrows():
@@ -113,10 +128,7 @@ if __name__ == "__main__":
     # Fix the score column by filling forward
     df["score"].iloc[0] = "0 - 0"
     df["score"] = df["score"].fillna(method='ffill')
-    #print(df["score"][0:100])
-    print(df["score"].iloc[0])
-    #print("-----",df["score"][0:50])
-
+    
     # Split the score into home and away, get score differential
     df["home_score"] = df["score"].apply(getHomePoints)
     df["visit_score"] = df["score"].apply(getVisitPoints)
@@ -128,21 +140,42 @@ if __name__ == "__main__":
     df.loc[df['quarter'] == "Q2",'time_seconds'] += 720
     df.loc[df['quarter'] == "Q3",'time_seconds'] += 720*2
     df.loc[df['quarter'] == "Q4",'time_seconds'] += 720*3
+    dt = df.fillna('').transpose().to_dict()
 
-    df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
-    
-##### Clean the Box Score Data
-    df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
-    df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
-    df = df.fillna('').transpose().to_dict()
-    for key in df.keys():
-        df[key]["PLAYER"] = key
-    
-    data = [df[key] for key in df.keys()]
-    with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
-        pickle.dump(data, fp)
-    
-    #df.to_csv("..//nba_backend//BoxScoreData//" + game_id + ".csv")
+    data = {}
+    categories = ["1","2","3","BLK","TOV","FOUL","STL","REB","AST"]
+    data["rest"] = []
+    for player in players:
+        data[player] = {}
+        for category in categories:
+            data[player][category] = []
+
+    for index in dt:
+        event = dt[index]
+        text = (event["home"] + " "  + event["visit"]).strip().lower()
+        if text is "":
+            data["rest"].append(event)
+        else:
+            for player in players:
+                if player in text:
+
+                    phrase = player + " " + "steal"
+                    if phrase in text and event not in data[player]["STL"]:
+                        data[player]["STL"].append(event)
+
+                    if "blk" in text and event not in data[player]["BLK"]:
+                        data[player]["BLK"].append(event)
+
+                    if "foul" in text and "s.foul" not in text and event not in data[player]["FOUL"] and text.split(" ")[0] == player:
+                        data[player]["FOUL"].append(event)
+
+                    if "turnover" in text  and event not in data[player]["TOV"] and event not in data[player]["STL"]:
+                        data[player]["TOV"].append(event)
+
+    for event in data["brown"]["BLK"]:
+        text = (event["home"] + " "  + event["visit"]).strip()
+        print(event["time_seconds"],text)
+    #df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
 
 ##### Remove the pickle files
     #os.remove("..//nba_backend//PBPdata//0041800104.pkl")
