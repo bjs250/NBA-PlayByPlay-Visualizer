@@ -8,8 +8,10 @@ from .models import Game
 import requests      
 
 import pandas as pd
+import numpy as np
 import json
 import os
+import pickle
 
 def showGamePBP(request,id):
     try:
@@ -50,10 +52,8 @@ def showGameBS(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        dt = pd.read_csv(cwd+'/BoxScoreData/'+foundGame.game_id+'.csv').fillna('').transpose().to_dict()
-        for key in dt.keys():
-            dt[key]["PLAYER"] = dt[key].pop("Unnamed: 0")
-        data = [dt[key] for key in dt.keys()]
+        with open (cwd+'/BoxScoreData/'+foundGame.game_id+'_edit.pkl', 'rb') as fp:
+            data = pickle.load(fp)
         
         # Return as a JSON response
         return HttpResponse(

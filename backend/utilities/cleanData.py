@@ -4,6 +4,7 @@ import numpy as np
 import sys
 import os
 import time
+import pickle
 
 def trim(s):
     if s is not None:
@@ -108,10 +109,13 @@ if __name__ == "__main__":
 
     # Turn empty string in Score column to None
     df["score"] = df["score"].apply(replace)
-
+    
     # Fix the score column by filling forward
-    df["score"][0] = "0 - 0"
+    df["score"].iloc[0] = "0 - 0"
     df["score"] = df["score"].fillna(method='ffill')
+    #print(df["score"][0:100])
+    print(df["score"].iloc[0])
+    #print("-----",df["score"][0:50])
 
     # Split the score into home and away, get score differential
     df["home_score"] = df["score"].apply(getHomePoints)
@@ -120,18 +124,25 @@ if __name__ == "__main__":
     df["score differential"] = df["home_score"] - df["visit_score"]
 
     df.drop_duplicates(keep=False,inplace=True) 
-    df = df.reset_index(drop=True)
 
     df.loc[df['quarter'] == "Q2",'time_seconds'] += 720
     df.loc[df['quarter'] == "Q3",'time_seconds'] += 720*2
     df.loc[df['quarter'] == "Q4",'time_seconds'] += 720*3
+
     df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
     
 ##### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
     df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
-    print(df)
-    df.to_csv("..//nba_backend//BoxScoreData//" + game_id + ".csv")
+    df = df.fillna('').transpose().to_dict()
+    for key in df.keys():
+        df[key]["PLAYER"] = key
+    
+    data = [df[key] for key in df.keys()]
+    with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
+        pickle.dump(data, fp)
+    
+    #df.to_csv("..//nba_backend//BoxScoreData//" + game_id + ".csv")
 
 ##### Remove the pickle files
     #os.remove("..//nba_backend//PBPdata//0041800104.pkl")
