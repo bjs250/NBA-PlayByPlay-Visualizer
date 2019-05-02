@@ -1,4 +1,20 @@
+.test{
+  overflow: visible
+}
+
 .pdot {
-    fill: #a200ff;
-    stroke: #fff;
+    fill: #ffffff;
+    stroke: rgb(0, 95, 13);
   }
+
+.pdot-bad {
+  fill: #ffffff;
+  stroke: rgb(255, 0, 0);
+}
+
+text{
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}

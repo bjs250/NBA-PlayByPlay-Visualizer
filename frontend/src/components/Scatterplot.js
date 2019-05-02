@@ -25,7 +25,6 @@ class Scatterplot extends React.Component {
 
   updateD3(props) {
     const { data, width, height, zoomTransform, zoomType, margin, buttonSelected } = props;
-    //console.log("Update executed", width,height,margin)
     
     this.xScale = d3.scaleLinear()
       .domain([0, d3.max(data, ([x, y]) => x)])
@@ -81,6 +80,7 @@ class Scatterplot extends React.Component {
 
     if (Object.keys(data).length) // make sure data has been loaded
     {
+      console.log(Object.keys(data).length)
       // Use the margin convention practice 
       var new_width = width - margin.left - margin.right // Use the window's width 
       var new_height = height - margin.top - margin.bottom; // Use the window's height
@@ -109,23 +109,32 @@ class Scatterplot extends React.Component {
       var pruned_xy = []; 
       for(var i = 1; i < xdata.length; i++ ) {
           if (ydata[i] !== ydata[i-1]){
-            if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
+            if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){       
               pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i], key:i});
             }
           }
       }
+      
 
-      var phrase = "3pt"
-      var player = "jackson"
+      var phrase = "free throw"
+      var player = "drummond"
       var queried_xy = [];
       var text;
       for(var i = 1; i < xdata.length; i++ ) {
         if (home[i] || visit[i])
         {
           text = (home[i] + " " + visit[i]).trim()
-          if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase))//&& Math.abs(ydata[i] - ydata[i-1]) === 3)
+          if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase)) //&& Math.abs(ydata[i] - ydata[i-1]) === 3)
           {
-            console.log(i,text)
+            // if (text.match(/\([\w ]+\)$/) && text.match(/\([\w ]+\)$/)[0].toLowerCase().includes(player) === true)
+            // {
+            //   console.log("fake",i,text)  
+            // } 
+            // else{
+            //   console.log("real",i,text)
+            // }
+            //console.log(i,text)
+            //console.log(text.match(/\([\w ]+\)$/)[0])
           }
         }
       }

@@ -12,15 +12,28 @@ class Points extends React.Component {
         return (
 
             data.map(d => (
-
-                <circle className="pdot"
-                    key={d.key}
-                    cx={xScale(d.x)}
-                    cy={yScale(d.y)}
-                    r={4}
+                <svg className="test"
                     onMouseOver={() => this.props.onMouseOverCallback(d)}
                     onMouseOut={() => this.props.onMouseOutCallback(null)}
-                />
+                    key={d.key}
+                    >
+                    <circle className="pdot"
+                        cx={xScale(d.x)}
+                        cy={yScale(d.y)}
+                        r={5}
+                        >
+                    </circle>
+                    <text
+                        x={xScale(d.x)}
+                        y={yScale(d.y)+3}
+                        fill="black"
+                        fontSize="8px"
+                        textAnchor="middle"
+                        fontWeight="bold"
+                        >2
+                    </text>
+                    
+                </svg>
             ))
 
       );
@@ -29,4 +42,3 @@ class Points extends React.Component {
 }
 
 export default Points;
-

@@ -30,3 +30,14 @@
                     </table>
 
                 </div>
+
+
+ if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase)) //&& Math.abs(ydata[i] - ydata[i-1]) === 3)
+          {
+            if (text.match(/\([\w ]+\)$/) && text.match(/\([\w ]+\)$/)[0].toLowerCase().includes(player) === true)
+            {
+              console.log("fake",i,text)  
+            } 
+            else{
+              console.log("real",i,text)
+            }

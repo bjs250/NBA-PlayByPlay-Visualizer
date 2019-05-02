@@ -1,8 +1,18 @@
+
+1) Point labeling based on filtering and css class
+
+
+Make rendering way smarter to prevent slowdown
+
+
 1) Selectable stats
     gray: MIN, FG%, 3P%, FT%, REB?
     special: pts
     column seelction
 
+1,2,3,B,T,S,R,F
+
+3PM, 3PA
 
 REB: player name + "REBOUND" 
 filter again:
