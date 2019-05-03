@@ -11,7 +11,6 @@ import Points from './Points.js';
 class Scatterplot extends React.Component {
   constructor(props) {
     super(props);
-    this.updateD3(props);
 
     this.state = {
       hoveredPoint: null
@@ -19,32 +18,12 @@ class Scatterplot extends React.Component {
 
   }
 
-  componentWillUpdate(nextProps) {
-    this.updateD3(nextProps);
-  }
-
-  updateD3(props) {
-    const { data, width, height, zoomTransform, zoomType, margin, buttonSelected } = props;
-    
-    // this.xScale = d3.scaleLinear()
-    //   .domain([0, d3.max(data, ([x, y]) => x)])
-    //   .range([0, width - margin.left - margin.right]);
-    // this.yScale = d3.scaleLinear()
-    //   .domain([0, d3.max(data, ([x, y]) => y)])
-    //   .range([0, height - margin.top - margin.bottom]);
-
-    if (zoomTransform && zoomType === "detail") {
-      this.xScale.domain(zoomTransform.rescaleX(this.xScale).domain());
-      this.yScale.domain(zoomTransform.rescaleY(this.yScale).domain());
-    }
-  }
-
   get transform() {
-    const { x, y, zoomTransform, zoomType, margin } = this.props;
+    const { x, y, zoomTransform, margin } = this.props;
     //console.log("Transform Executed",margin, zoomTransform)
     let transform = "";
 
-    if (zoomTransform && zoomType === "scale") {
+    if (zoomTransform) {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${y + zoomTransform.y + margin.top}) scale(${zoomTransform.k})`;
     }
 
@@ -52,11 +31,11 @@ class Scatterplot extends React.Component {
   }
 
   get ytransform() {
-    const { x, y, zoomTransform, zoomType, margin } = this.props;
+    const { x, y, zoomTransform, margin } = this.props;
     //console.log("Transform Executed",margin, zoomTransform)
     let transform = "";
 
-    if (zoomTransform && zoomType === "scale") {
+    if (zoomTransform) {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${zoomTransform.y}) scale(${zoomTransform.k})`;
     }
     return transform;
@@ -64,11 +43,11 @@ class Scatterplot extends React.Component {
   }
 
   get xtransform() {
-    const { x, y, zoomTransform, zoomType, margin } = this.props;
+    const { x, y, zoomTransform, margin } = this.props;
     //console.log("Transform Executed",margin, zoomTransform)
     let transform = "";
 
-    if (zoomTransform && zoomType === "scale") {
+    if (zoomTransform) {
       transform = `translate(${x + margin.left}, ${y + zoomTransform.y}) scale(${zoomTransform.k})`;
     }
     return transform;
@@ -76,127 +55,58 @@ class Scatterplot extends React.Component {
   }
 
   render() {
-    const { data, width, height, margin, buttonSelected } = this.props;
-    
-    if (data.length) // make sure data has been loaded
+    const { line_data, point_data, width, height, margin, buttonSelected } = this.props;
+
+    if (line_data.length && Object.keys(point_data).length) // make sure line_data has been loaded
     {
       // Use the margin convention practice 
       var new_width = width - margin.left - margin.right // Use the window's width 
       var new_height = height - margin.top - margin.bottom; // Use the window's height
 
-      var xdata = data.map(d => d["time_seconds"]);
-      var ydata = data.map(d => d["score differential"]);
-      //var home = Object.values(data["home"]);
-      //var visit = Object.values(data["visit"]);
-      var quarter = data.map(d => d["quarter"]);
+      // Put line_data into input format for d3.line by filtering by quarter
+      var xy = line_data.filter(function (d) {
+        return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
+      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], key: d["key"] }))
 
-      // by default, just take scoring plays
-      var a = new Set();
-      Object.keys(data).forEach(function(element){
+      // Render the baseline
+      var baseline_xy = line_data.filter(function (d) {
+        return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
+      }).map(d => ({ x: d["time_seconds"], y: 0, key: d["key"]+1000 }))
 
-      })
-      
-      // Put data into input format for d3.line
-      var xy = [];
-      for (var i = 0; i < xdata.length; i++) {
-        if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
-          xy.push({ x: xdata[i], y: ydata[i], key:i });
+      // Render the points
+      console.log(point_data)
+      var selected_players = ["brown"]
+      var selected_interests = ["AST"]
+      var set = new Set()
+      Object.keys(point_data).forEach(function(player){
+        if (selected_players.includes(player)){
+          Object.keys(point_data[player]).forEach(function(interest){
+            if (selected_interests.includes(interest))
+            {
+              point_data[player][interest].map(d => set.add(d))
+            }
+          })
         }
-      }
+      })
+      var pruned_xy = Array.from(set).filter(function (d) {
+        return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
+      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], key: d["key"]+2000 }))
+      console.log(pruned_xy)
 
-      // var baseline_xy = [];
-      // for (var i = 0; i < xdata.length; i++) {
-      //   if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){        
-      //     baseline_xy.push({ x: xdata[i], y: 0 });
-      //   }
-      // }
-
-      // var pruned_xy = []; 
-      // for(var i = 1; i < xdata.length; i++ ) {
-      //     if (ydata[i] !== ydata[i-1]){
-      //       if (quarter[i] === buttonSelected || buttonSelected === "Full Game"){       
-      //         pruned_xy.push({x: xdata[i], y: ydata[i], home:home[i], visit:visit[i], key:i});
-      //       }
-      //     }
-      // }
-      
-
-      // var phrase = "free throw"
-      // var player = "drummond"
-      // var queried_xy = [];
-      // var text;
-      // for(var i = 1; i < xdata.length; i++ ) {
-      //   if (home[i] || visit[i])
-      //   {
-      //     text = (home[i] + " " + visit[i]).trim()
-      //     if (text.toLowerCase().includes(player) && text.toLowerCase().includes(phrase)) //&& Math.abs(ydata[i] - ydata[i-1]) === 3)
-      //     {
-      //       // if (text.match(/\([\w ]+\)$/) && text.match(/\([\w ]+\)$/)[0].toLowerCase().includes(player) === true)
-      //       // {
-      //       //   console.log("fake",i,text)  
-      //       // } 
-      //       // else{
-      //       //   console.log("real",i,text)
-      //       // }
-      //       //console.log(i,text)
-      //       //console.log(text.match(/\([\w ]+\)$/)[0])
-      //     }
-      //   }
-      // }
-      
-      // Try to extract per player information
-      /*
-      var playerData = [];
-      var playerDataDict = {}
-      var currentVisitInfo = "";  
-      var currentHomeInfo = "";
-
-      for(var i = 0; i < data.length; i++ ) {
-          currentPlayer = data[i].players.split(" ")[1].toLowerCase()
-          playerDataDict[currentPlayer] = {"info": [], "time": [], "y":[]}
-          for(var j = 0; j < xdata.length; j++ ) {
-              currentInfo = ""
-              currentVisitInfo = visit[j].toLowerCase()
-              if (currentVisitInfo.includes(currentPlayer))
-              {
-                  currentInfo += currentVisitInfo
-              }
-              currentInfo += " "
-              currentHomeInfo = home[j].toLowerCase()
-              if (currentHomeInfo.includes(currentPlayer))
-              {
-                  currentInfo += currentHomeInfo
-              }
-              if (currentInfo !== " ")
-              {
-                  playerDataDict[currentPlayer]["time"].push(xdata[j])
-                  playerDataDict[currentPlayer]["y"].push(ydata[j])
-
-                  playerDataDict[currentPlayer]["info"].push(home[j] + visit[j])
-              }   
-          }
-      } 
-
-      currentPlayer = "james"
-      var player_xy = []; 
-      for(var i = 1; i < playerDataDict[currentPlayer]["time"].length; i++ ) {
-          player_xy.push({x: playerDataDict[currentPlayer]["time"][i], y: playerDataDict[currentPlayer]["y"][i], info: playerDataDict[currentPlayer]["info"][i]});
-          }
-      */
 
       // X Scale
       var xScale = d3.scaleLinear()
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
       var X_extrema = d3.extent(xy, function (d) { return d.x; })
-      var xticks = Math.floor((X_extrema[1] - X_extrema[0])/60.0)
-      
+      var xticks = Math.floor((X_extrema[1] - X_extrema[0]) / 60.0)
+
       // Y Scale 
       var extrema = d3.extent(xy, function (d) { return d.y; })
       extrema[0] -= 1
       extrema[1] += 1
       var yticks = extrema[1] - extrema[0] + 1
-      
+
       var yScale = d3.scaleLinear()
         .domain(extrema)
         .range([new_height, 0]);
@@ -208,8 +118,8 @@ class Scatterplot extends React.Component {
         .curve(d3.curveStepAfter) // apply smoothing to the line
 
       var baseline = d3.line()
-      .x(function(d) { return xScale(d.x); }) // set the x values for the line generator
-      .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
+        .x(function (d) { return xScale(d.x); }) // set the x values for the line generator
+        .y(function (d) { return yScale(d.y); }) // set the y values for the line generator 
 
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
@@ -226,16 +136,16 @@ class Scatterplot extends React.Component {
               d={line(xy)}
             />
 
-            {/* <path className="baseline"
+            <path className="baseline"
               d={baseline(baseline_xy)}
-            /> */}
+            />
 
-            {/* <Points
+            <Points
               scales={{xScale,yScale}}
               data={pruned_xy}
               onMouseOverCallback={d => this.setState({hoveredPoint: d})}
               onMouseOutCallback={d => this.setState({hoveredPoint: null})}
-            /> */}
+            />
 
             {/* { this.state.hoveredPoint ?
               <Tooltip

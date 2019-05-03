@@ -147,6 +147,7 @@ if __name__ == "__main__":
     full_line_data['quarter'] = df['quarter']
     full_line_data['time_seconds'] = df['time_seconds']
     full_line_data['score differential'] = df['score differential']
+    full_line_data['key'] = full_line_data.index
     full_line_data_dict = full_line_data.fillna('').transpose().to_dict()
     full_line_data_list = list(full_line_data_dict.values())
     
@@ -165,6 +166,7 @@ if __name__ == "__main__":
     #print(len(truncated_data_list))
     
     # Create datapoint tree for queries
+    df['key'] = df.index+10000
     dt = df.fillna('').transpose().to_dict()
     
     data = {}

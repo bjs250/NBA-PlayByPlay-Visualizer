@@ -66,7 +66,7 @@ class App extends Component {
         </Chart>
 
         <br></br>
-
+ 
         <BoxScore
           team={"Home"}>
         </BoxScore>

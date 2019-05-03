@@ -13,21 +13,17 @@ import json
 import os
 import pickle
 
-def showGamePBP(request,id):
+def showGamePBPLine(request,id):
     try:
         foundGame = Game.objects.get(game_id=id)
     except Game.DoesNotExist:
         foundGame = None
 
     if foundGame is not None:
-
-        #data = serializers.serialize('json', [foundGame,])
-        #print(data)
         
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        #dt = pd.read_csv(cwd+'/PBPdata/'+foundGame.game_id+'.csv').fillna('').to_dict()
         with open (cwd+'/PBPdata/'+foundGame.game_id+'line_edit.pkl', 'rb') as fp:
             data = pickle.load(fp)
 
@@ -39,6 +35,30 @@ def showGamePBP(request,id):
     
     else:
         return HttpResponse("That does not exist")
+
+def showGamePBPData(request,id):
+    try:
+        foundGame = Game.objects.get(game_id=id)
+    except Game.DoesNotExist:
+        foundGame = None
+
+    if foundGame is not None:
+        
+        # Get the corresponding data file
+        os.chdir(os.path.dirname(__file__))
+        cwd = os.getcwd()
+        with open (cwd+'/PBPdata/'+foundGame.game_id+'_edit.pkl', 'rb') as fp:
+            data = pickle.load(fp)
+
+        # Return as a JSON response
+        return HttpResponse(
+            json.dumps(data),
+            content_type = 'application/javascript; charset=utf8'
+            )
+    
+    else:
+        return HttpResponse("That does not exist")
+
 
 def showGameBS(request,id):
     try:

@@ -10,7 +10,8 @@ class Chart extends React.Component {
         super(props);
 
         this.state = {
-            data: [],
+            line_data: [],
+            point_data: [],
             zoomTransform: {k:1, x:0, y:0},
             buttonSelected: "Full Game",
         }
@@ -26,11 +27,18 @@ class Chart extends React.Component {
 
     componentDidMount() {
         console.log("Chart mounted ")
-        fetch('http://localhost:8000/games/PBP/0041800104#')
+        fetch('http://localhost:8000/games/PBP/line/0041800104#')
             .then(res => res.json())
             .then(res =>
                 this.setState({
-                    data: res
+                    line_data: res
+                })
+            )
+        fetch('http://localhost:8000/games/PBP/data/0041800104#')
+            .then(res => res.json())
+            .then(res =>
+                this.setState({
+                    point_data: res
                 })
             )
 
@@ -56,8 +64,7 @@ class Chart extends React.Component {
     };
 
     render() {
-        console.log("Current selected button: " + this.state.buttonSelected)
-        const { data, zoomTransform, buttonSelected } = this.state,
+        const { line_data, point_data, zoomTransform, buttonSelected } = this.state,
         { width, height, margin } = this.props;
         var scale_factor = null;
         if (buttonSelected === "Full Game")
@@ -72,13 +79,14 @@ class Chart extends React.Component {
             <div>
                 <div>
                     <svg width={width} height={height} ref="svg">
-                        <Scatterplot data={data}
+                        <Scatterplot 
+                            line_data={line_data}
+                            point_data={point_data}
                             x={0} y={0}
                             width={width*scale_factor}
                             height={height}
                             margin={margin}
                             zoomTransform={zoomTransform}
-                            zoomType="scale" 
                             buttonSelected={buttonSelected}/>
                     </svg>
                 </div>
