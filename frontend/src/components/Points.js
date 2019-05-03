@@ -9,7 +9,6 @@ class Points extends React.Component {
     render() {
         const { scales, data} = this.props
         const { xScale, yScale } = scales
-        console.log("points",data)
         return (
 
             data.map(d => (
