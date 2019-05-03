@@ -4,10 +4,7 @@
 
 2) Fully implement filtering
 3) Integrate filtering with data selection
-4)
 
-
-5) Make rendering way smarter to prevent slowdown
 6) Fix axis shit 
 7) Viewport shit
 

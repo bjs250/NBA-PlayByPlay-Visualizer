@@ -15,30 +15,9 @@ class Scatterplot extends React.Component {
 
     const { width, height, margin } = this.props;
 
-    // Use the margin convention practice 
-    var new_width = width - margin.left - margin.right // Use the window's width 
-    var new_height = height - margin.top - margin.bottom; // Use the window's height
-
-    // Put line_data into input format for d3.line by filtering by quarter
-    // var xy = line_data.filter(function (d) {
-    //   return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
-    // }).map(d => ({ x: d["time_seconds"], y: d["score differential"], key: d["key"] }))
-
-    // // Render the baseline
-    // var baseline_xy = line_data.filter(function (d) {
-    //   return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
-    // }).map(d => ({ x: d["time_seconds"], y: 0, key: d["key"] + 1000 }))
-
     this.state = {
       hoveredPoint: null,
-      new_width: new_width,
-      new_height: new_height,
     }
-
-
-    // var xy = line_data.filter(function (d) {
-    //   return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
-    // }).map(d => ({ x: d["time_seconds"], y: d["score differential"], key: d["key"] }))
 
   }
 
@@ -54,7 +33,7 @@ class Scatterplot extends React.Component {
     (line_data, buttonSelected) => line_data.filter(function (d) {
       return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
     }
-    ).map(d => ({ x: d["time_seconds"], y: 0, key: d["key"] + 1000 }))
+    ).map(d => ({ x: d["time_seconds"], y: 0, key: d["key"] + 1000 })) //Note: difference in y and key
   );
 
   point_filter = memoize(
@@ -65,63 +44,59 @@ class Scatterplot extends React.Component {
       Object.keys(point_data).forEach(function (d) {
         selectionMatrix[d] = {}
         selectionMatrix[d]["AST"] = 1
-        selectionMatrix[d]["BLK"] = 1
-        selectionMatrix[d]["STL"] = 1
-        selectionMatrix[d]["TOV"] = 1
-        selectionMatrix[d]["FOUL"] = 1
+        selectionMatrix[d]["BLK"] = 0
+        selectionMatrix[d]["STL"] = 0
+        selectionMatrix[d]["TOV"] = 0
+        selectionMatrix[d]["FOUL"] = 0
         selectionMatrix[d]["1"] = {}
         selectionMatrix[d]["1"]["Made"] = 1
-        selectionMatrix[d]["1"]["Miss"] = 1
+        selectionMatrix[d]["1"]["Miss"] = 0
         selectionMatrix[d]["2"] = {}
         selectionMatrix[d]["2"]["Made"] = 1
-        selectionMatrix[d]["2"]["Miss"] = 1
+        selectionMatrix[d]["2"]["Miss"] = 0
         selectionMatrix[d]["3"] = {}
         selectionMatrix[d]["3"]["Made"] = 1
-        selectionMatrix[d]["3"]["Miss"] = 1
+        selectionMatrix[d]["3"]["Miss"] = 0
       })
 
-      var selected = []
       var keyCheck = {}
 
-      function helper(selectionMatrix, point_data, player, identifier, keyCheck, selected) {
+      function helper(selectionMatrix, point_data, player, identifier, keyCheck) {
         if (selectionMatrix[player][identifier] === 1) {
-          point_data[player][identifier].map(d => {
+          point_data[player][identifier].forEach(d => {
             if (d["key"] in keyCheck === false) {
-              //console.log(d["key"],d["tag"],d)
               keyCheck[d["key"]] = d
-              selected.push(d)
             }
           })
         }
-        return [keyCheck,selected]
+        return keyCheck
       }
-      function helper_plus(selectionMatrix, point_data, player, identifier,identifier_plus,keyCheck, selected) {
+      function helper_plus(selectionMatrix, point_data, player, identifier,identifier_plus,keyCheck) {
         if (selectionMatrix[player][identifier][identifier_plus] === 1) {
-          point_data[player][identifier][identifier_plus].map(d => {
+          point_data[player][identifier][identifier_plus].forEach(d => {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
-              selected.push(d)
             }
           })
         }
-        return [keyCheck,selected]
+        return keyCheck
       }
 
       Object.keys(point_data).forEach(function (player) {
-        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "AST", keyCheck, selected)
-        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "BLK", keyCheck, selected)
-        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "STL", keyCheck, selected)
-        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "TOV", keyCheck, selected)
-        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "FOUL", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "1","Made", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "2","Made", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "3","Made", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "1","Miss", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "2","Miss", keyCheck, selected)
-        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "3","Miss", keyCheck, selected)
+        keyCheck = helper(selectionMatrix, point_data, player, "AST", keyCheck)
+        keyCheck = helper(selectionMatrix, point_data, player, "BLK", keyCheck)
+        keyCheck = helper(selectionMatrix, point_data, player, "STL", keyCheck)
+        keyCheck = helper(selectionMatrix, point_data, player, "TOV", keyCheck)
+        keyCheck = helper(selectionMatrix, point_data, player, "FOUL", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "1","Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "2","Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "3","Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "1","Miss", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "2","Miss", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "3","Miss", keyCheck)
       })
-
-      var pruned_xy = selected.filter(function (d) {
+      
+      var pruned_xy = Object.values(keyCheck).filter(function (d) {
         return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
       }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color:d["color"] }))
 
@@ -129,6 +104,7 @@ class Scatterplot extends React.Component {
     }
   )
 
+  // For axes and lines
   updateD3 = memoize(
     (xy, new_height, new_width) => {
 
@@ -167,7 +143,6 @@ class Scatterplot extends React.Component {
 
   componentDidMount() {
     console.log("Scatterplot mount")
-
   }
 
   get transform() {
@@ -183,7 +158,7 @@ class Scatterplot extends React.Component {
   }
 
   get ytransform() {
-    const { x, y, zoomTransform, margin } = this.props;
+    const { x, zoomTransform, margin } = this.props;
     //console.log("Transform Executed",margin, zoomTransform)
     let transform = "";
 
@@ -207,18 +182,22 @@ class Scatterplot extends React.Component {
   }
 
   render() {
-    const { line_data, point_data, width, height, margin, buttonSelected } = this.props;
+    const { line_data, point_data, buttonSelected, width, height, margin } = this.props;
     var { new_width, new_height } = this.state;
 
     if (line_data.length && Object.keys(point_data).length) // make sure line_data has been loaded
     {
+      // Use the margin convention practice 
+      var new_width = width - margin.left - margin.right // Use the window's width 
+      var new_height = height - margin.top - margin.bottom; // Use the window's height
+
       //Put line_data into input format for d3.line by filtering by quarter (but only if data has changed)
       const xy = this.line_filter(line_data, buttonSelected)
       const baseline_xy = this.baseline_filter(line_data, buttonSelected)
       const pruned_xy = this.point_filter(point_data, buttonSelected)
 
       // Calculate axes and lines in D3 (but only if data has changed)
-      const D3assets = this.updateD3(xy, new_height, new_width)
+      const D3assets = this.updateD3(xy, new_height, new_width, buttonSelected)
       const xScale = D3assets[0];
       const yScale = D3assets[1];
       const line = D3assets[2];
@@ -252,12 +231,12 @@ class Scatterplot extends React.Component {
               onMouseOutCallback={d => this.setState({ hoveredPoint: null })}
             />
 
-            {/* { this.state.hoveredPoint ?
+            { this.state.hoveredPoint ?
               <Tooltip
                 hoveredPoint={this.state.hoveredPoint}
                 scales={{xScale,yScale}}
               /> :
-            null} */}
+            null}
 
           </g>
 

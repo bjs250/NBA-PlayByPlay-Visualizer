@@ -2,10 +2,7 @@ import React from 'react';
 import '../styles/Points.css'
 
 class Points extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+ 
     render() {
         const { scales, data} = this.props
         const { xScale, yScale } = scales

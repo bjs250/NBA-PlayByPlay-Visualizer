@@ -203,16 +203,6 @@ class MyTable extends React.Component {
 
 export default MyTable;
 
-function MyCell(
-    { 
-        value, 
-        columnProps: { rest: { someFunc } } 
-    }) 
-    {
-    return <a href="#" onClick={someFunc}>{value}</a>
-}
-
-
 function sort(a, b, desc) {
     // force null and undefined to the bottom
     a = a === null || a === undefined ? '' : a
