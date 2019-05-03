@@ -59,75 +59,78 @@ class Scatterplot extends React.Component {
 
   point_filter = memoize(
     (point_data, buttonSelected) => {
+
       var selectionMatrix = {}
 
       Object.keys(point_data).forEach(function (d) {
         selectionMatrix[d] = {}
-        selectionMatrix[d]["AST"] = 0
-        selectionMatrix[d]["BLK"] = 0
-        selectionMatrix[d]["STL"] = 0
-        selectionMatrix[d]["TOV"] = 0
-        selectionMatrix[d]["FOUL"] = 0
+        selectionMatrix[d]["AST"] = 1
+        selectionMatrix[d]["BLK"] = 1
+        selectionMatrix[d]["STL"] = 1
+        selectionMatrix[d]["TOV"] = 1
+        selectionMatrix[d]["FOUL"] = 1
         selectionMatrix[d]["1"] = {}
         selectionMatrix[d]["1"]["Made"] = 1
-        selectionMatrix[d]["1"]["Miss"] = 0
+        selectionMatrix[d]["1"]["Miss"] = 1
         selectionMatrix[d]["2"] = {}
         selectionMatrix[d]["2"]["Made"] = 1
-        selectionMatrix[d]["2"]["Miss"] = 0
+        selectionMatrix[d]["2"]["Miss"] = 1
         selectionMatrix[d]["3"] = {}
         selectionMatrix[d]["3"]["Made"] = 1
-        selectionMatrix[d]["3"]["Miss"] = 0
+        selectionMatrix[d]["3"]["Miss"] = 1
       })
 
-      var selected_players = ["brown"]
-      var selected_interests = ["AST"]
       var selected = []
-      var keyCheck = new Set()
+      var keyCheck = {}
+
+      function helper(selectionMatrix, point_data, player, identifier, keyCheck, selected) {
+        if (selectionMatrix[player][identifier] === 1) {
+          point_data[player][identifier].map(d => {
+            if (d["key"] in keyCheck === false) {
+              //console.log(d["key"],d["tag"],d)
+              keyCheck[d["key"]] = d
+              selected.push(d)
+            }
+          })
+        }
+        return [keyCheck,selected]
+      }
+      function helper_plus(selectionMatrix, point_data, player, identifier,identifier_plus,keyCheck, selected) {
+        if (selectionMatrix[player][identifier][identifier_plus] === 1) {
+          point_data[player][identifier][identifier_plus].map(d => {
+            if (d["key"] in keyCheck === false) {
+              keyCheck[d["key"]] = d
+              selected.push(d)
+            }
+          })
+        }
+        return [keyCheck,selected]
+      }
+
       Object.keys(point_data).forEach(function (player) {
-        if (selectionMatrix[player]["AST"] === 1) {
-          point_data[player]["AST"].map(d => {
-            if (keyCheck.has(d["key"]) === false){              
-              keyCheck.add(d["key"])
-              selected.push(d)
-            }
-          })
-        }
-        if (selectionMatrix[player]["1"]["Made"] === 1) {
-          point_data[player]["1"]["Made"].map(d => {
-            if (keyCheck.has(d["key"]) === false){              
-              keyCheck.add(d["key"])
-              selected.push(d)
-            }
-          })
-        }
-        if (selectionMatrix[player]["2"]["Made"] === 1) {
-          point_data[player]["2"]["Made"].map(d => {
-            if (keyCheck.has(d["key"]) === false){              
-              keyCheck.add(d["key"])
-              selected.push(d)
-            }
-          })
-        }
-        if (selectionMatrix[player]["3"]["Made"] === 1) {
-          point_data[player]["3"]["Made"].map(d => {
-            if (keyCheck.has(d["key"]) === false){              
-              keyCheck.add(d["key"])
-              selected.push(d)
-            }
-          })
-        }
+        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "AST", keyCheck, selected)
+        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "BLK", keyCheck, selected)
+        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "STL", keyCheck, selected)
+        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "TOV", keyCheck, selected)
+        [keyCheck, selected] = helper(selectionMatrix, point_data, player, "FOUL", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "1","Made", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "2","Made", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "3","Made", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "1","Miss", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "2","Miss", keyCheck, selected)
+        [keyCheck, selected] = helper_plus(selectionMatrix, point_data, player, "3","Miss", keyCheck, selected)
       })
 
       var pruned_xy = selected.filter(function (d) {
         return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
-      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"]}))
+      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color:d["color"] }))
 
       return pruned_xy
     }
   )
 
   updateD3 = memoize(
-    (xy,new_height,new_width) => {
+    (xy, new_height, new_width) => {
 
       // X Scale
       var xScale = d3.scaleLinear()
@@ -155,8 +158,8 @@ class Scatterplot extends React.Component {
       var baseline = d3.line()
         .x(function (d) { return xScale(d.x); }) // set the x values for the line generator
         .y(function (d) { return yScale(d.y); }) // set the y values for the line generator 
-      
-      return [xScale,yScale,line,baseline,xticks,yticks]
+
+      return [xScale, yScale, line, baseline, xticks, yticks]
 
     }
   )
@@ -206,17 +209,16 @@ class Scatterplot extends React.Component {
   render() {
     const { line_data, point_data, width, height, margin, buttonSelected } = this.props;
     var { new_width, new_height } = this.state;
-    
+
     if (line_data.length && Object.keys(point_data).length) // make sure line_data has been loaded
     {
-
       //Put line_data into input format for d3.line by filtering by quarter (but only if data has changed)
       const xy = this.line_filter(line_data, buttonSelected)
       const baseline_xy = this.baseline_filter(line_data, buttonSelected)
       const pruned_xy = this.point_filter(point_data, buttonSelected)
-      
+
       // Calculate axes and lines in D3 (but only if data has changed)
-      const D3assets = this.updateD3(xy,new_height,new_width)
+      const D3assets = this.updateD3(xy, new_height, new_width)
       const xScale = D3assets[0];
       const yScale = D3assets[1];
       const line = D3assets[2];

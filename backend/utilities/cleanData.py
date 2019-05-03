@@ -185,6 +185,9 @@ if __name__ == "__main__":
     
     for index in range(1,len(dt.keys())):
         event = dt[index]
+        tag = ""
+        event["tag"] = tag
+        event["color"] = "green"
         text = (event["home"] + " "  + event["visit"]).strip().lower()
         if text is "":
             pass
@@ -196,46 +199,69 @@ if __name__ == "__main__":
                     # AST
                     a = re.search("\([\w ]+\)$",text)
                     if event not in data[player]["AST"] and a is not None and a.group(0).split(" ")[0][1:] == player:
+                        tag = "A"
+                        if "3pt" in text:
+                            tag = "3A"
+                        else:
+                            tag = "2A"
+                        event["tag"] = tag
                         data[player]["AST"].append(event)
 
                     difference = np.abs(dt[index]["score differential"]-dt[index-1]["score differential"])
 
-                    # FT, 2, 3
+                    # 1, 2, 3
                     if difference == 1 and event not in data[player]["1"]["Made"]:
+                        event["tag"] = "1"
                         data[player]["1"]["Made"].append(event)
-                    elif difference == 2 and event not in data[player]["2"]["Made"] and event not in data[player]["AST"]:
+                    elif difference == 2 and event not in data[player]["2"]["Made"]:
+                        if "ast" in text:
+                            event["tag"] = "2A"
+                        else:
+                            event["tag"] = "2"
                         data[player]["2"]["Made"].append(event)                    
-                    elif difference == 3 and event not in data[player]["3"]["Made"] and event not in data[player]["AST"]:
+                    elif difference == 3 and event not in data[player]["3"]["Made"]:
+                        if "ast" in text:
+                            event["tag"] = "3A"
+                        else:
+                            event["tag"] = "3"
                         data[player]["3"]["Made"].append(event)
                     
                     # BLK
                     if "blk" in text and event not in data[player]["BLK"]:
+                        event["tag"] = "B"
                         data[player]["BLK"].append(event)
 
                     # FOUL
                     if "foul" in text and "s.foul" not in text and event not in data[player]["FOUL"] and text.split(" ")[0] == player:
+                        event["tag"] = "F"
                         data[player]["FOUL"].append(event)
 
                     # STL
                     phrase = player + " " + "steal"
                     if phrase in text and event not in data[player]["STL"]:
+                        event["tag"] = "S"
                         data[player]["STL"].append(event)
 
                     # TOV
                     if "turnover" in text and event not in data[player]["TOV"] and event not in data[player]["STL"]:
+                        event["tag"] = "T"
                         data[player]["TOV"].append(event)
 
                     if player in text and "miss" in text and event not in data[player]["BLK"]:
+                        event["color"] = "red"
                         if "3pt" in text:
+                            event["tag"] = "3"
                             data[player]["3"]["Miss"].append(event)
                         elif "free throw" in text:
+                            event["tag"] = "1"
                             data[player]["1"]["Miss"].append(event)
                         else:
+                            event["tag"] = "2"
                             data[player]["2"]["Miss"].append(event)
     
     with open("..//nba_backend//PBPdata//" + game_id + "_edit.pkl", 'wb') as fp:
         pickle.dump(data, fp)
-                  
+
     #df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
 
 ##### Remove the pickle files

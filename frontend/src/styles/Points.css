@@ -4,13 +4,7 @@
 
 .pdot {
     fill: #ffffff;
-    stroke: rgb(0, 95, 13);
   }
-
-.pdot-bad {
-  fill: #ffffff;
-  stroke: rgb(255, 0, 0);
-}
 
 text{
   -webkit-user-select: none; /* Safari */        

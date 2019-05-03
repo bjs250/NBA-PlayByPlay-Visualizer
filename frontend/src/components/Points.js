@@ -9,6 +9,7 @@ class Points extends React.Component {
     render() {
         const { scales, data} = this.props
         const { xScale, yScale } = scales
+
         return (
 
             data.map(d => (
@@ -21,16 +22,17 @@ class Points extends React.Component {
                         cx={xScale(d.x)}
                         cy={yScale(d.y)}
                         r={5}
+                        stroke={d["color"]}
                         >
                     </circle>
                     <text
                         x={xScale(d.x)}
-                        y={yScale(d.y)+3}
+                        y={yScale(d.y)+2}
                         fill="black"
-                        fontSize="8px"
+                        fontSize="6px"
                         textAnchor="middle"
                         fontWeight="bold"
-                        >2
+                        >{d.tag}
                     </text>
                     
                 </svg>

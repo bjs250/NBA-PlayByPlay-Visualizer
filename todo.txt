@@ -1,5 +1,7 @@
 
 1) Point labeling based on filtering and css class
+    fix tov/stl
+
 2) Fully implement filtering
 3) Integrate filtering with data selection
 4)
