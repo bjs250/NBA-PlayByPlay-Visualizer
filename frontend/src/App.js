@@ -20,6 +20,8 @@ class App extends Component {
     // Bind event listening methods here
     this.handleGameInputChange = this.handleGameInputChange.bind(this);
     this.handleGameSubmit = this.handleGameSubmit.bind(this);
+    this.handleSelectionChange = this.handleSelectionChange.bind(this);
+    
   }
 
   // Get data
@@ -81,10 +83,30 @@ class App extends Component {
     .catch(err => console.log(err));
   };
 
+  handleSelectionChange = (player,column,value) => {
+    console.log(player,column,value)
+    var new_sel = this.state.selectionMatrix
+    if (column === "3PM"){
+      new_sel[player]["3"]["Made"] = value
+    }
+    else if (column === "REB"){
+      new_sel[player]["REB"] = value
+    }
+    else if (column === "BLK"){
+      new_sel[player]["BLK"] = value
+    }
+    
+
+    // Update the state
+    this.setState({
+      selectionMatrix: new_sel
+    })
+  }
+
   render() {
     const height = 600;
-    const width = 1000;
-    var margin = {top: 50, right: 50, bottom: 10, left: 50}
+    const width = 1200;
+    var margin = {top: 50, right: 100, bottom: 10, left: 150}
     var { selectionMatrix, point_data } = this.state
 
     return (
@@ -107,25 +129,29 @@ class App extends Component {
 
         <br></br>
 
+        {Object.keys(selectionMatrix).length > 0 ?
         <Chart 
           width={width}
           height={height} 
           margin={margin}>
-        </Chart>
+        </Chart> : null}
 
         <br></br>
- 
+
+        {/* Only render these once the selectionMatrix has been initialized */}
+        {Object.keys(selectionMatrix).length > 0 ?
         <BoxScore
           team={"Home"}
-          selectionMatrix={selectionMatrix}
+          handleSelectionChange={this.handleSelectionChange}
           >
-        </BoxScore>
+        </BoxScore> : null}
 
+        {Object.keys(selectionMatrix).length > 0 ?
         <BoxScore
           team={"Away"}
-          selectionMatrix={selectionMatrix}
+          handleSelectionChange={this.handleSelectionChange}
           >
-        </BoxScore>
+        </BoxScore> : null}
 
         <p>
           Instructions:

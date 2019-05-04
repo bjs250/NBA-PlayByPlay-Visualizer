@@ -36,14 +36,20 @@ class MyTable extends React.Component {
                 }
 
                 const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
+                const init_headers = ['FGM','3PM','FTM','AST']
                 var raw_sel = {}
                 for (var i = 0; i < raw_data.length; i++) {
-                    raw_sel[i] = {}
+                    raw_sel[raw_data[i]["PLAYER"]] = {}
+                    
                     for (var j = 0; j < headers.length; j++) {
-                        raw_sel[i][headers[j]] = 0
+                        if (init_headers.includes(headers[j])){
+                            raw_sel[raw_data[i]["PLAYER"]][headers[j]] = 1
+                        }
+                        else{
+                            raw_sel[raw_data[i]["PLAYER"]][headers[j]] = 0
+                        }
                     }
                 }
-                console.log("raw_sel",raw_sel)
 
                 this.setState({
                     data: raw_data,
@@ -79,13 +85,9 @@ class MyTable extends React.Component {
 
     render() {
         const { data, sel} = this.state;
-        const { selectionMatrix } = this.props;
 
         if (data.length) // make sure data has been loaded
         {
-            //console.log("sel", this.state.sel)
-            console.log("sel",selectionMatrix)
-
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
             const accessors = headers
@@ -132,7 +134,7 @@ class MyTable extends React.Component {
                     width: 50,
                     Footer: (<strong>{footer[accessors[i]]}</strong>),
                     getProps: (state, rowInfo, column) => {
-                        if (["PLAYER","MIN","FG%","3P%","FT%"].includes(column["Header"]))
+                        if (["PLAYER","MIN","FG%","3P%","FT%","PTS"].includes(column["Header"]))
                         {
                             return {
                                 style: {
@@ -143,8 +145,8 @@ class MyTable extends React.Component {
                         else{
                             return {
                                 style: {
-                                    background: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? '#ADD8E6' : null,
-                                    color: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'white' : 'black',
+                                    background: rowInfo && column && this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 1 ? '#ADD8E6' : null,
+                                    color: rowInfo && column && this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 1 ? 'white' : 'black',
                                 },
                         };}
                     }
@@ -175,14 +177,16 @@ class MyTable extends React.Component {
                                     //console.log(e.target)
                                     //console.log(rowInfo.original["PLAYER"], column["Header"])
 
+                                    // Update the selection matrix
                                     if (rowInfo && rowInfo.row && column && column["Header"]) {
-                                        //console.log("index", rowInfo.index, column["Header"],this.state.sel[rowInfo.index][column["Header"]])
                                         var new_sel = Object.assign({}, this.state.sel);
-                                        new_sel[rowInfo.index][column["Header"]] = this.state.sel[rowInfo.index][column["Header"]] === 0 ? 1 : 0
-                                        //console.log("new_sel", new_sel)
+                                        new_sel[rowInfo.original["PLAYER"]][column["Header"]] = this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 0 ? 1 : 0
                                         this.setState({
                                             sel: new_sel
                                         })
+
+                                        // Tell parent component to update the selectionMatrix
+                                        this.props.handleSelectionChange(rowInfo.original["PLAYER"].split(" ")[1].toLowerCase(),column["Header"],new_sel[rowInfo.original["PLAYER"]][column["Header"]]);
                                     }
 
 
