@@ -8,30 +8,6 @@
 6) Fix axis shit 
 7) Viewport shit
 
-Filtering
-    Selectable stats
-        gray: MIN, FG%, 3P%, FT%, REB?
-        special: pts
-        column seelction
-
-    1,2,3,B,T,S,R,F
-
-    3PM, 3PA
-
-    REB: player name + "REBOUND" 
-    filter again:
-        OREB
-        DREB
-
-    TOV: "Turnover"
-    STL: "STL"
-    BLK: "BLK"
-    PF: ".foul"
-
-    PTS: anytime the y axis value changes from before
-
-
-
 make list of ID's
     figure out how to take data slowly using the nba api 
     
@@ -45,3 +21,6 @@ use database instead of files?
 
 - Toggle scoring plays vs other events
 - Player selection in BoxScore
+
+
+handle overtime

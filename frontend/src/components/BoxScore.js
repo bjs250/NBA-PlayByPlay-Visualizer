@@ -43,6 +43,7 @@ class MyTable extends React.Component {
                         raw_sel[i][headers[j]] = 0
                     }
                 }
+                console.log("raw_sel",raw_sel)
 
                 this.setState({
                     data: raw_data,
@@ -77,11 +78,13 @@ class MyTable extends React.Component {
     }
 
     render() {
-        const { data, sel } = this.state;
+        const { data, sel} = this.state;
+        const { selectionMatrix } = this.props;
 
         if (data.length) // make sure data has been loaded
         {
             //console.log("sel", this.state.sel)
+            console.log("sel",selectionMatrix)
 
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
@@ -122,18 +125,28 @@ class MyTable extends React.Component {
             columns.push(check)
 
             for (var i = 0; i < headers.length - 1; i++) {
-                columns.push({
+                columns.push(
+                    {
                     Header: headers[i],
                     accessor: accessors[i],
                     width: 50,
                     Footer: (<strong>{footer[accessors[i]]}</strong>),
                     getProps: (state, rowInfo, column) => {
-                        return {
-                            style: {
-                                background: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'red' : null,
-                                color: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'white' : 'black',
-                            },
-                        };
+                        if (["PLAYER","MIN","FG%","3P%","FT%"].includes(column["Header"]))
+                        {
+                            return {
+                                style: {
+                                    background: column["Header"] === "PLAYER" ? null : '#D3D3D3'
+                                }
+                            }
+                        }
+                        else{
+                            return {
+                                style: {
+                                    background: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? '#ADD8E6' : null,
+                                    color: rowInfo && column && this.state.sel[rowInfo.index][column["Header"]] === 1 ? 'white' : 'black',
+                                },
+                        };}
                     }
                 })
             }
