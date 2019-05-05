@@ -84,7 +84,7 @@ class App extends Component {
   };
 
   handleSelectionChange = (player,column,value) => {
-    console.log(player,column,value)
+    //console.log(player,column,value)
     var new_sel = this.state.selectionMatrix
     if (column === "3PM"){
       new_sel[player]["3"]["Made"] = value
@@ -101,6 +101,8 @@ class App extends Component {
     this.setState({
       selectionMatrix: new_sel
     })
+
+    console.log("App", new_sel["lopez"]["BLK"])
   }
 
   render() {
@@ -133,7 +135,9 @@ class App extends Component {
         <Chart 
           width={width}
           height={height} 
-          margin={margin}>
+          margin={margin}
+          selectionMatrix={selectionMatrix}
+          >
         </Chart> : null}
 
         <br></br>

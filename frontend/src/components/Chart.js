@@ -65,7 +65,7 @@ class Chart extends React.Component {
 
     render() {
         const { line_data, point_data, zoomTransform, buttonSelected } = this.state,
-        { width, height, margin } = this.props;
+        { width, height, margin, selectionMatrix } = this.props;
         var scale_factor = null;
         if (buttonSelected === "Full Game")
         {
@@ -74,6 +74,8 @@ class Chart extends React.Component {
         else{
             scale_factor = 1;
         }
+
+        console.log("Chart sM", selectionMatrix["lopez"]["BLK"])
         
         return (
             <div>
@@ -87,7 +89,9 @@ class Chart extends React.Component {
                             height={height}
                             margin={margin}
                             zoomTransform={zoomTransform}
-                            buttonSelected={buttonSelected}/>
+                            buttonSelected={buttonSelected}
+                            selectionMatrix={selectionMatrix}
+                            />
                     </svg>
                 </div>
                 <div>
