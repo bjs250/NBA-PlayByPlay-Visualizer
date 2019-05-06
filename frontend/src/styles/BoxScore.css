@@ -8,8 +8,8 @@
   color: black;
 }
 
-.test {
-  border-bottom: 1px solid black;
+.test:after {
+  background-color: white;
 }
 
 .ReactTable {
@@ -305,7 +305,7 @@
 }
 
 .ReactTable .rt-tfoot .rt-td:last-child {
-  border-right: 0
+  border-right: 0;
 }
 
 .ReactTable.-striped .rt-tr.-odd {
