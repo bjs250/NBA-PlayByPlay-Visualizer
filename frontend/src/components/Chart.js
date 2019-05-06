@@ -12,17 +12,19 @@ class Chart extends React.Component {
         this.state = {
             line_data: [],
             point_data: [],
-            zoomTransform: {k:1, x:0, y:0},
+            zoomTransform: { k: 1, x: 0, y: 0 },
             buttonSelected: "Full Game",
         }
 
         this.zoom = d3.zoom()
             .scaleExtent([0, 5])
-            .translateExtent([[0, 0], [5000 , props.height ]])
+            .translateExtent([[0, 0], [5000, props.height]])
             .extent([[0, 0], [props.width, props.height]])
             .on("zoom", this.zoomed.bind(this))
 
         this.handleQuarterSubmit = this.handleQuarterSubmit.bind(this);
+        this.handleYScaleRefresh = this.handleYScaleRefresh.bind(this);
+
     }
 
     componentDidMount() {
@@ -60,46 +62,66 @@ class Chart extends React.Component {
     // Change what button is selected
     handleQuarterSubmit = (event) => {
         event.preventDefault();
-        this.setState({buttonSelected: event.target.id})
+        this.setState({ buttonSelected: event.target.id })
     };
+
+    // For changing the y axis scale
+    handleYScaleRefresh = (event) => {
+        event.preventDefault();
+        console.log("Hit");
+    };
+
 
     render() {
         const { line_data, point_data, zoomTransform, buttonSelected } = this.state,
-        { width, height, margin, selectionMatrix } = this.props;
+            { width, height, margin, selectionMatrix } = this.props;
         var scale_factor = null;
-        if (buttonSelected === "Full Game")
-        {
+        if (buttonSelected === "Full Game") {
             scale_factor = 4;
         }
-        else{
+        else {
             scale_factor = 1;
         }
 
-        
+
         return (
             <div>
                 <div>
                     <svg width={width} height={height} ref="svg">
-                        <Scatterplot 
+                        <Scatterplot
                             line_data={line_data}
                             point_data={point_data}
                             x={0} y={0}
-                            width={width*scale_factor}
+                            width={width * scale_factor}
                             height={height}
                             margin={margin}
                             zoomTransform={zoomTransform}
                             buttonSelected={buttonSelected}
                             selectionMatrix={selectionMatrix}
-                            />
+                        />
                     </svg>
                 </div>
                 <div>
-                    <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
-                    <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q2" ? "selected" : "unselected"}>Q2</button>
-                    <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q3" ? "selected" : "unselected"}>Q3</button>
-                    <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q4" ? "selected" : "unselected"}>Q4</button>
-                    <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected==="Full Game" ? "selected" : "unselected"}>Full Game</button>
+                    <div className="scaleDashboard">
+                        <p>Y-scale:</p>
+                        <label>Min:</label>
+                        <input id="ymin"></input>
+                        <br></br>
+                        <label>Max:</label>
+                        <input id="ymax"></input>
+                        <br></br>
+                        <button onClick={this.handleYScaleRefresh}>Refresh</button>
+                    </div>
+                    <div className="quarterHolder">
+                        <p>Select Quarter:</p>
+                        <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
+                        <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q2" ? "selected" : "unselected"}>Q2</button>
+                        <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q3" ? "selected" : "unselected"}>Q3</button>
+                        <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q4" ? "selected" : "unselected"}>Q4</button>
+                        <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected === "Full Game" ? "selected" : "unselected"}>Full Game</button>
+                    </div>
                 </div>
+
             </div>
         );
     }

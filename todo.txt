@@ -1,3 +1,11 @@
+1) datepicker
+2) x axis time
+3) end of game line
+
+
+1) Change y axis
+3) tooltip overflow
+
 
 
 Bug: handle data points that occur at the same time
@@ -9,7 +17,6 @@ Bug: handle data points that occur at the same time
 make list of ID's
     figure out how to take data slowly using the nba api 
     
-use database instead of files?
 
 - Fix x axis time and ticks 
 - preprocess the data on the back end
