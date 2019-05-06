@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTable from 'react-table'
 import '../styles/BoxScore.css'
 
-class MyTable extends React.Component {
+class BoxScore extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,8 +16,9 @@ class MyTable extends React.Component {
         this.toggleRow = this.toggleRow.bind(this);
     }
 
+    /* Acquire boxscore data from backend (either home or visiting) and initialize the selection */
     componentDidMount() {
-        console.log("BoxScore mount")
+
         fetch('http://localhost:8000/games/BS/0041800104#')
             .then(res => res.json())
             .then(res => {
@@ -59,12 +60,33 @@ class MyTable extends React.Component {
             )
     }
 
-    toggleRow(Player) {
+    /* This should select all selectable cells in the player's row */
+    toggleRow(player) {
+        const { handleSelectionChange } = this.props
         const newSelected = Object.assign({}, this.state.selected);
-        newSelected[Player] = !this.state.selected[Player];
+        newSelected[player] = !this.state.selected[player];
+        console.log("p",player)
+
+        var newSel = Object.assign({}, this.state.sel);
+        if (newSelected[player])
+        {
+            ["FGM","3PM","3PA","FTM","FTA","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].forEach(function(column){
+                newSel[player][column] = 1
+                handleSelectionChange(player.split(" ")[1].toLowerCase(),column,1);
+            })
+        }
+        else
+        {
+            ["FGM","3PM","3PA","FTM","FTA","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].forEach(function(column){
+                newSel[player][column] = 0
+                handleSelectionChange(player.split(" ")[1].toLowerCase(),column,0);
+            })
+        }
+
         this.setState({
             selected: newSelected,
-            selectAll: 2
+            selectAll: 2,
+            sel : newSel
         });
     }
 
@@ -88,6 +110,7 @@ class MyTable extends React.Component {
 
         if (data.length) // make sure data has been loaded
         {
+            console.log("sel",sel)
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
             const accessors = headers
@@ -132,7 +155,12 @@ class MyTable extends React.Component {
                     Header: headers[i],
                     accessor: accessors[i],
                     width: 50,
-                    Footer: (<strong>{footer[accessors[i]]}</strong>),
+                    Footer: (
+                        <div>
+                        <div className="test">Test</div>
+                        <div><strong>{footer[accessors[i]]}</strong></div>
+                        </div>
+                    ),
                     getProps: (state, rowInfo, column) => {
                         if (["PLAYER","MIN","FG%","3P%","FT%","PTS"].includes(column["Header"]))
                         {
@@ -218,7 +246,7 @@ class MyTable extends React.Component {
     }
 }
 
-export default MyTable;
+export default BoxScore;
 
 function sort(a, b, desc) {
     // force null and undefined to the bottom

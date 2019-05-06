@@ -89,9 +89,21 @@ class App extends Component {
     if (column === "3PM"){
       new_sel[player]["3"]["Made"] = value
     }
+    else if (column === "3PA"){
+      new_sel[player]["3"]["Miss"] = value
+    }
+    else if (column === "FTM"){
+      new_sel[player]["1"]["Made"] = value
+    }
+    else if (column === "FTA"){
+      new_sel[player]["1"]["Miss"] = value
+    }
+
+
     else if (column === "REB"){
       new_sel[player]["REB"] = value
     }
+
     else if (column === "BLK"){
       new_sel[player]["BLK"] = value
     }

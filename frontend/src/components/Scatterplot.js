@@ -38,8 +38,7 @@ class Scatterplot extends React.Component {
     (selectionMatrix, point_data, buttonSelected, selectionMatrixText) => {
 
       var keyCheck = {}
-      console.log("Scatterplot sM",selectionMatrix["lopez"]["BLK"])
-
+      
       function helper(selectionMatrix, point_data, player, identifier, keyCheck) {
         if (selectionMatrix[player][identifier] === 1) {
           point_data[player][identifier].forEach(d => {
@@ -171,8 +170,6 @@ class Scatterplot extends React.Component {
       var new_height = height - margin.top - margin.bottom; // Use the window's height
 
       //Put line_data into input format for d3.line by filtering by quarter (but only if data has changed)
-      console.log("plot",selectionMatrix["lopez"]["BLK"], buttonSelected)
-      console.log(JSON.stringify(selectionMatrix))
       const xy = this.line_filter(line_data, buttonSelected)
       const baseline_xy = this.baseline_filter(line_data, buttonSelected)
       const pruned_xy = this.point_filter(selectionMatrix, point_data, buttonSelected,JSON.stringify(selectionMatrix))
