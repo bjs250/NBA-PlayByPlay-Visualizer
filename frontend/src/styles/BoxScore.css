@@ -8,9 +8,13 @@
   color: black;
 }
 
-.test:after {
-  background-color: white;
+.tableheader{
+  font-weight: bold;
 }
+
+
+
+
 
 .ReactTable {
   position: relative;

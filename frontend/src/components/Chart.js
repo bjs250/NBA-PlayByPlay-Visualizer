@@ -75,7 +75,6 @@ class Chart extends React.Component {
             scale_factor = 1;
         }
 
-        console.log("Chart sM", selectionMatrix["lopez"]["BLK"])
         
         return (
             <div>

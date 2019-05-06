@@ -47,6 +47,20 @@ def handlePlayer(player):
         changedPlayer = player
     return changedPlayer
 
+def handlePM(row,tag1,tag2):
+    if "DNP" in row["FGM"]:
+        return ""
+    else:
+        return int(row[tag1]) - int(row[tag2])
+
+def handle2PMiss(row):
+    if "DNP" in row["FGM"]:
+        return ""
+    else:
+        #FGA 
+        return int(float(row["FGM"])/float(row["FG%"])) - int(row["3PA"]) - int(row["2PM"])
+
+
 if __name__ == "__main__":
 
     # Check if there was an input argument or not
@@ -61,6 +75,11 @@ if __name__ == "__main__":
 ######### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
     df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
+    df['3PMiss'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
+    df['FTMiss'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
+    df['2PM'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
+    df['2PMiss'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
+
     df = df.fillna('').transpose().to_dict()
     for key in df.keys():
         df[key]["PLAYER"] = key

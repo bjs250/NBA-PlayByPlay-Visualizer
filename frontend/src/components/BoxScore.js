@@ -37,8 +37,8 @@ class BoxScore extends React.Component {
                     });
                 }
 
-                const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
-                const init_headers = ['FGM', '3PM', 'FTM', 'AST']
+                const headers = ['PLAYER', 'MIN', 'FTM', 'FTMiss','FTA', 'FT%','2PM','2PMiss','3PM','3PMiss','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
+                const init_headers = ['FTM', '3PM', '2PM', 'AST']
                 var raw_sel = {}
                 for (var i = 0; i < raw_data.length; i++) {
                     raw_sel[raw_data[i]["PLAYER"]] = {}
@@ -70,13 +70,13 @@ class BoxScore extends React.Component {
 
         var newSel = Object.assign({}, this.state.sel);
         if (newSelected[player]) {
-            ["FGM", "3PM", "3PA", "FTM", "FTA", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 1
                 handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
             })
         }
         else {
-            ["FGM", "3PM", "3PA", "FTM", "FTA", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 0
                 handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
             })
@@ -91,13 +91,32 @@ class BoxScore extends React.Component {
 
     toggleSelectAll() {
         let newSelected = {};
+        const { handleSelectionChange } = this.props
 
+        var newSel = Object.assign({}, this.state.sel);
+        
         if (this.state.selectAll === 0) {
             this.state.data.forEach(x => {
                 newSelected[x["PLAYER"]] = true;
             });
         }
 
+        this.state.data.forEach(x => {
+            var player = x["PLAYER"]
+            if (newSelected[player]) {
+                ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                    newSel[player][column] = 1
+                    handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
+                })
+            }
+            else {
+                ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                    newSel[player][column] = 0
+                    handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
+                })
+            }
+        });
+        
         this.setState({
             selected: newSelected,
             selectAll: this.state.selectAll === 0 ? 1 : 0
@@ -120,7 +139,7 @@ class BoxScore extends React.Component {
         else {
             Object.keys(this.state.sel).forEach(function (player) {
                 newSel[player][column] = 0
-                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
+                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
             })
         }
 
@@ -137,7 +156,7 @@ class BoxScore extends React.Component {
         {
             //console.log("sel",sel)
             const footer = data[data.length - 1]
-            const headers = ['PLAYER', 'MIN', 'FGM', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', 'PTS', '+/-']
+            const headers = ['PLAYER', 'MIN', 'FTM', 'FTMiss','FTA', 'FT%','2PM','2PMiss','3PM','3PMiss','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             const accessors = headers
 
             // For row selection
@@ -175,14 +194,14 @@ class BoxScore extends React.Component {
             var columns = []
             columns.push(check)
 
-            for (var i = 0; i < headers.length - 1; i++) {
+            for (var i = 0; i < headers.length; i++) {
                 columns.push(
                     {
                         Header: headers[i],
                         accessor: accessors[i],
                         width: 50,
                         getProps: (state, rowInfo, column) => {
-                            if (["PLAYER", "MIN", "FG%", "3P%", "FT%", "PTS"].includes(column["Header"])) {
+                            if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","+/-","PTS"].includes(column["Header"])) {
                                 return {
                                     style: {
                                         background: column["Header"] === "PLAYER" ? null : '#D3D3D3'
@@ -204,7 +223,7 @@ class BoxScore extends React.Component {
                         },
                         Footer: (state) => (
                             <div className="test">
-                                {(["FGM","3PM","3PA","FTM","FTA","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
+                                {(["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
                                 <input
                                     type="checkbox"
                                     className="checkbox"
@@ -223,7 +242,7 @@ class BoxScore extends React.Component {
 
             return (
                 <div>
-                    <p>{this.props.team}</p>
+                    <p className="tableheader">{this.props.team}</p>
                     <ReactTable
                         data={data.slice(0, data.length - 1)}
                         columns={columns}

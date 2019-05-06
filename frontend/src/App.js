@@ -84,37 +84,38 @@ class App extends Component {
   };
 
   handleSelectionChange = (player,column,value) => {
-    //console.log(player,column,value)
     var new_sel = this.state.selectionMatrix
-    if (column === "3PM"){
-      new_sel[player]["3"]["Made"] = value
+    switch(column){
+      case "FTM":
+          new_sel[player]["1"]["Made"] = value
+      break;
+      case "FTMiss":
+          new_sel[player]["1"]["Miss"] = value
+      break;
+      case "2PM":
+          new_sel[player]["2"]["Made"] = value
+      break;
+      case "2PMiss":
+          new_sel[player]["2"]["Miss"] = value
+      break;
+      case "3PM":
+          new_sel[player]["3"]["Made"] = value
+      break;
+      case "3PMiss":
+          new_sel[player]["3"]["Miss"] = value
+      break;
+      case "PF":
+          new_sel[player]["FOUL"] = value
+      break;
+      default:
+        new_sel[player][column] = value
     }
-    else if (column === "3PA"){
-      new_sel[player]["3"]["Miss"] = value
-    }
-    else if (column === "FTM"){
-      new_sel[player]["1"]["Made"] = value
-    }
-    else if (column === "FTA"){
-      new_sel[player]["1"]["Miss"] = value
-    }
-
-
-    else if (column === "REB"){
-      new_sel[player]["REB"] = value
-    }
-
-    else if (column === "BLK"){
-      new_sel[player]["BLK"] = value
-    }
-    
 
     // Update the state
     this.setState({
       selectionMatrix: new_sel
     })
 
-    console.log("App", new_sel["lopez"]["BLK"])
   }
 
   render() {

@@ -38,12 +38,18 @@ class Scatterplot extends React.Component {
     (selectionMatrix, point_data, buttonSelected, selectionMatrixText) => {
 
       var keyCheck = {}
+      var timeCheck = {}
       
       function helper(selectionMatrix, point_data, player, identifier, keyCheck) {
         if (selectionMatrix[player][identifier] === 1) {
           point_data[player][identifier].forEach(d => {
             if (d["key"] in keyCheck === false) { 
               keyCheck[d["key"]] = d
+              if (d["time_seconds"] in timeCheck === true)
+              {
+                console.log(timeCheck[d["time_seconds"]])
+              }
+              timeCheck[d["time_seconds"]] = d
             }
           })
         }
@@ -54,6 +60,7 @@ class Scatterplot extends React.Component {
           point_data[player][identifier][identifier_plus].forEach(d => {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
+              timeCheck[d["time_seconds"]] = d
             }
           })
         }
