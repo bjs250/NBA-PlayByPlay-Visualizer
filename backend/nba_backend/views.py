@@ -12,6 +12,8 @@ import numpy as np
 import json
 import os
 import pickle
+import datetime
+
 
 def showGamePBPLine(request,id):
     try:
@@ -85,6 +87,28 @@ def showGameBS(request,id):
     
     else:
         return HttpResponse("That does not exist")
+
+def showGames(request,date):
+    [month,day,year] = date.split("-")
+    month = int(month)
+    day = int(day)
+    year = int(year)
+    print(month,day,year)
+    try:
+        foundGames = [{"id":game.game_id,"description":game.home+" vs. "+game.away} for game in Game.objects.filter(date__gte=datetime.date(year,month,day),date__lte=datetime.date(year,month,day))]
+    except Game.DoesNotExist:
+        foundGame = None
+
+    if foundGames is not None:
+
+        return HttpResponse(
+            json.dumps(foundGames),
+            content_type = 'application/javascript; charset=utf8'
+            )
+    
+    else:
+        return HttpResponse("That does not exist")
+
 
 """
 class GameView(viewsets.ModelViewSet):       
