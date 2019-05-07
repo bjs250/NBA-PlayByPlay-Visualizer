@@ -101,26 +101,34 @@ class Chart extends React.Component {
                         />
                     </svg>
                 </div>
-                <div>
-                    <div className="scaleDashboard">
-                        <p>Y-scale:</p>
-                        <label>Min:</label>
-                        <input id="ymin"></input>
-                        <br></br>
-                        <label>Max:</label>
-                        <input id="ymax"></input>
-                        <br></br>
-                        <button onClick={this.handleYScaleRefresh}>Refresh</button>
-                    </div>
-                    <div className="quarterHolder">
-                        <p>Select Quarter:</p>
-                        <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
-                        <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q2" ? "selected" : "unselected"}>Q2</button>
-                        <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q3" ? "selected" : "unselected"}>Q3</button>
-                        <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q4" ? "selected" : "unselected"}>Q4</button>
-                        <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected === "Full Game" ? "selected" : "unselected"}>Full Game</button>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <div className="scaleDashboard">
+                                <p>Y-scale:</p>
+                                <label>Min:</label>
+                                <input id="ymin"></input>
+                                <br></br>
+                                <label>Max:</label>
+                                <input id="ymax"></input>
+                                <br></br>
+                                <button onClick={this.handleYScaleRefresh}>Refresh</button>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="quarterHolder">
+                                <p>Select Quarter:</p>
+                                <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
+                                <button id="Q2" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q2" ? "selected" : "unselected"}>Q2</button>
+                                <button id="Q3" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q3" ? "selected" : "unselected"}>Q3</button>
+                                <button id="Q4" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q4" ? "selected" : "unselected"}>Q4</button>
+                                <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected === "Full Game" ? "selected" : "unselected"}>Full Game</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
 
             </div>
         );

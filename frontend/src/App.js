@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 
 import axios from "axios";
+
+// External dependencies
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import List from 'react-list-select'
 
+// Internal dependencies
 import Chart from './components/Chart.js'
 import BoxScore from './components/BoxScore.js'
 
@@ -34,19 +38,19 @@ class App extends Component {
       startDate: date
     });
 
-    const month = date.getMonth()
+    const month = date.getMonth() + 1
     const day = date.getDate()
     const year = date.getFullYear()
-    console.log(month, day, year)
+    console.log(date, month, day, year)
     const newDate = month + "-" + day + "-" + year;
 
-    fetch('http://localhost:8000/games/date/'+newDate+'#')
-    .then(res => res.json())
-    .then(res =>
-      this.setState({
-        idList: res
-      })
-    )
+    fetch('http://localhost:8000/games/date/' + newDate + '#')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          idList: res
+        })
+      )
   }
 
   // Get data
@@ -147,32 +151,52 @@ class App extends Component {
     const height = 600;
     const width = 1200;
     var margin = { top: 50, right: 100, bottom: 10, left: 150 }
-    var { selectionMatrix, point_data } = this.state
-    console.log("res",this.state.idList)
+    var { selectionMatrix, point_data, idList } = this.state
+    console.log("res", this.state.idList, Object.values(idList))
 
     return (
       <div className="App">
 
         <h1>Header</h1>
 
-        <DatePicker
-          selected={this.state.startDate}
-          onChange={this.handleDateChange}
-        />
-
-        <form>
-          <input
-            type='text'
-            placeholder="Enter ID here"
-            value={this.state.user_input}
-            onChange={this.handleGameInputChange}
-          />
-          <button
-            onClick={this.handleGameSubmit}>
-            Submit
-          </button>
-        </form>
-
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <form>
+                  <p>Enter an NBA Game ID here to load data or...</p>
+                  <input
+                    type='text'
+                    placeholder="Enter Game ID"
+                    value={this.state.user_input}
+                    onChange={this.handleGameInputChange}
+                  />
+                  <button
+                    onClick={this.handleGameSubmit}>
+                    Submit
+                  </button>
+                </form>
+              </div>
+              <div className="col">
+                <p>Search for Game ID's using the datepicker:</p>
+                <DatePicker
+                  selected={this.state.startDate}
+                  onChange={this.handleDateChange}
+                />
+              </div>
+              <div className="col">
+                <p>Select a Game ID based on date:</p>
+                {Object.keys(idList).length > 0 ?
+                  <List
+                    items={idList.map(d => { return d["description"] + " (" + d["id"] + ")" })}
+                    selected={[]}
+                    disabled={[]}
+                    multiple={true}
+                    onChange={(selected) => { console.log(selected) }}
+                  /> : <p>(No date selected)</p>}
+              </div>
+            </div>
+          </div>
+        
         <br></br>
 
         {Object.keys(selectionMatrix).length > 0 ?
@@ -194,12 +218,16 @@ class App extends Component {
           >
           </BoxScore> : null}
 
+          <br></br>
+
         {Object.keys(selectionMatrix).length > 0 ?
           <BoxScore
             team={"Away"}
             handleSelectionChange={this.handleSelectionChange}
           >
           </BoxScore> : null}
+
+        <br></br>
 
         <p>
           Instructions:

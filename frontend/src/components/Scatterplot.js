@@ -190,6 +190,8 @@ class Scatterplot extends React.Component {
       const xticks = D3assets[4];
       const yticks = D3assets[5];
 
+      console.log("tooltip",this.state.hoveredPoint )
+
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
 

@@ -2,6 +2,7 @@
 2) x axis time
 3) end of game line
 
+2Pmiss calculation
 
 1) Change y axis
 3) tooltip overflow

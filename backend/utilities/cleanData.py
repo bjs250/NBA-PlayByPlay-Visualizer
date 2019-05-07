@@ -57,9 +57,10 @@ def handle2PMiss(row):
     if "DNP" in row["FGM"]:
         return ""
     else:
-        #FGA 
-        return int(float(row["FGM"])/float(row["FG%"])) - int(row["3PA"]) - int(row["2PM"])
-
+        if float(row["FG%"]) != 0:
+            return int(float(row["FGM"])/float(row["FG%"])*100) - int(row["3PM"]) - int(row["2PM"]) - int(row["3PMiss"])
+        else:
+            return 0
 
 if __name__ == "__main__":
 
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     df['3PMiss'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
     df['FTMiss'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
     df['2PM'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
-    df['2PMiss'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
+    df['2PMiss'] = df.apply(lambda row: handle2PMiss(row), axis=1)
 
     df = df.fillna('').transpose().to_dict()
     for key in df.keys():
