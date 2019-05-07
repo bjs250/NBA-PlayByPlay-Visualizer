@@ -1,31 +1,25 @@
-2) x axis time
-3) end of game line
+Must do:
+- Reset viewport when quarter is selected
 
-2Pmiss calculation
+- 2Pmiss calculation
+- Change y axis
+- tooltip overflow
+- Handle data points that occur at the same time
+- Add quarter to tick desc in full game
+- Add axis labels
+- Change time to be every 15 seconds
 
-1) Change y axis
-3) tooltip overflow
-
-
+Nice to have:
+handle overtime
 
 Bug: handle data points that occur at the same time
      tov/stl
 
-6) Fix axis shit 
-7) Viewport shit
-
 make list of ID's
     figure out how to take data slowly using the nba api 
     
-
-- Fix x axis time and ticks 
-- preprocess the data on the back end
 - faint gridlines?
-- Reset viewport to left when quarter is selected
 - Make y axis minimum of 0
 
-- Toggle scoring plays vs other events
-- Player selection in BoxScore
 
 
-handle overtime

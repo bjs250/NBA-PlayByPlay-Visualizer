@@ -91,14 +91,25 @@ class Scatterplot extends React.Component {
 
   // For axes and lines
   updateD3 = memoize(
-    (xy, new_height, new_width) => {
+    (xy, new_height, new_width, buttonSelected) => {
 
       // X Scale
       var xScale = d3.scaleLinear()
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
       var X_extrema = d3.extent(xy, function (d) { return d.x; })
-      var xticks = d3.range(X_extrema[0],X_extrema[1]+60,60)
+      var start,end = 0;
+      if (buttonSelected === "Full Game"){
+        start = 0
+        end = 4*12*60
+      }
+      else{
+        var quarter = parseInt(buttonSelected.charAt(1))
+        start = 12 * 60 * (quarter-1)
+        end = start + 12*60
+      }
+      console.log(start,end)
+      var xticks = d3.range(start,end,60)
 
       // Y Scale 
       var extrema = d3.extent(xy, function (d) { return d.y; })
@@ -198,7 +209,7 @@ class Scatterplot extends React.Component {
             <g
               className="xaxis"
               transform={`translate(0, ${new_height})`}
-              ref={node => select(node).call(axisBottom(xScale).tickValues(xticks))}
+              ref={node => select(node).call(axisBottom(xScale).tickValues(xticks).tickFormat(d => `${(720-(d % 720))/60}:00`) ) }
             />
 
             <path className="line"

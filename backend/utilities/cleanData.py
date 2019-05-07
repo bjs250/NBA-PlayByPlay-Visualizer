@@ -162,6 +162,11 @@ if __name__ == "__main__":
     df.loc[df['quarter'] == "Q3",'time_seconds'] += 720*2
     df.loc[df['quarter'] == "Q4",'time_seconds'] += 720*3
     
+    lastScores = {}
+    for quarterText in ["Q1","Q2","Q3","Q4"]:
+        temp = df.loc[df['quarter'] == quarterText,'score differential']
+        lastScores[quarterText] = str(temp.iloc[-1])
+    
     # Create score-differential line data
     full_line_data = pd.DataFrame()
     full_line_data['quarter'] = df['quarter']
@@ -178,6 +183,23 @@ if __name__ == "__main__":
         else:
             if full_line_data_list[index]["score differential"] != full_line_data_list[index-1]["score differential"]:
                 truncated_data_list.append(element)
+
+    print(truncated_data_list[-1])
+
+    # Add in special points
+    special_elements = []
+    special_elements.append({'quarter':'Q1','time_seconds':0,'score differential':0, 'key':20000})
+    special_elements.append({'quarter':'Q2','time_seconds':720,'score differential':lastScores["Q1"], 'key':20001})
+    special_elements.append({'quarter':'Q2','time_seconds':720*2,'score differential':lastScores["Q2"], 'key':20002})
+    special_elements.append({'quarter':'Q3','time_seconds':720*2,'score differential':lastScores["Q2"], 'key':20003})
+    special_elements.append({'quarter':'Q3','time_seconds':720*3,'score differential':lastScores["Q3"], 'key':20004})
+    special_elements.append({'quarter':'Q4','time_seconds':720*3,'score differential':lastScores["Q3"], 'key':20005})
+    special_elements.append({'quarter':'Q4','time_seconds':720*4,'score differential':lastScores["Q4"], 'key':20006})
+    for element in special_elements:
+        truncated_data_list.append(element)
+
+    truncated_data_list.sort(key=lambda x: (x["quarter"],x["time_seconds"]))
+    print(truncated_data_list)
     
     with open("..//nba_backend//PBPdata//" + game_id + "line_edit.pkl", 'wb') as fp:
         pickle.dump(truncated_data_list, fp)
