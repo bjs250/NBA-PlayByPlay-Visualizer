@@ -141,23 +141,10 @@ class Scatterplot extends React.Component {
     console.log("Scatterplot mount")
   }
 
-  get transform() {
-    const { x, y, zoomTransform, margin } = this.props;
-    //console.log("Transform Executed",margin, zoomTransform)
-    let transform = "";
-
-    if (zoomTransform) {
-      transform = `translate(${x + zoomTransform.x + margin.left}, ${y + zoomTransform.y + margin.top}) scale(${zoomTransform.k})`;
-    }
-
-    return transform;
-  }
-
   get ytransform() {
-    const { x, zoomTransform, margin } = this.props;
-    //console.log("Transform Executed",margin, zoomTransform)
+    var { x, zoomTransform, margin } = this.props;
     let transform = "";
-
+    
     if (zoomTransform) {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${zoomTransform.y}) scale(${zoomTransform.k})`;
     }
@@ -167,7 +154,6 @@ class Scatterplot extends React.Component {
 
   get xtransform() {
     const { x, y, zoomTransform, margin } = this.props;
-    //console.log("Transform Executed",margin, zoomTransform)
     let transform = "";
 
     if (zoomTransform) {
@@ -200,11 +186,12 @@ class Scatterplot extends React.Component {
       const baseline = D3assets[3];
       const xticks = D3assets[4];
       const yticks = D3assets[5];
+
       
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
 
-          <g transform={this.ytransform}>
+          <g transform={this.ytransform} id="holder">
 
             <g
               className="xaxis"

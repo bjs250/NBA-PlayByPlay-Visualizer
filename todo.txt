@@ -1,12 +1,12 @@
 Must do:
-- Reset viewport when quarter is selected
+- Add axis labels
+
 
 - 2Pmiss calculation
 - Change y axis
 - tooltip overflow
 - Handle data points that occur at the same time
 - Add quarter to tick desc in full game
-- Add axis labels
 - Change time to be every 15 seconds
 
 Nice to have:

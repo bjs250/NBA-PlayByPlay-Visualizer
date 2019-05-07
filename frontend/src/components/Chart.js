@@ -62,7 +62,14 @@ class Chart extends React.Component {
     // Change what button is selected
     handleQuarterSubmit = (event) => {
         event.preventDefault();
-        this.setState({ buttonSelected: event.target.id })
+        var new_zoomTransform = this.state.zoomTransform
+        new_zoomTransform["x"] = 0
+        new_zoomTransform["y"] = 0
+        new_zoomTransform["k"] = 1
+        this.setState({ 
+            buttonSelected: event.target.id,
+            zoomTransform: new_zoomTransform
+        })
     };
 
     // For changing the y axis scale

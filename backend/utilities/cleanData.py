@@ -14,7 +14,6 @@ def trim(s):
         return s
 
 def replace(s):
-    #print(s, s is "")
     if s is "":
         return None
     else:
@@ -184,7 +183,6 @@ if __name__ == "__main__":
             if full_line_data_list[index]["score differential"] != full_line_data_list[index-1]["score differential"]:
                 truncated_data_list.append(element)
 
-    print(truncated_data_list[-1])
 
     # Add in special points
     special_elements = []
@@ -199,13 +197,9 @@ if __name__ == "__main__":
         truncated_data_list.append(element)
 
     truncated_data_list.sort(key=lambda x: (x["quarter"],x["time_seconds"]))
-    print(truncated_data_list)
     
     with open("..//nba_backend//PBPdata//" + game_id + "line_edit.pkl", 'wb') as fp:
         pickle.dump(truncated_data_list, fp)
-    
-    #print(truncated_data_list)
-    #print(len(truncated_data_list))
     
     # Create datapoint tree for queries
     df['key'] = df.index+10000
