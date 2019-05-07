@@ -159,8 +159,7 @@ class BoxScore extends React.Component {
             const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             const column_widths = [200,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
             const accessors = headers
-            console.log(column_widths.length,headers.length)
-
+            
             // For row selection
             var check = {
                 id: "checkbox",
@@ -213,7 +212,6 @@ class BoxScore extends React.Component {
                             }
                             // Gray out columns that are not selectable
                             if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","+/-","PTS"].includes(column["Header"]) && rowInfo) {
-                                console.log(rowInfo)
                                 return {
                                     style: {
                                         background: column["Header"] === "PLAYER" ? null : '#D3D3D3'

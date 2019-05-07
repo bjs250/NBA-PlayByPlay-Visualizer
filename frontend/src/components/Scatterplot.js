@@ -98,7 +98,7 @@ class Scatterplot extends React.Component {
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
       var X_extrema = d3.extent(xy, function (d) { return d.x; })
-      var xticks = Math.floor((X_extrema[1] - X_extrema[0]) / 60.0)
+      var xticks = d3.range(X_extrema[0],X_extrema[1]+60,60)
 
       // Y Scale 
       var extrema = d3.extent(xy, function (d) { return d.y; })
@@ -189,9 +189,7 @@ class Scatterplot extends React.Component {
       const baseline = D3assets[3];
       const xticks = D3assets[4];
       const yticks = D3assets[5];
-
-      console.log("tooltip",this.state.hoveredPoint )
-
+      
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
 
@@ -200,7 +198,7 @@ class Scatterplot extends React.Component {
             <g
               className="xaxis"
               transform={`translate(0, ${new_height})`}
-              ref={node => select(node).call(axisBottom(xScale).ticks(xticks))}
+              ref={node => select(node).call(axisBottom(xScale).tickValues(xticks))}
             />
 
             <path className="line"

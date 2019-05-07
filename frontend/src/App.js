@@ -152,7 +152,6 @@ class App extends Component {
     const width = 1200;
     var margin = { top: 50, right: 100, bottom: 10, left: 150 }
     var { selectionMatrix, point_data, idList } = this.state
-    console.log("res", this.state.idList, Object.values(idList))
 
     return (
       <div className="App">
