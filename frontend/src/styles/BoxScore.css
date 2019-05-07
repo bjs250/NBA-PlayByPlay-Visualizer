@@ -48,7 +48,6 @@
   align-items: center;
   width: 100%;
   border-collapse: collapse;
-  overflow: auto
 }
 
 .ReactTable .rt-thead {
@@ -70,7 +69,7 @@
 
 .ReactTable .rt-thead.-headerGroups {
   background: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .ReactTable .rt-thead.-filters {
@@ -88,7 +87,7 @@
 }
 
 .ReactTable .rt-thead.-filters .rt-th {
-  border-right: 1px solid rgba(0, 0, 0, 0.02)
+  border-right: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .ReactTable .rt-thead.-header {
@@ -96,7 +95,8 @@
 }
 
 .ReactTable .rt-thead .rt-tr {
-  text-align: center
+  text-align: left;
+  font-weight: bold;
 }
 
 .ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td {

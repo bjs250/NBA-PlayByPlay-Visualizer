@@ -37,7 +37,7 @@ class BoxScore extends React.Component {
                     });
                 }
 
-                const headers = ['PLAYER', 'MIN', 'FTM', 'FTMiss','FTA', 'FT%','2PM','2PMiss','3PM','3PMiss','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
+                const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
                 const init_headers = ['FTM', '3PM', '2PM', 'AST']
                 var raw_sel = {}
                 for (var i = 0; i < raw_data.length; i++) {
@@ -70,13 +70,13 @@ class BoxScore extends React.Component {
 
         var newSel = Object.assign({}, this.state.sel);
         if (newSelected[player]) {
-            ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 1
                 handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
             })
         }
         else {
-            ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 0
                 handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
             })
@@ -104,13 +104,13 @@ class BoxScore extends React.Component {
         this.state.data.forEach(x => {
             var player = x["PLAYER"]
             if (newSelected[player]) {
-                ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                     newSel[player][column] = 1
                     handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
                 })
             }
             else {
-                ["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                     newSel[player][column] = 0
                     handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
                 })
@@ -156,8 +156,10 @@ class BoxScore extends React.Component {
         {
             //console.log("sel",sel)
             const footer = data[data.length - 1]
-            const headers = ['PLAYER', 'MIN', 'FTM', 'FTMiss','FTA', 'FT%','2PM','2PMiss','3PM','3PMiss','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
+            const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
+            const column_widths = [200,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
             const accessors = headers
+            console.log(column_widths.length,headers.length)
 
             // For row selection
             var check = {
@@ -199,15 +201,26 @@ class BoxScore extends React.Component {
                     {
                         Header: headers[i],
                         accessor: accessors[i],
-                        width: 50,
+                        width: column_widths[i],
                         getProps: (state, rowInfo, column) => {
-                            if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","+/-","PTS"].includes(column["Header"])) {
+                            // Left align Player column
+                            if (column["Header"] === "PLAYER")
+                            {
+                                return{
+                                style: {
+                                    textAlign: 'left'
+                                }}
+                            }
+                            // Gray out columns that are not selectable
+                            if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","+/-","PTS"].includes(column["Header"]) && rowInfo) {
+                                console.log(rowInfo)
                                 return {
                                     style: {
                                         background: column["Header"] === "PLAYER" ? null : '#D3D3D3'
                                     }
                                 }
                             }
+                            // Handle color change on selection
                             else {
                                 if (rowInfo && column)
                                 {
@@ -223,7 +236,7 @@ class BoxScore extends React.Component {
                         },
                         Footer: (state) => (
                             <div className="test">
-                                {(["FTM","FTMiss","2PM","2PMiss","3PM","3PMiss","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
+                                {(["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
                                 <input
                                     type="checkbox"
                                     className="checkbox"
@@ -236,9 +249,6 @@ class BoxScore extends React.Component {
                         ),
                     })
             }
-
-            // Change the width of the player column
-            columns[1].width = 200
 
             return (
                 <div>

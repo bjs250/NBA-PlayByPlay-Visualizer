@@ -58,7 +58,7 @@ def handle2PMiss(row):
         return ""
     else:
         if float(row["FG%"]) != 0:
-            return int(float(row["FGM"])/float(row["FG%"])*100) - int(row["3PM"]) - int(row["2PM"]) - int(row["3PMiss"])
+            return int(float(row["FGM"])/float(row["FG%"])*100) - int(row["3PM"]) - int(row["2PM"]) - int(row["-3PM"])
         else:
             return 0
 
@@ -76,10 +76,10 @@ if __name__ == "__main__":
 ######### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
     df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
-    df['3PMiss'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
-    df['FTMiss'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
+    df['-3PM'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
+    df['-FTM'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
     df['2PM'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
-    df['2PMiss'] = df.apply(lambda row: handle2PMiss(row), axis=1)
+    df['-2PM'] = df.apply(lambda row: handle2PMiss(row), axis=1)
 
     df = df.fillna('').transpose().to_dict()
     for key in df.keys():
