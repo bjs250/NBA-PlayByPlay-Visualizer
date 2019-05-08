@@ -57,7 +57,8 @@ def handle2PMiss(row):
         return ""
     else:
         if float(row["FG%"]) != 0:
-            return int(float(row["FGM"])/float(row["FG%"])*100) - int(row["3PM"]) - int(row["2PM"]) - int(row["-3PM"])
+            # Calculation thanks to Dan Kosteva
+            return int( round(float(row["FGM"])/float(row["FG%"])*100 )) - int(row["FGM"]) + int(row["3PM"]) - int(row["3PA"])
         else:
             return 0
 

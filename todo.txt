@@ -1,18 +1,19 @@
 Must do:
-- Zoom button
+- Add quarter marker to full game
 
 - 2Pmiss calculation
 - Handle data points that occur at the same time
 
-- Add quarter to tick desc in full game
-- Change time to be every 30 seconds
 
 - instructions
+
+====
 
 Nice to have:
 - handle overtime
 - fix labels when zooming
 - fix tooltip overflow
+- Zoom button
 
 Bug: handle data points that occur at the same time
      tov/stl

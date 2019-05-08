@@ -245,11 +245,11 @@ class Chart extends React.Component {
                                     <button id="xincrease" onClick={this.handleXSpacingPlus}>+</button>
                                 </div>
 
-                                <div className="col">
+                                {/* <div className="col">
                                     <p>Zoom:</p>
                                     <button id="xdecrease" onClick={this.handleZoomMinus}>-</button>
                                     <button id="xincrease" onClick={this.handleZoomPlus}>+</button>
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>

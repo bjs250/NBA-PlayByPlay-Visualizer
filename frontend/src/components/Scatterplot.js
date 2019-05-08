@@ -39,14 +39,13 @@ class Scatterplot extends React.Component {
 
       var keyCheck = {}
       var timeCheck = {}
-      
+
       function helper(selectionMatrix, point_data, player, identifier, keyCheck) {
         if (selectionMatrix[player][identifier] === 1) {
           point_data[player][identifier].forEach(d => {
-            if (d["key"] in keyCheck === false) { 
+            if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
-              if (d["time_seconds"] in timeCheck === true)
-              {
+              if (d["time_seconds"] in timeCheck === true) {
                 console.log(timeCheck[d["time_seconds"]])
               }
               timeCheck[d["time_seconds"]] = d
@@ -55,7 +54,7 @@ class Scatterplot extends React.Component {
         }
         return keyCheck
       }
-      function helper_plus(selectionMatrix, point_data, player, identifier,identifier_plus,keyCheck) {
+      function helper_plus(selectionMatrix, point_data, player, identifier, identifier_plus, keyCheck) {
         if (selectionMatrix[player][identifier][identifier_plus] === 1) {
           point_data[player][identifier][identifier_plus].forEach(d => {
             if (d["key"] in keyCheck === false) {
@@ -73,17 +72,17 @@ class Scatterplot extends React.Component {
         keyCheck = helper(selectionMatrix, point_data, player, "STL", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "TOV", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "FOUL", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "1","Made", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "2","Made", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "3","Made", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "1","Miss", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "2","Miss", keyCheck)
-        keyCheck = helper_plus(selectionMatrix, point_data, player, "3","Miss", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "1", "Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "2", "Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "3", "Made", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "1", "Miss", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "2", "Miss", keyCheck)
+        keyCheck = helper_plus(selectionMatrix, point_data, player, "3", "Miss", keyCheck)
       })
-      
+
       var pruned_xy = Object.values(keyCheck).filter(function (d) {
         return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
-      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color:d["color"] }))
+      }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color: d["color"] }))
 
 
       return pruned_xy
@@ -99,25 +98,25 @@ class Scatterplot extends React.Component {
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
 
-      var start,end = 0;
-      if (buttonSelected === "Full Game"){
+      var start, end = 0;
+      if (buttonSelected === "Full Game") {
         start = 0
-        end = 4*12*60
+        end = 4 * 12 * 60
       }
-      else{
+      else {
         var quarter = parseInt(buttonSelected.charAt(1))
-        start = 12 * 60 * (quarter-1)
-        end = start + 12*60
+        start = 12 * 60 * (quarter - 1)
+        end = start + 12 * 60
       }
-      var xticks = d3.range(start,end,60)
+      var xticks = d3.range(start, end, 30)
 
       // Y Scale
 
-      if (yScaleMin !== null && yScaleMax !== null){
+      if (yScaleMin !== null && yScaleMax !== null) {
         var extrema = [yScaleMin, yScaleMax]
         console.log("manually changed y Scale")
-      } 
-      else{
+      }
+      else {
         var extrema = d3.extent(xy, function (d) { return d.y; })
         extrema[0] -= 1
         extrema[1] += 1
@@ -139,7 +138,38 @@ class Scatterplot extends React.Component {
         .x(function (d) { return xScale(d.x); }) // set the x values for the line generator
         .y(function (d) { return yScale(d.y); }) // set the y values for the line generator 
 
-      return [xScale, yScale, line, baseline, xticks, yticks]
+
+      var guidepoints = null
+      var guideline = null
+      if (buttonSelected === "Full Game") {
+
+        var guidepoints = []
+        var guides = [720, 720 * 2, 720 * 3, 720 * 4]
+        var keyStart = 100000
+        var counter = 0
+        guides.forEach(guide => {
+
+          // Create guideline if necessary
+          var guidepoint = [];
+          for (var i = extrema[0]; i <= extrema[1]; i++) {
+            guidepoint.push({ x: guide, y: i, key: keyStart + counter });
+            counter += 1
+
+          }
+
+          guideline = d3.line()
+            .x(function (d) { return xScale(d.x); }) // set the x values for the line generator
+            .y(function (d) { return yScale(d.y); }) // set the y values for the line generator 
+
+          var holder = { "points": guidepoint, "key": 200000 + counter }
+          guidepoints.push(holder)
+
+        })
+
+      }
+      console.log()
+
+      return [xScale, yScale, line, baseline, xticks, yticks, guidepoints, guideline]
 
     }
   )
@@ -152,7 +182,7 @@ class Scatterplot extends React.Component {
   get ytransform() {
     var { x, zoomTransform, margin } = this.props;
     let transform = "";
-    
+
     if (zoomTransform) {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${zoomTransform.y}) scale(${zoomTransform.k})`;
     }
@@ -184,7 +214,8 @@ class Scatterplot extends React.Component {
       //Put line_data into input format for d3.line by filtering by quarter (but only if data has changed)
       const xy = this.line_filter(line_data, buttonSelected)
       const baseline_xy = this.baseline_filter(line_data, buttonSelected)
-      const pruned_xy = this.point_filter(selectionMatrix, point_data, buttonSelected,JSON.stringify(selectionMatrix))
+
+      const pruned_xy = this.point_filter(selectionMatrix, point_data, buttonSelected, JSON.stringify(selectionMatrix))
 
       // Calculate axes and lines in D3 (but only if data has changed)
       const D3assets = this.updateD3(xy, new_height, new_width, buttonSelected, yScaleMin, yScaleMax)
@@ -194,18 +225,20 @@ class Scatterplot extends React.Component {
       const baseline = D3assets[3];
       const xticks = D3assets[4];
       const yticks = D3assets[5];
-      
+      const guidepoints = D3assets[6]
+      var guideline = D3assets[7];
+
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
-          <text transform={`translate(${margin.left/2}, ${height/2}) rotate(-90)`}>Point Differential</text>
-          <text transform={`translate(${buttonSelected === "Full Game" ? width/8 : width/2}, ${height-margin.bottom})`}>Time</text>
+          <text transform={`translate(${margin.left / 2}, ${height / 2}) rotate(-90)`}>Point Differential</text>
+          <text transform={`translate(${buttonSelected === "Full Game" ? width / 8 : width / 2}, ${height - margin.bottom})`}>Time</text>
 
           <g transform={this.ytransform} id="holder">
 
             <g
               className="xaxis"
               transform={`translate(0, ${new_height})`}
-              ref={node => select(node).call(axisBottom(xScale).tickValues(xticks).tickFormat(d => `${(720-(d % 720))/60}:00`) ) }
+              ref={node => select(node).call(axisBottom(xScale).tickValues(xticks).tickFormat(d => `${Math.trunc((720 - (d % 720)) / 60)}:${d % 60 === 0 ? "00" : d % 60}`))}
             />
 
             <path className="line"
@@ -216,6 +249,13 @@ class Scatterplot extends React.Component {
               d={baseline(baseline_xy)}
             />
 
+            {guideline !== null ?
+              guidepoints.map((d) => {
+                return <path className="guideline" key={d["key"]}
+                  d={guideline(d["points"])}
+                />
+              }) : null}
+
             <Points
               scales={{ xScale, yScale }}
               data={pruned_xy}
@@ -223,12 +263,12 @@ class Scatterplot extends React.Component {
               onMouseOutCallback={d => this.setState({ hoveredPoint: null })}
             />
 
-            { this.state.hoveredPoint ?
+            {this.state.hoveredPoint ?
               <Tooltip
                 hoveredPoint={this.state.hoveredPoint}
-                scales={{xScale,yScale}}
+                scales={{ xScale, yScale }}
               /> :
-            null}
+              null}
 
           </g>
 

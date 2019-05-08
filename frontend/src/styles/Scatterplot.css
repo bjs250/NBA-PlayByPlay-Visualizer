@@ -14,6 +14,14 @@
     stroke-dasharray: 5,3;
 }
 
+.guideline {
+  fill: none;
+  stroke: #020100;
+  stroke-width: 1;
+  stroke-dasharray: 10,10;
+}
+
+
 .overlay {
   fill: none;
   pointer-events: all;
