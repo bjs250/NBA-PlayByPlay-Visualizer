@@ -1,19 +1,18 @@
 Must do:
-- Change y axis
-- tooltip overflow
-
+- Zoom button
 
 - 2Pmiss calculation
-- tooltip overflow
 - Handle data points that occur at the same time
+
 - Add quarter to tick desc in full game
-- Change time to be every 15 seconds
-- set max zoom
+- Change time to be every 30 seconds
+
 - instructions
 
 Nice to have:
-handle overtime
-fix labels when zooming
+- handle overtime
+- fix labels when zooming
+- fix tooltip overflow
 
 Bug: handle data points that occur at the same time
      tov/stl

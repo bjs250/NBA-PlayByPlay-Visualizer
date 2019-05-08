@@ -14,6 +14,11 @@ class Chart extends React.Component {
             point_data: [],
             zoomTransform: { k: 1, x: 0, y: 0 },
             buttonSelected: "Full Game",
+            temp_yScaleMin: null,
+            temp_yScaleMax: null,
+            yScaleMin: null,
+            yScaleMax: null,
+            scaleFactor: 4
         }
 
         this.zoom = d3.zoom()
@@ -23,7 +28,18 @@ class Chart extends React.Component {
             .on("zoom", this.zoomed.bind(this))
 
         this.handleQuarterSubmit = this.handleQuarterSubmit.bind(this);
+
         this.handleYScaleRefresh = this.handleYScaleRefresh.bind(this);
+        this.handleYScaleReset = this.handleYScaleReset.bind(this);
+        this.handleYScaleMin = this.handleYScaleMin.bind(this);
+        this.handleYScaleMax = this.handleYScaleMax.bind(this);
+
+        this.handleXSpacingPlus = this.handleXSpacingPlus.bind(this);
+        this.handleXSpacingMinus = this.handleXSpacingMinus.bind(this);
+
+        this.handleZoomPlus = this.handleZoomPlus.bind(this);
+        this.handleZoomMinus = this.handleZoomMinus.bind(this);
+
 
     }
 
@@ -78,33 +94,102 @@ class Chart extends React.Component {
     handleQuarterSubmit = (event) => {
         event.preventDefault();
         var new_zoomTransform = this.state.zoomTransform
+        var new_buttonSelected = event.target.id
         new_zoomTransform["x"] = 0
         new_zoomTransform["y"] = 0
         new_zoomTransform["k"] = 1
-        this.setState({ 
-            buttonSelected: event.target.id,
-            zoomTransform: new_zoomTransform
+
+        this.setState({
+            buttonSelected: new_buttonSelected,
+            zoomTransform: new_zoomTransform,
+            scaleFactor: (new_buttonSelected === "Full Game" ? 4 : 1)
         })
     };
 
     // For changing the y axis scale
+    handleYScaleMin = (event) => {
+        this.setState({ temp_yScaleMin: event.target.value })
+    }
+
+    handleYScaleMax = (event) => {
+        this.setState({ temp_yScaleMax: event.target.value })
+    }
+
     handleYScaleRefresh = (event) => {
         event.preventDefault();
-        console.log("Hit");
+        const { temp_yScaleMin, temp_yScaleMax } = this.state
+        var new_yScaleMin = null
+        var new_yScaleMax = null
+
+        if (Number.isInteger(parseInt(temp_yScaleMin))) {
+            new_yScaleMin = parseInt(temp_yScaleMin)
+        }
+
+        if (Number.isInteger(parseInt(temp_yScaleMax))) {
+            new_yScaleMax = parseInt(temp_yScaleMax)
+        }
+        
+        console.log("Hit",new_yScaleMin,new_yScaleMax);
+
+        if (new_yScaleMin !== null && new_yScaleMax !== null){
+            this.setState({ 
+                yScaleMin: new_yScaleMin,
+                yScaleMax: new_yScaleMax,
+             })
+        }
+
     };
 
+    handleYScaleReset = (event) => {
+        event.preventDefault();
+        this.setState({ 
+            yScaleMin: null,
+            yScaleMax: null,
+         })
+    }
+
+    // For changing the X Axis Scale
+    handleXSpacingPlus = (event) => {
+        event.preventDefault();
+        var new_scaleFactor = this.state.scaleFactor
+        if (new_scaleFactor > 1){
+            new_scaleFactor += 1
+        }
+        else{
+            new_scaleFactor *= 2
+        }
+        this.setState({ 
+            scaleFactor: new_scaleFactor
+         })
+    };
+
+    handleXSpacingMinus = (event) => {
+        event.preventDefault();
+        var new_scaleFactor = this.state.scaleFactor
+        if (new_scaleFactor > 1){
+            new_scaleFactor -= 1
+        }
+        else{
+            new_scaleFactor *= 0.5
+        }
+        this.setState({ 
+            scaleFactor: new_scaleFactor
+         })
+    };
+
+    handleZoomPlus = (event) => {
+        event.preventDefault();
+        console.log("handleZoomPlus");
+    };
+
+    handleZoomMinus = (event) => {
+        event.preventDefault();
+        console.log("handleZoomMinus");
+    };
 
     render() {
-        const { line_data, point_data, zoomTransform, buttonSelected } = this.state,
+        const { line_data, point_data, zoomTransform, buttonSelected, yScaleMin, yScaleMax, scaleFactor } = this.state,
             { width, height, margin, selectionMatrix } = this.props;
-        var scale_factor = null;
-        if (buttonSelected === "Full Game") {
-            scale_factor = 4;
-        }
-        else {
-            scale_factor = 1;
-        }
-
 
         return (
             <div>
@@ -114,31 +199,21 @@ class Chart extends React.Component {
                             line_data={line_data}
                             point_data={point_data}
                             x={0} y={0}
-                            width={width * scale_factor}
+                            width={width * scaleFactor}
                             height={height}
                             margin={margin}
                             zoomTransform={zoomTransform}
                             buttonSelected={buttonSelected}
                             selectionMatrix={selectionMatrix}
+                            yScaleMin={yScaleMin}
+                            yScaleMax={yScaleMax}
                         />
                     </svg>
                 </div>
 
                 <div className="container">
                     <div className="row">
-                        <div className="col">
-                            <div className="scaleDashboard">
-                                <p>Y-scale:</p>
-                                <label>Min:</label>
-                                <input id="ymin"></input>
-                                <br></br>
-                                <label>Max:</label>
-                                <input id="ymax"></input>
-                                <br></br>
-                                <button onClick={this.handleYScaleRefresh}>Refresh</button>
-                            </div>
-                        </div>
-                        <div className="col">
+                        <div className="col-4">
                             <div className="quarterHolder">
                                 <p>Select Quarter:</p>
                                 <button id="Q1" onClick={this.handleQuarterSubmit} className={buttonSelected === "Q1" ? "selected" : "unselected"}>Q1</button>
@@ -148,7 +223,39 @@ class Chart extends React.Component {
                                 <button id="Full Game" onClick={this.handleQuarterSubmit} className={buttonSelected === "Full Game" ? "selected" : "unselected"}>Full Game</button>
                             </div>
                         </div>
+                        <div className="col-8">
+                            <div className="row">
+
+                                <div className="col">
+                                    <p>Y-Scale:</p>
+                                    <label>Min:</label>
+                                    <input type="text" onChange={this.handleYScaleMin}></input>
+                                    <br></br>
+                                    <label>Max:</label>
+                                    <input type="text" onChange={this.handleYScaleMax}></input>
+                                    <br></br>
+                                    <button onClick={this.handleYScaleRefresh}>Refresh</button>
+                                    <button onClick={this.handleYScaleReset}>Reset</button>
+
+                                </div>
+
+                                <div className="col">
+                                    <p>X-Axis Spacing:</p>
+                                    <button id="xdecrease" onClick={this.handleXSpacingMinus}>-</button>
+                                    <button id="xincrease" onClick={this.handleXSpacingPlus}>+</button>
+                                </div>
+
+                                <div className="col">
+                                    <p>Zoom:</p>
+                                    <button id="xdecrease" onClick={this.handleZoomMinus}>-</button>
+                                    <button id="xincrease" onClick={this.handleZoomPlus}>+</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
 
 

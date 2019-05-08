@@ -85,7 +85,6 @@ class Scatterplot extends React.Component {
         return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
       }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color:d["color"] }))
 
-      console.log(pruned_xy)
 
       return pruned_xy
     }
@@ -93,13 +92,13 @@ class Scatterplot extends React.Component {
 
   // For axes and lines
   updateD3 = memoize(
-    (xy, new_height, new_width, buttonSelected) => {
+    (xy, new_height, new_width, buttonSelected, yScaleMin, yScaleMax) => {
 
       // X Scale
       var xScale = d3.scaleLinear()
         .domain(d3.extent(xy, function (d) { return d.x; }))
         .range([0, new_width]);
-      var X_extrema = d3.extent(xy, function (d) { return d.x; })
+
       var start,end = 0;
       if (buttonSelected === "Full Game"){
         start = 0
@@ -112,10 +111,18 @@ class Scatterplot extends React.Component {
       }
       var xticks = d3.range(start,end,60)
 
-      // Y Scale 
-      var extrema = d3.extent(xy, function (d) { return d.y; })
-      extrema[0] -= 1
-      extrema[1] += 1
+      // Y Scale
+
+      if (yScaleMin !== null && yScaleMax !== null){
+        var extrema = [yScaleMin, yScaleMax]
+        console.log("manually changed y Scale")
+      } 
+      else{
+        var extrema = d3.extent(xy, function (d) { return d.y; })
+        extrema[0] -= 1
+        extrema[1] += 1
+      }
+
       var yticks = extrema[1] - extrema[0] + 1
 
       var yScale = d3.scaleLinear()
@@ -165,7 +172,7 @@ class Scatterplot extends React.Component {
   }
 
   render() {
-    const { line_data, point_data, buttonSelected, width, height, margin, selectionMatrix } = this.props;
+    const { line_data, point_data, buttonSelected, width, height, margin, selectionMatrix, yScaleMin, yScaleMax } = this.props;
     var { new_width, new_height } = this.state;
 
     if (line_data.length && Object.keys(point_data).length) // make sure line_data has been loaded
@@ -180,7 +187,7 @@ class Scatterplot extends React.Component {
       const pruned_xy = this.point_filter(selectionMatrix, point_data, buttonSelected,JSON.stringify(selectionMatrix))
 
       // Calculate axes and lines in D3 (but only if data has changed)
-      const D3assets = this.updateD3(xy, new_height, new_width, buttonSelected)
+      const D3assets = this.updateD3(xy, new_height, new_width, buttonSelected, yScaleMin, yScaleMax)
       const xScale = D3assets[0];
       const yScale = D3assets[1];
       const line = D3assets[2];

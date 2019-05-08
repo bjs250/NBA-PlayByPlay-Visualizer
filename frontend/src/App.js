@@ -157,9 +157,11 @@ class App extends Component {
       <div className="App">
 
         <h1>Header</h1>
+        <p>[text]</p>
 
           <div className="container">
             <div className="row">
+            
               <div className="col">
                 <form>
                   <p>Enter an NBA Game ID here to load data or...</p>
@@ -175,6 +177,7 @@ class App extends Component {
                   </button>
                 </form>
               </div>
+              
               <div className="col">
                 <p>Search for Game ID's using the datepicker:</p>
                 <DatePicker
@@ -182,6 +185,7 @@ class App extends Component {
                   onChange={this.handleDateChange}
                 />
               </div>
+
               <div className="col">
                 <p>Select a Game ID based on date:</p>
                 {Object.keys(idList).length > 0 ?
@@ -193,6 +197,7 @@ class App extends Component {
                     onChange={(selected) => { console.log(selected) }}
                   /> : <p>(No date selected)</p>}
               </div>
+
             </div>
           </div>
         
