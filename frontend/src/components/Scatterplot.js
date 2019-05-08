@@ -85,6 +85,8 @@ class Scatterplot extends React.Component {
         return d["quarter"] === buttonSelected || buttonSelected === "Full Game";
       }).map(d => ({ x: d["time_seconds"], y: d["score differential"], text: d["home"] + " " + d["visit"], key: d["key"], tag: d["tag"], color:d["color"] }))
 
+      console.log(pruned_xy)
+
       return pruned_xy
     }
   )
@@ -108,7 +110,6 @@ class Scatterplot extends React.Component {
         start = 12 * 60 * (quarter-1)
         end = start + 12*60
       }
-      console.log(start,end)
       var xticks = d3.range(start,end,60)
 
       // Y Scale 
@@ -186,10 +187,11 @@ class Scatterplot extends React.Component {
       const baseline = D3assets[3];
       const xticks = D3assets[4];
       const yticks = D3assets[5];
-
       
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
+          <text transform={`translate(${margin.left/2}, ${height/2}) rotate(-90)`}>Point Differential</text>
+          <text transform={`translate(${buttonSelected === "Full Game" ? width/8 : width/2}, ${height-margin.bottom})`}>Time</text>
 
           <g transform={this.ytransform} id="holder">
 

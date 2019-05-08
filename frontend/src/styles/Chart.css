@@ -26,6 +26,9 @@
 }
 
 .quarterHolder{
-  display: inline-block;
-    
+  display: inline-block;   
+}
+
+.plotholder{
+  outline: 1px dashed rgb(64, 68, 64);
 }

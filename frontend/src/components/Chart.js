@@ -54,8 +54,23 @@ class Chart extends React.Component {
     }
 
     zoomed() {
+        // console.log(d3.event.sourceEvent["deltaY"],this.state.zoomTransform["k"])
+        // if (this.state.zoomTransform["k"] > 2.50)
+        // {
+        //     if (d3.event.sourceEvent["deltaY"]>=0)
+        //     {
+        //         this.setState({
+        //             zoomTransform: d3.event.transform,
+        //         });
+        //     }
+        // }
+        // else{
+        //     this.setState({
+        //         zoomTransform: d3.event.transform,
+        //     });
+        // }
         this.setState({
-            zoomTransform: d3.event.transform
+            zoomTransform: d3.event.transform,
         });
     }
 
@@ -94,7 +109,7 @@ class Chart extends React.Component {
         return (
             <div>
                 <div>
-                    <svg width={width} height={height} ref="svg">
+                    <svg width={width} height={height} ref="svg" className="plotholder">
                         <Scatterplot
                             line_data={line_data}
                             point_data={point_data}

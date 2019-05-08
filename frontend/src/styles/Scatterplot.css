@@ -11,6 +11,7 @@
     fill: none;
     stroke: #020100;
     stroke-width: 1;
+    stroke-dasharray: 5,3;
 }
 
 .overlay {

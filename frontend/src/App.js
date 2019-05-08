@@ -118,19 +118,19 @@ class App extends Component {
       case "FTM":
         new_sel[player]["1"]["Made"] = value
         break;
-      case "FTMiss":
+      case "-FTM":
         new_sel[player]["1"]["Miss"] = value
         break;
       case "2PM":
         new_sel[player]["2"]["Made"] = value
         break;
-      case "2PMiss":
+      case "-2PM":
         new_sel[player]["2"]["Miss"] = value
         break;
       case "3PM":
         new_sel[player]["3"]["Made"] = value
         break;
-      case "3PMiss":
+      case "-3PM":
         new_sel[player]["3"]["Miss"] = value
         break;
       case "PF":
@@ -150,7 +150,7 @@ class App extends Component {
   render() {
     const height = 600;
     const width = 1200;
-    var margin = { top: 50, right: 100, bottom: 10, left: 150 }
+    var margin = { top: 50, right: 10, bottom: 10, left: 115 }
     var { selectionMatrix, point_data, idList } = this.state
 
     return (
