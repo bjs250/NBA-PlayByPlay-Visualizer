@@ -46,7 +46,7 @@ class Scatterplot extends React.Component {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
               if (d["time_seconds"] in timeCheck === true) {
-                //console.log(timeCheck[d["time_seconds"]])
+                console.log(timeCheck[d["time_seconds"]])
               }
               timeCheck[d["time_seconds"]] = d
             }
@@ -59,6 +59,9 @@ class Scatterplot extends React.Component {
           point_data[player][identifier][identifier_plus].forEach(d => {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
+              if (d["time_seconds"] in timeCheck === true) {
+                console.log(timeCheck[d["time_seconds"]])
+              }
               timeCheck[d["time_seconds"]] = d
             }
           })
@@ -69,7 +72,6 @@ class Scatterplot extends React.Component {
       Object.keys(point_data).forEach(function (player) {
         keyCheck = helper(selectionMatrix, point_data, player, "AST", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "REB", keyCheck)
-        
         keyCheck = helper(selectionMatrix, point_data, player, "BLK", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "STL", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "TOV", keyCheck)

@@ -179,7 +179,7 @@ if __name__ == "__main__":
 	df["home_score"] = df["score"].apply(getHomePoints)
 	df["visit_score"] = df["score"].apply(getVisitPoints)
 	df = df.drop(columns=["score"])
-	df["score differential"] = df["home_score"] - df["visit_score"]
+	df["score differential"] = df["visit_score"] - df["home_score"]
 
 	df.drop_duplicates(keep=False,inplace=True) 
 

@@ -5,6 +5,8 @@ Must do:
 - Header
 - Title
 - Icon
+- get data
+- bad path for game ID request
 
 Bugs:
 - Some fouls def missing
