@@ -6,6 +6,7 @@ import os
 import time
 import pickle
 import re
+import pprint
 
 def trim(s):
     if s is not None:
@@ -75,11 +76,14 @@ if __name__ == "__main__":
 
 ######### Clean the Box Score Data
     df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
+    #print(df)
     df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
     df['-3PM'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
     df['-FTM'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
     df['2PM'] = df.apply(lambda row: handlePM(row,"FGM","3PM"), axis=1)
     df['-2PM'] = df.apply(lambda row: handle2PMiss(row), axis=1)
+    home = df.iloc[0]["TEAM"]
+    away = df.iloc[-1]["TEAM"]
 
     df = df.fillna('').transpose().to_dict()
     for key in df.keys():
@@ -89,8 +93,17 @@ if __name__ == "__main__":
     #data = [df[key] for key in df.keys()]
     with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
         pickle.dump(data, fp)
-    
+
+    # Will need this later for data filtering    
     players = [df[key]["PLAYER"].split(" ")[1].lower() for key in df.keys()]
+    teamMap = {}
+    teamMap[home] = []
+    teamMap[away] = []
+    for player in df.keys():
+        teamMap[df[player]["TEAM"]].append(player.split(" ")[1].lower())
+
+    print("home",home,teamMap[home])
+    print("away",away,teamMap[away])
     
 ######### Clean the PBP Data
     # Read in the Play-By-Play data
@@ -210,15 +223,22 @@ if __name__ == "__main__":
     categories = ["1","2","3","BLK","TOV","FOUL","STL","REB","AST"]
     #data["rest"] = []
     for player in players:
-        data[player] = {}
+        print(player)
+        if player in teamMap[home]:
+            team = home
+        elif player in teamMap[away]:
+            team = away
+        data[team] = {}
+        data[team][player] = {}
         for category in categories:
             if category in ["1","2","3"]:
-                data[player][category] = {}
-                data[player][category]["Made"] = []
-                data[player][category]["Miss"] = []
+                data[team][player][category] = {}
+                data[team][player][category]["Made"] = []
+                data[team][player][category]["Miss"] = []
             else:
-                data[player][category] = []
+                data[team][player][category] = []
 
+    print(data)
     
     for index in range(1,len(dt.keys())):
         event = dt[index]
@@ -247,24 +267,25 @@ if __name__ == "__main__":
                     difference = np.abs(dt[index]["score differential"]-dt[index-1]["score differential"])
 
                     # 1, 2, 3
-                    if difference == 1 and event not in data[player]["1"]["Made"]:
-                        event["tag"] = "1"
-                        data[player]["1"]["Made"].append(event)
-                    elif difference == 2 and event not in data[player]["2"]["Made"]:
-                        if "ast" in text:
-                            event["tag"] = "2A"
-                        else:
-                            event["tag"] = "2"
-                        data[player]["2"]["Made"].append(event)                    
-                    elif difference == 3 and event not in data[player]["3"]["Made"]:
-                        if "ast" in text:
-                            event["tag"] = "3A"
-                        else:
-                            event["tag"] = "3"
-                        data[player]["3"]["Made"].append(event)
+                    if event not in data[player]["AST"]:
+                        if difference == 1 and event not in data[player]["1"]["Made"]:
+                            event["tag"] = "1"
+                            data[player]["1"]["Made"].append(event)
+                        elif difference == 2 and event not in data[player]["2"]["Made"]:
+                            if "ast" in text:
+                                event["tag"] = "2A"
+                            else:
+                                event["tag"] = "2"
+                            data[player]["2"]["Made"].append(event)                    
+                        elif difference == 3 and event not in data[player]["3"]["Made"]:
+                            if "ast" in text:
+                                event["tag"] = "3A"
+                            else:
+                                event["tag"] = "3"
+                            data[player]["3"]["Made"].append(event)
                     
                     # BLK
-                    if "blk" in text and event not in data[player]["BLK"]:
+                    if "blk" in text and "miss " + player not in text and event not in data[player]["BLK"]:
                         event["tag"] = "B"
                         data[player]["BLK"].append(event)
 
@@ -279,10 +300,18 @@ if __name__ == "__main__":
                         event["tag"] = "S"
                         data[player]["STL"].append(event)
 
+                    # REB
+                    phrase = "rebound"
+                    if phrase in text and event not in data[player]["REB"]:
+                        if player == "brown":
+                            print(text, event)
+                        event["tag"] = "R"
+                        data[player]["REB"].append(event)
+
                     # TOV
                     if "turnover" in text and event not in data[player]["TOV"] and event not in data[player]["STL"]:
                         event["tag"] = "T"
-                        data[player]["TOV"].append(event)
+                        data[player]["TOV"].append(event) 
 
                     if player in text and "miss" in text and event not in data[player]["BLK"]:
                         event["color"] = "red"
@@ -295,7 +324,15 @@ if __name__ == "__main__":
                         else:
                             event["tag"] = "2"
                             data[player]["2"]["Miss"].append(event)
-    
+
+    pprint.pprint(len(data["brown"]["REB"]))
+    pprint.pprint(len(data["ilyasova"]["REB"]))
+    pprint.pprint(len(data["drummond"]["REB"]))
+    pprint.pprint(len(data["griffin"]["REB"]))
+
+    #pprint.pprint(data["brown"]["REB"])
+    #AST labeled as 2 made
+
     with open("..//nba_backend//PBPdata//" + game_id + "_edit.pkl", 'wb') as fp:
         pickle.dump(data, fp)
 

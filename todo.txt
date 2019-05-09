@@ -1,11 +1,14 @@
 Must do:
-- Add quarter marker to full game
-
-- 2Pmiss calculation
 - Handle data points that occur at the same time
 
+- Data verification
+- Tag verification
+- REB
 
 - instructions
+- Header
+- Title
+- Icon
 
 ====
 
@@ -14,6 +17,7 @@ Nice to have:
 - fix labels when zooming
 - fix tooltip overflow
 - Zoom button
+- Add quarter marker to full game
 
 Bug: handle data points that occur at the same time
      tov/stl
@@ -24,5 +28,21 @@ make list of ID's
 - faint gridlines?
 - Make y axis minimum of 0
 
+count:
+x FTM 
+x -FTM
+x 2PM
+x -2PM
+x 3PM
+x -3PM
+
+x TOV
+x STL
+x AST
+x BLK
+
+REB
 
 
+STL, tov
+MISS, BLK
