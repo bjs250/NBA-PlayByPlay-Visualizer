@@ -46,7 +46,7 @@ class Scatterplot extends React.Component {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
               if (d["time_seconds"] in timeCheck === true) {
-                console.log(timeCheck[d["time_seconds"]])
+                //console.log(timeCheck[d["time_seconds"]])
               }
               timeCheck[d["time_seconds"]] = d
             }
@@ -68,6 +68,8 @@ class Scatterplot extends React.Component {
 
       Object.keys(point_data).forEach(function (player) {
         keyCheck = helper(selectionMatrix, point_data, player, "AST", keyCheck)
+        keyCheck = helper(selectionMatrix, point_data, player, "REB", keyCheck)
+        
         keyCheck = helper(selectionMatrix, point_data, player, "BLK", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "STL", keyCheck)
         keyCheck = helper(selectionMatrix, point_data, player, "TOV", keyCheck)
@@ -114,7 +116,6 @@ class Scatterplot extends React.Component {
 
       if (yScaleMin !== null && yScaleMax !== null) {
         var extrema = [yScaleMin, yScaleMax]
-        console.log("manually changed y Scale")
       }
       else {
         var extrema = d3.extent(xy, function (d) { return d.y; })
@@ -167,8 +168,7 @@ class Scatterplot extends React.Component {
         })
 
       }
-      console.log()
-
+    
       return [xScale, yScale, line, baseline, xticks, yticks, guidepoints, guideline]
 
     }

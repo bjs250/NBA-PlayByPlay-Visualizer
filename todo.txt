@@ -1,14 +1,15 @@
 Must do:
 - Handle data points that occur at the same time
 
-- Data verification
-- Tag verification
-- REB
-
 - instructions
 - Header
 - Title
 - Icon
+
+Bugs:
+- Some fouls def missing
+- panning gets stuck when x-axis spacing increased
+
 
 ====
 
@@ -19,30 +20,14 @@ Nice to have:
 - Zoom button
 - Add quarter marker to full game
 
-Bug: handle data points that occur at the same time
-     tov/stl
-
 make list of ID's
     figure out how to take data slowly using the nba api 
     
 - faint gridlines?
 - Make y axis minimum of 0
 
-count:
-x FTM 
-x -FTM
-x 2PM
-x -2PM
-x 3PM
-x -3PM
+=====
 
-x TOV
-x STL
-x AST
-x BLK
-
-REB
-
-
-STL, tov
-MISS, BLK
+Things I did poorly:
+key management
+unique key in hashtable (curry on curry)

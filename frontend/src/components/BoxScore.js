@@ -24,16 +24,16 @@ class BoxScore extends React.Component {
             .then(res => res.json())
             .then(res => {
                 // Choose home data or away data
-                var home_team = res[0]["TEAM"]
+                var visit_team = res[0]["TEAM"]
                 var raw_data;
-                if (this.props.team === "Home") {
+                if (this.props.team === "Away") {
                     raw_data = res.filter(function (row) {
-                        return row["TEAM"] === home_team;
+                        return row["TEAM"] === visit_team;
                     });
                 }
                 else {
                     raw_data = res.filter(function (row) {
-                        return row["TEAM"] !== home_team;
+                        return row["TEAM"] !== visit_team;
                     });
                 }
 
@@ -42,7 +42,6 @@ class BoxScore extends React.Component {
                 var raw_sel = {}
                 for (var i = 0; i < raw_data.length; i++) {
                     raw_sel[raw_data[i]["PLAYER"]] = {}
-
                     for (var j = 0; j < headers.length; j++) {
                         if (init_headers.includes(headers[j])) {
                             raw_sel[raw_data[i]["PLAYER"]][headers[j]] = 1
@@ -66,19 +65,18 @@ class BoxScore extends React.Component {
         const { handleSelectionChange } = this.props
         const newSelected = Object.assign({}, this.state.selected);
         newSelected[player] = !this.state.selected[player];
-        //console.log("p", player)
-
+        
         var newSel = Object.assign({}, this.state.sel);
         if (newSelected[player]) {
-            ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","-FTM","2PM","-2PM","3PM","-3PM", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 1
-                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
+                handleSelectionChange(player, column, 1);
             })
         }
         else {
-            ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+            ["FTM","-FTM","2PM","-2PM","3PM","-3PM", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                 newSel[player][column] = 0
-                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
+                handleSelectionChange(player, column, 0);
             })
         }
 
@@ -104,15 +102,15 @@ class BoxScore extends React.Component {
         this.state.data.forEach(x => {
             var player = x["PLAYER"]
             if (newSelected[player]) {
-                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                     newSel[player][column] = 1
-                    handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
+                    handleSelectionChange(player, column, 1);
                 })
             }
             else {
-                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
+                ["FTM","-FTM","2PM","-2PM","3PM","-3PM","REB", "AST", "TOV", "STL", "BLK", "PF"].forEach(function (column) {
                     newSel[player][column] = 0
-                    handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
+                    handleSelectionChange(player, column, 0);
                 })
             }
         });
@@ -133,13 +131,13 @@ class BoxScore extends React.Component {
         if (newSelected[column]) {
             Object.keys(this.state.sel).forEach(function (player) {
                 newSel[player][column] = 1
-                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 1);
+                handleSelectionChange(player, column, 1);
             })
         }
         else {
             Object.keys(this.state.sel).forEach(function (player) {
                 newSel[player][column] = 0
-                handleSelectionChange(player.split(" ")[1].toLowerCase(), column, 0);
+                handleSelectionChange(player, column, 0);
             })
         }
 
@@ -151,14 +149,13 @@ class BoxScore extends React.Component {
 
     render() {
         const { data, sel } = this.state;
-
+        
         if (data.length) // make sure data has been loaded
         {
-            //console.log("sel",sel)
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             const column_widths = [200,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
-            const accessors = headers
+            var accessors = ['_PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             
             // For row selection
             var check = {
@@ -211,7 +208,7 @@ class BoxScore extends React.Component {
                                 }}
                             }
                             // Gray out columns that are not selectable
-                            if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","+/-","PTS"].includes(column["Header"]) && rowInfo) {
+                            if (["PLAYER", "MIN","FTA","FG%","3PA","3P%","FT%","FGM","DREB","OREB","+/-","PTS"].includes(column["Header"]) && rowInfo) {
                                 return {
                                     style: {
                                         background: column["Header"] === "PLAYER" ? null : '#D3D3D3'
@@ -227,21 +224,21 @@ class BoxScore extends React.Component {
                                 return {
                                     style: {
                                         background: rowInfo && column && this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 1 ? '#ADD8E6' : null,
-                                        color: rowInfo && column && this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 1 ? 'white' : 'black',
+                                        color: rowInfo && column && this.state.sel[rowInfo.original["PLAYER"]][column["Header"]] === 1 ? 'black' : 'black',
                                     },
                                 };
                             }
                         },
                         Footer: (state) => (
                             <div className="test">
-                                {(["FTM","-FTM","2PM","-2PM","3PM","-3PM","OREB","DREB","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
+                                {(["FTM","-FTM","2PM","-2PM","3PM","-3PM","REB","AST","TOV","STL","BLK","PF"].includes(state["column"]["Header"])) ?
                                 <input
                                     type="checkbox"
                                     className="checkbox"
                                     checked={this.state.colSelected[state["column"]["Header"]] === true}
                                     onChange={() => this.toggleCol(state["column"]["Header"])}
                                 /> : <br></br> }
-                                <div><strong>{footer[state["column"]["Header"]]}</strong></div>
+                                <div><strong>{state["column"]["Header"] !== "PLAYER" ? footer[state["column"]["Header"]] : footer["_PLAYER"]}</strong></div>
                                 
                             </div>
                         ),
@@ -278,7 +275,7 @@ class BoxScore extends React.Component {
                                         })
 
                                         // Tell parent component to update the selectionMatrix
-                                        this.props.handleSelectionChange(rowInfo.original["PLAYER"].split(" ")[1].toLowerCase(), column["Header"], new_sel[rowInfo.original["PLAYER"]][column["Header"]]);
+                                        this.props.handleSelectionChange(rowInfo.original["PLAYER"], column["Header"], new_sel[rowInfo.original["PLAYER"]][column["Header"]]);
                                     }
 
 

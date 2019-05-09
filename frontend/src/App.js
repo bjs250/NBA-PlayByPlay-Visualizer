@@ -41,7 +41,6 @@ class App extends Component {
     const month = date.getMonth() + 1
     const day = date.getDate()
     const year = date.getFullYear()
-    console.log(date, month, day, year)
     const newDate = month + "-" + day + "-" + year;
 
     fetch('http://localhost:8000/games/date/' + newDate + '#')
@@ -71,6 +70,7 @@ class App extends Component {
       .then(res => res.json())
       .then(res => {
         var raw_sel = {}
+        //console.log(Object.keys(res))
         Object.keys(res).forEach(function (d) {
           raw_sel[d] = {}
           raw_sel[d]["AST"] = 1
@@ -88,6 +88,7 @@ class App extends Component {
           raw_sel[d]["3"]["Made"] = 1
           raw_sel[d]["3"]["Miss"] = 0
         })
+
         this.setState({
           point_data: res,
           selectionMatrix: raw_sel
@@ -105,7 +106,6 @@ class App extends Component {
   // Make request to the back-end using the current state.user_input
   handleGameSubmit = (event) => {
     event.preventDefault();
-    console.log("Current value of user input: " + this.state.user_input);
     axios
       .get("/games/" + this.state.user_input)
       .then(res => console.log(res.data))
@@ -114,6 +114,8 @@ class App extends Component {
 
   handleSelectionChange = (player, column, value) => {
     var new_sel = this.state.selectionMatrix
+
+    if (Object.keys(new_sel).includes(player)){ //TODO: fix
     switch (column) {
       case "FTM":
         new_sel[player]["1"]["Made"] = value
@@ -138,7 +140,7 @@ class App extends Component {
         break;
       default:
         new_sel[player][column] = value
-    }
+    }}
 
     // Update the state
     this.setState({
@@ -152,7 +154,6 @@ class App extends Component {
     const width = 1200;
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
     var { selectionMatrix, point_data, idList } = this.state
-
     return (
       <div className="App">
 

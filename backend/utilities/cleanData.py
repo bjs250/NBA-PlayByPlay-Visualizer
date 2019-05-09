@@ -77,7 +77,6 @@ if __name__ == "__main__":
 
 ######### Clean the Box Score Data
 	df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
-	#print(df)
 	df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
 	df['-3PM'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
 	df['-FTM'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
@@ -199,6 +198,8 @@ if __name__ == "__main__":
 	full_line_data['time_seconds'] = df['time_seconds']
 	full_line_data['score differential'] = df['score differential']
 	full_line_data['key'] = full_line_data.index
+	last_key = int(full_line_data.iloc[-1]["key"]) + 1
+	
 	full_line_data_dict = full_line_data.fillna('').transpose().to_dict()
 	full_line_data_list = list(full_line_data_dict.values())
 	
@@ -312,9 +313,12 @@ if __name__ == "__main__":
 						
 						# FOUL
 						if "foul" in text and "s.foul" not in text and text.split(" ")[0] == last_name:
-							event["tag"] = "F"
-							data[player]["FOUL"].append(event)
-							continue
+							new_event = deepcopy(event)
+							new_event["tag"] = "F"
+							new_event["color"] = "red"
+							new_event["key"] = last_key
+							data[player]["FOUL"].append(new_event)
+							last_key += 1
 
 						# REB
 						if "rebound" in text:
@@ -354,7 +358,9 @@ if __name__ == "__main__":
 						if nameMap[player][home]["Last Name"] in event["home"].lower():
 							new_event = deepcopy(event)
 							new_event["tag"] = "B"
+							new_event["key"] = last_key							
 							data[player]["BLK"].append(new_event)
+							last_key += 1
 							
 
 				elif "blk" in event["visit"].lower():
@@ -362,7 +368,9 @@ if __name__ == "__main__":
 						if nameMap[player][visit]["Last Name"] in event["visit"].lower():
 							new_event = deepcopy(event)
 							event["tag"] = "B"
+							new_event["key"] = last_key
 							data[player]["BLK"].append(event)
+							last_key += 1
 
 				# Misses caused by blocks
 				if "miss" in event["home"].lower():
@@ -372,10 +380,13 @@ if __name__ == "__main__":
 							new_event["color"] = "red"
 							if "3pt" in text:
 								new_event["tag"] = "3"
+								new_event["key"] = last_key
 								data[player]["3"]["Miss"].append(new_event)
+								last_key += 1
 							else:
 								new_event["tag"] = "2"
 								data[player]["2"]["Miss"].append(new_event)
+								last_key += 1
 
 				elif "miss" in event["visit"].lower():
 					for player in teamMap[visit]:
@@ -385,9 +396,13 @@ if __name__ == "__main__":
 							if "3pt" in text:
 								new_event["tag"] = "3"
 								data[player]["3"]["Miss"].append(new_event)
+								new_event["key"] = last_key
+								last_key += 1
 							else:
 								new_event["tag"] = "2"
+								new_event["key"] = last_key
 								data[player]["2"]["Miss"].append(new_event)
+								last_key += 1
 
 				# Steals
 				if "stl" in event["home"].lower():
@@ -395,14 +410,18 @@ if __name__ == "__main__":
 						if nameMap[player][home]["Last Name"] in event["home"].lower():
 							new_event = deepcopy(event)
 							new_event["tag"] = "S"
+							new_event["key"] = last_key
 							data[player]["STL"].append(new_event)
+							last_key += 1
 
 				elif "stl" in event["visit"].lower():
 					for player in teamMap[visit]:
 						if nameMap[player][visit]["Last Name"] in event["visit"].lower():
 							new_event = deepcopy(event)
 							new_event["tag"] = "S"
+							new_event["key"] = last_key
 							data[player]["STL"].append(new_event)
+							last_key += 1
 
 				# Turnovers caused by steals
 				if "turnover" in event["home"].lower():
@@ -411,7 +430,9 @@ if __name__ == "__main__":
 							new_event = deepcopy(event)
 							new_event["color"] = "red"
 							new_event["tag"] = "T"
+							new_event["key"] = last_key
 							data[player]["TOV"].append(new_event)
+							last_key += 1
 
 				elif "turnover" in event["visit"].lower():
 					for player in teamMap[visit]:
@@ -419,38 +440,9 @@ if __name__ == "__main__":
 							new_event = deepcopy(event)
 							new_event["color"] = "red"
 							new_event["tag"] = "T"
+							new_event["key"] = last_key
 							data[player]["TOV"].append(new_event)
-
-	# pprint.pprint(len(data["brown"]["REB"]))
-	# pprint.pprint(len(data["ilyasova"]["REB"]))
-	# pprint.pprint(len(data["drummond"]["REB"]))
-	# pprint.pprint(len(data["griffin"]["REB"]))
-
-	#pprint.pprint(data)
-	#print(len(data["milwaukee bucks giannis antetokounmpo"]["2"]["Miss"]))
-	#print(len(data["milwaukee bucks khris middleton"]["2"]["Miss"]))
-	#print(len(data["detroit pistons reggie jackson"]["2"]["Miss"]))
-	#print(len(data["detroit pistons blake griffin"]["2"]["Miss"]))
-
-	#pprint.pprint(data["milwaukee bucks giannis antetokounmpo"]["2"]["Miss"])
-	#pprint.pprint(data["milwaukee bucks khris middleton"]["2"]["Miss"])
-	#pprint.pprint(data["detroit pistons reggie jackson"]["2"]["Miss"])
-	#pprint.pprint(data["detroit pistons blake griffin"]["2"]["Miss"])
-
-	# print("=====")
-	# pprint.pprint(data["detroit pistons wayne ellington"]["2"]["Miss"])
-	# print("*****")
-	# pprint.pprint(data["milwaukee bucks brook lopez"]["BLK"])
-
-	# print("=====")
-	# pprint.pprint(data["detroit pistons blake griffin"]["TOV"])
-	# print("*****")
-	# pprint.pprint(data["milwaukee bucks eric bledsoe"]["STL"])
-	
-	
-	#print(len(data["milwaukee bucks brook lopez"]["BLK"]))
-	#print(len(data["milwaukee bucks giannis antetokounmpo"]["BLK"]))
-	#print(len(data["detroit pistons luke kennard"]["BLK"]))
+							last_key += 1
 	
 	with open("..//nba_backend//PBPdata//" + game_id + "_edit.pkl", 'wb') as fp:
 		pickle.dump(data, fp)
