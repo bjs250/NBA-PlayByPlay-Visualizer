@@ -89,5 +89,5 @@ df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents,
 print(df)
 
 df.to_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
-
+df.to_csv("..//nba_backend//PBPdata//" + game_id + "_debug.csv")
 driver.quit()
