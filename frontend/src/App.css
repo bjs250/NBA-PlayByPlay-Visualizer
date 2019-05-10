@@ -164,3 +164,7 @@ body {
 .quote{
 	font-style: italic;
 }
+
+.hints{
+	text-align: left;
+}

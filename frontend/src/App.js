@@ -247,8 +247,22 @@ class App extends Component {
 
         <br></br>
 
-        <p>
-          Instructions:
+        <p className="hints">
+          <u>Usage Hints</u>:<br/>
+          Get started by selecting a game by using the datepicker.<br/>
+          If the game you are looking for does not appear, you will need to find the Game ID on stats.nba.com and input it manually on the left.<br/>
+          <br/>
+          Columns highlighted in blue in the BoxScore are selectable. Clicking on the cell will render the corresponding points on the plot.<br/>
+          The checkboxes on the left and bottom allow you to select the entire row and column respectively.<br/>
+          The checkbox in the very top left will select or deselect all of the data.
+          Also note that clicking on the column header will sort the BoxScore by that column.<br/>
+          <br/>
+          If you hover over a point in the line chart, a tooltip will show you the full description of the data point.<br/>
+          You can use your mouse wheel to zoom in and out.<br/>
+          Clicking and dragging will allow you to move the data in the plot.<br/>
+          You can adjust the YScale and XScale using the buttons in the dashboard below.<br/>
+          You can also limit the scope of the data by Quarter using the corresponding buttons.
+          
         </p>
 
       </div>

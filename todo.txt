@@ -1,7 +1,6 @@
 Must do:
 - Handle data points that occur at the same time
 
-- instructions
 - get data
 - bad path for game ID request
 
