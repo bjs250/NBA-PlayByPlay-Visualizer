@@ -160,3 +160,7 @@ body {
   margin-right: -15px;
   margin-left: -15px;
 }
+
+.quote{
+	font-style: italic;
+}

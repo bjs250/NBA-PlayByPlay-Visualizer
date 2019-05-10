@@ -2,9 +2,6 @@ Must do:
 - Handle data points that occur at the same time
 
 - instructions
-- Header
-- Title
-- Icon
 - get data
 - bad path for game ID request
 

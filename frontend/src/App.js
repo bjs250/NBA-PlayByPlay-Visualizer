@@ -23,7 +23,9 @@ class App extends Component {
       point_data: [],
       selectionMatrix: {},
       startDate: new Date(),
-      idList: []
+      idList: [],
+      header: "[No Game Selected]",
+      quote: ""
     };
 
     // Bind event listening methods here
@@ -55,6 +57,17 @@ class App extends Component {
   // Get data
   componentDidMount() {
     console.log("App mounted ")
+
+    // Retrieve quote from file
+    fetch('quotes.txt')
+    .then(response => response.text())
+    .then(text => {
+      var text = text.split("\n")
+      var rand = text[Math.floor(Math.random() * text.length)];
+      this.setState({
+        quote: rand
+      });
+    })
 
     // Data for the score differential (used by Scatterplot)
     fetch('http://localhost:8000/games/PBP/line/0041800104#')
@@ -153,12 +166,12 @@ class App extends Component {
     const height = 600;
     const width = 1200;
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
-    var { selectionMatrix, point_data, idList } = this.state
+    var { selectionMatrix, point_data, idList, header, quote } = this.state
     return (
       <div className="App">
 
-        <h1>Header</h1>
-        <p>[text]</p>
+        <h1>{header}</h1>
+        <p className="quote">{quote}</p>
 
           <div className="container">
             <div className="row">
