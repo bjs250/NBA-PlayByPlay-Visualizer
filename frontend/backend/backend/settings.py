@@ -27,7 +27,7 @@ SECRET_KEY = 'pdi^edxt_z&+436h(r+&)l*92_2v_=az35&l54g=l+!y)p+%x2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nephew-stats.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['nephew-stats.herokuapp.com', 'localhost', '127.0.0.1:8000']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', #lib
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #lib
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

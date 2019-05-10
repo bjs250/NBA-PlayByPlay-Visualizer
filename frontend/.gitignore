@@ -1,8 +1,6 @@
 # custom
-Resources/
 .vscode/
-frontend/node_modules/
-frontend/less.js-windows-v2.6.1
+node_modules/
 *.pkl
 
 # Byte-compiled / optimized / DLL files
