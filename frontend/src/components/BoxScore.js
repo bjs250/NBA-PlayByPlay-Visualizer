@@ -2,6 +2,8 @@ import React from 'react';
 import ReactTable from 'react-table'
 import '../styles/BoxScore.css'
 
+import axios from "axios";
+
 class BoxScore extends React.Component {
     constructor(props) {
         super(props);
@@ -20,8 +22,8 @@ class BoxScore extends React.Component {
     /* Acquire boxscore data from backend (either home or visiting) and initialize the selection */
     componentDidMount() {
 
-        fetch('http://localhost:8000/games/BS/0041800104#')
-            .then(res => res.json())
+        axios.get('games/BS/0041800104#')
+            .then(res => res.data)
             .then(res => {
                 // Choose home data or away data
                 var visit_team = res[0]["TEAM"]

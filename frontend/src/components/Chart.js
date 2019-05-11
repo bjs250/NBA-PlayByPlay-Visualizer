@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as d3 from 'd3';
+import axios from "axios";
 
 import '../styles/Chart.css'
 import Scatterplot from './Scatterplot.js'
@@ -45,15 +46,15 @@ class Chart extends React.Component {
 
     componentDidMount() {
         console.log("Chart mounted ")
-        fetch('http://localhost:8000/games/PBP/line/0041800104#')
-            .then(res => res.json())
+        axios.get('games/PBP/line/0041800104#')
+            .then(res => res.data)
             .then(res =>
                 this.setState({
                     line_data: res
                 })
             )
-        fetch('http://localhost:8000/games/PBP/data/0041800104#')
-            .then(res => res.json())
+        axios.get('games/PBP/data/0041800104#')
+            .then(res => res.data)
             .then(res =>
                 this.setState({
                     point_data: res
