@@ -53,7 +53,7 @@ def showGamePBPLine(request,id):
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
         print("Attempting to read PBP Line Data")
-        with open (cwd+'/PBPdata/'+foundGame.game_id+'line_edit.pkl', 'rb') as fp:
+        with open (cwd+'/PBPdata/'+foundGame.game_id+'_line_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
         print(data)
         # Return as a JSON response
@@ -77,7 +77,7 @@ def showGamePBPData(request,id):
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
         print("Attempting to read PBP Data")
-        with open (cwd+'/PBPdata/'+foundGame.game_id+'_edit.pkl', 'rb') as fp:
+        with open (cwd+'/PBPdata/'+foundGame.game_id+'_data_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
         print(data)
 
@@ -106,7 +106,7 @@ def showGameBS(request,id):
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
         print("Attempting to read BoxScore Data")
-        with open (cwd+'/BoxScoreData/'+foundGame.game_id+'_edit.pkl', 'rb') as fp:
+        with open (cwd+'/BoxScoreData/'+foundGame.game_id+'_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
         print(data)
         

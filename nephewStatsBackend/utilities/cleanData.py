@@ -76,7 +76,7 @@ if __name__ == "__main__":
 		raise Exception("Wrong number of input arguments : " + str(len(sys.argv)))
 
 ######### Clean the Box Score Data
-	df = pd.read_pickle("..//nba_backend//BoxScoreData//" + game_id + ".pkl")
+	df = pd.read_pickle("..//BoxScoreData//" + game_id + ".pkl")
 	df = df.rename({playerName:handlePlayer(playerName) for playerName in df.index}, axis="index")
 	df['-3PM'] = df.apply(lambda row: handlePM(row,"3PA","3PM"), axis=1)
 	df['-FTM'] = df.apply(lambda row: handlePM(row,"FTA","FTM"), axis=1)
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 		df_dict[key]["_PLAYER"] = key
 
 	data = list(df_dict.values())
-	with open("..//nba_backend//BoxScoreData//" + game_id + "_edit.pkl", 'wb') as fp:
+	with open("..//BoxScoreData//" + game_id + "_cleaned.pkl", 'wb') as fp:
 		pickle.dump(data, fp)
 
 	# Will need this later for data filtering the play-by-play
@@ -119,7 +119,7 @@ if __name__ == "__main__":
 	
 ######### Clean the PBP Data
 	# Read in the Play-By-Play data
-	df = pd.read_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
+	df = pd.read_pickle("..//PBPdata//" + game_id + ".pkl")
 	
 	# Drop all rows that are all None
 	df = df.dropna(how='all')
@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
 	truncated_data_list.sort(key=lambda x: (x["quarter"],x["time_seconds"]))
 	
-	with open("..//nba_backend//PBPdata//" + game_id + "line_edit.pkl", 'wb') as fp:
+	with open("..//PBPdata//" + game_id + "_line_cleaned.pkl", 'wb') as fp:
 		pickle.dump(truncated_data_list, fp)
 	
 	# Create datapoint tree for queries
@@ -444,11 +444,9 @@ if __name__ == "__main__":
 							data[player]["TOV"].append(new_event)
 							last_key += 1
 	
-	with open("..//nba_backend//PBPdata//" + game_id + "_edit.pkl", 'wb') as fp:
+	with open("..//PBPdata//" + game_id + "_data_cleaned.pkl", 'wb') as fp:
 		pickle.dump(data, fp)
 
-	#df.to_csv("..//nba_backend//PBPdata//" + game_id + ".csv")
-
 ##### Remove the pickle files
-	#os.remove("..//nba_backend//PBPdata//0041800104.pkl")
-	#os.remove("..//nba_backend//BoxScoreData//0041800104.pkl")
+	#os.remove("..//nephewStatsBackend//PBPdata//0041800104.pkl")
+	#os.remove("..//nephewStatsBackend//BoxScoreData//0041800104.pkl")

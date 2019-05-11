@@ -86,8 +86,6 @@ for tr in table.find_all("tr"):
         homeEvents.append(None)
 
 df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents, "quarter":quarters})
-print(df)
 
-df.to_pickle("..//nba_backend//PBPdata//" + game_id + ".pkl")
-df.to_csv("..//nba_backend//PBPdata//" + game_id + "_debug.csv")
+df.to_pickle("..//nephewStatsBackend//PBPdata//" + game_id + ".pkl")
 driver.quit()
