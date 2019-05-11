@@ -14,6 +14,7 @@ valid_teams = ["Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks
 valid_abbreviations = []
 valid_teams = [s.strip().lower() for s in valid_teams]
 nameMap = {}
+abbreviationMap = {}
 data = {}
 exclusion_list = ["Pistons GT","NetsGC","Long Island Nets","Santa Cruz Warriors","Lakeland Magic","Westchester Knicks","Raptors 905","Stockton Kings","Windy City Bulls","Erie BayHawks","South Bay Lakers","Austin Spurs","Agua Caliente Clippers","Northern Arizona Suns","Sydney Kings","New Orleans Hornets"]
 exclusion_list = [s.strip().lower() for s in exclusion_list]
@@ -29,6 +30,8 @@ with open('leaguegamefinder.json') as f:
         teamAbbreviation = rowSet[2]
         if teamAbbreviation not in nameMap:
             nameMap[teamAbbreviation] = teamName
+        if teamName not in abbreviationMap:
+            abbreviationMap[teamName] = teamAbbreviation
 
     for rowSet in d["resultSets"][0]["rowSet"]:
         teamName = rowSet[3].strip().lower()
@@ -57,7 +60,8 @@ for key in data.keys():
     if "2019-" in key:
         for s in data[key]:
             game_id = data[key][s]
-            print(key, game_id)
+            temp = list(s)
+            print(key, game_id, abbreviationMap[temp[1]],abbreviationMap[temp[0]])
 
             # config = Path("..//BoxScoreData//" + data[key][s] + ".pkl")
             # if config.is_file():
