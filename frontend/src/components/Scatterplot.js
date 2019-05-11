@@ -46,7 +46,7 @@ class Scatterplot extends React.Component {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
               if (d["time_seconds"] in timeCheck === true) {
-                console.log(timeCheck[d["time_seconds"]])
+                //console.log(timeCheck[d["time_seconds"]])
               }
               timeCheck[d["time_seconds"]] = d
             }
@@ -60,7 +60,7 @@ class Scatterplot extends React.Component {
             if (d["key"] in keyCheck === false) {
               keyCheck[d["key"]] = d
               if (d["time_seconds"] in timeCheck === true) {
-                console.log(timeCheck[d["time_seconds"]])
+                //console.log(timeCheck[d["time_seconds"]])
               }
               timeCheck[d["time_seconds"]] = d
             }

@@ -178,6 +178,7 @@ class App extends Component {
     const width = 1200;
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
     var { selectionMatrix, point_data, idList, quote, game_id, game_desc } = this.state
+    console.log("game_id", game_id)
     return (
       <div className="App">
 

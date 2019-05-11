@@ -120,6 +120,8 @@ if __name__ == "__main__":
 ######### Clean the PBP Data
 	# Read in the Play-By-Play data
 	df = pd.read_pickle("..//PBPdata//" + game_id + ".pkl")
+	print(df)
+	print(df[295:300])
 	
 	# Drop all rows that are all None
 	df = df.dropna(how='all')
@@ -245,7 +247,10 @@ if __name__ == "__main__":
 			else:
 				data[player][category] = []
 
-	for index in range(1,len(dt.keys())):
+	prev_index = 0
+	for index in dt.keys():
+		if index == 0:
+			continue
 		event = dt[index]
 		tag = ""
 		event["tag"] = tag
@@ -289,7 +294,7 @@ if __name__ == "__main__":
 							data[player]["AST"].append(event)
 							continue
 
-						difference = np.abs(dt[index]["score differential"]-dt[index-1]["score differential"])
+						difference = np.abs(dt[index]["score differential"]-dt[prev_index]["score differential"])
 
 						# 1, 2, 3: Using score difference, mark as 1,2 or 3 and check if it's (someone else's) AST
 						if difference == 1:
@@ -443,6 +448,7 @@ if __name__ == "__main__":
 							new_event["key"] = last_key
 							data[player]["TOV"].append(new_event)
 							last_key += 1
+		prev_index = index
 	
 	with open("..//PBPdata//" + game_id + "_data_cleaned.pkl", 'wb') as fp:
 		pickle.dump(data, fp)

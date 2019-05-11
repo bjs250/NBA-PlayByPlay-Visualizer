@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.views.generic import View
 from django.conf import settings
 from django.core import serializers
-
+import urllib.request
 
 from .models import Game           
 import requests      
@@ -140,13 +140,18 @@ def showGames(request,date):
             )
 
 def getOrRetrieveGame(request,id):
-    print("hit", request, id)
-    try:
+    try: # Check if the game is cached
         foundGame = Game.objects.get(game_id=id)
     except Game.DoesNotExist:
-        foundGame = None
+        # Check if the input is a valid game id
+        print("id",id)
+        if len(id) == 10 and id.isnumeric():
+            # TODO: Probably a check to see if the score is 0-0 to just ignore everything
+            foundGame = None
+        else:
+            print("Invalid input")
+            foundGame = None
 
-    print("foundGame",foundGame)
 
     if foundGame is not None:
         
