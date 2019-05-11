@@ -46,7 +46,7 @@ class App extends Component {
     const newDate = month + "-" + day + "-" + year;
 
     axios.get('games/date/' + newDate + '#')
-      .then(res => res.json())
+      .then(res => res.data)
       .then(res =>
         this.setState({
           idList: res
