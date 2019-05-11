@@ -4,6 +4,10 @@ Must do:
     - error handling on automated scraping
     - putting the info into the DB
 
+
+
+- 4th quarter bug
+- x spacing bug
 - program the unhappy path
 
 
@@ -38,3 +42,7 @@ make list of ID's
 Things I did poorly:
 key management
 unique key in hashtable (curry on curry)
+
+Note: easiest way to get game ID's:
+https://stats.nba.com/scores/05/03/2019
+0041800233

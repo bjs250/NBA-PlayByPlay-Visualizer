@@ -6,6 +6,8 @@ import logging
 from django.http import HttpResponse
 from django.views.generic import View
 from django.conf import settings
+from django.core import serializers
+
 
 from .models import Game           
 import requests      
@@ -41,7 +43,7 @@ class FrontendAppView(View):
 
 def showGamePBPLine(request,id):
     print("hit", request, id)
-    print("Game", Game.objects.all())
+    #print("Game", Game.objects.all())
     try:
         foundGame = Game.objects.get(game_id=id)
     except Game.DoesNotExist:
@@ -136,6 +138,34 @@ def showGames(request,date):
             json.dumps(foundGames),
             content_type = 'application/javascript; charset=utf8'
             )
+
+def getOrRetrieveGame(request,id):
+    print("hit", request, id)
+    try:
+        foundGame = Game.objects.get(game_id=id)
+    except Game.DoesNotExist:
+        foundGame = None
+
+    print("foundGame",foundGame)
+
+    if foundGame is not None:
+        
+        fields = ['game_id','date','home','away']
+        data = serializers.serialize('json', [foundGame], fields=fields)
+        
+        # Return as a JSON response
+        return HttpResponse(
+            json.dumps(data),
+            content_type = 'application/javascript; charset=utf8'
+            )
     
     else:
-        return HttpResponse("That does not exist")
+        return bad_request(message="test")
+
+    
+def bad_request(message):
+    response = HttpResponse(json.dumps({'message': message}), 
+        content_type='application/json')
+    response.status_code = 400
+    return response
+

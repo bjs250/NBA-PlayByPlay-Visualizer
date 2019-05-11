@@ -19,6 +19,8 @@ class App extends Component {
     // Initialize state here
     this.state = {
       user_input: '',
+      game_id: '0041800104',
+      game_desc: '2019-04-22: DET @ MIL',
       line_data: [],
       point_data: [],
       selectionMatrix: {},
@@ -58,6 +60,7 @@ class App extends Component {
   // Get data
   componentDidMount() {
     console.log("App mounted ")
+    const {game_id} = this.state;
 
     // Retrieve quote from file
     axios.get('quotes.txt')
@@ -72,7 +75,7 @@ class App extends Component {
 
 
     // Data for the score differential (used by Scatterplot)
-    axios.get('games/PBP/line/0041800104#')
+    axios.get('games/PBP/line/' + game_id + '#')
       .then(res => res.data)
       .then(res =>
         this.setState({
@@ -81,7 +84,7 @@ class App extends Component {
       ).catch(error => console.log(error))
 
     // Data for the data points (used by Scatterplot)
-    axios.get('games/PBP/data/0041800104#')
+    axios.get('games/PBP/data/'+ game_id + '#')
       .then(res => res.data)
       .then(res => {
         var raw_sel = {}
@@ -122,9 +125,15 @@ class App extends Component {
   handleGameSubmit = (event) => {
     event.preventDefault();
     axios.get("/games/" + this.state.user_input)
-      .then(res => console.log(res.data))
+      .then(res => JSON.parse(res.data))
+      .then(res => {
+        this.setState({
+          game_id: res[0]["fields"]["game_id"],
+          game_desc: res[0]["fields"]["date"] + ": " + res[0]["fields"]["home"] + " @ " + res[0]["fields"]["away"]
+        });
+      })
       .catch(err => console.log(err));
-    console.log("ok")
+    console.log("Submission Triggered")
   };
 
   handleSelectionChange = (player, column, value) => {
@@ -168,11 +177,11 @@ class App extends Component {
     const height = 600;
     const width = 1200;
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
-    var { selectionMatrix, point_data, idList, header, quote } = this.state
+    var { selectionMatrix, point_data, idList, quote, game_id, game_desc } = this.state
     return (
       <div className="App">
 
-        <h1>{header}</h1>
+        <h1>{game_desc}</h1>
         <p className="quote">{quote}</p>
 
           <div className="container">
@@ -180,7 +189,7 @@ class App extends Component {
             
               <div className="col">
                 <form>
-                  <p>Enter an NBA Game ID here to load data or...</p>
+                  <p>Enter an NBA Game ID* here to load data or...</p>
                   <input
                     type='text'
                     placeholder="Enter Game ID"
@@ -225,6 +234,7 @@ class App extends Component {
             height={height}
             margin={margin}
             selectionMatrix={selectionMatrix}
+            game_id={game_id}
           >
           </Chart> : null}
 
@@ -235,6 +245,7 @@ class App extends Component {
           <BoxScore
             team={"Home"}
             handleSelectionChange={this.handleSelectionChange}
+            game_id={game_id}
           >
           </BoxScore> : null}
 
@@ -244,6 +255,7 @@ class App extends Component {
           <BoxScore
             team={"Away"}
             handleSelectionChange={this.handleSelectionChange}
+            game_id={game_id}
           >
           </BoxScore> : null}
 
@@ -264,6 +276,18 @@ class App extends Component {
           Clicking and dragging will allow you to move the data in the plot.<br/>
           You can adjust the YScale and XScale using the buttons in the dashboard below.<br/>
           You can also limit the scope of the data by Quarter using the corresponding buttons.
+          <br/>
+          <br/>
+          
+
+          * The easiest way to find a Game ID is to figure out what day the game happened, go to https://stats.nba.com/scores/mm/dd/yyyy
+          <br/> Select the BoxScore for the relevant game and the ID will be in the URL
+          <br/> Future release to automate this process
+
+          <br/><br/>
+
+          <u>Game Recommendations</u>:<br/>
+          0041800226
           
         </p>
 

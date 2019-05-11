@@ -45,15 +45,16 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
+        const { game_id } = this.props
         console.log("Chart mounted ")
-        axios.get('games/PBP/line/0041800104#')
+        axios.get('games/PBP/line/' + game_id + '#')
             .then(res => res.data)
             .then(res =>
                 this.setState({
                     line_data: res
                 })
             )
-        axios.get('games/PBP/data/0041800104#')
+        axios.get('games/PBP/data/' + game_id + '#')
             .then(res => res.data)
             .then(res =>
                 this.setState({

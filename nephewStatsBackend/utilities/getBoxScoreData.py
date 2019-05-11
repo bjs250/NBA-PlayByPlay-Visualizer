@@ -69,7 +69,7 @@ for index,table in enumerate(tables):
 
 # Save to file
 df = pd.DataFrame.from_dict(data).transpose()
-df.to_pickle("..//nephewStatsBackend//BoxScoreData//" + game_id + ".pkl")
+df.to_pickle("..//BoxScoreData//" + game_id + ".pkl")
 
 #print(df)
 driver.quit()

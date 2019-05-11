@@ -21,8 +21,9 @@ class BoxScore extends React.Component {
 
     /* Acquire boxscore data from backend (either home or visiting) and initialize the selection */
     componentDidMount() {
+        const { game_id } = this.props
 
-        axios.get('games/BS/0041800104#')
+        axios.get('games/BS/' + game_id + '#')
             .then(res => res.data)
             .then(res => {
                 // Choose home data or away data

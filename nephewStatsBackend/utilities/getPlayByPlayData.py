@@ -87,5 +87,5 @@ for tr in table.find_all("tr"):
 
 df = pd.DataFrame({"time": timeEvents, "score": scoreEvents, "home": homeEvents, "visit": visitEvents, "quarter":quarters})
 
-df.to_pickle("..//nephewStatsBackend//PBPdata//" + game_id + ".pkl")
+df.to_pickle("..//PBPdata//" + game_id + ".pkl")
 driver.quit()
