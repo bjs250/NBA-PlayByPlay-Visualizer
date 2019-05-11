@@ -1,13 +1,13 @@
+// Core dependencies
 import React, { Component } from 'react';
 import './App.css';
-
-import axios from "axios";
-import memoize from "memoize-one";
 
 // External dependencies
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import List from 'react-list-select'
+import axios from "axios";
+import memoize from "memoize-one";
 
 // Internal dependencies
 import Chart from './components/Chart.js'
@@ -20,8 +20,8 @@ class App extends Component {
     // Initialize state here
     this.state = {
       user_input: '',
-      game_id: '0041800104',
-      game_desc: '2019-04-22: DET @ MIL',
+      game_id: '0041800226',
+      game_desc: '2019-05-10: GSW @ HOU',
       line_data: [],
       point_data: [],
       selectionMatrix: {},
@@ -53,14 +53,11 @@ class App extends Component {
         this.setState({
           idList: res
         })
-      .catch(error => console.log(error))
-      )
+      ).catch(error => console.log(error))
   }
 
   // Get data
   componentDidMount() {
-    console.log("App mounted ")
-    const {game_id} = this.state;
 
     // Retrieve quote from file
     axios.get('quotes.txt')

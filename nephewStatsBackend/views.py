@@ -42,8 +42,6 @@ class FrontendAppView(View):
             )
 
 def showGamePBPLine(request,id):
-    print("hit", request, id)
-    #print("Game", Game.objects.all())
     try:
         foundGame = Game.objects.get(game_id=id)
     except Game.DoesNotExist:
@@ -54,10 +52,8 @@ def showGamePBPLine(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        print("Attempting to read PBP Line Data")
         with open (cwd+'/PBPdata/'+foundGame.game_id+'_line_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
-        print(data)
         # Return as a JSON response
         return HttpResponse(
             json.dumps(data),
@@ -78,11 +74,9 @@ def showGamePBPData(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        print("Attempting to read PBP Data")
         with open (cwd+'/PBPdata/'+foundGame.game_id+'_data_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
-        print(data)
-
+ 
         # Return as a JSON response
         return HttpResponse(
             json.dumps(data),
@@ -107,10 +101,8 @@ def showGameBS(request,id):
         # Get the corresponding data file
         os.chdir(os.path.dirname(__file__))
         cwd = os.getcwd()
-        print("Attempting to read BoxScore Data")
         with open (cwd+'/BoxScoreData/'+foundGame.game_id+'_cleaned.pkl', 'rb') as fp:
             data = pickle.load(fp)
-        print(data)
         
         # Return as a JSON response
         return HttpResponse(
@@ -122,6 +114,7 @@ def showGameBS(request,id):
         return HttpResponse("That does not exist")
 
 def showGames(request,date):
+    print(date)
     [month,day,year] = date.split("-")
     month = int(month)
     day = int(day)

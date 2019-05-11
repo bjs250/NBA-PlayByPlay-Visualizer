@@ -162,7 +162,7 @@ class BoxScore extends React.Component {
         {
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
-            const column_widths = [200,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
+            const column_widths = [230,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
             var accessors = ['_PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             
             // For row selection
