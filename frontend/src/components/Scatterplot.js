@@ -35,8 +35,8 @@ class Scatterplot extends React.Component {
   );
 
   point_filter = memoize(
-    (selectionMatrix, point_data, buttonSelected, selectionMatrixText) => {
-
+    (selectionMatrix, point_data, buttonSelected) => {
+        
       var keyCheck = {}
       var timeCheck = {}
 
@@ -176,11 +176,6 @@ class Scatterplot extends React.Component {
     }
   )
 
-
-  componentDidMount() {
-    console.log("Scatterplot mount")
-  }
-
   get ytransform() {
     var { x, zoomTransform, margin } = this.props;
     let transform = "";
@@ -206,7 +201,7 @@ class Scatterplot extends React.Component {
   render() {
     const { line_data, point_data, buttonSelected, width, height, margin, selectionMatrix, yScaleMin, yScaleMax } = this.props;
     var { new_width, new_height } = this.state;
-
+    
     if (line_data.length && Object.keys(point_data).length) // make sure line_data has been loaded
     {
       // Use the margin convention practice 

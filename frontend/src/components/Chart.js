@@ -2,6 +2,7 @@ import React from 'react';
 
 import * as d3 from 'd3';
 import axios from "axios";
+import memoize from "memoize-one";
 
 import '../styles/Chart.css'
 import Scatterplot from './Scatterplot.js'
@@ -19,7 +20,7 @@ class Chart extends React.Component {
             temp_yScaleMax: null,
             yScaleMin: null,
             yScaleMax: null,
-            scaleFactor: 4
+            scaleFactor: 4,
         }
 
         this.zoom = d3.zoom()
@@ -40,36 +41,41 @@ class Chart extends React.Component {
 
         this.handleZoomPlus = this.handleZoomPlus.bind(this);
         this.handleZoomMinus = this.handleZoomMinus.bind(this);
-
-
     }
 
     componentDidMount() {
-        const { game_id } = this.props
-        console.log("Chart mounted ")
-        axios.get('games/PBP/line/' + game_id + '#')
-            .then(res => res.data)
-            .then(res =>
-                this.setState({
-                    line_data: res
-                })
-            )
-        axios.get('games/PBP/data/' + game_id + '#')
-            .then(res => res.data)
-            .then(res =>
-                this.setState({
-                    point_data: res
-                })
-            )
-
         d3.select(this.refs.svg)
-            .call(this.zoom)
+        .call(this.zoom)
+
     }
 
     componentDidUpdate() {
         d3.select(this.refs.svg)
-            .call(this.zoom)
+        .call(this.zoom)
     }
+
+    load_data = memoize(
+        (game_id) => {
+
+            axios.get('games/PBP/line/' + game_id + '#')
+                .then(res => res.data)
+                .then(res =>
+                    this.setState({
+                        line_data: res,
+                        loadFlag: 0
+                    })
+                )
+
+            axios.get('games/PBP/data/' + game_id + '#')
+                .then(res => res.data)
+                .then(res =>
+                    this.setState({
+                        point_data: res
+                    })
+                )
+    
+        }
+    )
 
     zoomed() {
         // console.log(d3.event.sourceEvent["deltaY"],this.state.zoomTransform["k"])
@@ -190,8 +196,10 @@ class Chart extends React.Component {
     };
 
     render() {
-        const { line_data, point_data, zoomTransform, buttonSelected, yScaleMin, yScaleMax, scaleFactor } = this.state,
-            { width, height, margin, selectionMatrix } = this.props;
+        this.load_data(this.props.game_id)
+        
+        const { line_data, point_data, zoomTransform, buttonSelected, yScaleMin, yScaleMax, scaleFactor } = this.state;
+        const { width, height, margin, selectionMatrix, game_id } = this.props;
 
         return (
             <div>
@@ -209,6 +217,7 @@ class Chart extends React.Component {
                             selectionMatrix={selectionMatrix}
                             yScaleMin={yScaleMin}
                             yScaleMax={yScaleMax}
+                            game_id={game_id}
                         />
                     </svg>
                 </div>
@@ -262,7 +271,7 @@ class Chart extends React.Component {
 
 
             </div>
-        );
+            );
     }
 }
 

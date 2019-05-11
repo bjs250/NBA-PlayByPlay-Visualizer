@@ -120,8 +120,6 @@ if __name__ == "__main__":
 ######### Clean the PBP Data
 	# Read in the Play-By-Play data
 	df = pd.read_pickle("..//PBPdata//" + game_id + ".pkl")
-	print(df)
-	print(df[295:300])
 	
 	# Drop all rows that are all None
 	df = df.dropna(how='all')

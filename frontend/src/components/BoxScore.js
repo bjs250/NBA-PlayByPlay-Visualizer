@@ -3,6 +3,7 @@ import ReactTable from 'react-table'
 import '../styles/BoxScore.css'
 
 import axios from "axios";
+import memoize from "memoize-one";
 
 class BoxScore extends React.Component {
     constructor(props) {
@@ -20,10 +21,9 @@ class BoxScore extends React.Component {
     }
 
     /* Acquire boxscore data from backend (either home or visiting) and initialize the selection */
-    componentDidMount() {
-        const { game_id } = this.props
-
-        axios.get('games/BS/' + game_id + '#')
+    load_data = memoize(
+        (game_id) => {
+            axios.get('games/BS/' + game_id + '#')
             .then(res => res.data)
             .then(res => {
                 // Choose home data or away data
@@ -61,7 +61,9 @@ class BoxScore extends React.Component {
                 })
             }
             )
-    }
+
+        }
+    )
 
     /* This should select all selectable cells in the player's row */
     toggleRow(player) {
@@ -152,6 +154,9 @@ class BoxScore extends React.Component {
 
     render() {
         const { data, sel } = this.state;
+        const { game_id } = this.props
+
+        this.load_data(game_id)
         
         if (data.length) // make sure data has been loaded
         {

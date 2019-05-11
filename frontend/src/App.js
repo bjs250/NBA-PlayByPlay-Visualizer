@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import axios from "axios";
+import memoize from "memoize-one";
 
 // External dependencies
 import DatePicker from "react-datepicker";
@@ -26,7 +27,6 @@ class App extends Component {
       selectionMatrix: {},
       startDate: new Date(),
       idList: [],
-      header: "[No Game Selected]",
       quote: ""
     };
 
@@ -64,7 +64,7 @@ class App extends Component {
 
     // Retrieve quote from file
     axios.get('quotes.txt')
-    .then(response => response.text())
+    .then(response => response["data"])
     .then(text => {
       var text = text.split("\n")
       var rand = text[Math.floor(Math.random() * text.length)];
@@ -73,48 +73,54 @@ class App extends Component {
       })
     }).catch(error => console.log(error))
 
+  }
+
+  load_data = memoize(
+    (game_id) => {
 
     // Data for the score differential (used by Scatterplot)
     axios.get('games/PBP/line/' + game_id + '#')
-      .then(res => res.data)
-      .then(res =>
-        this.setState({
-          line_data: res
-        })
-      ).catch(error => console.log(error))
+    .then(res => res.data)
+    .then(res =>
+      this.setState({
+        line_data: res
+      })
+    ).catch(error => console.log(error))
 
-    // Data for the data points (used by Scatterplot)
-    axios.get('games/PBP/data/'+ game_id + '#')
-      .then(res => res.data)
-      .then(res => {
-        var raw_sel = {}
-        //console.log(Object.keys(res))
-        Object.keys(res).forEach(function (d) {
-          raw_sel[d] = {}
-          raw_sel[d]["AST"] = 1
-          raw_sel[d]["BLK"] = 0
-          raw_sel[d]["STL"] = 0
-          raw_sel[d]["TOV"] = 0
-          raw_sel[d]["FOUL"] = 0
-          raw_sel[d]["1"] = {}
-          raw_sel[d]["1"]["Made"] = 1
-          raw_sel[d]["1"]["Miss"] = 0
-          raw_sel[d]["2"] = {}
-          raw_sel[d]["2"]["Made"] = 1
-          raw_sel[d]["2"]["Miss"] = 0
-          raw_sel[d]["3"] = {}
-          raw_sel[d]["3"]["Made"] = 1
-          raw_sel[d]["3"]["Miss"] = 0
-        })
+  // Data for the data points (used by Scatterplot)
+  axios.get('games/PBP/data/'+ game_id + '#')
+    .then(res => res.data)
+    .then(res => {
+      var raw_sel = {}
+      //console.log(Object.keys(res))
+      Object.keys(res).forEach(function (d) {
+        raw_sel[d] = {}
+        raw_sel[d]["AST"] = 1
+        raw_sel[d]["BLK"] = 0
+        raw_sel[d]["STL"] = 0
+        raw_sel[d]["TOV"] = 0
+        raw_sel[d]["FOUL"] = 0
+        raw_sel[d]["1"] = {}
+        raw_sel[d]["1"]["Made"] = 1
+        raw_sel[d]["1"]["Miss"] = 0
+        raw_sel[d]["2"] = {}
+        raw_sel[d]["2"]["Made"] = 1
+        raw_sel[d]["2"]["Miss"] = 0
+        raw_sel[d]["3"] = {}
+        raw_sel[d]["3"]["Made"] = 1
+        raw_sel[d]["3"]["Miss"] = 0
+      })
 
-        this.setState({
-          point_data: res,
-          selectionMatrix: raw_sel
-        })
-      }
-      ).catch(error => console.log(error))
+      this.setState({
+        point_data: res,
+        selectionMatrix: raw_sel
+      })
+    }
+    ).catch(error => console.log(error))
 
-  }
+
+    }
+  )
 
   // Retain and update the value of state.user_input
   handleGameInputChange = (event) => {
@@ -129,7 +135,11 @@ class App extends Component {
       .then(res => {
         this.setState({
           game_id: res[0]["fields"]["game_id"],
-          game_desc: res[0]["fields"]["date"] + ": " + res[0]["fields"]["home"] + " @ " + res[0]["fields"]["away"]
+          game_desc: res[0]["fields"]["date"] + ": " + res[0]["fields"]["home"] + " @ " + res[0]["fields"]["away"],
+          line_data: [],
+          point_data: [],
+          selectionMatrix: {}
+
         });
       })
       .catch(err => console.log(err));
@@ -177,8 +187,11 @@ class App extends Component {
     const height = 600;
     const width = 1200;
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
-    var { selectionMatrix, point_data, idList, quote, game_id, game_desc } = this.state
-    console.log("game_id", game_id)
+    
+    this.load_data(this.state.game_id)
+    
+    var { selectionMatrix, point_data, idList, quote, game_id, game_desc } = this.state  
+
     return (
       <div className="App">
 

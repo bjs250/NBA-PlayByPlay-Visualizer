@@ -25,6 +25,7 @@ Bugs:
 ====
 
 Nice to have:
+
 - handle overtime
 - fix labels when zooming
 - fix tooltip overflow
@@ -46,3 +47,5 @@ unique key in hashtable (curry on curry)
 Note: easiest way to get game ID's:
 https://stats.nba.com/scores/05/03/2019
 0041800233
+
+0041800226
