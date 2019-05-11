@@ -43,19 +43,22 @@ def inverseConvertTime(s):
 
 def handlePlayer(player):
 	if "Totals:" not in player:
-		changedPlayer = player.split(" ")[0] + " " +  player.split(" ")[1]
+		if len(player.split(" ")) == 2:
+			changedPlayer = player.split(" ")[0] + " " +  player.split(" ")[1]
+		else:
+			changedPlayer = player.split(" ")[0] + " "
 	else:
 		changedPlayer = player
 	return changedPlayer
 
 def handlePM(row,tag1,tag2):
-	if "DNP" in row["FGM"]:
+	if "DNP " in row["FGM"] or "DND " in row["FGM"]:
 		return ""
 	else:
 		return int(row[tag1]) - int(row[tag2])
 
 def handle2PMiss(row):
-	if "DNP" in row["FGM"]:
+	if "DNP " in row["FGM"] or "DND " in row["FGM"]:
 		return ""
 	else:
 		if float(row["FG%"]) != 0:

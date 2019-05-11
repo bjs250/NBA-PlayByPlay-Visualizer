@@ -8,14 +8,15 @@ if len(sys.argv) == 2:
 else:
     raise Exception("Wrong number of input arguments : " + str(len(sys.argv)))
 
-print("Getting BoxScore data")
+print("\tGetting BoxScore data")
 cmd = ['python', 'getBoxScoreData.py', game_id]
 subprocess.Popen(cmd).wait()
 
-print("Getting PlayByPlay data")
+print("\tGetting PlayByPlay data")
 cmd = ['python', 'getPlayByPlayData.py', game_id]
 subprocess.Popen(cmd).wait()
 
-print("Cleaning data data")
+print("\tCleaning data")
 cmd = ['python', 'cleanData.py', game_id]
 subprocess.Popen(cmd).wait()
+print("\tDone")

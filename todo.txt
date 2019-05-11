@@ -1,4 +1,8 @@
 Must do:
+- finish datepicker
+- make dimensions of the plot depend on viewport
+- bugfix on x-axis spacing
+
 - Make sure the scraping scripts work on overtime
 - start doing the automated scraping
     - error handling on automated scraping
@@ -49,3 +53,8 @@ https://stats.nba.com/scores/05/03/2019
 0041800233
 
 0041800226
+
+funny things:
+curry on curry
+nene
+nba api team names and 2k gaming
