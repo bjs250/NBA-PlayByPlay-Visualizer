@@ -1,7 +1,5 @@
 Must do:
 - get more data
-- django check dev vs prod
-- inject environment vars
 - update README
 
 Nice to have

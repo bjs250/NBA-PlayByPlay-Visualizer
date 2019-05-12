@@ -5,6 +5,9 @@ import sys
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoBackend.settings.local')
+    print(os.environ.get('DJANGO_SETTINGS_MODULE', 'Not Set'))
+    print(os.environ.get('django_secret_key', 'Not Set'))
+    print(os.environ.get('django_env', 'Not Set'))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
