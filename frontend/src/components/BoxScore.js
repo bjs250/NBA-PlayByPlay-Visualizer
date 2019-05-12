@@ -220,7 +220,6 @@ class BoxScore extends React.Component {
 
             for (var i = 0; i < headers.length; i++) {
                 column_widths.push(columnWidthStandard)   
-                console.log(headers[i],i, column_widths[i]) 
                 columns.push(
                     {
                         Header: headers[i],
