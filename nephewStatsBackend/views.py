@@ -18,6 +18,7 @@ import json
 import os
 import pickle
 import datetime
+import random
 
 class FrontendAppView(View):
     """
@@ -40,6 +41,24 @@ class FrontendAppView(View):
                 """,
                 status=501,
             )
+
+def getQuotes(requests):
+    # Get the corresponding data file
+    os.chdir(os.path.dirname(__file__))
+    cwd = os.getcwd()
+    f=open("quotes.txt", "r",encoding="utf8")
+    if f.mode == 'r':
+        contents = f.readlines()
+    f.close()
+    item = random.choice(contents)
+    
+    # Return as a JSON response
+    return HttpResponse(
+        json.dumps(item),
+        content_type = 'application/javascript; charset=utf8'
+        )
+
+        
 
 def showGamePBPLine(request,id):
     try:

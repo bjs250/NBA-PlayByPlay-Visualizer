@@ -41,13 +41,11 @@ class App extends Component {
   componentDidMount() {
 
     // Retrieve quote from file
-    axios.get('quotes.txt')
-      .then(response => response["data"])
+    axios.get('games/quotes/')
+      .then(response => response.data)
       .then(text => {
-        var text = text.split("\n")
-        var rand = text[Math.floor(Math.random() * text.length)];
         this.setState({
-          quote: rand
+          quote: text
         })
       }).catch(error => console.log(error))
 

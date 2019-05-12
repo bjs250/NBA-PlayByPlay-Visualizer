@@ -24,7 +24,7 @@ urlpatterns = [
     path('games/PBP/data/<str:id>',views.showGamePBPData),
     path('games/BS/<str:id>',views.showGameBS),
     path('games/date/<str:date>',views.showGames),
+    path('games/quotes/',views.getQuotes),
     path('games/<str:id>',views.getOrRetrieveGame),
-    
     re_path(r'^', views.FrontendAppView.as_view()),
 ]

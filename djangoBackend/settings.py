@@ -98,7 +98,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config() # enable in production
 
 
 # Password validation
