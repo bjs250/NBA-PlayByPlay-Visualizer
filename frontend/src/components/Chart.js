@@ -21,11 +21,12 @@ class Chart extends React.Component {
             yScaleMin: null,
             yScaleMax: null,
             scaleFactor: 4,
+
         }
 
         this.zoom = d3.zoom()
             .scaleExtent([0, 5])
-            .translateExtent([[0, 0], [5000, props.height]])
+            .translateExtent([[0, 0], [15000, props.height]])
             .extent([[0, 0], [props.width, props.height]])
             .on("zoom", this.zoomed.bind(this))
 
@@ -41,18 +42,20 @@ class Chart extends React.Component {
 
         this.handleZoomPlus = this.handleZoomPlus.bind(this);
         this.handleZoomMinus = this.handleZoomMinus.bind(this);
+
     }
 
     componentDidMount() {
         d3.select(this.refs.svg)
         .call(this.zoom)
-
     }
 
     componentDidUpdate() {
         d3.select(this.refs.svg)
         .call(this.zoom)
     }
+
+
 
     load_data = memoize(
         (game_id) => {
@@ -166,8 +169,10 @@ class Chart extends React.Component {
         else{
             new_scaleFactor *= 2
         }
+
         this.setState({ 
-            scaleFactor: new_scaleFactor
+            scaleFactor: new_scaleFactor,
+            
          })
     };
 
@@ -218,6 +223,7 @@ class Chart extends React.Component {
                             yScaleMin={yScaleMin}
                             yScaleMax={yScaleMax}
                             game_id={game_id}
+                            scaleFactor={scaleFactor}
                         />
                     </svg>
                 </div>

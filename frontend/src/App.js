@@ -19,6 +19,8 @@ class App extends Component {
 
     // Initialize state
     this.state = {
+      viewportWidth: 0,
+      viewportHeight: 0,
       user_input: '',
       game_id: '0041800226',
       game_desc: '2019-05-10: GSW @ HOU',
@@ -31,6 +33,7 @@ class App extends Component {
     };
 
     // Bind event listeners
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
     this.handleGameInputChange = this.handleGameInputChange.bind(this);
     this.handleGameSubmit = this.handleGameSubmit.bind(this);
     this.handleSelectionChange = this.handleSelectionChange.bind(this);
@@ -49,6 +52,17 @@ class App extends Component {
         })
       }).catch(error => console.log(error))
 
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
   }
 
   handleDateChange(date) {
@@ -196,8 +210,10 @@ class App extends Component {
 
   render() {
     // For chart dimensions
-    const height = 600;
-    const width = 1200;
+    const { viewportWidth, viewportHeight } = this.state
+    const height = .60*viewportHeight;
+    const width = .80*viewportWidth;
+    
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
 
     this.load_data(this.state.game_id)
@@ -314,9 +330,6 @@ class App extends Component {
           <br /> Future release to automate this process
 
           <br /><br />
-
-          <u>Game Recommendations</u>:<br />
-          0041800226
 
         </p>
 

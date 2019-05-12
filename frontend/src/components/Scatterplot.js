@@ -183,6 +183,7 @@ class Scatterplot extends React.Component {
     if (zoomTransform) {
       transform = `translate(${x + zoomTransform.x + margin.left}, ${zoomTransform.y}) scale(${zoomTransform.k})`;
     }
+    //console.log(this.props.width,x,zoomTransform.x)
     return transform;
 
   }
@@ -228,7 +229,7 @@ class Scatterplot extends React.Component {
       return (
         <g ref="scatterplot" transform={`translate(0, ${5})`}>
           <text transform={`translate(${margin.left / 2}, ${height / 2}) rotate(-90)`}>Point Differential</text>
-          <text transform={`translate(${buttonSelected === "Full Game" ? width / 8 : width / 2}, ${height - margin.bottom})`}>Time</text>
+          <text transform={`translate(${buttonSelected === "Full Game" ? width / (8*this.props.scaleFactor) : width / (2*this.props.scaleFactor)}, ${height - margin.bottom})`}>Time</text>
 
           <g transform={this.ytransform} id="holder">
 
