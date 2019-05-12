@@ -5,7 +5,6 @@ Nice to have
 - figure out public folder
 - django check dev vs prod
 
-
 - Make sure the scraping scripts work on overtime
 - start doing the automated scraping
     - error handling on automated scraping

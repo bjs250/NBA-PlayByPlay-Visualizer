@@ -291,6 +291,7 @@ class App extends Component {
             team={"Home"}
             handleSelectionChange={this.handleSelectionChange}
             game_id={game_id}
+            viewportWidth={viewportWidth}
           >
           </BoxScore> : null}
 
@@ -301,6 +302,7 @@ class App extends Component {
             team={"Away"}
             handleSelectionChange={this.handleSelectionChange}
             game_id={game_id}
+            viewportWidth={viewportWidth}
           >
           </BoxScore> : null}
 

@@ -89,14 +89,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'nephewStatsDB',                     
-        'USER': 'postgres',                      # Remove in produuction
-        'PASSWORD': 'DeltaV123',                  # Remove in production
+        #'USER': 'postgres',                      # Remove in produuction
+        #'PASSWORD': 'DeltaV123',                  # Remove in production
         'HOST': 'localhost',                      # Set to empty string for localhost. 
         'PORT': '5432',                      # Set to empty string for default. 
     }
 }
 
-#DATABASES['default'] =  dj_database_url.config() # enable in production
+DATABASES['default'] =  dj_database_url.config() # enable in production
 
 
 # Password validation

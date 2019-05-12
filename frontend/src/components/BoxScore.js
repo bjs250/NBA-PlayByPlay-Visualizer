@@ -162,8 +162,17 @@ class BoxScore extends React.Component {
         {
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
-            const column_widths = [230,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
+            // const columnWidthStandard = this.props.viewportWidth/(headers.length+5)
+            // var column_widths = []
+            // for (var i = 0; i < headers.length; i++)
+            // {
+            //     column_widths.push(columnWidthStandard)
+            // }
+            //column_widths[0] *= 3
+            //const column_widths = [230,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
             var accessors = ['_PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
+            const table_width = .90 // this needs to match the CSS
+            const columnWidthStandard = this.props.viewportWidth*table_width/(headers.length+5)
             
             // For row selection
             var check = {
@@ -194,13 +203,24 @@ class BoxScore extends React.Component {
                     );
                 },
                 sortable: false,
-                width: 45,
+                width: columnWidthStandard,
             }
 
             var columns = []
+            var column_widths = []
+            //const column_widths_modifiders = [230,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
+            const column_widths_modifiders = [3,1.2,1,1.05,1,1,1,1.05,1,1.05,1,1,1.05,1.05,1.15,1.15,1,1,1,1,1,1,1,1]
+
+            for (var i = 0; i < headers.length; i++)
+            {
+                column_widths.push(columnWidthStandard * column_widths_modifiders[i])
+            }
+            
             columns.push(check)
 
             for (var i = 0; i < headers.length; i++) {
+                column_widths.push(columnWidthStandard)   
+                console.log(headers[i],i, column_widths[i]) 
                 columns.push(
                     {
                         Header: headers[i],
@@ -262,6 +282,7 @@ class BoxScore extends React.Component {
                         showPagination={false}
                         defaultPageSize={data.length - 1}
                         defaultSortMethod={sort}
+                        resizable={true}
                         getTdProps={(state, rowInfo, column, instance) => {
                             return {
                                 onClick: (e, handleOriginal) => {
