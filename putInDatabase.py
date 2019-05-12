@@ -26,3 +26,4 @@ for content in contents:
     if foundGame is None:
         game = Game(game_id=game_id,date=date,home=home,away=away)
         game.save()
+    print(x, foundGame)

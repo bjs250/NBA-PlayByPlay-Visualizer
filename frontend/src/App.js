@@ -197,7 +197,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.startDate)
     // For chart dimensions
     const height = 600;
     const width = 1200;
