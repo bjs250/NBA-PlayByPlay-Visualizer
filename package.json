@@ -6,6 +6,7 @@
     "author": "Brian Schendt",
     "license": "MIT",
     "private": true,
+    "homepage": "https://nephew-stats.herokuapp.com",
     "scripts": {
       "heroku-prebuild": "NODE_ENV=production cd frontend/ && yarn install && yarn build && cd .."
     },
