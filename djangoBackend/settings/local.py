@@ -20,7 +20,7 @@ ALLOWED_HOSTS = ['*']
 
 # DEBUG = True
 
-Prod
+# Prod
 
 DATABASES = {  
     'default': {
