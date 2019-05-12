@@ -15,6 +15,7 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("BASE DIR", BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -116,8 +117,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+
+print("REACT_APP_DIR", REACT_APP_DIR)
+print("index file path", os.path.join(REACT_APP_DIR, 'build', 'index.html'))
 
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
