@@ -2,7 +2,7 @@ import os
 import pprint
 import django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoBackend.local.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoBackend.settings.local")
 django.setup()
 from nephewStatsBackend.models import Game
 
