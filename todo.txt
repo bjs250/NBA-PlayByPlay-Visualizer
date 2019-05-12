@@ -1,5 +1,6 @@
 Must do:
-- finish datepicker
+- fix quote on deploy
+- get more data
 - make dimensions of the plot depend on viewport
 - bugfix on x-axis spacing
 

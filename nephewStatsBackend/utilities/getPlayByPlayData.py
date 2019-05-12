@@ -20,8 +20,8 @@ url = "https://stats.nba.com/game/" + game_id + "/playbyplay/"
 # create a new Firefox session
 driver = webdriver.Chrome()
 #driver = webdriver.Firefox()
-driver.implicitly_wait(40)
 driver.get(url)
+driver.implicitly_wait(100)
 
 visitEvents = list()
 timeEvents = list()

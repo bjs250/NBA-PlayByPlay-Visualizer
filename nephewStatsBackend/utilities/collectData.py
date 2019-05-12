@@ -5,9 +5,9 @@ from pathlib import Path
 import subprocess
 import sys
 
-old_stdout = sys.stdout
-log_file = open("message.log","w")
-sys.stdout = log_file
+# old_stdout = sys.stdout
+# log_file = open("message.log","w")
+# sys.stdout = log_file
 
 
 valid_teams = ["Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks","Nuggets","Pistons","Warriors","Rockets","Pacers","Clippers","Lakers","Grizzlies","Heat","Bucks","Timberwolves","Pelicans","Knicks","Thunder","Magic","76ers","Suns","Blazers","Kings","Spurs","Raptors","Jazz","Wizards"]
@@ -59,32 +59,29 @@ total = 0
 for key in data.keys():
     if "2019-" in key:
         for s in data[key]:
+
+            config = Path("..//BoxScoreData//" + data[key][s] + ".pkl")
+            if config.is_file():
+                print(data[key][s] + " was already found")
+                continue
+
             game_id = data[key][s]
-            temp = list(s)
-            print(key, game_id, abbreviationMap[temp[1]],abbreviationMap[temp[0]])
+            print(game_id)
+            print("\tGetting BoxScore data")
+            cmd = ['python', 'getBoxScoreData.py', game_id]
+            subprocess.Popen(cmd).wait()
 
-            # config = Path("..//BoxScoreData//" + data[key][s] + ".pkl")
-            # if config.is_file():
-            #     print(data[key][s] + " was already found")
-            #     pass
+            print("\tGetting PlayByPlay data")
+            cmd = ['python', 'getPlayByPlayData.py', game_id]
+            subprocess.Popen(cmd).wait()
 
-            # game_id = data[key][s]
-            # print(game_id)
-            # print("\tGetting BoxScore data")
-            # cmd = ['python', 'getBoxScoreData.py', game_id]
-            # subprocess.Popen(cmd).wait()
+            print("\tCleaning data")
+            cmd = ['python', 'cleanData.py', game_id]
+            subprocess.Popen(cmd).wait()
+            print("\tDone")
 
-            # print("\tGetting PlayByPlay data")
-            # cmd = ['python', 'getPlayByPlayData.py', game_id]
-            # subprocess.Popen(cmd).wait()
+            time.sleep(120)
 
-            # print("\tCleaning data")
-            # cmd = ['python', 'cleanData.py', game_id]
-            # subprocess.Popen(cmd).wait()
-            # print("\tDone")
-
-            # time.sleep(120)
-
-sys.stdout = log_file
-log_file.close()
+# sys.stdout = log_file
+# log_file.close()
 

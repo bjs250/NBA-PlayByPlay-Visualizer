@@ -20,8 +20,9 @@ url = "https://stats.nba.com/game/" + game_id + "/"
 # create a new Firefox session
 driver = webdriver.Chrome()
 #driver = webdriver.Firefox()
-driver.implicitly_wait(80)
+driver.implicitly_wait(200)
 driver.get(url)
+driver.implicitly_wait(100)
 
 # Declare data structures to be used to store data for the Pandas dataframe
 headers = list()
