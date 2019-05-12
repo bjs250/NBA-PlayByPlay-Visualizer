@@ -43,7 +43,7 @@ def inverseConvertTime(s):
 
 def handlePlayer(player):
 	if "Totals:" not in player:
-		if len(player.split(" ")) == 2:
+		if len(player.split(" ")) >= 2:
 			changedPlayer = player.split(" ")[0] + " " +  player.split(" ")[1]
 		else:
 			changedPlayer = player.split(" ")[0] + " "
