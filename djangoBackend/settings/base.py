@@ -20,15 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1v-brmj#%p4rpqg#ppzv1qsj(5#!i@0cn$ff%x=e=xs1*on1ay'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,20 +75,6 @@ WSGI_APPLICATION = 'djangoBackend.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-DATABASES = {  
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'nephewStatsDB',                     
-        #'USER': 'postgres',                      # Remove in produuction
-        #'PASSWORD': 'DeltaV123',                  # Remove in production
-        'HOST': 'localhost',                      # Set to empty string for localhost. 
-        'PORT': '5432',                      # Set to empty string for default. 
-    }
-}
-
-DATABASES['default'] =  dj_database_url.config() # enable in production
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

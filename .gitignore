@@ -8,6 +8,7 @@ local_settings.py
 db.sqlite3
 media
 frontend/build/*
+/djangoBackend/settings/local.py
 
 # don't track virtualenv, ever!
 venv/

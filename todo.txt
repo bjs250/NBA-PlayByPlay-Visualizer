@@ -1,9 +1,11 @@
 Must do:
 - get more data
+- django check dev vs prod
+- inject environment vars
+- update README
 
 Nice to have
 - figure out public folder
-- django check dev vs prod
 
 - Make sure the scraping scripts work on overtime
 - start doing the automated scraping
