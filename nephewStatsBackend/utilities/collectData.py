@@ -80,7 +80,7 @@ for key in data.keys():
             subprocess.Popen(cmd).wait()
             print("\tDone")
 
-            time.sleep(120)
+            time.sleep(45)
 
 # sys.stdout = log_file
 # log_file.close()
