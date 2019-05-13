@@ -1,10 +1,10 @@
 Must do:
 - get more data
-- update README
+- update with UML diagrams
+- game ID automated retrieval
 
 Nice to have
 - figure out public folder
-
 - Make sure the scraping scripts work on overtime
 - start doing the automated scraping
     - error handling on automated scraping
