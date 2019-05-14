@@ -156,7 +156,6 @@ def showGames(request,date):
 def getOrRetrieveGame(request,id):
     try: # Check if the game is cached
         foundGame = Game.objects.get(game_id=id)
-        print(foundGame)
     except Game.DoesNotExist:
         # Check if the input is a valid game id
         print("id",id)
