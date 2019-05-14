@@ -23,6 +23,7 @@ The UML diagram for the data servicing transactions is pictured below:
 React was chosen as a frontend JavaScript framework primarily because it is great for Single Page Applications, relatively good at managing state, and its internal diff logic aids in rendering performance. The component tree is relatively shallow, so a state managing library like Redux was not used. D3 is the premier JavaScript data visualization library, so it was chosen to render the line chart. React and D3 both compete for managing the DOM -- to get these libraries to work together, React was chosen as the DOM master, and D3's methods are only invoked as utility functions. 
 
 The react component tree with state and prop relations is pictured below:
+[](https://imgur.com/SxN4QlP.jpg)
 
 ## Built With
 
