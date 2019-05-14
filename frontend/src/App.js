@@ -29,7 +29,8 @@ class App extends Component {
       selectionMatrix: {},
       startDate: null,
       idList: [],
-      quote: ""
+      quote: "",
+      submissionErrorFlag: 0
     };
 
     // Bind event listeners
@@ -162,11 +163,16 @@ class App extends Component {
           game_desc: res[0]["fields"]["date"] + ": " + res[0]["fields"]["home"] + " @ " + res[0]["fields"]["away"],
           line_data: [],
           point_data: [],
-          selectionMatrix: {}
+          selectionMatrix: {},
+          submissionErrorFlag: 0
 
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({
+          submissionErrorFlag: 1
+        });
+      });
     console.log("Submission Triggered")
   };
 
@@ -239,11 +245,12 @@ class App extends Component {
                   value={this.state.user_input}
                   onChange={this.handleGameInputChange}
                 />
-
                 <button
                   onClick={this.handleGameSubmit}>
                   Submit
                   </button>
+                {this.state.submissionErrorFlag === 1 ? <p id="gameIDerror">There was a problem retrieving that ID</p> : null}
+
 
               </form>
 

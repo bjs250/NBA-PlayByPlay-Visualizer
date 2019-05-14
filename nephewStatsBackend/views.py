@@ -11,6 +11,7 @@ import urllib.request
 
 from .models import Game           
 import requests      
+from pathlib import Path
 
 import pandas as pd
 import numpy as np
@@ -19,6 +20,7 @@ import os
 import pickle
 import datetime
 import random
+import subprocess
 
 class FrontendAppView(View):
     """
@@ -154,16 +156,42 @@ def showGames(request,date):
 def getOrRetrieveGame(request,id):
     try: # Check if the game is cached
         foundGame = Game.objects.get(game_id=id)
+        print(foundGame)
     except Game.DoesNotExist:
         # Check if the input is a valid game id
         print("id",id)
         if len(id) == 10 and id.isnumeric():
             # TODO: Probably a check to see if the score is 0-0 to just ignore everything
+            # wd = os.getcwd()
+            # os.chdir("utilities")
+
+            # print("======================",os.cwd())
+
+            # cmd = ['python', 'utilities\getBoxScoreData.py', id]
+            # subprocess.Popen(cmd).wait()
+
+            # print("\tGetting PlayByPlay data")
+            # cmd = ['python', 'utilities\getPlayByPlayData.py', id]
+            # subprocess.Popen(cmd).wait()
+
+            # print("\tCleaning data")
+            # cmd = ['python', 'utilities\cleanData.py', id]
+            # subprocess.Popen(cmd).wait()
+            # print("\tDone")
+
+            # os.chdir(wd)
+
+            #if Path("BoxScoreData/"+id)
+
+
+            # game = Game(game_id=id,date="2019-05-13",home="POR",away="DEN")
+            # game.save()
+            # foundGame = Game.objects.get(game_id=id)
             foundGame = None
+
         else:
             print("Invalid input")
             foundGame = None
-
 
     if foundGame is not None:
         

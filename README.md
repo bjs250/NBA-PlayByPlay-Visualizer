@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Design & Implementation
 
-The play-by-play data and boxscore stats used in the application are webscraped in Python using Selenium and BeautifulSoup from stats.nba.com and saved as pickled files to be cleaned later. (more specifically, URL's in the form of https://stats.nba.com/game/`<game_id>/`/playbyplay/ and https://stats.nba.com/game/`<game_id>/` respectively. Details can be seen in backend/utilities/getBoxScoreData.py and backend/utilities/getPlayByPlayData.py). Using the API documented at swar/nba_api, a list of NBA game id's was constructed, and a script was built to periodically webscrape using these id's ().
+The play-by-play data and boxscore stats used in the application are webscraped in Python using Selenium and BeautifulSoup from stats.nba.com and saved as pickled files to be cleaned later. (more specifically, URL's in the form of https://stats.nba.com/game/(game_id)/playbyplay/ and https://stats.nba.com/game/(game_id)/ respectively. Details can be seen in backend/utilities/getBoxScoreData.py and backend/utilities/getPlayByPlayData.py). Using the API documented at swar/nba_api, a list of NBA game id's was constructed, and a script was built to periodically webscrape using these id's ().
 
 The raw data was then cleaned and stored into JSON serializable data structures in Python using Pandas (backend/utilities/cleanData.py).
 
@@ -31,13 +31,14 @@ The react component tree with state and prop relations is pictured below:
 * [Pandas]() - Raw data cleaning and formatting
 * [Django]() - Backend framework
 * [React]() - Frontend framework
+* [PostgreSQL]() - Backend database
+* [D3]() - Data visualization (line chart)
+
 * [React-table]() - Creating the interactive BoxScore table
-* [D3]() - Data visualization
+* [Memoize-one]() - Memoization of front-end JavaScript functions
 
-## License
-
-TDB
+Deployed on Heroku
 
 ## Acknowledgments
 
-* TBD
+* [swar/nba_api]() - Documenting the unofficial API endpoints of NBA.com
