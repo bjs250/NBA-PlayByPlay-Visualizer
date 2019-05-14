@@ -6,7 +6,7 @@ To allow end users to understand the flow of an NBA game based on score differen
 
 ## Design & Implementation
 
-The play-by-play data and boxscore stats used in the application are webscraped in Python using Selenium and BeautifulSoup from stats.nba.com and saved as pickled files to be cleaned later. (more specifically, URL's in the form of https://stats.nba.com/game/(game_id)/playbyplay/ and https://stats.nba.com/game/(game_id)/ respectively. Details can be seen in backend/utilities/getBoxScoreData.py and backend/utilities/getPlayByPlayData.py). Using the API documented at swar/nba_api, a list of NBA game id's was constructed, and a script was built to periodically webscrape using these id's.
+The play-by-play data and boxscore stats used in the application are webscraped in Python using Selenium and BeautifulSoup from stats.nba.com and saved as pickled files to be cleaned later (more specifically, URL's in the form of https://stats.nba.com/game/(game_id)/playbyplay/ and https://stats.nba.com/game/(game_id)/ respectively. Details can be seen in backend/utilities/getBoxScoreData.py and backend/utilities/getPlayByPlayData.py). Using the unofficial NBA.com API documented at swar/nba_api, a list of NBA game ID's was constructed, and a script was built to webscrape using these ID's.
 
 The raw data was then cleaned and stored into JSON serializable data structures in Python using Pandas (backend/utilities/cleanData.py).
 
