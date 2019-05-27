@@ -246,7 +246,7 @@ class App extends Component {
   render() {
     // For chart dimensions
     const { viewportWidth, viewportHeight } = this.state
-    const height = .60*viewportHeight;
+    const height = .70*viewportHeight;
     const width = .80*viewportWidth;
     
     console.log(this.state.screenOrientation, viewportWidth, viewportHeight);
@@ -255,10 +255,14 @@ class App extends Component {
 
     this.load_data(this.state.game_id)
 
-    var { selectionMatrix, idList, quote, game_id, game_desc } = this.state
+    var { selectionMatrix, idList, quote, game_id, game_desc, screenOrientation } = this.state
 
     return (
       <div className="App">
+
+        {screenOrientation === "portrait" ?
+          <p className="warning">For a better user experience, if you are visiting on mobile it is highly recommended that you view this page in landscape mode rather than portrait mode.</p>
+        : null}
 
         <h1>{game_desc}</h1>
         <p className="quote">{quote}</p>

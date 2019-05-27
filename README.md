@@ -29,7 +29,6 @@ A simplified UML diagram for some of the data servicing transactions is pictured
 * [React]() - Frontend framework
 * [PostgreSQL]() - Backend database
 * [D3]() - Data visualization (line chart)
-
 * [React-table]() - Creating the interactive BoxScore table
 * [Memoize-one]() - Memoization of front-end JavaScript functions
 

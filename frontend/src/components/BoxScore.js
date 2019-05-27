@@ -163,8 +163,9 @@ class BoxScore extends React.Component {
             const footer = data[data.length - 1]
             const headers = ['PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
             var accessors = ['_PLAYER', 'MIN', 'FTM', '-FTM','FTA', 'FT%','2PM','-2PM','3PM','-3PM','3PA', '3P%','FGM', 'FG%', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PF', '+/-', 'PTS']
-            const table_width = .90 // this needs to match the CSS
-            const columnWidthStandard = this.props.viewportWidth*table_width/(headers.length+5)
+            //const table_width = .90 // this needs to match the CSS
+            //const columnWidthStandard = this.props.viewportWidth*table_width/(headers.length+5)
+            const columnWidthStandard = 50;
             
             // For row selection
             var check = {
@@ -200,9 +201,8 @@ class BoxScore extends React.Component {
 
             var columns = []
             var column_widths = []
-            //const column_widths_modifiders = [230,60,45,50,45,45,45,50,45,50,45,45,50,50,60,60,45,45,45,45,45,45,45,45]
-            const column_widths_modifiders = [3,1.2,1,1.05,1,1,1,1.05,1,1.05,1,1,1.05,1.05,1.15,1.15,1,1,1,1,1,1,1,1]
-
+            let column_widths_modifiders = [4,1.2,1,1.05,1,1,1,1.05,1,1.05,1,1,1.05,1.05,1.20,1.20,1,1,1,1,1,1,1,1]
+            
             for (var i = 0; i < headers.length; i++)
             {
                 column_widths.push(columnWidthStandard * column_widths_modifiders[i])
@@ -265,7 +265,7 @@ class BoxScore extends React.Component {
             }
 
             return (
-                <div>
+                <div className="tableholder">
                     <p className="tableheader">{this.props.team}</p>
                     <ReactTable
                         data={data.slice(0, data.length - 1)}
@@ -277,15 +277,6 @@ class BoxScore extends React.Component {
                         getTdProps={(state, rowInfo, column, instance) => {
                             return {
                                 onClick: (e, handleOriginal) => {
-                                    //console.log('A Td Element was clicked!')
-                                    //console.log('it produced this event:', e)
-                                    //console.log('It was in this column:', column)
-                                    //console.log('It was in this row:', rowInfo)
-                                    //console.log('It was in this table instance:', instance)
-
-                                    //console.log(e.target)
-                                    //console.log(rowInfo.original["PLAYER"], column["Header"])
-
                                     // Update the selection matrix
                                     if (rowInfo && rowInfo.row && column && column["Header"]) {
                                         var new_sel = Object.assign({}, this.state.sel);
@@ -298,12 +289,6 @@ class BoxScore extends React.Component {
                                         this.props.handleSelectionChange(rowInfo.original["PLAYER"], column["Header"], new_sel[rowInfo.original["PLAYER"]][column["Header"]]);
                                     }
 
-
-                                    // IMPORTANT! React-Table uses onClick internally to trigger
-                                    // events like expanding SubComponents and pivots.
-                                    // By default a custom 'onClick' handler will override this functionality.
-                                    // If you want to fire the original onClick handler, call the
-                                    // 'handleOriginal' function.
                                     if (handleOriginal) {
                                         handleOriginal()
                                     }
