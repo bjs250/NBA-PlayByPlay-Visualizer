@@ -1,8 +1,7 @@
 Must do:
-- get more data april 24 to may 13
+- backfill games to end of east/west conferences
 - game ID automated retrieval
 
-- update with UML diagrams
 
 Nice to have
 - figure out public folder
