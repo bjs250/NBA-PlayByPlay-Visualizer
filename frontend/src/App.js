@@ -5,6 +5,9 @@ import './App.css';
 // External dependencies
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
 import List from 'react-list-select'
 import axios from "axios";
 import memoize from "memoize-one";
@@ -12,6 +15,18 @@ import memoize from "memoize-one";
 // Internal dependencies
 import Chart from './components/Chart.js'
 import BoxScore from './components/BoxScore.js'
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +40,7 @@ class App extends Component {
       line_data: [],
       point_data: [],
       selectionMatrix: {},
-      startDate: null,
+      startDate: new Date("2019-05-10"),
       idList: [],
       quote: "",
       submissionErrorFlag: 0,
@@ -35,6 +50,7 @@ class App extends Component {
       screenOrientation: window.matchMedia("(orientation: portrait)").matches ? 'portrait' : 'landscape'
     };
 
+
     // Bind event listeners
     this.handleGameInputChange = this.handleGameInputChange.bind(this);
     this.handleGameSubmit = this.handleGameSubmit.bind(this);
@@ -42,7 +58,7 @@ class App extends Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleGameSelectionChange = this.handleGameSelectionChange.bind(this);
 
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.setScreenOrientation = this.setScreenOrientation.bind(this);
   }
 
@@ -72,10 +88,10 @@ class App extends Component {
     let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let height = Math.min(document.documentElement.clientHeight, window.innerHeight || 0)
 
-    this.setState({ 
-      viewportWidth: Math.max(width,1000),
-      viewportHeight: Math.max(height,600)
-     });
+    this.setState({
+      viewportWidth: Math.max(width, 1000),
+      viewportHeight: Math.max(height, 600)
+    });
   }
 
   setScreenOrientation = () => {
@@ -95,15 +111,18 @@ class App extends Component {
 
   }
 
-  handleDateChange(date) {
+  handleDateChange(event) {
+    const date = new Date(event.target.value);
+
     this.setState({
       startDate: date
     });
 
     const month = date.getMonth() + 1
-    const day = date.getDate()
+    const day = date.getDate() + 1
     const year = date.getFullYear()
     const newDate = month + "-" + day + "-" + year;
+    console.log(newDate);
 
     axios.get('games/date/' + newDate + '#')
       .then(res => res.data)
@@ -114,11 +133,11 @@ class App extends Component {
       ).catch(error => console.log(error))
   }
 
-  handleGameSelectionChange(index){
+  handleGameSelectionChange(index) {
     const game = this.state.idList[index]
     const date = this.state.startDate
     const month = date.getMonth() + 1
-    const day = date.getDate()
+    const day = date.getDate() + 1
     const year = date.getFullYear()
     const newDate = month + "-" + day + "-" + year;
 
@@ -168,7 +187,7 @@ class App extends Component {
 
           this.setState({
             point_data: res,
-            selectionMatrix: raw_sel
+            selectionMatrix: raw_sel,
           })
         }
         ).catch(error => console.log(error))
@@ -246,11 +265,11 @@ class App extends Component {
   render() {
     // For chart dimensions
     const { viewportWidth, viewportHeight } = this.state
-    const height = .70*viewportHeight;
-    const width = .80*viewportWidth;
-    
+    const height = .70 * viewportHeight;
+    const width = .80 * viewportWidth;
+
     console.log(this.state.screenOrientation, viewportWidth, viewportHeight);
-    
+
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
 
     this.load_data(this.state.game_id)
@@ -262,7 +281,7 @@ class App extends Component {
 
         {screenOrientation === "portrait" ?
           <p className="warning">For a better user experience, if you are visiting on mobile it is highly recommended that you view this page in landscape mode rather than portrait mode.</p>
-        : null}
+          : null}
 
         <h1>{game_desc}</h1>
         <p className="quote">{quote}</p>
@@ -293,10 +312,18 @@ class App extends Component {
 
             <div className="col">
               <p>Search for Game ID's using the datepicker:</p>
-              <DatePicker
-                selected={this.state.startDate}
-                onChange={this.handleDateChange}
-              />
+              <form noValidate>
+                <TextField
+                  id="Game Date"
+                  label="Game Date"
+                  type="date"
+                  defaultValue={this.state.startDate}
+                  onChange={this.handleDateChange}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+              </form>
             </div>
 
             <div className="col">
@@ -307,7 +334,7 @@ class App extends Component {
                   selected={[]}
                   disabled={[]}
                   multiple={false}
-                  onChange={(selected) => {this.handleGameSelectionChange(selected)}}
+                  onChange={(selected) => { this.handleGameSelectionChange(selected) }}
                 /> : <p>(No Game ID's for chosen date)</p>}
             </div>
 
@@ -384,3 +411,4 @@ class App extends Component {
 }
 
 export default App;
+
