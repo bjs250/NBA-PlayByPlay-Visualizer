@@ -81,21 +81,6 @@ class Chart extends React.Component {
     )
 
     zoomed() {
-        // console.log(d3.event.sourceEvent["deltaY"],this.state.zoomTransform["k"])
-        // if (this.state.zoomTransform["k"] > 2.50)
-        // {
-        //     if (d3.event.sourceEvent["deltaY"]>=0)
-        //     {
-        //         this.setState({
-        //             zoomTransform: d3.event.transform,
-        //         });
-        //     }
-        // }
-        // else{
-        //     this.setState({
-        //         zoomTransform: d3.event.transform,
-        //     });
-        // }
         this.setState({
             zoomTransform: d3.event.transform,
         });

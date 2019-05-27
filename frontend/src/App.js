@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 // External dependencies
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import {isMobile} from 'react-device-detect';
+
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -279,7 +279,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        {screenOrientation === "portrait" ?
+        {isMobile && screenOrientation === "portrait" ?
           <p className="warning">For a better user experience, if you are visiting on mobile it is highly recommended that you view this page in landscape mode rather than portrait mode.</p>
           : null}
 
