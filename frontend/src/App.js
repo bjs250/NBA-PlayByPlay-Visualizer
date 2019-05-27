@@ -19,8 +19,6 @@ class App extends Component {
 
     // Initialize state
     this.state = {
-      viewportWidth: 0,
-      viewportHeight: 0,
       user_input: '',
       game_id: '0041800226',
       game_desc: '2019-05-10: GSW @ HOU',
@@ -30,16 +28,22 @@ class App extends Component {
       startDate: null,
       idList: [],
       quote: "",
-      submissionErrorFlag: 0
+      submissionErrorFlag: 0,
+
+      viewportWidth: 0,
+      viewportHeight: 0,
+      screenOrientation: window.matchMedia("(orientation: portrait)").matches ? 'portrait' : 'landscape'
     };
 
     // Bind event listeners
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
     this.handleGameInputChange = this.handleGameInputChange.bind(this);
     this.handleGameSubmit = this.handleGameSubmit.bind(this);
     this.handleSelectionChange = this.handleSelectionChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleGameSelectionChange = this.handleGameSelectionChange.bind(this);
+
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
+    this.setScreenOrientation = this.setScreenOrientation.bind(this);
   }
 
   componentDidMount() {
@@ -55,15 +59,40 @@ class App extends Component {
 
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('orientationchange', this.setScreenOrientation);
 
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('orientationchange', this.setScreenOrientation);
   }
 
   updateWindowDimensions() {
-    this.setState({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
+    let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    let height = Math.min(document.documentElement.clientHeight, window.innerHeight || 0)
+
+    this.setState({ 
+      viewportWidth: Math.max(width,1000),
+      viewportHeight: Math.max(height,600)
+     });
+  }
+
+  setScreenOrientation = () => {
+    this.updateWindowDimensions();
+
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      this.setState({
+        screenOrientation: 'landscape'
+      });
+    }
+
+    else if (window.matchMedia("(orientation: landscape)").matches) {
+      this.setState({
+        screenOrientation: 'portrait'
+      });
+    }
+
   }
 
   handleDateChange(date) {
@@ -219,6 +248,8 @@ class App extends Component {
     const { viewportWidth, viewportHeight } = this.state
     const height = .60*viewportHeight;
     const width = .80*viewportWidth;
+    
+    console.log(this.state.screenOrientation, viewportWidth, viewportHeight);
     
     var margin = { top: 50, right: 10, bottom: 10, left: 115 }
 

@@ -22,9 +22,15 @@
   -ms-flex-direction: column;
   flex-direction: column;
   /* border: 1px solid rgba(0, 0, 0, 0.1); */
-  width: 90vw;
+  width: 1000px;
   
 }
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .ReactTable {width: 90vw};
+}
+
 
 .ReactTable * {
   box-sizing: border-box
@@ -43,9 +49,14 @@
   flex-direction: column;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-items: center;
+  align-items: left;
   width: 100%;
   border-collapse: collapse;
+}
+
+@media only screen and (min-width: 1000px) {
+  /* For desktop: */
+  .ReactTable .rt-table {align-items: center};
 }
 
 .ReactTable .rt-thead {
