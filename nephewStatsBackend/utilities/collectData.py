@@ -5,10 +5,9 @@ from pathlib import Path
 import subprocess
 import sys
 
-# old_stdout = sys.stdout
-# log_file = open("message.log","w")
-# sys.stdout = log_file
-
+old_stdout = sys.stdout
+log_file = open("message.log","w")
+sys.stdout = log_file
 
 valid_teams = ["Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks","Nuggets","Pistons","Warriors","Rockets","Pacers","Clippers","Lakers","Grizzlies","Heat","Bucks","Timberwolves","Pelicans","Knicks","Thunder","Magic","76ers","Suns","Blazers","Kings","Spurs","Raptors","Jazz","Wizards"]
 valid_abbreviations = []
@@ -21,9 +20,6 @@ exclusion_list = [s.strip().lower() for s in exclusion_list]
 
 with open('leaguegamefinder.json') as f:
     d = json.load(f)
-    #print(d.keys())
-    #print(d["resultSets"][0].keys())
-    #print(d["resultSets"][0]["headers"])  
     for rowSet in d["resultSets"][0]["rowSet"]:
         teamName = rowSet[3].strip().lower()
         
@@ -56,32 +52,34 @@ with open('leaguegamefinder.json') as f:
         
 total = 0
 
+# modify as needed
+
 for key in data.keys():
     if "2019-" in key:
         for s in data[key]:
-
-            config = Path("..//BoxScoreData//" + data[key][s] + ".pkl")
-            if config.is_file():
-                print(data[key][s] + " was already found")
-                continue
-
             game_id = data[key][s]
-            print(game_id)
-            print("\tGetting BoxScore data")
-            cmd = ['python', 'getBoxScoreData.py', game_id]
-            subprocess.Popen(cmd).wait()
+            config = Path("..//BoxScoreData//" + game_id + ".pkl")
+            if config.is_file():                
+                #print(key, game_id, abbreviationMap[list(s)[0]], abbreviationMap[list(s)[1]], "already found")
+                print(key, game_id, abbreviationMap[list(s)[0]], abbreviationMap[list(s)[1]])
+                continue
+            else:
+                game_id = data[key][s]
+                print(key, game_id, abbreviationMap[list(s)[0]], abbreviationMap[list(s)[1]])
+                #print("\tGetting BoxScore data")
+                cmd = ['python', 'getBoxScoreData.py', game_id]
+                subprocess.Popen(cmd).wait()
 
-            print("\tGetting PlayByPlay data")
-            cmd = ['python', 'getPlayByPlayData.py', game_id]
-            subprocess.Popen(cmd).wait()
+                #print("\tGetting PlayByPlay data")
+                cmd = ['python', 'getPlayByPlayData.py', game_id]
+                subprocess.Popen(cmd).wait()
 
-            print("\tCleaning data")
-            cmd = ['python', 'cleanData.py', game_id]
-            subprocess.Popen(cmd).wait()
-            print("\tDone")
+                #print("\tCleaning data")
+                cmd = ['python', 'cleanData.py', game_id]
+                subprocess.Popen(cmd).wait()
+                #print("\tDone")
 
-            time.sleep(45)
 
-# sys.stdout = log_file
-# log_file.close()
+sys.stdout = log_file
+log_file.close()
 
