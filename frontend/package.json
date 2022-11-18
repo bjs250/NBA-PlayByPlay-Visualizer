@@ -13,7 +13,7 @@
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-list-select": "^0.4.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-table": "^6.10.0"
   },
   "scripts": {
